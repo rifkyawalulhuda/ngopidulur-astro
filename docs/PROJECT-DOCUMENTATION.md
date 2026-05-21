@@ -84,7 +84,7 @@ ngopidulur-astro/
 │   │   ├── index.astro        # Homepage
 │   │   ├── about.astro        # About page
 │   │   ├── project.astro      # Project page
-│   │   ├── friend.astro       # Friend links page
+│   │   ├── friend.astro       # Friend links page (route masih ada, menu utama sudah dihapus)
 │   │   ├── rss.xml.ts         # RSS feed
 │   │   └── robots.txt.ts      # Robots.txt
 │   ├── plugins/
@@ -125,7 +125,7 @@ site:
   date_format: ddd MMM DD YYYY
   blog:
     pageSize: 8            # Artikel per halaman
-  menu: [...]              # Navigasi menu
+  menu: [...]              # Navigasi menu sidebar/navbar
 
 user:
   name: Rifky Awalul Huda  # Nama yang ditampilkan
@@ -138,6 +138,13 @@ user:
 ```
 
 **Penting:** Setelah edit `frosti.config.yaml`, restart dev server (`Ctrl+C` lalu `npm run dev` lagi) karena file ini dibaca via `fs.readFileSync` yang tidak hot-reload.
+
+### Catatan Konfigurasi yang Sedang Dipakai
+
+- Menu `Friend` dan `Contact` sudah dihapus dari `site.menu`, jadi tidak tampil lagi di sidebar maupun navbar.
+- Social icon sidebar dan footer saat ini memakai Facebook, GitHub, LinkedIn, dan X.
+- Format icon yang benar mengikuti pola `collection:name`, misalnya `ri:linkedin-line` atau `ri:facebook-line`.
+- `user.site` saat ini mengarah ke profil LinkedIn.
 
 ### Astro Config: `astro.config.mjs`
 
@@ -366,6 +373,27 @@ Selama proses setup, beberapa CMS dicoba tapi tidak kompatibel:
 2. **Keystatic** — Belum support Astro 6 (peer dependency conflict, crash di production)
 
 Kedua percobaan ini sudah di-revert sepenuhnya. Tidak ada sisa kode dari Storyblok atau Keystatic di project.
+
+### Penyesuaian UI dan Konfigurasi (Mei 2026)
+
+**Homepage**
+- `src/pages/index.astro`: section `Features` diganti menjadi `Blog Terbaru`.
+- Homepage sekarang menampilkan maksimal 6 post terbaru dari collection `blog`.
+- Layout daftar post di homepage diubah menjadi grid card ringkas 3 kolom di desktop dan tetap responsif di layar kecil.
+
+**About page**
+- `src/pages/about.astro`: tombol sosial pertama di section profil diubah dari GitHub menjadi LinkedIn.
+- Link sosial yang dipakai di halaman About sudah menyesuaikan profil LinkedIn dan Facebook terbaru.
+
+**Navigasi**
+- `frosti.config.yaml`: menu `Friend` dan `Contact` dihapus dari `site.menu`.
+- Halaman `src/pages/friend.astro` masih ada di codebase, tetapi tidak lagi muncul di navigasi utama.
+
+**Footer dan social icons**
+- `src/components/Footer.astro` tetap menjadi komponen footer utama yang dipakai oleh `src/layouts/BaseLayout.astro`.
+- Data social footer tetap dibaca dari `frosti.config.yaml` melalui `src/config.ts`.
+- Icon `ri:cup-line` di konfigurasi social footer diganti menjadi `ri:facebook-line`.
+- Icon LinkedIn di konfigurasi memakai format yang benar: `ri:linkedin-line`.
 
 ---
 
