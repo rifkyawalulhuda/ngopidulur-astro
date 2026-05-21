@@ -215,6 +215,21 @@ collections:
       - body (markdown)
 ```
 
+### Catatan: File .md vs .mdx di CMS
+
+Decap CMS hanya menampilkan file dengan ekstensi `.md` (dikonfigurasi via `extension: "md"` di `config.yml`). File `.mdx` **tidak muncul** di CMS dan memang sengaja dikelola terpisah.
+
+**Konvensi:**
+- **File `.md`** — Artikel biasa, dikelola via Decap CMS (`/admin`) atau langsung edit file.
+- **File `.mdx`** — Artikel yang menggunakan komponen interaktif (import custom components seperti `<Collapse>`, `<Info>`, `<LinkCard>`, dll). Dikelola langsung via code editor karena Decap CMS tidak bisa merender syntax JSX/import.
+
+**Kenapa tidak membuat collection kedua untuk MDX?**
+1. Di sisi Astro, semua post (`.md` dan `.mdx`) sudah satu content collection `blog`. Memisahkan di CMS membingungkan.
+2. Decap CMS tetap tidak bisa mengedit syntax MDX (import/JSX) dengan benar.
+3. Duplikasi konfigurasi fields tanpa manfaat nyata.
+
+Jadi jika ada post yang hanya muncul di situs tapi tidak di CMS, kemungkinan besar itu file `.mdx` — dan itu memang by design.
+
 ### Catatan Production
 
 Untuk deploy dengan Decap CMS aktif:
