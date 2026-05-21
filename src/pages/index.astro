@@ -21,9 +21,13 @@ const latestPosts = sortPostsByDate(await getAllPosts()).slice(0, 6);
       <!-- Hero Section -->
       <section class="py-6">
         <div class="flex flex-col items-center text-center">
+          <h1 class="sr-only">Blog Ngopidulur</h1>
           <img
             src="/profile2.png"
             alt="Blog Ngopidulur"
+            width="240"
+            height="80"
+            fetchpriority="high"
             class="h-20 w-auto mb-4 object-contain"
           />
           <p class="text-xl text-base-content/80 max-w-3xl mb-8">

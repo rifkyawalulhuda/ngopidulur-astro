@@ -41,7 +41,9 @@ Blog ini menghasilkan **file HTML statis** saat di-build, sehingga sangat cepat 
 | Expressive Code | ^0.41.3 | Syntax highlighting code blocks |
 | KaTeX | ^0.16.25 | Render rumus matematika |
 | Pagefind | ^1.4.0 | Search engine statis (client-side) |
-| Decap CMS | ^3.3.3 | Admin UI untuk kelola konten |
+| @astrojs/rss | ^4.0.18 | Generate RSS feed |
+| @astrojs/sitemap | ^3.7.2 | Generate sitemap.xml |
+| Decap CMS | 3.3.3 (pinned, lokal) | Admin UI untuk kelola konten |
 | Biome | ^2.3.8 | Linter & formatter |
 | Sharp | ^0.34.5 | Image optimization |
 
@@ -54,11 +56,14 @@ ngopidulur-astro/
 ├── public/                    # File statis (langsung di-serve)
 │   ├── admin/                 # Decap CMS
 │   │   ├── config.yml         # Konfigurasi CMS (collections, fields)
-│   │   └── index.html         # Entry point CMS
+│   │   ├── index.html         # Entry point CMS
+│   │   └── decap-cms.js       # Decap CMS bundle (pinned 3.3.3, lokal)
 │   ├── image/                 # Gambar untuk artikel
+│   ├── pagefind/              # Search index (auto-generated dari `pnpm search:index`)
 │   ├── favicon.ico
 │   ├── logo.png
-│   └── profile.png            # Avatar user
+│   ├── profile.png            # Avatar user
+│   └── profile2.png           # Logo hero homepage
 ├── src/
 │   ├── components/            # Komponen Astro
 │   │   ├── mdx/               # Komponen untuk MDX (alerts, collapse, dll)
@@ -84,7 +89,6 @@ ngopidulur-astro/
 │   │   ├── index.astro        # Homepage
 │   │   ├── about.astro        # About page
 │   │   ├── project.astro      # Project page
-│   │   ├── friend.astro       # Friend links page (route masih ada, menu utama sudah dihapus)
 │   │   ├── rss.xml.ts         # RSS feed
 │   │   └── robots.txt.ts      # Robots.txt
 │   ├── plugins/
@@ -97,7 +101,7 @@ ngopidulur-astro/
 │   └── content.config.ts      # Definisi content collections
 ├── frosti.config.yaml         # KONFIGURASI UTAMA SITUS
 ├── astro.config.mjs           # Konfigurasi Astro
-├── tsconfig.json              # TypeScript config
+├── tsconfig.json              # TypeScript config (exclude pagefind & decap-cms.js)
 ├── biome.json                 # Linter/formatter config
 ├── package.json               # Dependencies & scripts
 └── dist/                      # Output build (jangan edit manual)
@@ -141,7 +145,8 @@ user:
 
 ### Catatan Konfigurasi yang Sedang Dipakai
 
-- Menu `Friend` dan `Contact` sudah dihapus dari `site.menu`, jadi tidak tampil lagi di sidebar maupun navbar.
+- Menu `Friend`, `Contact`, dan `Examples` sudah dihapus dari `site.menu`. Halaman `friend.astro` juga dihapus dari codebase.
+- Kategori sidebar yang aktif: `Tulisan Random`, `Teknologi`, `Documentation`.
 - Social icon sidebar dan footer saat ini memakai Facebook, GitHub, LinkedIn, dan X.
 - Format icon yang benar mengikuti pola `collection:name`, misalnya `ri:linkedin-line` atau `ri:facebook-line`.
 - `user.site` saat ini mengarah ke profil LinkedIn.
@@ -291,54 +296,67 @@ Isi artikel di sini menggunakan Markdown...
 ### Prerequisites
 
 - Node.js >= 18
-- npm (sudah terinstall)
+- pnpm (recommended) atau npm
+- Untuk pnpm v10+: jalankan `pnpm approve-builds` saat install pertama untuk approve build scripts dari `esbuild`, `sharp`, `swup`, dan `@parcel/watcher`.
 
 ### Commands
 
+> Project ini pakai pnpm. Semua command bisa dijalankan via `pnpm <script>`. Kalau pakai npm, ganti `pnpm` dengan `npm run`.
+
 ```sh
-# Running Decap Server
+# Running Decap Server (terminal 1)
 npx decap-server
-http://localhost:4321/admin/index.html
+# Akses CMS: http://localhost:4321/admin
 
 # Install dependencies
-npm install
+pnpm install
 
-# Development server (http://localhost:4321)
-npm run dev
+# Development server (http://localhost:4321) — terminal 2
+pnpm dev
 
-# Build untuk production
-npm run build
+# Build untuk production (build + generate Pagefind index)
+pnpm build
 
 # Preview build result
-npm run preview
+pnpm preview
 
 # Type checking
-npm run check
+pnpm check
 
-# Linting
-npm run lint
+# Linting (Biome)
+pnpm lint
 
-# Format code
-npm run format
+# Format code (Biome)
+pnpm format
 
-# Generate search index (jalankan sebelum dev pertama kali)
-npm run search:index
+# Generate search index lalu copy ke public/
+pnpm search:index
 ```
 
 ### Pertama Kali Setup
 
 ```sh
-npm install
-npm run search:index    # Generate Pagefind search index
-npm run dev             # Start dev server
+pnpm install
+pnpm approve-builds        # Approve build scripts (pilih semua dengan 'a')
+pnpm search:index          # Generate Pagefind search index
+pnpm dev                   # Start dev server
 ```
 
 ### Workflow Harian
 
 ```sh
-npm run dev             # Start dev server
+pnpm dev                   # Start dev server
 # Edit artikel via /admin atau langsung di file
 # Ctrl+C untuk stop
+```
+
+### Setelah Tambah/Edit Artikel
+
+Search index Pagefind tidak auto-update saat dev. Setelah konten berubah signifikan, regenerate index:
+
+```sh
+pnpm build
+npx cpy-cli "dist/pagefind/**" "public/pagefind"
 ```
 
 ---
@@ -410,6 +428,32 @@ Kedua percobaan ini sudah di-revert sepenuhnya. Tidak ada sisa kode dari Storybl
 - Icon `ri:cup-line` di konfigurasi social footer diganti menjadi `ri:facebook-line`.
 - Icon LinkedIn di konfigurasi memakai format yang benar: `ri:linkedin-line`.
 
+### Maintenance & Code Quality (Mei 2026)
+
+**Update dependency untuk kompatibilitas Astro 6**
+- `@astrojs/rss` di-update ke `^4.0.18` (fix error `z.function().returns is not a function`).
+- `@astrojs/sitemap` di-update ke `^3.7.2` (fix error `Cannot read properties of undefined (reading 'reduce')`).
+
+**Fix prioritas High dari hasil code review**
+- **Decap CMS pinned & lokal**: dependency dari CDN (`https://unpkg.com/decap-cms@^3.3.3`) di `src/pages/admin.astro` dan `public/admin/index.html` diganti ke file lokal `public/admin/decap-cms.js` (versi 3.3.3 di-pin). Mencegah breaking change upstream dan mengurangi attack surface.
+- **Race condition di search page**: `src/pages/blog/search.astro` di-refactor agar tidak append script tag duplikat saat user navigate via View Transitions. Ada pengecekan `window.PagefindUI` dan attribute `data-pagefind-loader` untuk reuse instance.
+- **A11y/SEO homepage**: `src/pages/index.astro` heading `<h1>` ditambah lagi (`sr-only` agar tetap visual-friendly), gambar hero `profile2.png` ditambah `width`, `height`, dan `fetchpriority="high"` untuk cegah CLS dan prioritaskan loading.
+
+**Schema content collection lebih toleran**
+- `src/content.config.ts`: field `updated` sekarang menerima string kosong `""` dari Decap CMS dan otomatis convert ke `undefined`. Mencegah error `Expected type "date", received "object"` saat post baru dibuat lewat CMS tanpa mengisi tanggal update.
+
+**TypeScript config**
+- `tsconfig.json`: tambah `exclude` untuk `public/admin/decap-cms.js` (5.3 MB minified) dan `public/pagefind/**`. Mencegah `astro check` out-of-memory saat scan vendor files.
+
+**Cleanup file tidak terpakai**
+- Dihapus 14 file yang sudah tidak terpakai:
+  - Static assets duplikat: `favicon1.ico`, `profile1.png`, `image/l.png`, `image/r.png`, `image/image2.jpg`, `image/uploaded-screenshot.png`.
+  - Frosti updater scripts: `frosti.update.sh`, `.updateignore`, `src/i18n/en.sh`, `src/i18n/zh.sh`.
+  - Halaman friend dan komponen pendukungnya: `src/pages/friend.astro`, `src/components/mdx/FriendCard.astro`, `src/components/mdx/Showcase.astro`, `src/components/mdx/LinkCard.astro`.
+
+**Setup MCP Astro Docs (global Kiro)**
+- File `~/.kiro/settings/mcp.json` ditambah server `astro-docs` dengan `autoApprove: ["search_astro_docs"]`. AI agent sekarang punya akses ke dokumentasi Astro versi terbaru via MCP tanpa konfirmasi manual.
+
 ---
 
 ## Troubleshooting
@@ -438,7 +482,35 @@ Kedua percobaan ini sudah di-revert sepenuhnya. Tidak ada sisa kode dari Storybl
 ### Search tidak berfungsi
 
 **Penyebab:** Search index belum di-generate.
-**Solusi:** Jalankan `npm run search:index` sebelum `npm run dev`.
+**Solusi:** Jalankan `pnpm search:index` (atau `npm run search:index`) sebelum `pnpm dev`. Setelah build, copy index ke `public/`:
+```sh
+npx cpy-cli "dist/pagefind/**" "public/pagefind"
+```
+
+### Search page error: "Cannot import non-asset file"
+
+**Penyebab:** Pagefind UI di-import via dynamic `import()` yang diproses Vite, padahal file ada di `public/`.
+**Solusi:** Sudah di-fix. `src/pages/blog/search.astro` sekarang load `/pagefind/pagefind-ui.js` via `document.createElement("script")` agar bypass Vite.
+
+### Decap CMS error: "data does not match collection schema (updated: Expected date, received object)"
+
+**Penyebab:** Decap CMS menyimpan field datetime kosong sebagai string `""`, sementara schema Zod lama strict.
+**Solusi:** Sudah di-fix di `src/content.config.ts`. Field `updated` sekarang menerima `""` dan otomatis convert ke `undefined`. Tidak perlu action manual.
+
+### `astro check` JavaScript heap out of memory
+
+**Penyebab:** Astro mencoba scan file vendor besar di `public/` (`decap-cms.js`, file Pagefind).
+**Solusi:** Sudah di-fix di `tsconfig.json` via `exclude`. Kalau muncul lagi setelah tambah file vendor baru, tambahkan ke `exclude` array.
+
+### Build error: `z.function(...).returns is not a function`
+
+**Penyebab:** `@astrojs/rss` versi lama tidak kompatibel dengan Zod yang dibawa Astro 6.
+**Solusi:** Sudah di-fix dengan update ke `@astrojs/rss@^4.0.18`. Kalau ketemu di package lain, update ke versi terbaru.
+
+### pnpm install gagal: `[ERR_PNPM_IGNORED_BUILDS]`
+
+**Penyebab:** pnpm v10+ memblokir postinstall scripts secara default.
+**Solusi:** Jalankan `pnpm approve-builds`, pilih semua dengan `a` lalu `Enter`, lalu `pnpm install` lagi.
 
 ---
 

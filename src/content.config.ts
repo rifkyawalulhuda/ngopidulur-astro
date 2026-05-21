@@ -8,7 +8,10 @@ const blog = defineCollection({
     title: z.string(),
     description: z.string(),
     pubDate: z.coerce.date(),
-    updated: z.coerce.date().optional(),
+    updated: z
+      .union([z.coerce.date(), z.literal("")])
+      .optional()
+      .transform((val) => (val === "" ? undefined : val)),
     image: z.string().optional(),
     badge: z.string().optional(),
     draft: z.boolean().default(false),
