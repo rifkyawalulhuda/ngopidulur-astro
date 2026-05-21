@@ -1,3 +1,14 @@
+---
+title: Ngopidulur Astro Blog Doc
+description: Dokumentasi Projek blog ngopidulur.my.id yang di build dengan Astro
+pubDate: 2026-05-21T23:20:00.000Z
+draft: false
+categories:
+  - Documentation
+tags:
+  - documentation
+  - astro
+---
 # Dokumentasi Project: ngopidulur-astro
 
 > Blog pribadi statis menggunakan Frosti theme + Astro 6 + Decap CMS
