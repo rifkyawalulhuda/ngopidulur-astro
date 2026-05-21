@@ -1,4 +1,4 @@
-# Dokumentasi Project: ngopidulur
+# Dokumentasi Project: ngopidulur-astro
 
 > Blog pribadi statis menggunakan Frosti theme + Astro 6 + Decap CMS
 
@@ -50,7 +50,7 @@ Blog ini menghasilkan **file HTML statis** saat di-build, sehingga sangat cepat 
 ## Struktur Project
 
 ```
-ngopidulur/
+ngopidulur-astro/
 ├── public/                    # File statis (langsung di-serve)
 │   ├── admin/                 # Decap CMS
 │   │   ├── config.yml         # Konfigurasi CMS (collections, fields)
