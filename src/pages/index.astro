@@ -1,10 +1,13 @@
 ---
-import { Code } from "astro-expressive-code/components";
 import { Icon } from "astro-icon/components";
+import { DATE_FORMAT } from "@config";
 import MainCard from "@/components/MainCard.astro";
-import FeatureCard from "@/components/mdx/FeatureCard.astro";
 import GitHubStats from "@/components/mdx/GitHubStats.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import dayjs from "@utils/dayjs";
+import { getAllPosts, sortPostsByDate } from "@utils/blogUtils";
+
+const latestPosts = sortPostsByDate(await getAllPosts()).slice(0, 6);
 ---
 
 <BaseLayout title="Home">
@@ -36,56 +39,87 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
         </div>
       </section>
 
-      <!-- Features Section -->
+      <!-- Latest Blog Section -->
       <section class="py-6">
-        <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
-          <Icon name="lucide:sparkles" class="w-6 h-6 text-primary" />
-          <span>Features</span>
-        </h2>
+        <div class="mb-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <h2 class="text-2xl font-bold flex items-center gap-2">
+              <Icon name="lucide:newspaper" class="w-6 h-6 text-primary" />
+              <span>Blog Terbaru</span>
+            </h2>
+            <p class="mt-2 text-sm text-base-content/70">
+              Enam tulisan paling baru dari Ngopidulur, siap buat dibaca santai.
+            </p>
+          </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <FeatureCard
-            title="Responsive Design"
-            description="Fully responsive design that looks great on all devices from mobile to desktop."
-            icon="lucide:smartphone"
-            color="oklch(0.7 0.2 30)"
-          />
-
-          <FeatureCard
-            title="Dark/Light Mode"
-            description="Toggle between light and dark themes with a beautiful transition effect."
-            icon="lucide:moon"
-            color="oklch(0.65 0.2 280)"
-          />
-
-          <FeatureCard
-            title="MDX Support"
-            description="Write your content in MDX with full support for React components and JSX."
-            icon="lucide:file-code"
-            color="oklch(0.6 0.2 160)"
-          />
-
-          <FeatureCard
-            title="SEO Optimized"
-            description="Built-in SEO optimization with meta tags, OpenGraph, and JSON-LD."
-            icon="lucide:search"
-            color="oklch(0.6 0.2 200)"
-          />
-
-          <FeatureCard
-            title="Fast Performance"
-            description="Optimized for speed with lazy loading, code splitting, and minimal JavaScript."
-            icon="lucide:zap"
-            color="oklch(0.8 0.2 80)"
-          />
-
-          <FeatureCard
-            title="Customizable"
-            description="Easily customize the theme to match your personal brand and preferences."
-            icon="lucide:palette"
-            color="oklch(0.7 0.2 10)"
-          />
+          <a href="/blog" class="btn btn-outline btn-primary gap-2 self-start sm:self-auto">
+            <span>Lihat Semua Post</span>
+            <Icon name="lucide:arrow-right" class="w-4 h-4" />
+          </a>
         </div>
+
+        {
+          latestPosts.length > 0 ? (
+            <div class="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
+              {latestPosts.map((blog) => (
+                <a
+                  href={`/blog/${blog.id}`}
+                  class="group card min-h-[220px] border border-base-200 bg-base-100 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                >
+                  <div class="card-body justify-between gap-5 p-6">
+                    <div class="space-y-4">
+                      <div class="flex items-start justify-between gap-3">
+                        <div class="rounded-2xl bg-primary/10 p-3 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-content">
+                          <Icon name="lucide:newspaper" class="h-5 w-5" />
+                        </div>
+                        {
+                          blog.data.badge && (
+                            <span class="badge badge-outline">{blog.data.badge}</span>
+                          )
+                        }
+                      </div>
+
+                      <div class="space-y-2">
+                        <p class="text-xs font-medium uppercase tracking-[0.2em] text-base-content/50">
+                          {dayjs(blog.data.pubDate).format(DATE_FORMAT)}
+                        </p>
+                        <h3 class="line-clamp-2 text-lg font-bold leading-snug text-base-content transition-colors duration-300 group-hover:text-primary">
+                          {blog.data.title}
+                        </h3>
+                        <p class="line-clamp-3 text-sm leading-6 text-base-content/70">
+                          {blog.data.description}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="flex items-center justify-between gap-3 border-t border-dashed border-base-300 pt-4">
+                      <span class="text-sm text-base-content/60">
+                        {blog.data.categories?.[0] ?? "Artikel"}
+                      </span>
+                      <span class="inline-flex items-center gap-2 text-sm font-medium text-primary">
+                        Baca Post
+                        <Icon
+                          name="lucide:arrow-right"
+                          class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+                        />
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
+          ) : (
+            <div class="card border border-dashed border-base-300 bg-base-100">
+              <div class="card-body items-center py-10 text-center">
+                <Icon name="lucide:file-text" class="w-10 h-10 text-base-content/40" />
+                <h3 class="text-lg font-semibold">Belum ada post terbaru</h3>
+                <p class="max-w-md text-sm text-base-content/70">
+                  Begitu artikel pertama dipublikasikan, section ini akan otomatis menampilkannya di sini.
+                </p>
+              </div>
+            </div>
+          )
+        }
       </section>
 
       <!-- GitHub Stats -->
