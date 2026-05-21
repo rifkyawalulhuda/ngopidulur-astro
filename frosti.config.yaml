@@ -34,16 +34,23 @@ site:
           href: /blog
           svg: "material-symbols:ink-pen-outline-rounded"
           target: _self
+        - id: tulisan-random
+          text: Tulisan Random
+          href: /blog/category/Tulisan-Random
+          svg: "material-symbols:article-outline"
+          target: _self
+        - id: teknologi
+          text: Teknologi
+          href: /blog/category/Teknologi
+          svg: "material-symbols:developer-mode-tv-outline"
+          target: _self
         - id: documentation
           text: Documentation
           href: /blog/category/Documentation
           svg: "material-symbols:unknown-document-outline-rounded"
           target: _self
-        - id: examples
-          text: Examples
-          href: /blog/category/Examples
-          svg: "material-symbols:deployed-code-outline"
-          target: _self
+
+
         # 子菜单项配置
     - id: project
       text: Project
