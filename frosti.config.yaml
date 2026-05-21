@@ -60,7 +60,7 @@ site:
 # 用户的个人信息
 user:
   name: Rifky Awalul Huda # 用户名
-  site: "https://linkedin.com/in/rifky-awalul-huda-6b7a1a12a" # 用户的网站链接
+  site: "https://ngopidulur.my.id" # 用户的网站链接
   avatar: /profile.png # 用户头像路径
   sidebar: # 侧边栏配置
     social:
