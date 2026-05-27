@@ -18,50 +18,49 @@ const {
 const displayDate = pubDate ? dayjs(pubDate).format(DATE_FORMAT) : "";
 const ogImage = url ? `${String(url).replace("/blog/", "/og/")}.png` : "";
 const fullUrl = url ? `${USER_SITE}${url}` : USER_SITE;
-const encodedTitle = encodeURIComponent(title || "");
-const encodedUrl = encodeURIComponent(fullUrl);
+const shareTitle = title || "";
 const socialLinks = [
   {
     name: "X (Twitter)",
     icon: "ri:twitter-x-line",
     class: "bg-black hover:bg-gray-800",
-    url: `https://twitter.com/intent/tweet/?text=${encodedTitle}&url=${encodedUrl}`,
+    url: `https://twitter.com/intent/tweet/?text=${encodeURIComponent(shareTitle)}&url=${encodeURIComponent(fullUrl)}`,
   },
   {
     name: "Telegram",
     icon: "ri:telegram-line",
     class: "bg-[#26a5e4] hover:bg-[#1e96d1]",
-    url: `https://telegram.me/share/url?text=${encodedTitle}&url=${encodedUrl}`,
+    url: `https://telegram.me/share/url?text=${encodeURIComponent(shareTitle)}&url=${encodeURIComponent(fullUrl)}`,
   },
   {
     name: "WhatsApp",
     icon: "ri:whatsapp-line",
     class: "bg-[#25d366] hover:bg-[#1ebe57]",
-    url: `https://api.whatsapp.com/send?text=${encodedTitle}%20${encodedUrl}`,
+    url: `https://api.whatsapp.com/send?text=${encodeURIComponent(shareTitle + " " + fullUrl)}`,
   },
   {
     name: "LinkedIn",
     icon: "ri:linkedin-line",
     class: "bg-[#0a66c2] hover:bg-[#084d94]",
-    url: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`,
+    url: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(fullUrl)}`,
   },
   {
     name: "Reddit",
     icon: "ri:reddit-line",
     class: "bg-[#ff4500] hover:bg-[#e63e00]",
-    url: `https://reddit.com/submit/?url=${encodedUrl}&title=${encodedTitle}`,
+    url: `https://reddit.com/submit/?url=${encodeURIComponent(fullUrl)}&title=${encodeURIComponent(shareTitle)}`,
   },
   {
     name: "Facebook",
     icon: "ri:facebook-circle-line",
     class: "bg-[#0866ff] hover:bg-[#0755d6]",
-    url: `https://facebook.com/sharer/sharer.php?u=${encodedUrl}`,
+    url: `https://facebook.com/sharer/sharer.php?u=${encodeURIComponent(fullUrl)}`,
   },
   {
     name: "Email",
     icon: "ri:mail-line",
     class: "bg-gray-600 hover:bg-gray-700",
-    url: `mailto:?subject=${encodedTitle}&body=${encodedUrl}`,
+    url: `mailto:?subject=${encodeURIComponent(shareTitle)}&body=${encodeURIComponent(fullUrl)}`,
   },
   {
     name: "Copy Link",
