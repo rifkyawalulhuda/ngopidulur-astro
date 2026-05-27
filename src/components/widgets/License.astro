@@ -1,5 +1,5 @@
 ---
-import { DATE_FORMAT, t, USER_NAME } from "@config";
+import { DATE_FORMAT, t, USER_NAME, USER_SITE } from "@config";
 import type { PostData } from "@interfaces/data";
 import dayjs from "@utils/dayjs";
 import { Icon } from "astro-icon/components";
@@ -17,36 +17,58 @@ const {
 } = Astro.props as PostData;
 const displayDate = pubDate ? dayjs(pubDate).format(DATE_FORMAT) : "";
 const ogImage = url ? `${String(url).replace("/blog/", "/og/")}.png` : "";
+const fullUrl = url ? `${USER_SITE}${url}` : USER_SITE;
+const encodedTitle = encodeURIComponent(title || "");
+const encodedUrl = encodeURIComponent(fullUrl);
 const socialLinks = [
   {
     name: "X (Twitter)",
     icon: "ri:twitter-x-line",
     class: "bg-black hover:bg-gray-800",
-    url: `https://twitter.com/intent/tweet/?text=${title}&url=${url}`,
+    url: `https://twitter.com/intent/tweet/?text=${encodedTitle}&url=${encodedUrl}`,
   },
   {
     name: "Telegram",
     icon: "ri:telegram-line",
     class: "bg-[#26a5e4] hover:bg-[#1e96d1]",
-    url: `https://telegram.me/share/url?text=${title}&url=${url}`,
+    url: `https://telegram.me/share/url?text=${encodedTitle}&url=${encodedUrl}`,
+  },
+  {
+    name: "WhatsApp",
+    icon: "ri:whatsapp-line",
+    class: "bg-[#25d366] hover:bg-[#1ebe57]",
+    url: `https://api.whatsapp.com/send?text=${encodedTitle}%20${encodedUrl}`,
+  },
+  {
+    name: "LinkedIn",
+    icon: "ri:linkedin-line",
+    class: "bg-[#0a66c2] hover:bg-[#084d94]",
+    url: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`,
   },
   {
     name: "Reddit",
     icon: "ri:reddit-line",
     class: "bg-[#ff4500] hover:bg-[#e63e00]",
-    url: `https://reddit.com/submit/?url=${url}&title=${title}`,
+    url: `https://reddit.com/submit/?url=${encodedUrl}&title=${encodedTitle}`,
   },
   {
     name: "Facebook",
     icon: "ri:facebook-circle-line",
     class: "bg-[#0866ff] hover:bg-[#0755d6]",
-    url: `https://facebook.com/sharer/sharer.php?u=${url}`,
+    url: `https://facebook.com/sharer/sharer.php?u=${encodedUrl}`,
   },
   {
     name: "Email",
     icon: "ri:mail-line",
     class: "bg-gray-600 hover:bg-gray-700",
-    url: `mailto:?subject=${title}&body=${url}`,
+    url: `mailto:?subject=${encodedTitle}&body=${encodedUrl}`,
+  },
+  {
+    name: "Copy Link",
+    icon: "ri:link",
+    class: "bg-base-content/80 hover:bg-base-content",
+    url: "#copy-link",
+    isCopyLink: true,
   },
 ];
 ---
@@ -153,18 +175,30 @@ const socialLinks = [
       <!-- 按钮更小巧，排列紧凑 -->
       <div class="flex flex-wrap gap-3 justify-center">
         {
-          socialLinks.map(({ name, icon, class: bgClass, url }) => (
-            <a
-              href={url}
-              class={`btn btn-circle btn-md transition-transform hover:scale-110 ${bgClass}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              title={name}
-            >
-              <span class="sr-only">{name}</span>
-              <Icon name={icon} class="w-5 h-5 text-white" />
-            </a>
-          ))
+          socialLinks.map(({ name, icon, class: bgClass, url: linkUrl, isCopyLink }) =>
+            isCopyLink ? (
+              <button
+                id="copy-link-btn"
+                class={`btn btn-circle btn-md transition-transform hover:scale-110 ${bgClass}`}
+                title={name}
+                data-url={fullUrl}
+              >
+                <span class="sr-only">{name}</span>
+                <Icon name={icon} class="w-5 h-5 text-white" />
+              </button>
+            ) : (
+              <a
+                href={linkUrl}
+                class={`btn btn-circle btn-md transition-transform hover:scale-110 ${bgClass}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={name}
+              >
+                <span class="sr-only">{name}</span>
+                <Icon name={icon} class="w-5 h-5 text-white" />
+              </a>
+            )
+          )
         }
       </div>
 
@@ -197,3 +231,29 @@ const socialLinks = [
     text-decoration: none;
   }
 </style>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const copyBtn = document.getElementById("copy-link-btn");
+    if (copyBtn) {
+      copyBtn.addEventListener("click", async () => {
+        const url = copyBtn.getAttribute("data-url") || window.location.href;
+        try {
+          await navigator.clipboard.writeText(url);
+          copyBtn.classList.add("btn-success");
+          setTimeout(() => copyBtn.classList.remove("btn-success"), 2000);
+        } catch {
+          // Fallback for older browsers
+          const input = document.createElement("input");
+          input.value = url;
+          document.body.appendChild(input);
+          input.select();
+          document.execCommand("copy");
+          document.body.removeChild(input);
+          copyBtn.classList.add("btn-success");
+          setTimeout(() => copyBtn.classList.remove("btn-success"), 2000);
+        }
+      });
+    }
+  });
+</script>
