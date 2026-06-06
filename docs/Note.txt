@@ -1,0 +1,49 @@
+1. Buka terminal pertama, jalankan proxy server:
+   ```sh
+   npx decap-server
+   ```
+
+2. Buka terminal kedua, jalankan dev server:
+   ```sh
+   npm run dev
+   ```
+
+3. Buka browser: **http://localhost:4321/admin/index.html
+
+      subItems:
+        - id: all
+          text: All blogs
+          href: /blog
+          svg: "material-symbols:ink-pen-outline-rounded"
+          target: _self
+        - id: tulisan-random
+          text: Tulisan Random
+          href: /blog/category/Tulisan-Random
+          svg: "material-symbols:article-outline"
+          target: _self
+        - id: teknologi
+          text: Teknologi
+          href: /blog/category/Teknologi
+          svg: "material-symbols:developer-mode-tv-outline"
+          target: _self
+        - id: documentation
+          text: Documentation
+          href: /blog/category/Documentation
+          svg: "material-symbols:unknown-document-outline-rounded"
+          target: _self
+
+
+#### Build dan compress
+
+Di lokal:
+
+```sh
+pnpm install
+pnpm search:index
+pnpm build
+
+
+Lalu compress isi `dist/`:
+
+```powershell
+Compress-Archive -Path dist\* -DestinationPath dist.zip -Force

@@ -16,6 +16,7 @@ tags:
   - filament
   - php
   - laravel
+  - framework
 ---
 Pernahkah kamu merasa lelah menghabiskan berbulan-bulan hanya untuk membuat admin panel yang cantik dan fungsional? Atau mungkin kamu sudah mencoba beberapa solusi admin panel Laravel, tapi hasilnya tetap kurang memuaskan — baik dari segi tampilan, kecepatan development, maupun maintainability?
 
