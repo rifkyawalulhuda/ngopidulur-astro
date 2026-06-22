@@ -2,30 +2,62 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Auth Callback</title>
+  <title>Auth Callback — Ngopidulur CMS</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      display: flex; justify-content: center; align-items: center;
+      min-height: 100vh; margin: 0; background: #0d1117; color: #c9d1d9;
+    }
+    .card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; 
+      padding: 32px 40px; text-align: center; max-width: 440px; }
+    h2 { color: #2ea44f; margin-bottom: 8px; }
+    p { color: #8b949e; font-size: 0.95rem; }
+  </style>
 </head>
 <body>
+  <div class="card">
+    <h2 id="status">⏳ Memproses login...</h2>
+    <p id="msg">Mohon tunggu sebentar</p>
+  </div>
+
 <script>
 (function() {
-  // Baca token dari URL hash: #token=gho_xxx
   var hash = window.location.hash.substring(1);
   var params = new URLSearchParams(hash);
   var token = params.get('token');
   var provider = params.get('provider') || 'github';
 
-  if (token && window.opener && window.opener !== window) {
-    // Kirim token ke Decap CMS (same origin, pasti diterima!)
+  var statusEl = document.getElementById('status');
+  var msgEl = document.getElementById('msg');
+
+  if (!token) {
+    statusEl.textContent = '❌ Error';
+    msgEl.textContent = 'Token tidak ditemukan. Silakan coba login lagi.';
+    return;
+  }
+
+  // Kirim token via postMessage — JANGAN close window, biarin Decap CMS yang nutup
+  if (window.opener && window.opener !== window) {
     window.opener.postMessage(
       { token: token, provider: provider },
       window.location.origin
     );
-    // Tutup popup setelah dikit
-    setTimeout(function() { window.close(); }, 200);
+    statusEl.textContent = '✅ Login berhasil!';
+    msgEl.textContent = 'Jendela ini akan tertutup otomatis. Jika tidak, silakan tutup manual.';
+
+    // Jangan tutup sendiri — Decap CMS perlu waktu untuk proses token
+    // Fallback: tutup setelah 5 detik kalau Decap CMS gak nutup
+    setTimeout(function() {
+      window.close();
+      // Kalau gak bisa nutup (browser block), kasih pesan
+      setTimeout(function() {
+        msgEl.textContent = 'Silakan tutup jendela ini secara manual.';
+      }, 500);
+    }, 5000);
   } else {
-    document.body.innerHTML = '<div style="text-align:center;padding:40px;font-family:sans-serif;">'
-      + (token ? '<h2 style="color:#2ea44f;">✅ Login sukses!</h2><p>Tutup jendela ini.</p>' 
-              : '<h2 style="color:#cf222e;">❌ Tidak ada token</h2><p>Coba login lagi dari halaman admin.</p>')
-      + '</div>';
+    statusEl.textContent = '❌ Error';
+    msgEl.textContent = 'Jendela opener tidak tersedia. Pastikan Anda login dari halaman admin.';
   }
 })();
 </script>
