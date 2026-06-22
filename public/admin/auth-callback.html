@@ -11,54 +11,84 @@
     }
     .card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; 
       padding: 32px 40px; text-align: center; max-width: 440px; }
-    h2 { color: #2ea44f; margin-bottom: 8px; }
+    h2 { margin-bottom: 8px; }
     p { color: #8b949e; font-size: 0.95rem; }
+    .green { color: #2ea44f; }
+    .red { color: #f85149; }
+    .spinner { display: inline-block; width: 24px; height: 24px; border: 3px solid #30363d;
+      border-top-color: #58a6ff; border-radius: 50%; animation: spin 0.8s linear infinite; margin-bottom: 8px; }
+    @keyframes spin { to { transform: rotate(360deg); } }
   </style>
 </head>
 <body>
   <div class="card">
+    <div id="spinner" class="spinner"></div>
     <h2 id="status">⏳ Memproses login...</h2>
-    <p id="msg">Mohon tunggu sebentar</p>
+    <p id="msg">Menukarkan kode otorisasi</p>
   </div>
 
 <script>
 (function() {
-  var hash = window.location.hash.substring(1);
-  var params = new URLSearchParams(hash);
-  var token = params.get('token');
-  var provider = params.get('provider') || 'github';
-
-  var statusEl = document.getElementById('status');
-  var msgEl = document.getElementById('msg');
-
-  if (!token) {
-    statusEl.textContent = '❌ Error';
-    msgEl.textContent = 'Token tidak ditemukan. Silakan coba login lagi.';
+  var code = new URLSearchParams(window.location.search).get('code');
+  if (!code) {
+    document.getElementById('spinner').remove();
+    document.getElementById('status').innerHTML = '❌ Error';
+    document.getElementById('status').className = 'red';
+    document.getElementById('msg').textContent = 'Kode otorisasi tidak ditemukan.';
     return;
   }
 
-  // Kirim token via postMessage — JANGAN close window, biarin Decap CMS yang nutup
-  if (window.opener && window.opener !== window) {
-    window.opener.postMessage(
-      { token: token, provider: provider },
-      window.location.origin
-    );
-    statusEl.textContent = '✅ Login berhasil!';
-    msgEl.textContent = 'Jendela ini akan tertutup otomatis. Jika tidak, silakan tutup manual.';
+  // Tukar code dengan token via Worker API
+  fetch('https://ngopidulur-oauth.rifkyawalulhuda.workers.dev/api/token', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ code: code })
+  })
+  .then(function(r) { return r.json(); })
+  .then(function(data) {
+    var spinner = document.getElementById('spinner');
+    var statusEl = document.getElementById('status');
+    var msgEl = document.getElementById('msg');
 
-    // Jangan tutup sendiri — Decap CMS perlu waktu untuk proses token
-    // Fallback: tutup setelah 5 detik kalau Decap CMS gak nutup
-    setTimeout(function() {
-      window.close();
-      // Kalau gak bisa nutup (browser block), kasih pesan
+    if (data.error) {
+      spinner.remove();
+      statusEl.innerHTML = '❌ Error';
+      statusEl.className = 'red';
+      msgEl.textContent = data.error;
+      return;
+    }
+
+    var token = data.access_token;
+
+    // Kirim token ke Decap CMS via postMessage (SAME ORIGIN — pasti diterima!)
+    if (window.opener && window.opener !== window) {
+      window.opener.postMessage(
+        { token: token, provider: 'github' },
+        window.location.origin
+      );
+      spinner.remove();
+      statusEl.innerHTML = '✅ Login Berhasil!';
+      statusEl.className = 'green';
+      msgEl.textContent = 'Token terkirim. Tutup jendela ini dan kembali ke halaman admin.';
+
+      // Jangan tutup otomatis — Decap CMS perlu window hidup untuk verifikasi
+      // Auto-close setelah 3 detik sebagai fallback
       setTimeout(function() {
-        msgEl.textContent = 'Silakan tutup jendela ini secara manual.';
-      }, 500);
-    }, 5000);
-  } else {
-    statusEl.textContent = '❌ Error';
-    msgEl.textContent = 'Jendela opener tidak tersedia. Pastikan Anda login dari halaman admin.';
-  }
+        window.close();
+      }, 3000);
+    } else {
+      spinner.remove();
+      statusEl.innerHTML = '❌ Error';
+      statusEl.className = 'red';
+      msgEl.textContent = 'Jendela opener tidak tersedia. Coba login ulang dari halaman admin.';
+    }
+  })
+  .catch(function(err) {
+    document.getElementById('spinner').remove();
+    document.getElementById('status').innerHTML = '❌ Error';
+    document.getElementById('status').className = 'red';
+    document.getElementById('msg').textContent = 'Gagal menghubungi server: ' + err.message;
+  });
 })();
 </script>
 </body>
