@@ -1,0 +1,46 @@
+name: 🚀 Deploy to cPanel
+
+on:
+  push:
+    branches: [main]
+  # Bisa juga trigger manual dari GitHub UI
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: ⬇️ Checkout
+        uses: actions/checkout@v4
+
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: 📦 Install dependencies
+        run: npm ci
+
+      - name: 🔨 Build Astro
+        run: npm run build
+        env:
+          NODE_ENV: production
+
+      - name: 📤 Deploy to cPanel via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: ${{ secrets.FTP_SERVER_DIR }}
+          local-dir: ./dist/
+          # Hapus file lama di server sebelum upload
+          dangerous-clean-slate: false
+          # Exclude file/folder yang tidak perlu
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/cgi-bin/**

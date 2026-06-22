@@ -1,0 +1,11 @@
+# Cloudflare Worker config — Decap CMS OAuth Proxy
+name = "ngopidulur-oauth"
+main = "oauth.js"
+compatibility_date = "2025-01-01"
+
+# Free tier: 100,000 requests/day — lebih dari cukup untuk OAuth
+# Deploy: npx wrangler deploy
+# Set secrets: 
+#   npx wrangler secret put GITHUB_CLIENT_ID
+#   npx wrangler secret put GITHUB_CLIENT_SECRET
+#   npx wrangler secret put ORIGIN
