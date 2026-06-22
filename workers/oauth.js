@@ -1,6 +1,11 @@
 /**
  * Decap CMS GitHub OAuth Proxy — Cloudflare Worker
  * URL: https://ngopidulur-oauth.rifkyawalulhuda.workers.dev
+ * 
+ * PROTOKOL (ditemukan dari reverse-engineering decap-cms.js):
+ *   1. Popup ke /auth → kirim HANDSHAKE dulu: "authorizing:github"
+ *   2. Redirect ke GitHub → user authorize
+ *   3. Callback /callback → tukar code → kirim: "authorization:github:success:<token>"
  */
 
 const ORIGIN = 'https://ngopidulur.my.id';
@@ -9,30 +14,62 @@ async function getSecret(env, key, fallback) {
   return env[key] || fallback;
 }
 
+function html(title, body) {
+  return `<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>${title}</title>
+<style>*{margin:0;padding:0}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;display:flex;justify-content:center;align-items:center;min-height:100vh;background:#0d1117;color:#c9d1d9}
+.card{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:32px 40px;text-align:center;max-width:440px;margin:20px}
+h2{color:#2ea44f;margin-bottom:8px}.green{color:#2ea44f}.red{color:#f85149}
+p{color:#8b949e;font-size:.9rem;line-height:1.5;margin:4px 0}
+pre{background:#0d1117;border:1px solid #30363d;border-radius:6px;padding:8px;font-family:monospace;font-size:.75rem;word-break:break-all;white-space:pre-wrap;margin:8px 0;text-align:left}
+</style></head><body><div class="card">${body}</div></body></html>`;
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    const cid = await getSecret(env, 'GITHUB_CLIENT_ID', '');
+    const csec = await getSecret(env, 'GITHUB_CLIENT_SECRET', '');
+    const origin = await getSecret(env, 'ORIGIN', ORIGIN);
     
+    // === STEP 1: /auth — Kirim handshake dulu, BARU redirect ke GitHub ===
     if (url.pathname === '/auth') {
-      const cid = await getSecret(env, 'GITHUB_CLIENT_ID', '');
-      if (!cid) return new Response('Config error', {status:400});
+      if (!cid) return html('Error', '<h2 class="red">Config error</h2>', 400);
+
       const params = new URLSearchParams({
         client_id: cid,
         scope: 'repo,user',
         redirect_uri: `${url.origin}/callback`,
       });
-      return Response.redirect(`https://github.com/login/oauth/authorize?${params}`, 302);
+      const githubUrl = `https://github.com/login/oauth/authorize?${params}`;
+
+      return new Response(`<!DOCTYPE html><html><head><meta charset="utf-8"></head><body>
+<script>
+(function(){
+  var origin = '${origin}';
+
+  // Step 1: Kirim HANDSHAKE ke Decap CMS (format: "authorizing:github")
+  if (window.opener) {
+    window.opener.postMessage('authorizing:github', origin);
+  }
+
+  // Step 2: Redirect ke GitHub setelah handshake terkirim
+  setTimeout(function(){
+    window.location.href = '${githubUrl}';
+  }, 200);
+})();
+</script>
+<p style="text-align:center;padding:40px;font-family:sans-serif">Mengalihkan ke GitHub...</p>
+</body></html>`, {
+        headers: {'Content-Type': 'text/html; charset=utf-8'},
+      });
     }
 
+    // === STEP 2: /callback — Tukar code, kirim SUCCESS message ===
     if (url.pathname === '/callback') {
       const code = url.searchParams.get('code');
-      if (!code) return new Response('No code', {status:400});
+      if (!code) return html('Error', '<h2 class="red">No authorization code</h2>', 400);
 
-      const cid = await getSecret(env, 'GITHUB_CLIENT_ID', '');
-      const csec = await getSecret(env, 'GITHUB_CLIENT_SECRET', '');
-      const origin = await getSecret(env, 'ORIGIN', ORIGIN);
-      
-      let token, errorMsg;
+      let token, errMsg;
       try {
         const tr = await fetch('https://github.com/login/oauth/access_token', {
           method: 'POST',
@@ -43,73 +80,38 @@ export default {
         if (td.error) throw new Error(td.error_description || td.error);
         token = td.access_token;
       } catch(e) {
-        errorMsg = e.message;
+        errMsg = e.message;
       }
 
-      if (errorMsg) {
-        return new Response(`Error: ${errorMsg}`, {status:400});
-      }
+      if (errMsg) return html('Error', `<h2 class="red">⚠️ ${errMsg}</h2>`, 400);
 
-      return new Response(`<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Auth Debug — Ngopidulur CMS</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0d1117;color:#c9d1d9;padding:20px}
-.card{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:24px;max-width:500px;margin:0 auto}
-h2{margin-bottom:12px;font-size:1.2rem}.green{color:#2ea44f}.red{color:#f85149}.yellow{color:#d29922}
-pre{background:#0d1117;border:1px solid #30363d;border-radius:6px;padding:12px;font-family:monospace;font-size:0.8rem;word-break:break-all;white-space:pre-wrap;margin:8px 0;max-height:200px;overflow:auto}
-.info{margin:8px 0;font-size:0.9rem} .info span{color:#8b949e} .info b{color:#c9d1d9}
-.btn{display:inline-block;margin:4px;padding:8px 16px;border-radius:6px;border:none;cursor:pointer;font-size:0.85rem;font-weight:500}
-.btn-green{background:#238636;color:#fff}.btn-blue{background:#1f6feb;color:#fff}.btn-red{background:#da3633;color:#fff}
-</style></head><body><div class="card">
-<h2 class="green">✅ Token Didapatkan</h2>
-<div class="info"><span>Origin worker: </span><b>${url.origin}</b></div>
-<div class="info"><span>Target admin: </span><b>${origin}</b></div>
-<div class="info"><span>Opener: </span><b id="opener-status">⏳ cek...</b></div>
-<div class="info"><span>postMessage: </span><b id="pm-status">⏳ cek...</b></div>
-<div class="info"><span>Error: </span><b id="err-status" class="red">-</b></div>
-<pre id="token-display" style="display:none"></pre>
-<button class="btn btn-green" onclick="send()">🔄 Kirim Ulang Token</button>
-<button class="btn btn-blue" onclick="copyToken()">📋 Copy Token</button>
-<button class="btn btn-red" onclick="window.close()">✕ Tutup</button>
-</div>
+      // Kirim SUCCESS message: "authorization:github:success:TOKEN"
+      return new Response(`<!DOCTYPE html><html><head><meta charset="utf-8"></head><body>
 <script>
-var token='${token}', origin='${origin}';
-document.getElementById('opener-status').textContent = window.opener ? '✅ ADA' : '❌ NULL';
-document.getElementById('opener-status').className = window.opener ? 'green' : 'red';
+(function(){
+  var token = '${token}';
+  var origin = '${origin}';
 
-function send(){
-  var pm=document.getElementById('pm-status');
-  var er=document.getElementById('err-status');
-  try {
-    if(!window.opener){er.textContent='window.opener NULL!';return;}
-    window.opener.postMessage({token:token,provider:'github'}, origin);
-    pm.textContent='✅ Terkirim ('+new Date().toLocaleTimeString()+')';
-    pm.className='green';
-  } catch(e) {
-    pm.textContent='❌ GAGAL';
-    pm.className='red';
-    er.textContent=e.message;
+  // Format SUCCESS: "authorization:github:success:TOKEN"
+  if (window.opener) {
+    window.opener.postMessage('authorization:github:success:' + token, origin);
   }
-}
-
-function copyToken(){
-  navigator.clipboard.writeText(token).then(function(){
-    document.getElementById('token-display').textContent=token;
-    document.getElementById('token-display').style.display='block';
-    alert('Token dicopy!');
-  });
-}
-
-// Auto-send on load
-setTimeout(send, 500);
-setTimeout(send, 1500);
-setTimeout(send, 3000);
-</script></body></html>`, {
+})();
+</script>
+<div style="text-align:center;padding:40px;font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:#0d1117;color:#c9d1d9;min-height:100vh;display:flex;align-items:center;justify-content:center">
+<div style="background:#161b22;border:1px solid #30363d;border-radius:8px;padding:32px;max-width:440px">
+<h2 style="color:#2ea44f">✅ Login Berhasil!</h2>
+<p style="color:#8b949e">Token terkirim ke halaman admin.</p>
+<p style="color:#484f58;font-size:0.8rem;margin-top:8px">Jendela ini akan tertutup otomatis.</p>
+</div></div>
+<script>setTimeout(function(){window.close()},3000);</script>
+</body></html>`, {
         headers: {'Content-Type': 'text/html; charset=utf-8'},
       });
     }
 
-    return new Response(JSON.stringify({status:'ok'}), {
+    // Health check
+    return new Response(JSON.stringify({status:'ok',auth_url:url.origin+'/auth'}), {
       headers: {'Content-Type': 'application/json'},
     });
   },
