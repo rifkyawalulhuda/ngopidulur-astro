@@ -4,6 +4,7 @@
   "version": "3.3.3",
   "scripts": {
     "dev": "astro dev",
+    "cms": "decap-server",
     "start": "astro dev",
     "check": "astro check",
     "build": "astro check && astro build && pagefind --site dist",
