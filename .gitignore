@@ -25,3 +25,6 @@ pnpm-debug.log*
 
 # pagefind
 public/pagefind/
+
+# ssh keys (jangan commit private key!)
+.ssh/

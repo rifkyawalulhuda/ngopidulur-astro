@@ -3,7 +3,6 @@ name: 🚀 Deploy to cPanel
 on:
   push:
     branches: [main]
-  # Bisa juga trigger manual dari GitHub UI
   workflow_dispatch:
 
 jobs:
@@ -28,19 +27,20 @@ jobs:
         env:
           NODE_ENV: production
 
-      - name: 📤 Deploy to cPanel via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - name: 🔑 Setup SSH
+        uses: webfactory/ssh-agent@v0.9.1
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: ${{ secrets.FTP_SERVER_DIR }}
-          local-dir: ./dist/
-          # Hapus file lama di server sebelum upload
-          dangerous-clean-slate: false
-          # Exclude file/folder yang tidak perlu
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
-            **/cgi-bin/**
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: 🧹 Scan host key
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+
+      - name: 📤 Deploy via rsync
+        run: |
+          rsync -avz --delete \
+            --exclude='.git' \
+            --exclude='cgi-bin' \
+            ./dist/ \
+            ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.REMOTE_PATH }}
