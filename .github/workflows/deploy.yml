@@ -42,10 +42,10 @@ jobs:
           mkdir -p ~/.ssh
           ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
-      - name: 📤 Deploy via rsync
+      - name: 📤 Deploy to cPanel
         run: |
-          rsync -avz --delete \
-            --exclude='.git' \
-            --exclude='cgi-bin' \
-            ./dist/ \
-            ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.REMOTE_PATH }}
+          # Clean old files (keep cgi-bin)
+          ssh -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} \
+            "find ${{ secrets.REMOTE_PATH }} -mindepth 1 -maxdepth 1 ! -name 'cgi-bin' -exec rm -rf {} +"
+          # Upload new build
+          scp -r -P ${{ secrets.SSH_PORT }} ./dist/* ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.REMOTE_PATH }}/
