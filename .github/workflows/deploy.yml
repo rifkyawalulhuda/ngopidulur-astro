@@ -8,7 +8,7 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 15
 
     steps:
       - name: ⬇️ Checkout
@@ -32,6 +32,9 @@ jobs:
       - name: 🔎 Pagefind index
         run: npx pagefind --site dist
 
+      - name: 📦 Compress dist
+        run: tar -czf deploy.tar.gz -C dist .
+
       - name: 🔑 Setup SSH
         uses: webfactory/ssh-agent@v0.9.1
         with:
@@ -44,5 +47,10 @@ jobs:
 
       - name: 📤 Deploy to cPanel
         run: |
-          scp -r -C -P ${{ secrets.SSH_PORT }} ./dist/* \
+          # Upload compressed archive (1 file = fast)
+          scp -P ${{ secrets.SSH_PORT }} deploy.tar.gz \
             ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.REMOTE_PATH }}/
+
+          # Extract on server — overwrite existing files
+          ssh -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} \
+            "cd ${{ secrets.REMOTE_PATH }} && tar -xzf deploy.tar.gz && rm deploy.tar.gz"
