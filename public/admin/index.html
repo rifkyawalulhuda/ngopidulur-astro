@@ -6,9 +6,112 @@
     <meta name="robots" content="noindex, nofollow" />
     <title>Ngopidulur CMS</title>
     <link rel="icon" href="/favicon.ico" />
+    <style>
+      /* Token input form */
+      #token-form {
+        display: none;
+        position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(0,0,0,0.8); z-index: 9999;
+        justify-content: center; align-items: center;
+      }
+      #token-form.show { display: flex; }
+      #token-form .box {
+        background: #161b22; border: 1px solid #30363d;
+        border-radius: 8px; padding: 32px; max-width: 440px; width: 90%;
+        text-align: center;
+      }
+      #token-form h2 { color: #58a6ff; font-size: 1.2rem; margin-bottom: 12px; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
+      #token-form p { color: #8b949e; font-size: 0.85rem; margin-bottom: 16px; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
+      #token-form input {
+        width: 100%; padding: 10px; border-radius: 6px;
+        border: 1px solid #30363d; background: #0d1117; color: #c9d1d9;
+        font-family: monospace; font-size: 0.85rem; margin-bottom: 12px;
+      }
+      #token-form button {
+        padding: 8px 20px; border-radius: 6px; border: none;
+        cursor: pointer; font-size: 0.9rem; margin: 4px;
+      }
+      .btn-save { background: #238636; color: #fff; }
+      .btn-clear { background: #21262d; color: #c9d1d9; border: 1px solid #30363d; }
+      .btn-github { background: #21262d; color: #c9d1d9; border: 1px solid #30363d; }
+    </style>
   </head>
   <body>
-    <!-- Decap CMS auto-loads /admin/config.yml -->
+    <!-- Token form (manual input) -->
+    <div id="token-form" class="show">
+      <div class="box">
+        <h2>🔑 Ngopidulur CMS — Login</h2>
+        <p>Masukkan <b>GitHub Personal Access Token</b> untuk mengakses CMS.<br>
+        <a href="https://github.com/settings/tokens" target="_blank" style="color:#58a6ff">Buat token di sini →</a>
+        (scope: <code>repo</code>)</p>
+        <input id="token-input" type="password" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" />
+        <div>
+          <button class="btn-save" onclick="saveToken()">💾 Simpan & Masuk</button>
+        </div>
+        <div style="margin-top:16px">
+          <button class="btn-github" onclick="tryGitHubOAuth()">🔐 Login via GitHub OAuth</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // === 1. Cek token tersimpan ===
+      var savedToken = localStorage.getItem('decap-github-token');
+      if (savedToken) {
+        // Sembunyikan form, override backend token
+        document.getElementById('token-form').classList.remove('show');
+        // Inject token ke Decap CMS nanti via init override
+        window.__DECAP_GITHUB_TOKEN__ = savedToken;
+      }
+
+      function saveToken() {
+        var token = document.getElementById('token-input').value.trim();
+        if (!token) return alert('Masukkan token dulu!');
+        if (!token.startsWith('ghp_') && !token.startsWith('github_pat_') && !token.startsWith('gho_')) {
+          if (!confirm('Token tidak diawali ghp_/github_pat_/gho_. Tetap simpan?')) return;
+        }
+        localStorage.setItem('decap-github-token', token);
+        window.__DECAP_GITHUB_TOKEN__ = token;
+        document.getElementById('token-form').classList.remove('show');
+        // Reload Decap CMS
+        location.reload();
+      }
+
+      function tryGitHubOAuth() {
+        document.getElementById('token-form').classList.remove('show');
+        // Biarkan Decap CMS handle OAuth
+        location.href = location.pathname;
+      }
+
+      // Clear token (tampilkan di console untuk debugging)
+      if (!savedToken) {
+        console.log('ℹ️ Belum ada token tersimpan. Isi token atau klik Login via GitHub OAuth.');
+      }
+    </script>
+
+    <!-- Override Decap CMS backend untuk inject token -->
+    <script>
+      // Intercept fetch API calls ke api.github.com — inject token manual
+      var _token = window.__DECAP_GITHUB_TOKEN__ || localStorage.getItem('decap-github-token');
+      if (_token) {
+        var origFetch = window.fetch;
+        window.fetch = function(url, opts) {
+          if (typeof url === 'string' && url.includes('api.github.com')) {
+            opts = opts || {};
+            opts.headers = opts.headers || {};
+            if (opts.headers instanceof Headers) {
+              opts.headers.set('Authorization', 'Bearer ' + _token);
+            } else {
+              opts.headers['Authorization'] = 'Bearer ' + _token;
+            }
+          }
+          return origFetch.call(this, url, opts);
+        };
+        console.log('✅ Token GitHub di-inject ke semua API call');
+      }
+    </script>
+
+    <!-- Decap CMS -->
     <script src="/admin/decap-cms.js"></script>
   </body>
 </html>
