@@ -6,7 +6,7 @@ description: Pelajari COBIT 2019 framework tata kelola IT secara lengkap —
   memahami penerapan nyata di perusahaan Indonesia. Cocok untuk auditor,
   mahasiswa, dan profesional IT.
 pubDate: 2026-06-22T17:00:00.000Z
-image: /image/ai-for-data-science.webp
+image: /image/cobit-2019-cover.svg
 draft: false
 categories:
   - Teknologi

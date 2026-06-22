@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a1628"/>
+      <stop offset="50%" stop-color="#0f2340"/>
+      <stop offset="100%" stop-color="#162d50"/>
+    </linearGradient>
+    <linearGradient id="accent1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00d4ff"/>
+      <stop offset="100%" stop-color="#0077b6"/>
+    </linearGradient>
+    <linearGradient id="accent2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#48cae4"/>
+      <stop offset="100%" stop-color="#023e8a"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Grid pattern -->
+  <g opacity="0.05" stroke="#00d4ff" stroke-width="0.5">
+    <line x1="0" y1="100" x2="1200" y2="100"/>
+    <line x1="0" y1="200" x2="1200" y2="200"/>
+    <line x1="0" y1="300" x2="1200" y2="300"/>
+    <line x1="0" y1="400" x2="1200" y2="400"/>
+    <line x1="0" y1="500" x2="1200" y2="500"/>
+    <line x1="200" y1="0" x2="200" y2="630"/>
+    <line x1="400" y1="0" x2="400" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="800" y1="0" x2="800" y2="630"/>
+    <line x1="1000" y1="0" x2="1000" y2="630"/>
+  </g>
+
+  <!-- Decorative dots -->
+  <g opacity="0.15" fill="#00d4ff">
+    <circle cx="850" cy="120" r="2"/>
+    <circle cx="920" cy="180" r="1.5"/>
+    <circle cx="780" cy="200" r="2.5"/>
+    <circle cx="950" cy="140" r="1"/>
+    <circle cx="1020" cy="220" r="3"/>
+    <circle cx="880" cy="250" r="1.5"/>
+  </g>
+
+  <!-- Left side: abstract governance structure -->
+  <g transform="translate(80, 60)">
+    <!-- Main framework hexagons -->
+    <g filter="url(#glow)">
+      <!-- Center node -->
+      <polygon points="150,0 225,43 225,130 150,173 75,130 75,43" fill="none" stroke="url(#accent1)" stroke-width="2.5" opacity="0.9"/>
+      <circle cx="150" cy="87" r="12" fill="url(#accent1)" opacity="0.8"/>
+      
+      <!-- Connected nodes -->
+      <polygon points="300,87 350,112 350,162 300,187 250,162 250,112" fill="none" stroke="url(#accent1)" stroke-width="2" opacity="0.5"/>
+      <polygon points="0,87 50,112 50,162 0,187 -50,162 -50,112" fill="none" stroke="url(#accent1)" stroke-width="2" opacity="0.5"/>
+      <polygon points="150,-100 225,-75 225,12 150,55 75,12 75,-75" fill="none" stroke="url(#accent2)" stroke-width="2" opacity="0.6"/>
+      <polygon points="150,274 225,299 225,386 150,429 75,386 75,299" fill="none" stroke="url(#accent2)" stroke-width="2" opacity="0.6"/>
+      <polygon points="340,187 390,212 390,262 340,287 290,262 290,212" fill="none" stroke="url(#accent1)" stroke-width="1.5" opacity="0.3"/>
+      <polygon points="-40,187 10,212 10,262 -40,287 -90,262 -90,212" fill="none" stroke="url(#accent1)" stroke-width="1.5" opacity="0.3"/>
+    </g>
+
+    <!-- Connection lines -->
+    <g stroke="url(#accent2)" stroke-width="1" opacity="0.3">
+      <line x1="150" y1="55" x2="150" y2="0"/>
+      <line x1="150" y1="173" x2="150" y2="274"/>
+      <line x1="225" y1="130" x2="300" y2="162"/>
+      <line x1="75" y1="130" x2="0" y2="162"/>
+      <line x1="300" y1="187" x2="340" y2="237"/>
+      <line x1="0" y1="187" x2="-40" y2="237"/>
+    </g>
+
+    <!-- Nodes -->
+    <g fill="url(#accent1)" filter="url(#glow)">
+      <circle cx="150" cy="87" r="8" opacity="0.9"/>
+      <circle cx="300" cy="137" r="5" opacity="0.7"/>
+      <circle cx="0" cy="137" r="5" opacity="0.7"/>
+      <circle cx="150" cy="-13" r="5" opacity="0.8"/>
+      <circle cx="150" cy="361" r="5" opacity="0.8"/>
+      <circle cx="340" cy="237" r="3" opacity="0.5"/>
+      <circle cx="-40" cy="237" r="3" opacity="0.5"/>
+    </g>
+  </g>
+
+  <!-- Right side: Text & Capability Levels -->
+  <g transform="translate(520, 130)">
+    <!-- Title -->
+    <text x="0" y="0" font-family="system-ui,-apple-system,sans-serif" font-size="48" font-weight="800" fill="#ffffff" letter-spacing="-0.5">
+      COBIT 2019
+    </text>
+    <text x="0" y="52" font-family="system-ui,-apple-system,sans-serif" font-size="26" font-weight="500" fill="#8ab4f8" letter-spacing="1">
+      IT GOVERNANCE FRAMEWORK
+    </text>
+    
+    <!-- Divider -->
+    <rect x="0" y="72" width="80" height="3" rx="1.5" fill="url(#accent1)" filter="url(#glow)"/>
+
+    <!-- Subtitle -->
+    <text x="0" y="110" font-family="system-ui,-apple-system,sans-serif" font-size="16" fill="#94a3b8">
+      Panduan Lengkap dari Prinsip Governance,
+    </text>
+    <text x="0" y="135" font-family="system-ui,-apple-system,sans-serif" font-size="16" fill="#94a3b8">
+      Capability Level Assessment, sampai
+    </text>
+    <text x="0" y="160" font-family="system-ui,-apple-system,sans-serif" font-size="16" fill="#94a3b8">
+      Studi Kasus Audit Koperasi Digital
+    </text>
+
+    <!-- Capability Level mini -->
+    <g transform="translate(0, 195)">
+      <text x="0" y="0" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#64748b" letter-spacing="2">CAPABILITY LEVELS</text>
+      
+      <g transform="translate(0, 16)">
+        <rect x="0" y="0" width="38" height="20" rx="4" fill="#00d4ff" opacity="0.15"/>
+        <text x="19" y="14" font-family="monospace" font-size="11" fill="#00d4ff" text-anchor="middle">L0</text>
+      </g>
+      <g transform="translate(46, 16)">
+        <rect x="0" y="0" width="38" height="20" rx="4" fill="#00d4ff" opacity="0.25"/>
+        <text x="19" y="14" font-family="monospace" font-size="11" fill="#00d4ff" text-anchor="middle">L1</text>
+      </g>
+      <g transform="translate(92, 16)">
+        <rect x="0" y="0" width="38" height="20" rx="4" fill="#00d4ff" opacity="0.4"/>
+        <text x="19" y="14" font-family="monospace" font-size="11" fill="#00d4ff" text-anchor="middle">L2</text>
+      </g>
+      <g transform="translate(138, 16)">
+        <rect x="0" y="0" width="38" height="20" rx="4" fill="#00d4ff" opacity="0.55"/>
+        <text x="19" y="14" font-family="monospace" font-size="11" fill="#00d4ff" text-anchor="middle">L3</text>
+      </g>
+      <g transform="translate(184, 16)">
+        <rect x="0" y="0" width="38" height="20" rx="4" fill="#00d4ff" opacity="0.7"/>
+        <text x="19" y="14" font-family="monospace" font-size="11" fill="#00d4ff" text-anchor="middle">L4</text>
+      </g>
+      <g transform="translate(230, 16)">
+        <rect x="0" y="0" width="38" height="20" rx="4" fill="#00d4ff" opacity="0.9"/>
+        <text x="19" y="14" font-family="monospace" font-size="11" fill="#0a1628" text-anchor="middle">L5</text>
+      </g>
+
+      <g transform="translate(0, 50)">
+        <text x="0" y="0" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#64748b" letter-spacing="2">DOMAINS</text>
+        <g transform="translate(0, 10)">
+          <tspan x="0" y="16" font-family="monospace" font-size="11" fill="#e2e8f0">EDM · APO · BAI · DSS · MEA</tspan>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- Bottom branding -->
+  <text x="30" y="605" font-family="system-ui,-apple-system,sans-serif" font-size="13" fill="#334155">ngopidulur.my.id</text>
+  
+  <!-- ISACA reference -->
+  <text x="1170" y="605" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#334155" text-anchor="end">ISACA Framework</text>
+</svg>
