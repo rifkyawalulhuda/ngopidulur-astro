@@ -57,10 +57,10 @@ collections:
     view_filters:
       - label: "Drafts"
         field: "draft"
-        pattern: true
+        pattern: "true"
       - label: "Published"
         field: "draft"
-        pattern: false
+        pattern: "false"
       - label: "Teknologi"
         field: "categories"
         pattern: "Teknologi"
@@ -73,13 +73,6 @@ collections:
     view_groups:
       - label: "Category"
         field: "categories"
-      - label: "Status"
-        field: "draft"
-        pattern:
-          - label: "Draft"
-            value: true
-          - label: "Published"
-            value: false
     fields:
       - { label: "Title", name: "title", widget: "string", required: true }
       - { label: "Description", name: "description", widget: "text", required: true }
