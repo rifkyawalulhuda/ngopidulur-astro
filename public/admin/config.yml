@@ -1,8 +1,7 @@
-# ============================================
-# Decap CMS Configuration - Ngopidulur Blog
-# ============================================
-# LOCAL MODE: jalankan `npx decap-server` untuk edit dari localhost
-# Auto deploy: git push → GitHub Actions → cPanel
+# ═══════════════════════════════════════════
+#  Decap CMS — Ngopidulur Blog
+#  Local mode: npx decap-server + npm run dev
+# ═══════════════════════════════════════════
 
 site_url: https://ngopidulur.my.id
 display_url: https://ngopidulur.my.id
@@ -14,62 +13,279 @@ backend:
   name: git-gateway
   branch: main
 
-# --- Media ---
+# === Media ===
 media_folder: "public/image"
 public_folder: "/image"
 
-# --- Editorial Workflow ---
+# === Editorial Workflow ===
 publish_mode: editorial_workflow
 
-# --- Slug ---
+# === Slug ===
 slug:
   encoding: "ascii"
   clean_accents: true
   sanitize_replacement: "-"
 
-# --- Collections ---
+# ═══════════════════════════════════════════
+#  COLLECTIONS
+# ═══════════════════════════════════════════
+
 collections:
+
+  # ▸ ALL POSTS (main)
   - name: "blog"
-    label: "Blog Posts"
-    label_singular: "Blog Post"
+    label: "📝 Semua Artikel"
+    label_singular: "Artikel"
     folder: "src/content/blog"
     create: true
     slug: "{{slug}}"
     extension: "md"
     format: "frontmatter"
     preview_path: "/blog/{{slug}}"
+    identifier_field: "title"
+    summary: "{{description | truncate(120)}}"
+    
+    # Sorting default
     sortable_fields:
       - title
       - pubDate
+      - updated
       - categories
+    
+    # Quick filter buttons (muncul di atas daftar)
+    view_filters:
+      - label: "📅 Semua"
+        field: "draft"
+        pattern: "false"
+      - label: "📝 Draft"
+        field: "draft"
+        pattern: "true"
+      - label: "💻 Teknologi"
+        field: "categories"
+        pattern: "Teknologi"
+      - label: "✍️ Tulisan Random"
+        field: "categories"
+        pattern: "Tulisan-Random"
+      - label: "📋 Documentation"
+        field: "categories"
+        pattern: "Documentation"
+      - label: "📌 Pinned"
+        field: "badge"
+        pattern: "Pin"
+    
+    # Group list by category
+    view_groups:
+      - label: "Kategori"
+        field: "categories"
+      - label: "Status"
+        field: "draft"
+        pattern: "true"
+
+    # === FIELDS ===
     fields:
-      - { label: "Title", name: "title", widget: "string", required: true }
-      - { label: "Description", name: "description", widget: "text", required: true }
-      - { label: "Publish Date", name: "pubDate", widget: "datetime", required: true }
-      - { label: "Updated Date", name: "updated", widget: "datetime", required: false }
+      # — Row 1: Meta Utama —
+      - label: "Judul Artikel"
+        name: "title"
+        widget: "string"
+        required: true
+        hint: "Gunakan judul yang SEO-friendly & menarik klik"
+      
+      - label: "Slug (URL)"
+        name: "slug"
+        widget: "string"
+        required: false
+        hint: "Kosongkan untuk auto-generate dari judul. Contoh: panduan-aspnet-core"
+        pattern: ['^[a-z0-9]+(?:-[a-z0-9]+)*$', "Hanya huruf kecil, angka, dan strip. Contoh: panduan-aspnet-core"]
+      
+      - label: "Deskripsi"
+        name: "description"
+        widget: "text"
+        required: true
+        hint: "150-160 karakter — ini yang muncul di Google & preview card"
+      
+      # — Row 2: Tanggal —
+      - label: "Tanggal Terbit"
+        name: "pubDate"
+        widget: "datetime"
+        required: true
+        default: "{{now}}"
+        format: "YYYY-MM-DDTHH:mm:ss.sssZ"
+      
+      - label: "Tanggal Update"
+        name: "updated"
+        widget: "datetime"
+        required: false
+        format: "YYYY-MM-DDTHH:mm:ss.sssZ"
+        hint: "Kosongkan kalau belum pernah diupdate"
+      
+      # — Row 3: Visual —
       - label: "Cover Image"
         name: "image"
         widget: "image"
         required: false
-      - label: "Badge"
+        hint: "Rekomendasi: SVG untuk vector crisp, WebP untuk foto. Ukuran ideal 1200×630"
+        media_folder: "public/image"
+        public_folder: "/image"
+      
+      - label: "Badge / Pin"
         name: "badge"
         widget: "select"
         required: false
+        default: ""
         options:
-          - { label: "None", value: "" }
-          - { label: "Pin", value: "Pin" }
-      - { label: "Draft", name: "draft", widget: "boolean", default: false }
-      - label: "Categories"
+          - { label: "— Tidak ada —", value: "" }
+          - { label: "📌 Pin (sticky di halaman depan)", value: "Pin" }
+      
+      # — Row 4: Status —
+      - label: "Status"
+        name: "draft"
+        widget: "boolean"
+        default: false
+        hint: "Aktifkan untuk menyembunyikan dari publik"
+      
+      # — Row 5: Kategori & Tag —
+      - label: "Kategori"
         name: "categories"
         widget: "select"
         multiple: true
         required: false
+        hint: "Pilih satu atau lebih kategori"
         options:
-          - "Teknologi"
-          - "Tulisan-Random"
-          - "Documentation"
+          - { label: "💻 Teknologi", value: "Teknologi" }
+          - { label: "✍️ Tulisan Random", value: "Tulisan-Random" }
+          - { label: "📋 Documentation", value: "Documentation" }
+      
       - label: "Tags"
         name: "tags"
         widget: "list"
         required: false
-      - { label: "Body", name: "body", widget: "markdown" }
+        hint: "Tekan Enter untuk setiap tag. Gunakan CamelCase (contoh: ASPNETCore, WebDev)"
+        field:
+          name: "tag"
+          label: "Tag"
+          widget: "string"
+          pattern: ['^[A-Za-z0-9]+$', "Hanya huruf & angka, tanpa spasi"]
+      
+      # — Row 6: Konten —
+      - label: "Isi Artikel"
+        name: "body"
+        widget: "markdown"
+        hint: "Gunakan heading (##) untuk struktur, ``` untuk kode, dan ![alt](url) untuk gambar"
+        modes:
+          - raw
+          - rich_text
+
+  # ▸ KATEGORI TERPISAH untuk navigasi mudah
+  - name: "teknologi"
+    label: "💻 Teknologi"
+    label_singular: "Artikel Teknologi"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    preview_path: "/blog/{{slug}}"
+    filter: { field: "categories", value: "Teknologi" }
+    summary: "{{description | truncate(100)}}"
+    identifier_field: "title"
+    sortable_fields:
+      - title
+      - pubDate
+    fields:
+      - { label: "Judul", name: "title", widget: "string", required: true }
+      - { label: "Deskripsi", name: "description", widget: "text", required: true }
+      - { label: "Tanggal", name: "pubDate", widget: "datetime", required: true, default: "{{now}}" }
+      - label: "Cover"
+        name: "image"
+        widget: "image"
+        required: false
+      - { label: "Draft", name: "draft", widget: "boolean", default: false }
+      - label: "Kategori"
+        name: "categories"
+        widget: "hidden"
+        default: ["Teknologi"]
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        required: false
+        field:
+          name: "tag"
+          label: "Tag"
+          widget: "string"
+      - { label: "Isi", name: "body", widget: "markdown" }
+
+  - name: "tulisan-random"
+    label: "✍️ Tulisan Random"
+    label_singular: "Tulisan"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    preview_path: "/blog/{{slug}}"
+    filter: { field: "categories", value: "Tulisan-Random" }
+    summary: "{{description | truncate(100)}}"
+    identifier_field: "title"
+    sortable_fields:
+      - title
+      - pubDate
+    fields:
+      - { label: "Judul", name: "title", widget: "string", required: true }
+      - { label: "Deskripsi", name: "description", widget: "text", required: true }
+      - { label: "Tanggal", name: "pubDate", widget: "datetime", required: true, default: "{{now}}" }
+      - label: "Cover"
+        name: "image"
+        widget: "image"
+        required: false
+      - { label: "Draft", name: "draft", widget: "boolean", default: false }
+      - label: "Kategori"
+        name: "categories"
+        widget: "hidden"
+        default: ["Tulisan-Random"]
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        required: false
+        field:
+          name: "tag"
+          label: "Tag"
+          widget: "string"
+      - { label: "Isi", name: "body", widget: "markdown" }
+
+  - name: "documentation"
+    label: "📋 Documentation"
+    label_singular: "Dokumentasi"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    preview_path: "/blog/{{slug}}"
+    filter: { field: "categories", value: "Documentation" }
+    summary: "{{description | truncate(100)}}"
+    identifier_field: "title"
+    sortable_fields:
+      - title
+      - pubDate
+    fields:
+      - { label: "Judul", name: "title", widget: "string", required: true }
+      - { label: "Deskripsi", name: "description", widget: "text", required: true }
+      - { label: "Tanggal", name: "pubDate", widget: "datetime", required: true, default: "{{now}}" }
+      - label: "Cover"
+        name: "image"
+        widget: "image"
+        required: false
+      - { label: "Draft", name: "draft", widget: "boolean", default: false }
+      - label: "Kategori"
+        name: "categories"
+        widget: "hidden"
+        default: ["Documentation"]
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        required: false
+        field:
+          name: "tag"
+          label: "Tag"
+          widget: "string"
+      - { label: "Isi", name: "body", widget: "markdown" }
