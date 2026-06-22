@@ -16,8 +16,8 @@ backend:
   name: github
   repo: rifkyawalulhuda/ngopidulur-astro
   branch: main
-  # OAuth proxy URL — ganti dengan URL Cloudflare Worker setelah deploy
-  base_url: https://ngopidulur-oauth.YOUR_SUBDOMAIN.workers.dev
+  # OAuth proxy URL — Cloudflare Worker
+  base_url: https://ngopidulur-oauth.rifkyawalulhuda.workers.dev
   # API URL untuk self-hosted GitHub Enterprise (abaikan kalau github.com)
   # api_root: https://api.github.com
 
