@@ -16,10 +16,8 @@ backend:
   name: github
   repo: rifkyawalulhuda/ngopidulur-astro
   branch: main
-  # OAuth proxy URL — Cloudflare Worker
-  base_url: https://ngopidulur-oauth.rifkyawalulhuda.workers.dev
-  # Explicit GitHub API (jangan pakai base_url untuk API call!)
   api_root: https://api.github.com
+  base_url: https://ngopidulur-oauth.rifkyawalulhuda.workers.dev
 
 # --- Media ---
 media_folder: "public/image"
