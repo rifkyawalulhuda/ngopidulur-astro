@@ -1,41 +1,31 @@
 # ============================================
 # Decap CMS Configuration - Ngopidulur Blog
 # ============================================
+# LOCAL MODE: jalankan `npx decap-server` untuk edit dari localhost
+# Auto deploy: git push → GitHub Actions → cPanel
 
 site_url: https://ngopidulur.my.id
 display_url: https://ngopidulur.my.id
 logo_url: /logo.png
 
-# --- Backend (GitHub) ---
-# Untuk development lokal, aktifkan local_backend: true
-#   dan jalankan: npx decap-server
-# Untuk production, nonaktifkan local_backend
-local_backend: false
+local_backend: true
 
 backend:
-  name: github
-  repo: rifkyawalulhuda/ngopidulur-astro
+  name: git-gateway
   branch: main
-  api_root: https://api.github.com
-  base_url: https://ngopidulur-oauth.rifkyawalulhuda.workers.dev
 
 # --- Media ---
 media_folder: "public/image"
 public_folder: "/image"
 
-# --- Editorial Workflow (opsional) ---
-# Aktifkan untuk fitur draft/review/publish
+# --- Editorial Workflow ---
 publish_mode: editorial_workflow
 
-# --- Slug Format ---
+# --- Slug ---
 slug:
   encoding: "ascii"
   clean_accents: true
   sanitize_replacement: "-"
-
-# --- Editor ---
-editor:
-  preview: true
 
 # --- Collections ---
 collections:
@@ -52,44 +42,23 @@ collections:
       - title
       - pubDate
       - categories
-    view_filters:
-      - label: "Drafts"
-        field: "draft"
-        pattern: "true"
-      - label: "Published"
-        field: "draft"
-        pattern: "false"
-      - label: "Teknologi"
-        field: "categories"
-        pattern: "Teknologi"
-      - label: "Tulisan Random"
-        field: "categories"
-        pattern: "Tulisan-Random"
-      - label: "Documentation"
-        field: "categories"
-        pattern: "Documentation"
-    view_groups:
-      - label: "Category"
-        field: "categories"
     fields:
       - { label: "Title", name: "title", widget: "string", required: true }
       - { label: "Description", name: "description", widget: "text", required: true }
-      - { label: "Publish Date", name: "pubDate", widget: "datetime", required: true, format: "YYYY-MM-DDTHH:mm:ss.sssZ" }
-      - { label: "Updated Date", name: "updated", widget: "datetime", required: false, format: "YYYY-MM-DDTHH:mm:ss.sssZ" }
+      - { label: "Publish Date", name: "pubDate", widget: "datetime", required: true }
+      - { label: "Updated Date", name: "updated", widget: "datetime", required: false }
       - label: "Cover Image"
         name: "image"
         widget: "image"
         required: false
-        hint: "Upload atau pilih gambar dari /public/image/"
       - label: "Badge"
         name: "badge"
         widget: "select"
         required: false
-        hint: "Pin untuk menandai post sebagai pinned"
         options:
           - { label: "None", value: "" }
           - { label: "Pin", value: "Pin" }
-      - { label: "Draft", name: "draft", widget: "boolean", default: false, required: false }
+      - { label: "Draft", name: "draft", widget: "boolean", default: false }
       - label: "Categories"
         name: "categories"
         widget: "select"
@@ -103,5 +72,4 @@ collections:
         name: "tags"
         widget: "list"
         required: false
-        hint: "Tekan Enter untuk menambah tag baru"
       - { label: "Body", name: "body", widget: "markdown" }
