@@ -1,60 +1,38 @@
 /**
  * Decap CMS GitHub OAuth Proxy — Cloudflare Worker
- * 
- * Deploy ke Cloudflare Workers (gratis 100k req/hari).
- * Setelah deploy, ganti `base_url` di config.yml dengan URL Worker ini.
- *
- * Setup:
- *   1. Bikin GitHub OAuth App: https://github.com/settings/developers
- *      - Homepage URL: https://ngopidulur.my.id
- *      - Callback URL: https://YOUR_WORKER.workers.dev/callback
- *   2. Deploy worker ini dengan wrangler:
- *        npx wrangler deploy
- *   3. Set secrets:
- *        npx wrangler secret put GITHUB_CLIENT_ID
- *        npx wrangler secret put GITHUB_CLIENT_SECRET
- *        npx wrangler secret put OAUTH_CLIENT_ID
- *        npx wrangler secret put OAUTH_CLIENT_SECRET
- *        npx wrangler secret put ORIGIN
+ * URL: https://ngopidulur-oauth.rifkyawalulhuda.workers.dev
  */
 
 const ORIGIN = 'https://ngopidulur.my.id';
-
-// ===== GitHub OAuth Config =====
-// Disimpan sebagai secret di Cloudflare:
-//   GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET
-//   OAUTH_CLIENT_ID, OAUTH_CLIENT_SECRET
-//   ORIGIN (optional, default di atas)
 
 async function getSecret(env, key, fallback) {
   return env[key] || fallback;
 }
 
-// ===== Helpers =====
 function renderBody(status, content) {
-  const html = `
-<!DOCTYPE html>
+  const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${status}</title>
   <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       display: flex; justify-content: center; align-items: center;
-      min-height: 100vh; margin: 0; background: #0d1117; color: #c9d1d9;
+      min-height: 100vh; background: #0d1117; color: #c9d1d9;
     }
     .card {
       background: #161b22; border: 1px solid #30363d;
       border-radius: 8px; padding: 32px 40px; text-align: center;
-      max-width: 420px; width: 90%;
+      max-width: 440px; width: 90%;
     }
     h1 { color: #58a6ff; margin-bottom: 8px; font-size: 1.3rem; }
-    p { color: #8b949e; font-size: 0.95rem; line-height: 1.5; }
+    p { color: #8b949e; font-size: 0.95rem; line-height: 1.5; margin-bottom: 8px; }
     .code { background: #0d1117; border: 1px solid #30363d;
       border-radius: 6px; padding: 8px 12px; font-family: monospace;
-      font-size: 0.85rem; word-break: break-all; margin-top: 12px; }
+      font-size: 0.8rem; word-break: break-all; margin-top: 12px; user-select: all; }
   </style>
 </head>
 <body>
@@ -70,17 +48,14 @@ function renderBody(status, content) {
   });
 }
 
-// ===== OAuth Flow =====
 async function handleAuth(request, env) {
   const url = new URL(request.url);
-  const clientId = await getSecret(env, 'OAUTH_CLIENT_ID', '');
-  const clientSecret = await getSecret(env, 'OAUTH_CLIENT_SECRET', '');
   
   // Step 1: Redirect to GitHub OAuth
   if (url.pathname === '/auth') {
     const githubClientId = await getSecret(env, 'GITHUB_CLIENT_ID', '');
     if (!githubClientId) {
-      return renderBody('Error', '<p>⚠️ GITHUB_CLIENT_ID belum diset di Cloudflare Worker secrets.</p>');
+      return renderBody('Error', '<p>⚠️ GITHUB_CLIENT_ID belum diset.</p>');
     }
 
     const params = new URLSearchParams({
@@ -102,7 +77,6 @@ async function handleAuth(request, env) {
     const githubClientId = await getSecret(env, 'GITHUB_CLIENT_ID', '');
     const githubClientSecret = await getSecret(env, 'GITHUB_CLIENT_SECRET', '');
     
-    // Exchange code for access token
     const tokenRes = await fetch('https://github.com/login/oauth/access_token', {
       method: 'POST',
       headers: {
@@ -121,24 +95,64 @@ async function handleAuth(request, env) {
       return renderBody('Error', `<p>⚠️ GitHub OAuth error: ${tokenData.error_description || tokenData.error}</p>`);
     }
 
-    // Send token back to Decap CMS via postMessage
     const origin = await getSecret(env, 'ORIGIN', ORIGIN);
-    const html = `
-<!DOCTYPE html>
-<html><head><script>
-  window.opener.postMessage(
-    { token: "${tokenData.access_token}", provider: "github" },
-    "${origin}"
-  );
-  window.close();
-</script></head><body><p>Login berhasil! Menutup jendela...</p></body></html>`;
-    
+    const token = tokenData.access_token;
+
+    // Kirim token ke Decap CMS via postMessage + fallback localStorage
+    const html = `<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Auth</title></head><body>
+<script>
+(function() {
+  var token = "${token}";
+  var origin = "${origin}";
+  var done = false;
+
+  function sendToken() {
+    if (done) return;
+    done = true;
+
+    // Method 1: postMessage ke opener (Decap CMS)
+    if (window.opener && window.opener !== window) {
+      try {
+        window.opener.postMessage(
+          { token: token, provider: "github" },
+          origin
+        );
+        console.log("Token sent via postMessage");
+      } catch(e) {
+        console.error("postMessage failed:", e);
+      }
+    }
+
+    // Method 2: localStorage fallback
+    try {
+      localStorage.setItem("decap-cms-github-token", token);
+    } catch(e) {}
+
+    // Tunggu sebentar biar Decap CMS sempat terima message
+    setTimeout(function() {
+      window.close();
+      // Kalau window gak ketutup (blocked), tampilkan success
+      setTimeout(function() {
+        document.body.innerHTML = '<div style="text-align:center;padding:40px;font-family:sans-serif;">'
+          + '<h2 style="color:#2ea44f;">✅ Login Berhasil!</h2>'
+          + '<p>Tutup jendela ini dan kembali ke halaman admin.</p>'
+          + '<button onclick="window.close()" style="margin-top:12px;padding:8px 16px;border-radius:6px;background:#238636;color:#fff;border:none;cursor:pointer;font-size:14px;">Tutup</button>'
+          + '</div>';
+      }, 1500);
+    }, 500);
+  }
+
+  // Delay dikit — memastikan opener sudah siap nerima message
+  setTimeout(sendToken, 300);
+})();
+</script></body></html>`;
+
     return new Response(html, {
-      headers: { 'Content-Type': 'text/html' },
+      headers: { 'Content-Type': 'text/html; charset=utf-8' },
     });
   }
 
-  // Health check
   return renderBody('OK', '<p>✅ Ngopidulur CMS OAuth Server siap.</p><p class="code">' + url.origin + '/auth</p>');
 }
 
