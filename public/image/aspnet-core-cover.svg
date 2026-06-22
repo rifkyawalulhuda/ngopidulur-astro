@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a0a2e"/>
+      <stop offset="50%" stop-color="#16213e"/>
+      <stop offset="100%" stop-color="#0a1628"/>
+    </linearGradient>
+    <linearGradient id="purple" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Dot grid -->
+  <g opacity="0.06">
+    <pattern id="dots" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
+      <circle cx="15" cy="15" r="1" fill="#7c3aed"/>
+    </pattern>
+    <rect width="1200" height="630" fill="url(#dots)"/>
+  </g>
+
+  <!-- Decorative circles -->
+  <circle cx="950" cy="150" r="200" fill="none" stroke="#7c3aed" stroke-width="0.5" opacity="0.08"/>
+  <circle cx="950" cy="150" r="280" fill="none" stroke="#3b82f6" stroke-width="0.3" opacity="0.05"/>
+
+  <!-- .NET logo inspired shapes -->
+  <g transform="translate(80, 120)" filter="url(#glow)">
+    <!-- Code brackets -->
+    <text x="0" y="0" font-family="monospace" font-size="120" fill="url(#purple)" opacity="0.6">&lt;/&gt;</text>
+  </g>
+
+  <!-- Floating code snippets (decorative) -->
+  <g font-family="monospace" font-size="11" opacity="0.12" fill="#a855f7">
+    <text x="420" y="130">public class</text>
+    <text x="420" y="150">  WebApplication</text>
+    <text x="420" y="170">{</text>
+    <text x="420" y="190">  builder.Build()</text>
+    <text x="420" y="210">  app.Run()</text>
+    <text x="420" y="230">}</text>
+  </g>
+
+  <g font-family="monospace" font-size="10" opacity="0.08" fill="#06b6d4">
+    <text x="440" y="280">[ApiController]</text>
+    <text x="440" y="298">[Route("api")]</text>
+    <text x="440" y="316">services.Add</text>
+    <text x="440" y="334">Controllers();</text>
+    <text x="440" y="352">app.UseRouting</text>
+    <text x="440" y="370">app.MapControllers</text>
+  </g>
+
+  <!-- Connection nodes -->
+  <g transform="translate(500, 420)">
+    <g filter="url(#glow)">
+      <circle cx="0" cy="0" r="6" fill="url(#purple)" opacity="0.8"/>
+      <circle cx="120" cy="-30" r="4" fill="url(#blue)" opacity="0.6"/>
+      <circle cx="120" cy="30" r="4" fill="url(#blue)" opacity="0.6"/>
+      <circle cx="60" cy="0" r="3" fill="url(#purple)" opacity="0.4"/>
+    </g>
+    <g stroke="#7c3aed" stroke-width="1" opacity="0.25">
+      <line x1="0" y1="0" x2="120" y2="-30"/>
+      <line x1="0" y1="0" x2="120" y2="30"/>
+      <line x1="60" y1="0" x2="120" y2="-30"/>
+      <line x1="60" y1="0" x2="120" y2="30"/>
+    </g>
+  </g>
+
+  <!-- Title -->
+  <g transform="translate(700, 230)">
+    <text x="0" y="0" font-family="system-ui,-apple-system,sans-serif" font-size="52" font-weight="800" fill="#ffffff" letter-spacing="-1">
+      ASP.NET
+    </text>
+    <text x="0" y="48" font-family="system-ui,-apple-system,sans-serif" font-size="52" font-weight="800" fill="url(#purple)" letter-spacing="-1" filter="url(#glow)">
+      Core
+    </text>
+    <rect x="0" y="68" width="80" height="3" rx="1.5" fill="url(#purple)" filter="url(#glow)"/>
+
+    <text x="0" y="105" font-family="system-ui,-apple-system,sans-serif" font-size="16" fill="#94a3b8" letter-spacing="2">
+      .NET 8 • C# • MVC • EF CORE • IDENTITY • DEPLOY
+    </text>
+  </g>
+
+  <!-- Bottom bar: feature chips -->
+  <g transform="translate(700, 460)">
+    <rect x="0" y="0" width="90" height="28" rx="14" fill="#7c3aed" opacity="0.15"/>
+    <text x="45" y="19" font-family="system-ui" font-size="11" fill="#a855f7" text-anchor="middle">Cross-Platform</text>
+
+    <rect x="100" y="0" width="70" height="28" rx="14" fill="#3b82f6" opacity="0.15"/>
+    <text x="135" y="19" font-family="system-ui" font-size="11" fill="#60a5fa" text-anchor="middle">Open Source</text>
+
+    <rect x="180" y="0" width="75" height="28" rx="14" fill="#7c3aed" opacity="0.15"/>
+    <text x="218" y="19" font-family="system-ui" font-size="11" fill="#a855f7" text-anchor="middle">High Perf</text>
+
+    <rect x="0" y="36" width="65" height="28" rx="14" fill="#3b82f6" opacity="0.15"/>
+    <text x="33" y="55" font-family="system-ui" font-size="11" fill="#60a5fa" text-anchor="middle">Docker</text>
+
+    <rect x="75" y="36" width="60" height="28" rx="14" fill="#7c3aed" opacity="0.15"/>
+    <text x="105" y="55" font-family="system-ui" font-size="11" fill="#a855f7" text-anchor="middle">Azure</text>
+
+    <rect x="145" y="36" width="55" height="28" rx="14" fill="#3b82f6" opacity="0.15"/>
+    <text x="173" y="55" font-family="system-ui" font-size="11" fill="#60a5fa" text-anchor="middle">Linux</text>
+  </g>
+
+  <!-- ngopidulur branding -->
+  <text x="30" y="605" font-family="system-ui,-apple-system,sans-serif" font-size="12" fill="#334155">ngopidulur.my.id</text>
+  <text x="1170" y="605" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#334155" text-anchor="end">.NET 8 Series</text>
+</svg>
