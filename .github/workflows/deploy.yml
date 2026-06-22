@@ -17,18 +17,17 @@ jobs:
       - name: 🟢 Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "22"
           cache: "npm"
 
       - name: 📦 Install dependencies
-        run: npm ci
-
-      - name: 🔍 Type Check (non-blocking)
-        continue-on-error: true
-        run: npx astro check
+        run: npm install
 
       - name: 🔨 Build Astro
         run: npx astro build
+        env:
+          CI: true
+          NODE_OPTIONS: "--max-old-space-size=4096"
 
       - name: 🔎 Pagefind index
         run: npx pagefind --site dist
