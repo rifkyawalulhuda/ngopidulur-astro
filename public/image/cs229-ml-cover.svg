@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d0221"/>
+      <stop offset="40%" stop-color="#150a30"/>
+      <stop offset="100%" stop-color="#0a1628"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#60a5fa"/>
+    </linearGradient>
+    <linearGradient id="purple" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#a78bfa"/>
+    </linearGradient>
+    <linearGradient id="pink" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ec4899"/>
+      <stop offset="100%" stop-color="#f472b6"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="15" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Floating particles -->
+  <g opacity="0.06">
+    <circle cx="200" cy="150" r="1.5" fill="#f59e0b"/><circle cx="450" cy="80" r="1" fill="#3b82f6"/>
+    <circle cx="700" cy="200" r="2" fill="#8b5cf6"/><circle cx="850" cy="120" r="1" fill="#ec4899"/>
+    <circle cx="1000" cy="300" r="1.5" fill="#f59e0b"/><circle cx="150" cy="400" r="1" fill="#3b82f6"/>
+    <circle cx="550" cy="500" r="2" fill="#8b5cf6"/><circle cx="350" cy="350" r="1" fill="#ec4899"/>
+  </g>
+
+  <!-- Dense neural network visualization (left side, large) -->
+  <g transform="translate(40, 80)">
+    <!-- Layer 1 (input) - 6 nodes -->
+    <circle cx="0" cy="40" r="5" fill="url(#blue)" opacity="0.7"/><circle cx="0" cy="100" r="5" fill="url(#blue)" opacity="0.7"/>
+    <circle cx="0" cy="160" r="5" fill="url(#blue)" opacity="0.7"/><circle cx="0" cy="220" r="5" fill="url(#blue)" opacity="0.7"/>
+    <circle cx="0" cy="280" r="5" fill="url(#blue)" opacity="0.7"/><circle cx="0" cy="340" r="5" fill="url(#blue)" opacity="0.7"/>
+
+    <!-- Layer 2 (hidden 1) - 8 nodes -->
+    <circle cx="70" cy="20" r="6" fill="url(#purple)" opacity="0.6"/><circle cx="70" cy="70" r="6" fill="url(#purple)" opacity="0.6"/>
+    <circle cx="70" cy="120" r="6" fill="url(#purple)" opacity="0.6"/><circle cx="70" cy="170" r="6" fill="url(#purple)" opacity="0.6"/>
+    <circle cx="70" cy="220" r="6" fill="url(#purple)" opacity="0.6"/><circle cx="70" cy="270" r="6" fill="url(#purple)" opacity="0.6"/>
+    <circle cx="70" cy="320" r="6" fill="url(#purple)" opacity="0.6"/><circle cx="70" cy="370" r="6" fill="url(#purple)" opacity="0.6"/>
+
+    <!-- Layer 3 (hidden 2) - 8 nodes -->
+    <circle cx="140" cy="40" r="7" fill="url(#pink)" opacity="0.5"/><circle cx="140" cy="90" r="7" fill="url(#pink)" opacity="0.5"/>
+    <circle cx="140" cy="140" r="7" fill="url(#pink)" opacity="0.5"/><circle cx="140" cy="190" r="7" fill="url(#pink)" opacity="0.5"/>
+    <circle cx="140" cy="240" r="7" fill="url(#pink)" opacity="0.5"/><circle cx="140" cy="290" r="7" fill="url(#pink)" opacity="0.5"/>
+    <circle cx="140" cy="340" r="7" fill="url(#pink)" opacity="0.5"/><circle cx="140" cy="390" r="7" fill="url(#pink)" opacity="0.5"/>
+
+    <!-- Layer 4 (hidden 3) - 6 nodes -->
+    <circle cx="210" cy="60" r="6" fill="url(#gold)" opacity="0.6"/><circle cx="210" cy="120" r="6" fill="url(#gold)" opacity="0.6"/>
+    <circle cx="210" cy="180" r="6" fill="url(#gold)" opacity="0.6"/><circle cx="210" cy="240" r="6" fill="url(#gold)" opacity="0.6"/>
+    <circle cx="210" cy="300" r="6" fill="url(#gold)" opacity="0.6"/><circle cx="210" cy="360" r="6" fill="url(#gold)" opacity="0.6"/>
+
+    <!-- Layer 5 (output) - 3 nodes -->
+    <circle cx="280" cy="110" r="5" fill="url(#blue)" opacity="0.8"/><circle cx="280" cy="210" r="5" fill="url(#blue)" opacity="0.8"/>
+    <circle cx="280" cy="310" r="5" fill="url(#blue)" opacity="0.8"/>
+
+    <!-- Connections (dense, semi-transparent) -->
+    <g stroke-width="0.3" opacity="0.06">
+      <!-- L1→L2 -->
+      <line x1="5" y1="40" x2="64" y2="20"/><line x1="5" y1="100" x2="64" y2="70"/><line x1="5" y1="160" x2="64" y2="120"/>
+      <line x1="5" y1="220" x2="64" y2="170"/><line x1="5" y1="280" x2="64" y2="220"/><line x1="5" y1="340" x2="64" y2="270"/>
+      <!-- L2→L3 -->
+      <line x1="76" y1="20" x2="133" y2="40"/><line x1="76" y1="70" x2="133" y2="90"/>
+      <line x1="76" y1="120" x2="133" y2="140"/><line x1="76" y1="170" x2="133" y2="190"/>
+      <line x1="76" y1="220" x2="133" y2="240"/><line x1="76" y1="270" x2="133" y2="290"/>
+      <line x1="76" y1="320" x2="133" y2="340"/><line x1="76" y1="370" x2="133" y2="390"/>
+      <!-- L3→L4 -->
+      <line x1="147" y1="40" x2="204" y2="60"/><line x1="147" y1="90" x2="204" y2="120"/>
+      <line x1="147" y1="140" x2="204" y2="180"/><line x1="147" y1="190" x2="204" y2="240"/>
+      <line x1="147" y1="240" x2="204" y2="300"/><line x1="147" y1="290" x2="204" y2="360"/>
+      <!-- L4→L5 -->
+      <line x1="216" y1="60" x2="275" y2="110"/><line x1="216" y1="120" x2="275" y2="110"/>
+      <line x1="216" y1="180" x2="275" y2="210"/><line x1="216" y1="240" x2="275" y2="210"/>
+      <line x1="216" y1="300" x2="275" y2="310"/><line x1="216" y1="360" x2="275" y2="310"/>
+    </g>
+  </g>
+
+  <!-- Title -->
+  <g transform="translate(530, 170)">
+    <text x="0" y="0" font-family="system-ui,-apple-system,sans-serif" font-size="46" font-weight="800" fill="#ffffff" letter-spacing="-1">
+      Machine &amp; Deep
+    </text>
+    <text x="0" y="48" font-family="system-ui,-apple-system,sans-serif" font-size="46" font-weight="800" fill="url(#gold)" letter-spacing="-1" filter="url(#glow)">
+      Learning
+    </text>
+    <rect x="0" y="66" width="100" height="3" rx="1.5" fill="url(#gold)" filter="url(#glow)"/>
+
+    <text x="0" y="100" font-family="system-ui,-apple-system,sans-serif" font-size="17" font-weight="600" fill="#a78bfa" letter-spacing="3">
+      CS229 STANFORD NOTES
+    </text>
+
+    <text x="0" y="135" font-family="system-ui,-apple-system,sans-serif" font-size="13" fill="#64748b" letter-spacing="1.5">
+      LINEAR REGRESSION · LOGISTIC · GDA · NAIVE BAYES · SVM · KERNELS
+    </text>
+    <text x="0" y="155" font-family="system-ui,-apple-system,sans-serif" font-size="13" fill="#64748b" letter-spacing="1.5">
+      DECISION TREES · ENSEMBLES · NEURAL NETWORKS · CNN · RNN · TRANSFORMERS
+    </text>
+  </g>
+
+  <!-- Mini architecture icons (right side) -->
+  <g transform="translate(530, 380)">
+    <!-- CNN icon -->
+    <rect x="0" y="0" width="28" height="20" rx="3" fill="none" stroke="url(#blue)" stroke-width="1" opacity="0.5"/>
+    <rect x="2" y="2" width="8" height="7" rx="1" fill="url(#blue)" opacity="0.3"/>
+    <rect x="12" y="2" width="14" height="7" rx="1" fill="url(#blue)" opacity="0.15"/>
+    <text x="14" y="32" font-family="system-ui" font-size="8" fill="#60a5fa" text-anchor="middle">CNN</text>
+
+    <!-- RNN icon -->
+    <rect x="50" y="0" width="8" height="20" rx="2" fill="url(#purple)" opacity="0.3"/>
+    <rect x="62" y="0" width="8" height="20" rx="2" fill="url(#purple)" opacity="0.3"/>
+    <rect x="74" y="0" width="8" height="20" rx="2" fill="url(#purple)" opacity="0.3"/>
+    <line x1="58" y1="10" x2="62" y2="10" stroke="url(#purple)" stroke-width="0.8" opacity="0.4"/>
+    <line x1="70" y1="10" x2="74" y2="10" stroke="url(#purple)" stroke-width="0.8" opacity="0.4"/>
+    <text x="78" y="32" font-family="system-ui" font-size="8" fill="#a78bfa" text-anchor="middle">RNN</text>
+
+    <!-- Transformer icon -->
+    <rect x="110" y="0" width="8" height="20" rx="1" fill="url(#pink)" opacity="0.3"/>
+    <line x1="110" y1="10" x2="130" y2="10" stroke="url(#pink)" stroke-width="0.5" opacity="0.3"/>
+    <rect x="130" y="0" width="8" height="20" rx="1" fill="url(#pink)" opacity="0.3"/>
+    <text x="138" y="32" font-family="system-ui" font-size="8" fill="#f472b6" text-anchor="middle">TRANS</text>
+
+    <!-- Tree icon -->
+    <circle cx="178" cy="10" r="3" fill="url(#gold)" opacity="0.4"/>
+    <line x1="178" y1="13" x2="172" y2="20" stroke="url(#gold)" stroke-width="0.8" opacity="0.4"/>
+    <line x1="178" y1="13" x2="184" y2="20" stroke="url(#gold)" stroke-width="0.8" opacity="0.4"/>
+    <circle cx="172" cy="20" r="2" fill="url(#gold)" opacity="0.3"/>
+    <circle cx="184" cy="20" r="2" fill="url(#gold)" opacity="0.3"/>
+    <text x="178" y="32" font-family="system-ui" font-size="8" fill="#fbbf24" text-anchor="middle">TREE</text>
+  </g>
+
+  <!-- Bottom math -->
+  <g transform="translate(530, 450)" opacity="0.3" font-family="monospace" font-size="9">
+    <text x="0" y="0" fill="#60a5fa">∂J/∂W = (1/m)·δ·aᵀ</text>
+    <text x="200" y="0" fill="#f472b6">σ(z) = 1/(1+e⁻ᶻ)</text>
+    <text x="0" y="16" fill="#fbbf24">Attention(Q,K,V) = softmax(QKᵀ/√d)·V</text>
+  </g>
+
+  <!-- ngopidulur branding -->
+  <text x="30" y="605" font-family="system-ui,-apple-system,sans-serif" font-size="12" fill="#334155">ngopidulur.my.id</text>
+  <text x="1170" y="605" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#334155" text-anchor="end">CS229 Series · Andrew Ng</text>
+</svg>
