@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d0d1a"/>
+      <stop offset="40%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00c853"/>
+      <stop offset="100%" stop-color="#00e676"/>
+    </linearGradient>
+    <linearGradient id="amber" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff8f00"/>
+      <stop offset="100%" stop-color="#ffb300"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Terminal grid -->
+  <g opacity="0.04">
+    <line x1="0" y1="70" x2="1200" y2="70" stroke="#00c853" stroke-width="0.5"/>
+    <line x1="0" y1="140" x2="1200" y2="140" stroke="#00c853" stroke-width="0.5"/>
+    <line x1="0" y1="210" x2="1200" y2="210" stroke="#00c853" stroke-width="0.5"/>
+    <line x1="0" y1="280" x2="1200" y2="280" stroke="#00c853" stroke-width="0.5"/>
+    <line x1="0" y1="350" x2="1200" y2="350" stroke="#00c853" stroke-width="0.5"/>
+    <line x1="0" y1="420" x2="1200" y2="420" stroke="#00c853" stroke-width="0.5"/>
+    <line x1="0" y1="490" x2="1200" y2="490" stroke="#00c853" stroke-width="0.5"/>
+    <line x1="0" y1="560" x2="1200" y2="560" stroke="#00c853" stroke-width="0.5"/>
+  </g>
+
+  <!-- Terminal window (left) -->
+  <g transform="translate(60, 100)">
+    <rect x="0" y="0" width="400" height="400" rx="10" fill="#0a0e14" stroke="#30363d" stroke-width="1.5"/>
+    <!-- Title bar -->
+    <rect x="0" y="0" width="400" height="28" rx="10" fill="#161b22"/>
+    <rect x="0" y="18" width="400" height="10" fill="#161b22"/>
+    <circle cx="16" cy="14" r="6" fill="#ff5f56"/>
+    <circle cx="36" cy="14" r="6" fill="#ffbd2e"/>
+    <circle cx="56" cy="14" r="6" fill="#27c93f"/>
+    <text x="200" y="19" font-family="monospace" font-size="10" fill="#8b949e" text-anchor="middle">user@linux:~</text>
+
+    <!-- Terminal code lines -->
+    <text x="16" y="60" font-family="monospace" font-size="13" fill="#27c93f">$</text>
+    <text x="32" y="60" font-family="monospace" font-size="13" fill="#c9d1d9">cat /etc/os-release</text>
+    <text x="16" y="85" font-family="monospace" font-size="13" fill="#8b949e">PRETTY_NAME="Debian GNU/Linux 10 (buster)"</text>
+
+    <text x="16" y="115" font-family="monospace" font-size="13" fill="#27c93f">$</text>
+    <text x="32" y="115" font-family="monospace" font-size="13" fill="#c9d1d9">ls -la</text>
+    <text x="16" y="140" font-family="monospace" font-size="13" fill="#8b949e">drwxr-xr-x  5 user user 4096 Jun 29 12:00</text>
+    <text x="16" y="160" font-family="monospace" font-size="13" fill="#8b949e">-rw-r--r--  1 user user  512 Jun 29 12:01 <tspan fill="#e3dcff">file.txt</tspan></text>
+    <text x="16" y="180" font-family="monospace" font-size="13" fill="#8b949e">-rwxr-xr-x  1 user user 1024 Jun 29 12:02 <tspan fill="#27c93f">script.sh</tspan></text>
+
+    <text x="16" y="210" font-family="monospace" font-size="13" fill="#27c93f">$</text>
+    <text x="32" y="210" font-family="monospace" font-size="13" fill="#c9d1d9">sudo apt install</text>
+    <text x="16" y="230" font-family="monospace" font-size="13" fill="#27c93f">✓</text>
+    <text x="32" y="230" font-family="monospace" font-size="13" fill="#c9d1d9">Reading package lists... Done</text>
+
+    <text x="16" y="260" font-family="monospace" font-size="13" fill="#27c93f">$</text>
+    <text x="32" y="260" font-family="monospace" font-size="13" fill="#c9d1d9">systemctl status nginx</text>
+    <text x="16" y="285" font-family="monospace" font-size="13" fill="#27c93f">●</text>
+    <text x="32" y="285" font-family="monospace" font-size="13" fill="#c9d1d9">Active: <tspan fill="#27c93f">active (running)</tspan></text>
+
+    <text x="16" y="315" font-family="monospace" font-size="13" fill="#27c93f">$</text>
+    <text x="32" y="315" font-family="monospace" font-size="13" fill="#c9d1d9">chmod +x script.sh &amp;&amp; ./script.sh</text>
+    <text x="16" y="340" font-family="monospace" font-size="13" fill="#ff8f00">Hello, Linux!</text>
+
+    <!-- Blinking cursor -->
+    <text x="16" y="375" font-family="monospace" font-size="13" fill="#27c93f">$</text>
+    <text x="32" y="375" font-family="monospace" font-size="13" fill="#c9d1d9">▮</text>
+  </g>
+
+  <!-- Penguin silhouette (TUX inspired) -->
+  <g transform="translate(740, 100)">
+    <!-- TUX body -->
+    <ellipse cx="95" cy="150" rx="55" ry="65" fill="#e0e0e0" opacity="0.08"/>
+    <ellipse cx="95" cy="150" rx="50" ry="60" fill="none" stroke="#e0e0e0" stroke-width="2" opacity="0.5"/>
+    <!-- TUX head -->
+    <ellipse cx="95" cy="100" rx="30" ry="25" fill="none" stroke="#e0e0e0" stroke-width="2" opacity="0.5"/>
+    <!-- TUX eyes -->
+    <circle cx="82" cy="95" r="4" fill="#e0e0e0" opacity="0.4"/>
+    <circle cx="108" cy="95" r="4" fill="#e0e0e0" opacity="0.4"/>
+    <!-- TUX beak -->
+    <path d="M90,105 L95,112 L100,105 Z" fill="#ff8f00" opacity="0.5"/>
+  </g>
+
+  <!-- Title -->
+  <g transform="translate(680, 230)">
+    <text x="0" y="0" font-family="system-ui, sans-serif" font-size="52" font-weight="800" fill="#ffffff" letter-spacing="-1">Linux</text>
+    <text x="0" y="52" font-family="system-ui, sans-serif" font-size="24" font-weight="700" fill="url(#green)" letter-spacing="4" filter="url(#glow)">BASIC</text>
+    <rect x="0" y="70" width="80" height="3" rx="1.5" fill="url(#green)" filter="url(#glow)"/>
+
+    <text x="0" y="110" font-family="system-ui, sans-serif" font-size="14" fill="#8b949e" letter-spacing="2">PANDUAN LENGKAP UNTUK PEMULA</text>
+
+    <!-- Tags -->
+    <g transform="translate(0, 150)">
+      <rect x="0" y="0" width="85" height="26" rx="13" fill="#27c93f" opacity="0.12"/>
+      <text x="43" y="17" font-family="monospace" font-size="10" fill="#27c93f" text-anchor="middle">Terminal</text>
+
+      <rect x="95" y="0" width="85" height="26" rx="13" fill="#ff8f00" opacity="0.12"/>
+      <text x="138" y="17" font-family="monospace" font-size="10" fill="#ff8f00" text-anchor="middle">Open Source</text>
+
+      <rect x="0" y="36" width="85" height="26" rx="13" fill="#27c93f" opacity="0.12"/>
+      <text x="43" y="53" font-family="monospace" font-size="10" fill="#27c93f" text-anchor="middle">SysAdmin</text>
+
+      <rect x="95" y="36" width="85" height="26" rx="13" fill="#ff8f00" opacity="0.12"/>
+      <text x="138" y="53" font-family="monospace" font-size="10" fill="#ff8f00" text-anchor="middle">Debian</text>
+    </g>
+  </g>
+
+  <!-- Bottom keyboard shortcut decoration -->
+  <g transform="translate(680, 470)" opacity="0.6" font-family="monospace" font-size="11">
+    <rect x="0" y="0" width="32" height="24" rx="4" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+    <text x="16" y="16" fill="#8b949e" text-anchor="middle">Ctrl</text>
+    <text x="8" y="16" fill="#8b949e">+</text>
+    <rect x="40" y="0" width="32" height="24" rx="4" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+    <text x="56" y="16" fill="#8b949e" text-anchor="middle">C</text>
+
+    <text x="90" y="16" fill="#30363d">│</text>
+
+    <rect x="110" y="0" width="32" height="24" rx="4" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+    <text x="126" y="16" fill="#8b949e" text-anchor="middle">Tab</text>
+
+    <text x="8" y="16" fill="#8b949e">+</text>
+    <rect x="180" y="0" width="50" height="24" rx="4" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+    <text x="205" y="16" fill="#8b949e" text-anchor="middle">Enter</text>
+
+    <text x="250" y="16" fill="#30363d">│</text>
+
+    <rect x="270" y="0" width="55" height="24" rx="4" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+    <text x="298" y="16" fill="#8b949e" text-anchor="middle">Ctrl+R</text>
+  </g>
+
+  <!-- ngopidulur branding -->
+  <text x="30" y="610" font-family="system-ui, sans-serif" font-size="12" fill="#334155">ngopidulur.my.id</text>
+  <text x="1170" y="610" font-family="system-ui, sans-serif" font-size="11" fill="#334155" text-anchor="end">Linux Basic Series</text>
+</svg>
