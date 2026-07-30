@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117"/>
+      <stop offset="100%" style="stop-color:#1a1f2e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f97316"/>
+      <stop offset="100%" style="stop-color:#fb923c"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#22c55e"/>
+      <stop offset="100%" style="stop-color:#4ade80"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#60a5fa"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Subtle grid pattern -->
+  <g opacity="0.04">
+    <line x1="0" y1="105" x2="1200" y2="105" stroke="#fff" stroke-width="1"/>
+    <line x1="0" y1="210" x2="1200" y2="210" stroke="#fff" stroke-width="1"/>
+    <line x1="0" y1="315" x2="1200" y2="315" stroke="#fff" stroke-width="1"/>
+    <line x1="0" y1="420" x2="1200" y2="420" stroke="#fff" stroke-width="1"/>
+    <line x1="0" y1="525" x2="1200" y2="525" stroke="#fff" stroke-width="1"/>
+    <line x1="200" y1="0" x2="200" y2="630" stroke="#fff" stroke-width="1"/>
+    <line x1="400" y1="0" x2="400" y2="630" stroke="#fff" stroke-width="1"/>
+    <line x1="600" y1="0" x2="600" y2="630" stroke="#fff" stroke-width="1"/>
+    <line x1="800" y1="0" x2="800" y2="630" stroke="#fff" stroke-width="1"/>
+    <line x1="1000" y1="0" x2="1000" y2="630" stroke="#fff" stroke-width="1"/>
+  </g>
+
+  <!-- Left panel: API request/response mockup -->
+  <rect x="60" y="80" width="460" height="470" rx="12" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+
+  <!-- Window bar -->
+  <rect x="60" y="80" width="460" height="36" rx="12" fill="#21262d"/>
+  <rect x="60" y="98" width="460" height="18" fill="#21262d"/>
+  <circle cx="88" cy="98" r="6" fill="#ff5f56"/>
+  <circle cx="110" cy="98" r="6" fill="#ffbd2e"/>
+  <circle cx="132" cy="98" r="6" fill="#27c93f"/>
+  <text x="220" y="103" font-family="monospace" font-size="11" fill="#8b949e">api-request.http</text>
+
+  <!-- HTTP Request lines -->
+  <text x="84" y="142" font-family="monospace" font-size="13" fill="#f97316">POST</text>
+  <text x="130" y="142" font-family="monospace" font-size="13" fill="#e6edf3"> /api/v1/places</text>
+  <text x="84" y="163" font-family="monospace" font-size="12" fill="#8b949e">Content-Type:</text>
+  <text x="188" y="163" font-family="monospace" font-size="12" fill="#79c0ff"> application/json</text>
+  <text x="84" y="184" font-family="monospace" font-size="12" fill="#8b949e">Authorization:</text>
+  <text x="188" y="184" font-family="monospace" font-size="12" fill="#79c0ff"> Bearer </text>
+  <text x="242" y="184" font-family="monospace" font-size="12" fill="#a5d6ff">eyJhbGci...</text>
+
+  <!-- JSON body -->
+  <text x="84" y="214" font-family="monospace" font-size="13" fill="#e6edf3">{</text>
+  <text x="100" y="234" font-family="monospace" font-size="12" fill="#79c0ff">  "name"</text>
+  <text x="160" y="234" font-family="monospace" font-size="12" fill="#e6edf3">:</text>
+  <text x="168" y="234" font-family="monospace" font-size="12" fill="#a8ff78"> "Warung Kopi Adem"</text>
+  <text x="100" y="254" font-family="monospace" font-size="12" fill="#79c0ff">  "lat"</text>
+  <text x="148" y="254" font-family="monospace" font-size="12" fill="#e6edf3">:</text>
+  <text x="156" y="254" font-family="monospace" font-size="12" fill="#ffb347"> -6.2088</text>
+  <text x="100" y="274" font-family="monospace" font-size="12" fill="#79c0ff">  "lon"</text>
+  <text x="148" y="274" font-family="monospace" font-size="12" fill="#e6edf3">:</text>
+  <text x="156" y="274" font-family="monospace" font-size="12" fill="#ffb347"> 106.8456</text>
+  <text x="84" y="294" font-family="monospace" font-size="13" fill="#e6edf3">}</text>
+
+  <!-- Divider -->
+  <line x1="84" y1="310" x2="496" y2="310" stroke="#30363d" stroke-width="1"/>
+
+  <!-- Response -->
+  <rect x="84" y="322" width="68" height="22" rx="4" fill="#1a4a2e"/>
+  <text x="90" y="337" font-family="monospace" font-size="12" fill="#22c55e" font-weight="bold">201 Created</text>
+
+  <text x="84" y="368" font-family="monospace" font-size="13" fill="#e6edf3">{</text>
+  <text x="100" y="388" font-family="monospace" font-size="12" fill="#79c0ff">  "data"</text>
+  <text x="148" y="388" font-family="monospace" font-size="12" fill="#e6edf3">: {</text>
+  <text x="116" y="408" font-family="monospace" font-size="12" fill="#79c0ff">    "id"</text>
+  <text x="157" y="408" font-family="monospace" font-size="12" fill="#e6edf3">:</text>
+  <text x="165" y="408" font-family="monospace" font-size="12" fill="#a8ff78"> "uuid-xk29m"</text>
+  <text x="116" y="428" font-family="monospace" font-size="12" fill="#79c0ff">    "name"</text>
+  <text x="168" y="428" font-family="monospace" font-size="12" fill="#e6edf3">:</text>
+  <text x="176" y="428" font-family="monospace" font-size="12" fill="#a8ff78"> "Warung Kopi Adem"</text>
+  <text x="100" y="448" font-family="monospace" font-size="12" fill="#e6edf3">  }</text>
+  <text x="84" y="468" font-family="monospace" font-size="13" fill="#e6edf3">}</text>
+
+  <!-- Right side: Title + info -->
+  <text x="580" y="155" font-family="'Segoe UI', sans-serif" font-size="18" fill="#8b949e" letter-spacing="4">BUILD APIs</text>
+  <text x="580" y="210" font-family="'Segoe UI', sans-serif" font-size="52" fill="#f0f6fc" font-weight="700" letter-spacing="-1">YOU WON'T</text>
+  <text x="580" y="268" font-family="'Segoe UI', sans-serif" font-size="52" fill="url(#accent)" font-weight="700" letter-spacing="-1">HATE</text>
+
+  <!-- Decorative bar under title -->
+  <rect x="580" y="282" width="200" height="4" rx="2" fill="url(#accent)"/>
+
+  <!-- Subtitle -->
+  <text x="580" y="330" font-family="'Segoe UI', sans-serif" font-size="18" fill="#8b949e">Panduan Praktis Desain REST API</text>
+  <text x="580" y="356" font-family="'Segoe UI', sans-serif" font-size="18" fill="#8b949e">Berdasarkan Phil Sturgeon</text>
+
+  <!-- Tag pills -->
+  <rect x="580" y="388" width="90" height="28" rx="14" fill="#1f2937"/>
+  <text x="606" y="406" font-family="'Segoe UI', sans-serif" font-size="13" fill="#22c55e">Laravel</text>
+
+  <rect x="682" y="388" width="68" height="28" rx="14" fill="#1f2937"/>
+  <text x="700" y="406" font-family="'Segoe UI', sans-serif" font-size="13" fill="#3b82f6">REST</text>
+
+  <rect x="762" y="388" width="72" height="28" rx="14" fill="#1f2937"/>
+  <text x="779" y="406" font-family="'Segoe UI', sans-serif" font-size="13" fill="#f97316">JSON</text>
+
+  <rect x="846" y="388" width="82" height="28" rx="14" fill="#1f2937"/>
+  <text x="860" y="406" font-family="'Segoe UI', sans-serif" font-size="13" fill="#a78bfa">Fractal</text>
+
+  <!-- HTTP status code badges -->
+  <g transform="translate(580, 440)">
+    <rect width="52" height="28" rx="6" fill="#1a4a2e"/>
+    <text x="8" y="19" font-family="monospace" font-size="13" fill="#22c55e" font-weight="bold">200</text>
+    <rect x="64" width="52" height="28" rx="6" fill="#1a3a4a"/>
+    <text x="72" y="19" font-family="monospace" font-size="13" fill="#3b82f6" font-weight="bold">201</text>
+    <rect x="128" width="52" height="28" rx="6" fill="#4a3a00"/>
+    <text x="136" y="19" font-family="monospace" font-size="13" fill="#fbbf24" font-weight="bold">404</text>
+    <rect x="192" width="52" height="28" rx="6" fill="#4a1a1a"/>
+    <text x="200" y="19" font-family="monospace" font-size="13" fill="#f87171" font-weight="bold">422</text>
+  </g>
+
+  <!-- Bottom: chapter list -->
+  <g transform="translate(580, 500)">
+    <circle cx="8" cy="8" r="4" fill="#f97316"/>
+    <text x="20" y="13" font-family="'Segoe UI', sans-serif" font-size="13" fill="#6e7681">Database Seeding · Endpoints · Status Codes</text>
+  </g>
+  <g transform="translate(580, 524)">
+    <circle cx="8" cy="8" r="4" fill="#3b82f6"/>
+    <text x="20" y="13" font-family="'Segoe UI', sans-serif" font-size="13" fill="#6e7681">Testing · Fractal Transformer · Data Relationships</text>
+  </g>
+
+  <!-- Ngopidulur brand -->
+  <text x="580" y="588" font-family="'Segoe UI', sans-serif" font-size="13" fill="#30363d">ngopidulur.my.id</text>
+
+  <!-- Right glow accent -->
+  <circle cx="1160" cy="80" r="120" fill="#f97316" opacity="0.06"/>
+  <circle cx="1160" cy="80" r="60" fill="#f97316" opacity="0.06"/>
+</svg>
