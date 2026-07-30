@@ -1,0 +1,165 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#060912"/>
+      <stop offset="100%" style="stop-color:#0d1528"/>
+    </linearGradient>
+    <linearGradient id="cyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#06b6d4"/>
+      <stop offset="100%" style="stop-color:#0ea5e9"/>
+    </linearGradient>
+    <linearGradient id="purple" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#a78bfa"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="0" y="0" width="1200" height="4" fill="url(#cyan)"/>
+  <rect x="0" y="626" width="1200" height="4" fill="url(#cyan)"/>
+
+  <!-- Neural network visualization -->
+  <g transform="translate(60, 80)" opacity="0.9">
+    <!-- Layer 1: Input -->
+    <circle cx="60" cy="100" r="16" fill="#0d1528" stroke="#06b6d4" stroke-width="2"/>
+    <circle cx="60" cy="160" r="16" fill="#0d1528" stroke="#06b6d4" stroke-width="2"/>
+    <circle cx="60" cy="220" r="16" fill="#0d1528" stroke="#06b6d4" stroke-width="2"/>
+    <circle cx="60" cy="280" r="16" fill="#0d1528" stroke="#06b6d4" stroke-width="2"/>
+    <circle cx="60" cy="340" r="16" fill="#0d1528" stroke="#06b6d4" stroke-width="2"/>
+    <text x="60" y="390" font-family="monospace" font-size="10" fill="#06b6d4" text-anchor="middle">Input</text>
+
+    <!-- Layer 2 -->
+    <circle cx="170" cy="120" r="16" fill="#0d1528" stroke="#8b5cf6" stroke-width="2"/>
+    <circle cx="170" cy="180" r="16" fill="#0d1528" stroke="#8b5cf6" stroke-width="2"/>
+    <circle cx="170" cy="240" r="16" fill="#0d1528" stroke="#8b5cf6" stroke-width="2"/>
+    <circle cx="170" cy="300" r="16" fill="#0d1528" stroke="#8b5cf6" stroke-width="2"/>
+
+    <!-- Layer 3 -->
+    <circle cx="280" cy="140" r="16" fill="#0d1528" stroke="#8b5cf6" stroke-width="2"/>
+    <circle cx="280" cy="200" r="16" fill="#0d1528" stroke="#8b5cf6" stroke-width="2"/>
+    <circle cx="280" cy="260" r="16" fill="#0d1528" stroke="#8b5cf6" stroke-width="2"/>
+    <circle cx="280" cy="320" r="16" fill="#0d1528" stroke="#8b5cf6" stroke-width="2"/>
+
+    <!-- Layer 4: Output -->
+    <circle cx="390" cy="160" r="16" fill="#0d1528" stroke="#06b6d4" stroke-width="2"/>
+    <circle cx="390" cy="240" r="16" fill="#0d1528" stroke="#06b6d4" stroke-width="2"/>
+    <circle cx="390" cy="320" r="16" fill="#0d1528" stroke="#06b6d4" stroke-width="2"/>
+    <text x="390" y="390" font-family="monospace" font-size="10" fill="#06b6d4" text-anchor="middle">Output</text>
+
+    <!-- Connections L1->L2 -->
+    <g stroke="#06b6d4" stroke-width="0.5" opacity="0.3">
+      <line x1="76" y1="100" x2="154" y2="120"/>
+      <line x1="76" y1="100" x2="154" y2="180"/>
+      <line x1="76" y1="100" x2="154" y2="240"/>
+      <line x1="76" y1="100" x2="154" y2="300"/>
+      <line x1="76" y1="160" x2="154" y2="120"/>
+      <line x1="76" y1="160" x2="154" y2="180"/>
+      <line x1="76" y1="160" x2="154" y2="240"/>
+      <line x1="76" y1="160" x2="154" y2="300"/>
+      <line x1="76" y1="220" x2="154" y2="120"/>
+      <line x1="76" y1="220" x2="154" y2="180"/>
+      <line x1="76" y1="220" x2="154" y2="240"/>
+      <line x1="76" y1="220" x2="154" y2="300"/>
+      <line x1="76" y1="280" x2="154" y2="120"/>
+      <line x1="76" y1="280" x2="154" y2="180"/>
+      <line x1="76" y1="280" x2="154" y2="240"/>
+      <line x1="76" y1="280" x2="154" y2="300"/>
+      <line x1="76" y1="340" x2="154" y2="120"/>
+      <line x1="76" y1="340" x2="154" y2="180"/>
+      <line x1="76" y1="340" x2="154" y2="240"/>
+      <line x1="76" y1="340" x2="154" y2="300"/>
+    </g>
+    <!-- Connections L2->L3 -->
+    <g stroke="#8b5cf6" stroke-width="0.5" opacity="0.3">
+      <line x1="186" y1="120" x2="264" y2="140"/>
+      <line x1="186" y1="120" x2="264" y2="200"/>
+      <line x1="186" y1="120" x2="264" y2="260"/>
+      <line x1="186" y1="120" x2="264" y2="320"/>
+      <line x1="186" y1="180" x2="264" y2="140"/>
+      <line x1="186" y1="180" x2="264" y2="200"/>
+      <line x1="186" y1="180" x2="264" y2="260"/>
+      <line x1="186" y1="180" x2="264" y2="320"/>
+      <line x1="186" y1="240" x2="264" y2="140"/>
+      <line x1="186" y1="240" x2="264" y2="200"/>
+      <line x1="186" y1="240" x2="264" y2="260"/>
+      <line x1="186" y1="240" x2="264" y2="320"/>
+      <line x1="186" y1="300" x2="264" y2="140"/>
+      <line x1="186" y1="300" x2="264" y2="200"/>
+      <line x1="186" y1="300" x2="264" y2="260"/>
+      <line x1="186" y1="300" x2="264" y2="320"/>
+    </g>
+    <!-- Connections L3->L4 -->
+    <g stroke="#06b6d4" stroke-width="0.5" opacity="0.3">
+      <line x1="296" y1="140" x2="374" y2="160"/>
+      <line x1="296" y1="140" x2="374" y2="240"/>
+      <line x1="296" y1="140" x2="374" y2="320"/>
+      <line x1="296" y1="200" x2="374" y2="160"/>
+      <line x1="296" y1="200" x2="374" y2="240"/>
+      <line x1="296" y1="200" x2="374" y2="320"/>
+      <line x1="296" y1="260" x2="374" y2="160"/>
+      <line x1="296" y1="260" x2="374" y2="240"/>
+      <line x1="296" y1="260" x2="374" y2="320"/>
+      <line x1="296" y1="320" x2="374" y2="160"/>
+      <line x1="296" y1="320" x2="374" y2="240"/>
+      <line x1="296" y1="320" x2="374" y2="320"/>
+    </g>
+
+    <!-- Active path highlight -->
+    <g stroke="#06b6d4" stroke-width="2" opacity="0.8" filter="url(#glow)">
+      <line x1="76" y1="220" x2="154" y2="180"/>
+      <line x1="186" y1="180" x2="264" y2="200"/>
+      <line x1="296" y1="200" x2="374" y2="240"/>
+    </g>
+    <circle cx="60" cy="220" r="16" fill="#06b6d4" opacity="0.4"/>
+    <circle cx="170" cy="180" r="16" fill="#8b5cf6" opacity="0.4"/>
+    <circle cx="280" cy="200" r="16" fill="#8b5cf6" opacity="0.4"/>
+    <circle cx="390" cy="240" r="16" fill="#06b6d4" opacity="0.4"/>
+  </g>
+
+  <!-- Right: Title -->
+  <text x="570" y="145" font-family="'Segoe UI', sans-serif" font-size="13" fill="#6e7681" letter-spacing="5">STEVE BLANK · STANFORD</text>
+  <text x="570" y="208" font-family="'Segoe UI', sans-serif" font-size="48" fill="#f0f6fc" font-weight="800" letter-spacing="-2">Artificial</text>
+  <text x="570" y="262" font-family="'Segoe UI', sans-serif" font-size="48" fill="url(#cyan)" font-weight="800" letter-spacing="-2">Intelligence</text>
+  <text x="570" y="310" font-family="'Segoe UI', sans-serif" font-size="32" fill="url(#purple)" font-weight="600">Machine Learning</text>
+  <rect x="570" y="324" width="240" height="3" rx="2" fill="url(#cyan)"/>
+
+  <text x="570" y="362" font-family="'Segoe UI', sans-serif" font-size="15" fill="#8b949e">Explained — Panduan Bahasa Indonesia</text>
+  <text x="570" y="384" font-family="'Segoe UI', sans-serif" font-size="15" fill="#8b949e">Gordian Knot Center, Stanford University</text>
+
+  <!-- Pills -->
+  <g transform="translate(570, 410)">
+    <rect x="0" y="0" width="90" height="26" rx="13" fill="#061a1a"/>
+    <text x="45" y="17" font-family="'Segoe UI', sans-serif" font-size="11" fill="#06b6d4" text-anchor="middle">Deep Learning</text>
+
+    <rect x="102" y="0" width="60" height="26" rx="13" fill="#12061a"/>
+    <text x="132" y="17" font-family="'Segoe UI', sans-serif" font-size="11" fill="#a78bfa" text-anchor="middle">NLP</text>
+
+    <rect x="174" y="0" width="100" height="26" rx="13" fill="#061a1a"/>
+    <text x="224" y="17" font-family="'Segoe UI', sans-serif" font-size="11" fill="#22d3ee" text-anchor="middle">Computer Vision</text>
+
+    <rect x="0" y="36" width="80" height="26" rx="13" fill="#1a0612"/>
+    <text x="40" y="53" font-family="'Segoe UI', sans-serif" font-size="11" fill="#f87171" text-anchor="middle">Cyberwarfare</text>
+
+    <rect x="92" y="36" width="100" height="26" rx="13" fill="#0d1a06"/>
+    <text x="142" y="53" font-family="'Segoe UI', sans-serif" font-size="11" fill="#4ade80" text-anchor="middle">Generative AI</text>
+
+    <rect x="204" y="36" width="72" height="26" rx="13" fill="#1a1206"/>
+    <text x="240" y="53" font-family="'Segoe UI', sans-serif" font-size="11" fill="#fbbf24" text-anchor="middle">GPU / TPU</text>
+  </g>
+
+  <g transform="translate(570, 504)">
+    <text x="0" y="0" font-family="'Segoe UI', sans-serif" font-size="12" fill="#6e7681">Art.1  Pengantar, Definisi, Mengapa ML Sekarang</text>
+    <text x="0" y="18" font-family="'Segoe UI', sans-serif" font-size="12" fill="#6e7681">Art.2  Kemampuan AI: NLP, Computer Vision, Militer</text>
+    <text x="0" y="36" font-family="'Segoe UI', sans-serif" font-size="12" fill="#6e7681">Art.3  Hardware, Tipe ML, Pipeline, Keterbatasan</text>
+  </g>
+
+  <text x="570" y="604" font-family="'Segoe UI', sans-serif" font-size="12" fill="#30363d">ngopidulur.my.id</text>
+
+  <!-- Corner glow -->
+  <circle cx="1170" cy="80" r="120" fill="#06b6d4" opacity="0.04"/>
+  <circle cx="1170" cy="80" r="60" fill="#8b5cf6" opacity="0.04"/>
+</svg>
