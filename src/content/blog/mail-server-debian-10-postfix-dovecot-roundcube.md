@@ -18,6 +18,8 @@ tags:
   - Webmail
   - Linux
   - SysAdmin
+series: "Debian Server"
+seriesOrder: 4
 ---
 
 Email adalah layanan paling tua di internet — dan tetap menjadi tulang punggung komunikasi bisnis. Dengan **Postfix**, **Dovecot**, dan **Roundcube**, kamu bisa membangun mail server profesional di Debian 10.

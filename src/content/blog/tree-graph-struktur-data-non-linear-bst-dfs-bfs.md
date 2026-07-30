@@ -18,6 +18,8 @@ tags:
   - DFS
   - BFS
   - Algorithm
+series: "DSA C"
+seriesOrder: 4
 ---
 
 **Tree dan Graph** adalah struktur data non-linear yang memodelkan hubungan hierarkis dan jaringan — dari sistem file komputer hingga peta jalan kota, dari database index hingga jaringan sosial.

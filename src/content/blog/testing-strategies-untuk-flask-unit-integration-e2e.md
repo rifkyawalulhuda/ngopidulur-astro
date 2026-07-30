@@ -15,6 +15,8 @@ tags:
   - python
   - e2e
   - testing
+series: "Flask Web"
+seriesOrder: 6
 ---
 Di artikel ini, kita akan membahas **Testing Strategies** untuk aplikasi Flask secara lengkap, mulai dari Unit Testing, Integration Testing, hingga End-to-End (E2E) Testing.
 

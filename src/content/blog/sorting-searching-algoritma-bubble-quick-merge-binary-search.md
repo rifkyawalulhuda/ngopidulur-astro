@@ -19,6 +19,8 @@ tags:
   - QuickSort
   - BinarySearch
   - C
+series: "DSA C"
+seriesOrder: 5
 ---
 
 **Sorting dan searching** adalah dua operasi paling fundamental dalam ilmu komputer. Hampir setiap aplikasi yang kamu bangun — dari e-commerce hingga sistem manajemen — membutuhkan kemampuan mengurutkan dan mencari data secara efisien.

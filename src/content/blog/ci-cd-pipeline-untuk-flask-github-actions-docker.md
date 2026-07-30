@@ -17,6 +17,8 @@ tags:
   - github
   - ci/cd
   - pipeline
+series: "Flask Web"
+seriesOrder: 9
 ---
 Di artikel ini, kita akan membahas cara membangun **CI/CD Pipeline** untuk aplikasi Flask menggunakan **GitHub Actions** dan **Docker**.
 

@@ -19,6 +19,8 @@ tags:
   - TextMining
   - ComputationalSocialScience
   - DataScience
+series: "ML Ilmu Sosial"
+seriesOrder: 2
 ---
 
 Ketika peneliti sosial berhadapan dengan ribuan dokumen teks — novel, artikel berita, transkrip wawancara, postingan media sosial — membaca semuanya secara manual tidak mungkin dilakukan. Di sinilah **unsupervised machine learning** berperan.

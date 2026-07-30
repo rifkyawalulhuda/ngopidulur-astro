@@ -18,6 +18,8 @@ tags:
   - Algorithm
   - C
   - DataStructure
+series: "DSA C"
+seriesOrder: 3
 ---
 
 **Stack dan Queue** adalah dua struktur data yang paling sering kamu temui tanpa disadari — dari tombol undo/redo di text editor, hingga antrian print dokumen di printer. Keduanya sederhana tapi sangat powerful.

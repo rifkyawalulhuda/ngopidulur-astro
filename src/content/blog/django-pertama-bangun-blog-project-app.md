@@ -13,6 +13,8 @@ tags:
   - Python
   - Tutorial
   - WebDevelopment
+series: "Django Web"
+seriesOrder: 2
 ---
 
 Django adalah salah satu framework web Python paling populer di dunia. Dikenal dengan slogan *"The web framework for perfectionists with deadlines"*, Django menawarkan pendekatan *batteries included* — hampir semua yang kamu butuhkan sudah tersedia tanpa perlu install banyak library tambahan. Dalam artikel ini, kita akan membangun blog sederhana dari nol menggunakan Django, mulai dari membuat project, mendefinisikan model, hingga menampilkan post di browser — semuanya dalam waktu sekitar 30 menit.

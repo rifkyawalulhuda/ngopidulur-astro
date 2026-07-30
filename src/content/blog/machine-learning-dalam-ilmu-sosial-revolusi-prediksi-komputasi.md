@@ -18,6 +18,8 @@ tags:
   - PrediksiSosial
   - RisetKuantitatif
   - BigData
+series: "ML Ilmu Sosial"
+seriesOrder: 1
 ---
 
 Computational Social Science (CSS) adalah perpaduan antara **ilmu sosial** dan **ilmu komputer** yang sedang mengubah cara kita memahami masyarakat. Di jantung revolusi ini ada **machine learning** — teknologi yang memungkinkan peneliti sosial memprediksi, mengklasifikasi, dan menemukan pola dari data berskala masif.

@@ -15,6 +15,8 @@ tags:
   - web-development
   - docker
   - kubernetes
+series: "Flask Web"
+seriesOrder: 11
 ---
 Di artikel ini, kita akan membahas cara **mendeploy aplikasi Flask ke Kubernetes** secara lengkap dan praktis.
 

@@ -15,6 +15,8 @@ tags:
   - PemrogramanPython
   - BelajarPython
   - DataStructure
+series: "Python Dasar"
+seriesOrder: 4
 ---
 
 **Dictionary** adalah struktur data paling powerful di Python — menyimpan data dalam pasangan key-value, akses O(1), dan sangat fleksibel. Hampir semua Python developer menggunakannya setiap hari.

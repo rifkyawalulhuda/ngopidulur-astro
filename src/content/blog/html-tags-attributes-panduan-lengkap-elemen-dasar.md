@@ -15,6 +15,8 @@ tags:
   - WebDevelopment
   - FrontEnd
   - BelajarHTML
+series: "UI Web Dasar"
+seriesOrder: 2
 ---
 
 HTML tags adalah blok bangunan dasar setiap halaman web. Memahami tag-tag ini dan cara kerjanya adalah langkah pertama menuju web development yang sesungguhnya.

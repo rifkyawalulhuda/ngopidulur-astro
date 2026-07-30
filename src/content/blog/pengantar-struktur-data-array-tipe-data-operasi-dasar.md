@@ -17,6 +17,8 @@ tags:
   - C
   - DataStructure
   - ComputerScience
+series: "DSA C"
+seriesOrder: 1
 ---
 
 **Struktur data** adalah fondasi pemrograman. Tanpa memahami cara menyimpan dan mengorganisasi data di memori, kamu tidak bisa menulis program yang efisien — seberapa pun pandai algoritma yang kamu gunakan.

@@ -16,6 +16,8 @@ tags:
   - TipeData
   - Variabel
   - PythonPemula
+series: "Python Dasar"
+seriesOrder: 1
 ---
 
 Python adalah bahasa pemrograman yang dirancang untuk **mudah dibaca dan ditulis**. Sintaksnya bersih, ekspresif, dan produktif — itulah kenapa Python jadi bahasa #1 untuk data science, web development, automation, dan AI.

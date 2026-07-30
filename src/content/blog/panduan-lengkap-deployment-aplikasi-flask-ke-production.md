@@ -14,6 +14,8 @@ tags:
   - deployment
   - web-development
   - python
+series: "Flask Web"
+seriesOrder: 12
 ---
 Di artikel ini, kita akan membahas cara **mendeploy aplikasi Flask ke production** dengan praktik terbaik tahun 2026. Kita akan fokus pada pendekatan yang paling umum dan direkomendasikan: menggunakan **Gunicorn + Nginx + Docker**.
 

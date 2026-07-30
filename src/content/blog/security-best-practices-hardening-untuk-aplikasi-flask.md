@@ -14,6 +14,8 @@ tags:
   - web-development
   - security
   - python
+series: "Flask Web"
+seriesOrder: 7
 ---
 Di artikel ini, kita akan membahas **Security Best Practices & Hardening** untuk aplikasi Flask secara menyeluruh dan praktis.
 

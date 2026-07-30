@@ -16,6 +16,8 @@ tags:
   - WebDevelopment
   - FrontEnd
   - Styling
+series: "UI Web Dasar"
+seriesOrder: 3
 ---
 
 HTML Forms adalah cara utama mengumpulkan input dari pengguna — login, registrasi, pencarian, pemesanan. CSS kemudian mempercantik tampilan form dan seluruh halaman web.

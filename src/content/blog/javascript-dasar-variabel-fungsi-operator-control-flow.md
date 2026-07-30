@@ -15,6 +15,8 @@ tags:
   - FrontEnd
   - BelajarJavaScript
   - ES6
+series: "UI Web Dasar"
+seriesOrder: 4
 ---
 
 JavaScript adalah bahasa pemrograman yang membuat halaman web menjadi **interaktif dan dinamis**. Mulai dari validasi form, animasi, hingga fetch data dari API — semuanya menggunakan JavaScript.

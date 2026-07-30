@@ -17,6 +17,8 @@ tags:
   - Class
   - Inheritance
   - BelajarPython
+series: "Python Dasar"
+seriesOrder: 5
 ---
 
 **Functions dan OOP** adalah dua pilar pemrograman Python modern. Fungsi membuat kode modular dan reusable, sementara OOP memungkinkan kamu memodelkan dunia nyata dalam kode.

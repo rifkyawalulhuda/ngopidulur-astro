@@ -17,6 +17,8 @@ tags:
   - KnowledgeRepresentation
   - MachineLearning
   - WEKA
+series: "Data Mining WEKA"
+seriesOrder: 2
 ---
 
 Setelah data diproses dan algoritma dijalankan, apa hasilnya? **Knowledge representation** — bagaimana model menyimpan "pengetahuan" yang dipelajari.

@@ -18,6 +18,8 @@ tags:
   - NLP
   - ComputerVision
   - AI
+series: "CS229 Machine Learning"
+seriesOrder: 6
 ---
 
 Setelah memahami neural networks dasar, kita masuk ke **specialized architectures** — CNN untuk computer vision, RNN/LSTM untuk sequences, dan Transformers yang mendominasi NLP modern.

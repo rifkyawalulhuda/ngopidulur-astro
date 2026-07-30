@@ -16,6 +16,8 @@ tags:
   - python
   - web-development
   - background-task
+series: "Flask Web"
+seriesOrder: 4
 ---
 Di artikel ini, kita akan membahas cara mengimplementasikan **Background Tasks** di Flask menggunakan **Celery** dengan **Redis** sebagai message broker.
 

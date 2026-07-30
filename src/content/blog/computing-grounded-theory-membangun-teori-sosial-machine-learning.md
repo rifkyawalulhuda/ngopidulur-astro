@@ -18,6 +18,8 @@ tags:
   - MixedMethods
   - ComputationalSocialScience
   - MethodologyResearch
+series: "ML Ilmu Sosial"
+seriesOrder: 4
 ---
 
 **Grounded Theory** adalah salah satu metodologi paling berpengaruh dalam riset kualitatif — membangun teori "dari bawah" (dari data), bukan "dari atas" (dari teori yang sudah ada). Tapi bagaimana jika kita bisa mengakselerasi proses ini dengan machine learning?

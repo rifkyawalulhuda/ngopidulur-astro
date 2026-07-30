@@ -16,6 +16,8 @@ tags:
   - WebDevelopment
   - FrontEnd
   - PemulaCoding
+series: "UI Web Dasar"
+seriesOrder: 1
 ---
 
 Setiap website yang kamu lihat di browser dibuat dengan tiga teknologi dasar: **HTML, CSS, dan JavaScript**. Ketiganya bekerja bersama — HTML membangun struktur, CSS mempercantik tampilan, dan JavaScript menambahkan interaktivitas.

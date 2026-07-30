@@ -13,6 +13,8 @@ tags:
   - Templates
   - Forms
   - Python
+series: "Django Web"
+seriesOrder: 5
 ---
 
 Dua komponen yang paling sering berinteraksi dengan pengguna di aplikasi Django adalah **template** (tampilan HTML) dan **form** (input data). Chapter 6 dari *Python Web Development with Django* membahas keduanya secara mendalam — dari sintaks Django Template Language hingga validasi form yang robust.

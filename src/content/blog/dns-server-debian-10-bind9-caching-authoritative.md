@@ -17,6 +17,8 @@ tags:
   - Linux
   - Networking
   - SysAdmin
+series: "Debian Server"
+seriesOrder: 2
 ---
 
 **DNS (Domain Name System)** adalah "buku telepon internet" — menerjemahkan nama domain seperti `ngopidulur.my.id` ke alamat IP yang bisa dipahami komputer.

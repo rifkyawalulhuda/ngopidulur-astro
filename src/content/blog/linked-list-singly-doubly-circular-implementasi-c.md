@@ -17,6 +17,8 @@ tags:
   - C
   - DataStructure
   - DynamicMemory
+series: "DSA C"
+seriesOrder: 2
 ---
 
 **Linked List** adalah solusi untuk keterbatasan array — ukuran dinamis, insert/delete efisien di mana saja, tanpa perlu memindahkan elemen lain. Tapi ada trade-off: akses acak lebih lambat.

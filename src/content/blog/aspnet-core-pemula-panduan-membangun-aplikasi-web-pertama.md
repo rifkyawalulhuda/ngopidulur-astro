@@ -19,6 +19,8 @@ tags:
   - NET8
   - Pemrograman
   - Tutorial
+series: "ASP.NET Core"
+seriesOrder: 1
 ---
 
 ASP.NET Core adalah framework web modern, cross-platform, dan open-source buatan Microsoft. Framework ini jadi fondasi untuk membangun aplikasi web, API, microservices, dan real-time applications dengan performa tinggi.

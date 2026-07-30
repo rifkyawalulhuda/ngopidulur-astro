@@ -14,6 +14,8 @@ tags:
   - web-development
   - redis
   - python
+series: "Flask Web"
+seriesOrder: 10
 ---
 Di artikel ini, kita akan membahas secara mendalam cara **scaling aplikasi Flask**, dengan fokus pada **Horizontal Scaling** dan **Caching menggunakan Redis** — dua teknik paling efektif dan umum digunakan.
 

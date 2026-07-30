@@ -13,6 +13,8 @@ tags:
   - database
   - sql-alchemy
   - python
+series: "Flask Web"
+seriesOrder: 5
 ---
 Di artikel ini, kita akan membahas secara mendalam cara **mengoptimalkan performa database** pada aplikasi Flask yang menggunakan **SQLAlchemy**, termasuk teknik-teknik yang paling berdampak.
 

@@ -19,6 +19,8 @@ tags:
   - SysAdmin
   - Debian
   - Terminal
+series: "Linux Basic"
+seriesOrder: 3
 ---
 
 Setelah menguasai navigasi terminal, saatnya naik level: mengelola **software, service, filesystem, dan monitoring** — skill wajib seorang system administrator Linux.

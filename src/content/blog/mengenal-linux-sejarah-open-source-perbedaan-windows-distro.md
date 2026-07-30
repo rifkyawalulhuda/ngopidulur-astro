@@ -17,6 +17,8 @@ tags:
   - DistroLinux
   - TUX
   - Pemrograman
+series: "Linux Basic"
+seriesOrder: 1
 ---
 
 **Linux** — sistem operasi yang kini menggerakkan 80% dari 500 superkomputer teratas dunia, seluruh smartphone Android, dan mayoritas server internet. Tapi Linux bukan sekadar OS; ia adalah filosofi, komunitas, dan revolusi teknologi.

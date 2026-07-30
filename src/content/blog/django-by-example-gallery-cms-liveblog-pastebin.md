@@ -13,6 +13,8 @@ tags:
   - Python
   - Tutorial
   - ProjectBased
+series: "Django Web"
+seriesOrder: 6
 ---
 
 Teori tanpa praktik tidak lengkap. Chapter 7–10 dari *Python Web Development with Django* mengajak kita membangun empat aplikasi nyata: photo gallery, mini CMS, liveblog real-time, dan pastebin dengan syntax highlighting. Masing-masing mengajarkan pola Django yang berbeda dan bisa langsung kamu adaptasi.

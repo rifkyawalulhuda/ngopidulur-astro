@@ -18,6 +18,8 @@ tags:
   - Monitoring
   - Linux
   - SysAdmin
+series: "Debian Server"
+seriesOrder: 5
 ---
 
 Setelah DNS, web server, dan mail server berjalan, server kamu butuh **file sharing** dan **monitoring**. Artikel ini melengkapi setup server Debian 10 dengan Samba, NFS, FTP, dan Netdata.

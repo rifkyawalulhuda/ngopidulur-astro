@@ -15,6 +15,8 @@ tags:
   - PemrogramanPython
   - StringMethods
   - BelajarPython
+series: "Python Dasar"
+seriesOrder: 2
 ---
 
 String adalah tipe data yang paling sering kamu pakai di Python — dari mencetak pesan, memproses input user, hingga parsing data. Python punya 40+ built-in string methods yang siap pakai tanpa import apapun.

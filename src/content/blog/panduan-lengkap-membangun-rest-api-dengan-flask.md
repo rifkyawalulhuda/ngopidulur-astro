@@ -14,6 +14,8 @@ tags:
   - framework
   - rest-api
   - python
+series: "Flask Web"
+seriesOrder: 2
 ---
 Di artikel ini, kita akan membahas cara membangun **REST API** yang profesional menggunakan Flask, dengan praktik terbaik terkini (2026). Kita akan menggunakan pendekatan yang terstruktur, termasuk dokumentasi otomatis, validasi, error handling, dan keamanan.
 

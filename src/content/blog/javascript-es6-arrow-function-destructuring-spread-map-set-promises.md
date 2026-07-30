@@ -16,6 +16,8 @@ tags:
   - FrontEnd
   - ArrowFunction
   - Promises
+series: "UI Web Dasar"
+seriesOrder: 5
 ---
 
 ES6 (ECMAScript 2015) dan versi setelahnya membawa banyak fitur baru yang membuat JavaScript lebih modern, ringkas, dan powerful. Ini adalah fitur-fitur yang wajib dikuasai developer JavaScript masa kini.

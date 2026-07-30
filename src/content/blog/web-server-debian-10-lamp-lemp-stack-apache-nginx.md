@@ -19,6 +19,8 @@ tags:
   - PHP
   - WebServer
   - Linux
+series: "Debian Server"
+seriesOrder: 3
 ---
 
 Web server adalah layanan paling fundamental di internet. Di dunia Linux, ada dua stack dominan: **LAMP** (Apache) dan **LEMP** (Nginx — dibaca "Engine-X").

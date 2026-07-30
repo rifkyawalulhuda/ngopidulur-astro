@@ -13,6 +13,8 @@ tags:
   - Python
   - WebDevelopment
   - Framework
+series: "Django Web"
+seriesOrder: 1
 ---
 
 Sebelum era framework modern, membangun aplikasi web terasa seperti merakit mesin dari bahan mentah setiap kali. Kamu menulis koneksi database dari nol, memikirkan routing URL sendiri, dan membangun sistem autentikasi berulang kali untuk setiap proyek baru. **Reinventing the wheel** — itulah istilah yang paling tepat menggambarkan kondisi web development sebelum Django hadir.

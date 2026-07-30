@@ -19,6 +19,8 @@ tags:
   - DataScience
   - RisetSosial
   - ComputationalSocialScience
+series: "ML Ilmu Sosial"
+seriesOrder: 3
 ---
 
 Seberapa akurat machine learning bisa memprediksi perilaku manusia? Pertanyaan ini bukan lagi spekulasi — riset terkini menunjukkan bahwa supervised learning dapat memprediksi fenomena sosial kompleks dengan akurasi yang mengejutkan.

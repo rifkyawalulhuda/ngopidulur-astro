@@ -27,6 +27,8 @@ const blog = defineCollection({
         message: "tags must be unique",
       })
       .optional(),
+    series: z.string().optional(),
+    seriesOrder: z.number().optional(),
   }),
 });
 

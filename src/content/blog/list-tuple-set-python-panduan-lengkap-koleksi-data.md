@@ -17,6 +17,8 @@ tags:
   - PemrogramanPython
   - BelajarPython
   - KoleksiData
+series: "Python Dasar"
+seriesOrder: 3
 ---
 
 Python punya empat tipe koleksi bawaan: **List, Tuple, Set, dan Dictionary**. Masing-masing punya karakteristik berbeda — memilih yang tepat akan membuat kode lebih efisien dan ekspresif.

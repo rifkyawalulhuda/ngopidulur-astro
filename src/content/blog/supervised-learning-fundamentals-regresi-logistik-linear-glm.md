@@ -19,6 +19,8 @@ tags:
   - AndrewNg
   - DataScience
   - Matematika
+series: "CS229 Machine Learning"
+seriesOrder: 1
 ---
 
 **CS229: Machine Learning** di Stanford University adalah salah satu kursus ML paling berpengaruh di dunia. Diajarkan oleh **Andrew Ng**, catatan kuliahnya menjadi rujukan standar untuk memahami fondasi matematis machine learning.

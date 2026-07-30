@@ -17,6 +17,8 @@ tags:
   - Shell
   - SysAdmin
   - Pemrograman
+series: "Linux Basic"
+seriesOrder: 2
 ---
 
 **Terminal adalah kekuatan Linux.** Banyak yang menganggap mode teks menakutkan, tapi sebenarnya terminal memberi kamu kontrol penuh atas sistem — lebih cepat, lebih efisien, dan lebih powerful daripada GUI.

@@ -19,6 +19,8 @@ tags:
   - CS229
   - AndrewNg
   - DataScience
+series: "CS229 Machine Learning"
+seriesOrder: 2
 ---
 
 Semua model yang kita bahas sejauh ini — linear regression, logistic regression — adalah **discriminative models**. Mereka mempelajari P(y|x) secara langsung.

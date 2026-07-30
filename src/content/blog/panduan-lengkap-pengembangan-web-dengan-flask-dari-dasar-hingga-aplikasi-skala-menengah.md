@@ -16,6 +16,8 @@ tags:
   - web-development
   - framework
   - python
+series: "Flask Web"
+seriesOrder: 1
 ---
 Artikel ini akan membahas secara menyeluruh cara membangun aplikasi web menggunakan Flask, mulai dari instalasi, struktur dasar aplikasi, hingga pembuatan aplikasi skala menengah dengan fitur autentikasi, database, form, dan struktur yang terorganisir.
 

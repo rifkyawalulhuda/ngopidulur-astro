@@ -17,6 +17,8 @@ tags:
   - AI
   - CS229
   - DataScience
+series: "CS229 Machine Learning"
+seriesOrder: 5
 ---
 
 **Neural Networks** adalah jantung dari revolusi deep learning. Dari pengenalan gambar hingga ChatGPT, dari AlphaGo hingga protein folding — semua dibangun di atas fondasi yang sama: jaringan neuron tiruan yang belajar dari data.

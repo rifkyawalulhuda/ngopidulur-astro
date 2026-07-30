@@ -17,6 +17,8 @@ tags:
   - ConfusionMatrix
   - DataMining
   - WEKA
+series: "Data Mining WEKA"
+seriesOrder: 4
 ---
 
 Model machine learning yang buruk lebih berbahaya daripada tidak punya model sama sekali. **Evaluasi** adalah proses menentukan apakah model kamu benar-benar berfungsi — dan seberapa baik.

@@ -1,0 +1,172 @@
+---
+/**
+ * SeriesNav.astro
+ * Navigasi seri artikel — daftar + prev/next.
+ * Deteksi seri: prioritas field `series`+`seriesOrder` dari frontmatter,
+ * fallback ke deteksi otomatis dari prefix slug (≥2 kata yang match ≥2 artikel).
+ */
+import { getCollection, type CollectionEntry } from "astro:content";
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  currentSlug: string;
+}
+
+const { currentSlug } = Astro.props;
+
+const allPosts = await getCollection("blog", ({ data }) =>
+  import.meta.env.PROD ? !data.draft : true
+);
+
+// Cari post saat ini
+const currentPost = allPosts.find((p) => p.id === currentSlug);
+
+let seriesPosts: CollectionEntry<"blog">[] = [];
+let seriesTitle = "";
+
+if (currentPost?.data.series) {
+  // ── Mode 1: gunakan field series dari frontmatter ──
+  const sname = currentPost.data.series;
+  seriesTitle = sname;
+  seriesPosts = allPosts
+    .filter((p) => p.data.series === sname)
+    .sort((a, b) => {
+      const oa = a.data.seriesOrder ?? 999;
+      const ob = b.data.seriesOrder ?? 999;
+      if (oa !== ob) return oa - ob;
+      const da = a.data.pubDate ? new Date(a.data.pubDate).getTime() : 0;
+      const db = b.data.pubDate ? new Date(b.data.pubDate).getTime() : 0;
+      return da - db;
+    });
+} else {
+  // ── Mode 2: deteksi otomatis dari prefix slug ──
+  function getSeriesPrefix(slug: string, posts: CollectionEntry<"blog">[]): string | null {
+    const parts = slug.split("-");
+    let bestPrefix: string | null = null;
+    let bestCount = 1;
+    for (const n of [4, 3, 2]) {
+      if (parts.length <= n) continue;
+      const prefix = parts.slice(0, n).join("-");
+      const count = posts.filter(
+        (p) => p.id.startsWith(prefix + "-") || p.id === prefix
+      ).length;
+      if (count >= 2 && count > bestCount) {
+        bestCount = count;
+        bestPrefix = prefix;
+      }
+    }
+    return bestPrefix;
+  }
+
+  const prefix = getSeriesPrefix(currentSlug, allPosts);
+  if (prefix) {
+    seriesTitle = prefix
+      .split("-")
+      .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+      .join(" ");
+    seriesPosts = allPosts
+      .filter((p) => p.id.startsWith(prefix + "-") || p.id === prefix)
+      .sort((a, b) => {
+        const da = a.data.pubDate ? new Date(a.data.pubDate).getTime() : 0;
+        const db = b.data.pubDate ? new Date(b.data.pubDate).getTime() : 0;
+        return da - db;
+      });
+  }
+}
+
+const currentIndex = seriesPosts.findIndex((p) => p.id === currentSlug);
+const prevPost = currentIndex > 0 ? seriesPosts[currentIndex - 1] : null;
+const nextPost = currentIndex < seriesPosts.length - 1 ? seriesPosts[currentIndex + 1] : null;
+---
+
+{seriesPosts.length > 1 && (
+  <div class="my-6 rounded-xl border border-base-300 bg-base-200/50 overflow-hidden">
+    <!-- Header -->
+    <div class="flex items-center gap-2 px-4 py-3 bg-base-300/50 border-b border-base-300">
+      <Icon name="lucide:layers" class="w-4 h-4 flex-shrink-0 text-primary" />
+      <span class="text-sm font-semibold text-base-content">Seri: {seriesTitle}</span>
+      <span class="ml-auto text-xs text-base-content/50">
+        {currentIndex + 1} / {seriesPosts.length}
+      </span>
+    </div>
+
+    <!-- Daftar artikel -->
+    <ol class="divide-y divide-base-300">
+      {seriesPosts.map((post, idx) => {
+        const isCurrent = post.id === currentSlug;
+        return (
+          <li>
+            {isCurrent ? (
+              <div class="flex items-start gap-3 px-4 py-3 bg-primary/10">
+                <span class="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-primary-content text-xs font-bold flex items-center justify-center mt-0.5">
+                  {idx + 1}
+                </span>
+                <div class="flex-1 min-w-0">
+                  <span class="text-sm font-semibold text-base-content line-clamp-2">
+                    {post.data.title}
+                  </span>
+                  <span class="block text-xs text-primary font-medium mt-0.5">Artikel ini</span>
+                </div>
+                <Icon name="lucide:bookmark" class="w-4 h-4 flex-shrink-0 text-primary mt-1" />
+              </div>
+            ) : (
+              <a
+                href={`/blog/${post.id}`}
+                class="flex items-start gap-3 px-4 py-3 hover:bg-base-300/50 transition-colors group"
+              >
+                <span class="flex-shrink-0 w-6 h-6 rounded-full bg-base-300 text-base-content/60 text-xs font-bold flex items-center justify-center mt-0.5 group-hover:bg-primary group-hover:text-primary-content transition-colors">
+                  {idx + 1}
+                </span>
+                <div class="flex-1 min-w-0">
+                  <span class="text-sm text-base-content/80 group-hover:text-base-content line-clamp-2 transition-colors">
+                    {post.data.title}
+                  </span>
+                </div>
+                <Icon name="lucide:chevron-right" class="w-4 h-4 flex-shrink-0 text-base-content/30 group-hover:text-primary mt-1 transition-colors" />
+              </a>
+            )}
+          </li>
+        );
+      })}
+    </ol>
+
+    <!-- Prev / Next -->
+    {(prevPost || nextPost) && (
+      <div class="flex gap-2 p-3 border-t border-base-300 bg-base-300/30">
+        {prevPost ? (
+          <a
+            href={`/blog/${prevPost.id}`}
+            class="flex-1 flex items-center gap-2 px-3 py-2 rounded-lg border border-base-300 hover:border-primary hover:bg-primary/10 transition-all group min-w-0"
+          >
+            <Icon name="lucide:arrow-left" class="w-4 h-4 flex-shrink-0 text-base-content/40 group-hover:text-primary transition-colors" />
+            <div class="min-w-0">
+              <div class="text-xs text-base-content/40 mb-0.5">Sebelumnya</div>
+              <div class="text-xs font-medium text-base-content/70 group-hover:text-base-content line-clamp-1 transition-colors">
+                {prevPost.data.title}
+              </div>
+            </div>
+          </a>
+        ) : (
+          <div class="flex-1" />
+        )}
+
+        {nextPost ? (
+          <a
+            href={`/blog/${nextPost.id}`}
+            class="flex-1 flex items-center gap-2 px-3 py-2 rounded-lg border border-base-300 hover:border-primary hover:bg-primary/10 transition-all group text-right min-w-0"
+          >
+            <div class="min-w-0 flex-1">
+              <div class="text-xs text-base-content/40 mb-0.5">Selanjutnya</div>
+              <div class="text-xs font-medium text-base-content/70 group-hover:text-base-content line-clamp-1 transition-colors">
+                {nextPost.data.title}
+              </div>
+            </div>
+            <Icon name="lucide:arrow-right" class="w-4 h-4 flex-shrink-0 text-base-content/40 group-hover:text-primary transition-colors" />
+          </a>
+        ) : (
+          <div class="flex-1" />
+        )}
+      </div>
+    )}
+  </div>
+)}

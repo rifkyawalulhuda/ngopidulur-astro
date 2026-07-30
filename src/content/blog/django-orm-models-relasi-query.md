@@ -13,6 +13,8 @@ tags:
   - ORM
   - Python
   - Database
+series: "Django Web"
+seriesOrder: 3
 ---
 
 Database adalah jantung dari hampir semua aplikasi web. Django ORM (Object-Relational Mapper) memungkinkan kamu berinteraksi dengan database menggunakan Python murni — tanpa menulis SQL secara manual. Chapter 4 dari *Python Web Development with Django* membahas ORM secara mendalam, dari mendefinisikan model hingga query kompleks dengan optimasi.

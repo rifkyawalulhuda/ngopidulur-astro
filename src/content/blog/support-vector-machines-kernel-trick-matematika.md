@@ -17,6 +17,8 @@ tags:
   - CS229
   - Matematika
   - DataScience
+series: "CS229 Machine Learning"
+seriesOrder: 3
 ---
 
 **Support Vector Machine (SVM)** adalah salah satu algoritma paling elegan dalam machine learning. Ia mencari **hyperplane optimal** yang memisahkan dua kelas dengan **margin maksimum**.

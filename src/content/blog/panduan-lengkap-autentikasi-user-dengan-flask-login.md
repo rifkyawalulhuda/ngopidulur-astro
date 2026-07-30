@@ -14,6 +14,8 @@ tags:
   - web-development
   - python
   - login-authentication
+series: "Flask Web"
+seriesOrder: 3
 ---
 Di artikel ini, kita akan membahas secara mendalam dan praktis cara membangun sistem **autentikasi lengkap** menggunakan Flask, dengan fokus utama pada ekstensi **Flask-Login**. Kita juga akan mengintegrasikan beberapa komponen penting lainnya seperti hashing password, token konfirmasi email, dan proteksi route.
 

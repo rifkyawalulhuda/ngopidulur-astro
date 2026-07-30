@@ -14,6 +14,8 @@ tags:
   - monitoring
   - observability
   - python
+series: "Flask Web"
+seriesOrder: 8
 ---
 Di artikel ini, kita akan membahas cara membangun sistem **Monitoring & Observability** yang solid untuk aplikasi Flask menggunakan tiga tools paling populer:
 

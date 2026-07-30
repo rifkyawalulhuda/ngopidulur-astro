@@ -18,6 +18,8 @@ tags:
   - SSH
   - Buster
   - AdministrasiServer
+series: "Debian Server"
+seriesOrder: 1
 ---
 
 **Debian** adalah salah satu distro Linux paling stabil dan banyak digunakan untuk server production. Dengan repositori paket yang luas dan komunitas yang solid, Debian menjadi pilihan utama para system administrator.

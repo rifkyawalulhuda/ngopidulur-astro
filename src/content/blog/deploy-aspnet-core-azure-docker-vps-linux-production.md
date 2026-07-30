@@ -20,6 +20,8 @@ tags:
   - Production
   - CloudComputing
   - Tutorial
+series: "ASP.NET Core"
+seriesOrder: 5
 ---
 
 Aplikasi udah jadi, saatnya go live! Di artikel pamungkas series ASP.NET Core ini, kita akan membahas 3 cara deploy aplikasi ke production — dari yang paling managed (Azure App Service) sampai yang paling fleksibel (Docker container).

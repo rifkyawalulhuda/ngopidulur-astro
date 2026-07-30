@@ -20,6 +20,8 @@ tags:
   - DependencyInjection
   - DotNet
   - CSharp
+series: "ASP.NET Core"
+seriesOrder: 3
 ---
 
 Entity Framework Core (EF Core) adalah **ORM (Object-Relational Mapper)** modern untuk .NET. Ia memungkinkan kamu bekerja dengan database menggunakan C# objects — tanpa menulis SQL mentah.

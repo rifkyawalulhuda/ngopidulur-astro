@@ -18,6 +18,8 @@ tags:
   - SemiSupervisedLearning
   - WEKA
   - BigData
+series: "Data Mining WEKA"
+seriesOrder: 5
 ---
 
 Setelah menguasai fondasi, saatnya naik level. Artikel ini mengupas teknik-teknik advanced yang membedakan praktisi data mining biasa dengan yang expert.

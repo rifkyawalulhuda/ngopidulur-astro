@@ -16,6 +16,8 @@ tags:
   - BigData
   - PatternRecognition
   - DataScience
+series: "Data Mining WEKA"
+seriesOrder: 1
 ---
 
 **Data Mining** adalah proses mengekstrak pola tersembunyi dari data. Buku klasik *"Data Mining: Practical Machine Learning Tools and Techniques"* oleh Ian Witten dan Eibe Frank adalah rujukan utama yang menghubungkan teori ML dengan praktik nyata.

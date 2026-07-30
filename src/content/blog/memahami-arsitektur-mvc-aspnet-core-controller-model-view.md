@@ -19,6 +19,8 @@ tags:
   - ArsitekturSoftware
   - Backend
   - Tutorial
+series: "ASP.NET Core"
+seriesOrder: 2
 ---
 
 MVC (Model-View-Controller) adalah pola arsitektur yang memisahkan aplikasi menjadi tiga komponen utama. Di ASP.NET Core, MVC adalah fondasi untuk membangun aplikasi web yang terstruktur, mudah di-maintain, dan testable.

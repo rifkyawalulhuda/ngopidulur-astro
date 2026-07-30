@@ -13,6 +13,8 @@ tags:
   - Python
   - AdvancedDjango
   - WebDevelopment
+series: "Django Web"
+seriesOrder: 7
 ---
 
 Setelah menguasai dasar-dasar Django, saatnya naik level. Chapter 11 dari *Python Web Development with Django* membahas fitur-fitur yang membuat Django benar-benar bersinar di production: Admin yang bisa dikustomisasi sepenuhnya, RSS/Atom feed bawaan, sitemap otomatis, sistem caching berlapis, signal untuk event-driven programming, dan management commands kustom.

@@ -18,6 +18,8 @@ tags:
   - KMeans
   - WEKA
   - MachineLearning
+series: "Data Mining WEKA"
+seriesOrder: 3
 ---
 
 Dari yang paling sederhana (1R) hingga yang sophisticated (C4.5), artikel ini mengupas **bagaimana** algoritma machine learning klasik bekerja — dengan perhitungan manual.

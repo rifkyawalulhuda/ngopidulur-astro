@@ -13,6 +13,8 @@ tags:
   - Python
   - URLRouting
   - Middleware
+series: "Django Web"
+seriesOrder: 4
 ---
 
 Views adalah jantung dari logika Django — di sinilah request HTTP masuk, diproses, dan response dikembalikan. Chapter 5 dari *Python Web Development with Django* membahas URLconf, HTTP mechanisms, dan berbagai jenis view secara lengkap.

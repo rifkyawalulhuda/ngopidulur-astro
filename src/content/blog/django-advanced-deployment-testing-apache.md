@@ -13,6 +13,8 @@ tags:
   - Python
   - Deployment
   - Testing
+series: "Django Web"
+seriesOrder: 8
 ---
 
 Aplikasi Django yang berjalan di development server bukanlah aplikasi production. Ada jurang besar antara `python manage.py runserver` dan server production yang bisa menangani ribuan request per menit. Chapter 12 dari *Python Web Development with Django* membahas semua yang perlu kamu ketahui untuk menutup jurang itu: testing yang benar, deployment ke Apache, manajemen konfigurasi, utility scripts, dan optimasi.

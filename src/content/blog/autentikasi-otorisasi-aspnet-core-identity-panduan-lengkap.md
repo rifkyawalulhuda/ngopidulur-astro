@@ -20,6 +20,8 @@ tags:
   - WebSecurity
   - RoleBasedAccess
   - Tutorial
+series: "ASP.NET Core"
+seriesOrder: 4
 ---
 
 Keamanan adalah aspek kritis setiap aplikasi web. **ASP.NET Core Identity** adalah framework built-in untuk menangani autentikasi (siapa kamu?) dan otorisasi (apa yang boleh kamu lakukan?).

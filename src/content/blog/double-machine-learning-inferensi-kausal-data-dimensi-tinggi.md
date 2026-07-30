@@ -19,6 +19,8 @@ tags:
   - RisetSosial
   - Statistik
   - AI
+series: "ML Ilmu Sosial"
+seriesOrder: 5
 ---
 
 "Apakah X menyebabkan Y?" — inilah pertanyaan paling fundamental dalam ilmu sosial. Tapi menjawabnya tidak semudah menghitung korelasi. **Korelasi bukan kausalitas.**

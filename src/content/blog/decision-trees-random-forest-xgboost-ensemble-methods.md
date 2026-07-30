@@ -18,6 +18,8 @@ tags:
   - Bagging
   - Boosting
   - DataScience
+series: "CS229 Machine Learning"
+seriesOrder: 4
 ---
 
 **Decision Trees** adalah fondasi dari **ensemble methods** — keluarga algoritma paling dominan di kompetisi data science dan aplikasi bisnis. Dari Random Forest hingga XGBoost, semuanya berakar dari pohon keputusan.
