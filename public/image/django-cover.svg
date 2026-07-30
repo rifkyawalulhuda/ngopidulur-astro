@@ -1,0 +1,203 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0e1a"/>
+      <stop offset="100%" style="stop-color:#0d1f2d"/>
+    </linearGradient>
+    <linearGradient id="green1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#092e1f"/>
+      <stop offset="100%" style="stop-color:#0c3d28"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#44b78b"/>
+      <stop offset="100%" style="stop-color:#2ba772"/>
+    </linearGradient>
+    <linearGradient id="py" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3776ab"/>
+      <stop offset="100%" style="stop-color:#ffd343"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softglow">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Django green accent top bar -->
+  <rect x="0" y="0" width="1200" height="5" fill="url(#accent)"/>
+
+  <!-- Left: Code panel -->
+  <rect x="50" y="60" width="480" height="510" rx="10" fill="#0d1117" stroke="#21262d" stroke-width="1.5"/>
+  <!-- Window chrome -->
+  <rect x="50" y="60" width="480" height="34" rx="10" fill="#161b22"/>
+  <rect x="50" y="80" width="480" height="14" fill="#161b22"/>
+  <circle cx="76" cy="77" r="5.5" fill="#ff5f56"/>
+  <circle cx="96" cy="77" r="5.5" fill="#ffbd2e"/>
+  <circle cx="116" cy="77" r="5.5" fill="#27c93f"/>
+  <text x="200" y="81" font-family="monospace" font-size="11" fill="#6e7681" text-anchor="middle">models.py</text>
+
+  <!-- Code lines -->
+  <text x="74" y="122" font-family="monospace" font-size="12.5" fill="#ff7b72">from</text>
+  <text x="111" y="122" font-family="monospace" font-size="12.5" fill="#e6edf3"> django.db </text>
+  <text x="207" y="122" font-family="monospace" font-size="12.5" fill="#ff7b72">import</text>
+  <text x="249" y="122" font-family="monospace" font-size="12.5" fill="#e6edf3"> models</text>
+
+  <text x="74" y="148" font-family="monospace" font-size="12.5" fill="#7ee787">class</text>
+  <text x="109" y="148" font-family="monospace" font-size="12.5" fill="#79c0ff"> Post</text>
+  <text x="143" y="148" font-family="monospace" font-size="12.5" fill="#e6edf3">(models.</text>
+  <text x="208" y="148" font-family="monospace" font-size="12.5" fill="#79c0ff">Model</text>
+  <text x="247" y="148" font-family="monospace" font-size="12.5" fill="#e6edf3">):</text>
+
+  <text x="90" y="172" font-family="monospace" font-size="12.5" fill="#e6edf3">title </text>
+  <text x="128" y="172" font-family="monospace" font-size="12.5" fill="#e6edf3">= models.</text>
+  <text x="207" y="172" font-family="monospace" font-size="12.5" fill="#79c0ff">CharField</text>
+  <text x="272" y="172" font-family="monospace" font-size="12.5" fill="#e6edf3">(</text>
+  <text x="279" y="172" font-family="monospace" font-size="12.5" fill="#a5d6ff">max_length</text>
+  <text x="355" y="172" font-family="monospace" font-size="12.5" fill="#e6edf3">=</text>
+  <text x="363" y="172" font-family="monospace" font-size="12.5" fill="#79c0ff">200</text>
+  <text x="384" y="172" font-family="monospace" font-size="12.5" fill="#e6edf3">)</text>
+
+  <text x="90" y="196" font-family="monospace" font-size="12.5" fill="#e6edf3">body  </text>
+  <text x="128" y="196" font-family="monospace" font-size="12.5" fill="#e6edf3">= models.</text>
+  <text x="207" y="196" font-family="monospace" font-size="12.5" fill="#79c0ff">TextField</text>
+  <text x="272" y="196" font-family="monospace" font-size="12.5" fill="#e6edf3">()</text>
+
+  <text x="90" y="220" font-family="monospace" font-size="12.5" fill="#e6edf3">author</text>
+  <text x="128" y="220" font-family="monospace" font-size="12.5" fill="#e6edf3">= models.</text>
+  <text x="207" y="220" font-family="monospace" font-size="12.5" fill="#79c0ff">ForeignKey</text>
+  <text x="282" y="220" font-family="monospace" font-size="12.5" fill="#e6edf3">(</text>
+  <text x="289" y="220" font-family="monospace" font-size="12.5" fill="#a8ff78">User</text>
+  <text x="316" y="220" font-family="monospace" font-size="12.5" fill="#e6edf3">, ...)</text>
+
+  <!-- Divider -->
+  <line x1="74" y1="238" x2="510" y2="238" stroke="#21262d" stroke-width="1"/>
+
+  <!-- views.py snippet -->
+  <text x="74" y="258" font-family="monospace" font-size="11" fill="#6e7681"># views.py</text>
+  <text x="74" y="280" font-family="monospace" font-size="12.5" fill="#ff7b72">from</text>
+  <text x="111" y="280" font-family="monospace" font-size="12.5" fill="#e6edf3"> django.shortcuts </text>
+  <text x="253" y="280" font-family="monospace" font-size="12.5" fill="#ff7b72">import</text>
+  <text x="295" y="280" font-family="monospace" font-size="12.5" fill="#e6edf3"> render</text>
+
+  <text x="74" y="304" font-family="monospace" font-size="12.5" fill="#d2a8ff">@login_required</text>
+  <text x="74" y="326" font-family="monospace" font-size="12.5" fill="#7ee787">def</text>
+  <text x="100" y="326" font-family="monospace" font-size="12.5" fill="#d2a8ff"> post_list</text>
+  <text x="171" y="326" font-family="monospace" font-size="12.5" fill="#e6edf3">(request):</text>
+  <text x="90" y="348" font-family="monospace" font-size="12.5" fill="#e6edf3">posts = Post.objects.</text>
+  <text x="90" y="348" font-family="monospace" font-size="12.5" fill="#e6edf3">posts = Post.objects.</text>
+  <text x="90" y="348" font-family="monospace" font-size="12.5" fill="#79c0ff">              </text>
+
+  <text x="90" y="348" font-family="monospace" font-size="12.5" fill="#e6edf3">posts = Post.</text>
+  <text x="178" y="348" font-family="monospace" font-size="12.5" fill="#79c0ff">objects</text>
+  <text x="225" y="348" font-family="monospace" font-size="12.5" fill="#e6edf3">.</text>
+  <text x="232" y="348" font-family="monospace" font-size="12.5" fill="#d2a8ff">filter</text>
+  <text x="272" y="348" font-family="monospace" font-size="12.5" fill="#e6edf3">(</text>
+  <text x="278" y="348" font-family="monospace" font-size="12.5" fill="#a5d6ff">pub=</text>
+  <text x="306" y="348" font-family="monospace" font-size="12.5" fill="#7ee787">True</text>
+  <text x="330" y="348" font-family="monospace" font-size="12.5" fill="#e6edf3">)</text>
+
+  <text x="90" y="372" font-family="monospace" font-size="12.5" fill="#7ee787">return</text>
+  <text x="130" y="372" font-family="monospace" font-size="12.5" fill="#d2a8ff"> render</text>
+  <text x="176" y="372" font-family="monospace" font-size="12.5" fill="#e6edf3">(request,</text>
+  <text x="90" y="394" font-family="monospace" font-size="12.5" fill="#a8ff78">    'blog/list.html'</text>
+  <text x="222" y="394" font-family="monospace" font-size="12.5" fill="#e6edf3">, {</text>
+  <text x="90" y="414" font-family="monospace" font-size="12.5" fill="#79c0ff">    'posts'</text>
+  <text x="145" y="414" font-family="monospace" font-size="12.5" fill="#e6edf3">: posts})</text>
+
+  <!-- Django admin snippet -->
+  <line x1="74" y1="432" x2="510" y2="432" stroke="#21262d" stroke-width="1"/>
+  <text x="74" y="452" font-family="monospace" font-size="11" fill="#6e7681"># admin.py</text>
+  <text x="74" y="474" font-family="monospace" font-size="12.5" fill="#d2a8ff">@admin.register</text>
+  <text x="188" y="474" font-family="monospace" font-size="12.5" fill="#e6edf3">(Post)</text>
+  <text x="74" y="496" font-family="monospace" font-size="12.5" fill="#7ee787">class</text>
+  <text x="109" y="496" font-family="monospace" font-size="12.5" fill="#79c0ff"> PostAdmin</text>
+  <text x="186" y="496" font-family="monospace" font-size="12.5" fill="#e6edf3">(ModelAdmin):</text>
+  <text x="90" y="518" font-family="monospace" font-size="12.5" fill="#e6edf3">list_display = [</text>
+  <text x="90" y="538" font-family="monospace" font-size="12.5" fill="#a8ff78">  'title'</text>
+  <text x="142" y="538" font-family="monospace" font-size="12.5" fill="#e6edf3">,</text>
+  <text x="150" y="538" font-family="monospace" font-size="12.5" fill="#a8ff78">'author'</text>
+  <text x="207" y="538" font-family="monospace" font-size="12.5" fill="#e6edf3">,</text>
+  <text x="215" y="538" font-family="monospace" font-size="12.5" fill="#a8ff78">'pub'</text>
+  <text x="248" y="538" font-family="monospace" font-size="12.5" fill="#e6edf3">]</text>
+
+  <!-- Right: Title area -->
+  <!-- Django logo shape (simplified) -->
+  <rect x="610" y="65" width="8" height="60" rx="3" fill="#44b78b" opacity="0.9"/>
+  <rect x="628" y="65" width="8" height="90" rx="3" fill="#44b78b" opacity="0.9"/>
+  <rect x="628" y="115" width="30" height="8" rx="3" fill="#44b78b" opacity="0.9"/>
+
+  <!-- Title -->
+  <text x="675" y="105" font-family="'Segoe UI', sans-serif" font-size="16" fill="#8b949e" letter-spacing="5">PYTHON WEB</text>
+  <text x="675" y="170" font-family="'Segoe UI', sans-serif" font-size="58" fill="#f0f6fc" font-weight="800" letter-spacing="-2">Django</text>
+  <text x="675" y="222" font-family="'Segoe UI', sans-serif" font-size="22" fill="url(#accent)" font-weight="600">Web Development</text>
+
+  <!-- Green underline -->
+  <rect x="675" y="234" width="240" height="3" rx="2" fill="url(#accent)"/>
+
+  <!-- Subtitle -->
+  <text x="675" y="274" font-family="'Segoe UI', sans-serif" font-size="15" fill="#8b949e">Panduan lengkap dari Forcier, Bissex &amp; Chun</text>
+  <text x="675" y="296" font-family="'Segoe UI', sans-serif" font-size="15" fill="#8b949e">Bahasa Indonesia · 8 Artikel Komprehensif</text>
+
+  <!-- MVT Architecture diagram -->
+  <g transform="translate(620, 330)">
+    <!-- Boxes -->
+    <rect x="0" y="0" width="90" height="36" rx="6" fill="#092e1f" stroke="#44b78b" stroke-width="1.5"/>
+    <text x="45" y="23" font-family="'Segoe UI', sans-serif" font-size="13" fill="#44b78b" text-anchor="middle" font-weight="600">Model</text>
+
+    <rect x="115" y="0" width="90" height="36" rx="6" fill="#0d1f3a" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="160" y="23" font-family="'Segoe UI', sans-serif" font-size="13" fill="#60a5fa" text-anchor="middle" font-weight="600">View</text>
+
+    <rect x="230" y="0" width="100" height="36" rx="6" fill="#2a1a00" stroke="#fbbf24" stroke-width="1.5"/>
+    <text x="280" y="23" font-family="'Segoe UI', sans-serif" font-size="13" fill="#fbbf24" text-anchor="middle" font-weight="600">Template</text>
+
+    <!-- Arrows -->
+    <line x1="91" y1="18" x2="113" y2="18" stroke="#44b78b" stroke-width="1.5" marker-end="url(#arr1)"/>
+    <line x1="206" y1="18" x2="228" y2="18" stroke="#3b82f6" stroke-width="1.5"/>
+    <polygon points="228,13 238,18 228,23" fill="#fbbf24"/>
+
+    <text x="162" y="56" font-family="'Segoe UI', sans-serif" font-size="12" fill="#6e7681" text-anchor="middle">MVT Architecture</text>
+  </g>
+
+  <!-- Feature pills -->
+  <g transform="translate(620, 430)">
+    <rect x="0" y="0" width="72" height="28" rx="14" fill="#092e1f"/>
+    <text x="36" y="19" font-family="'Segoe UI', sans-serif" font-size="12" fill="#44b78b" text-anchor="middle">ORM</text>
+
+    <rect x="84" y="0" width="72" height="28" rx="14" fill="#0d1f3a"/>
+    <text x="120" y="19" font-family="'Segoe UI', sans-serif" font-size="12" fill="#60a5fa" text-anchor="middle">Admin</text>
+
+    <rect x="168" y="0" width="80" height="28" rx="14" fill="#2a1a00"/>
+    <text x="208" y="19" font-family="'Segoe UI', sans-serif" font-size="12" fill="#fbbf24" text-anchor="middle">Forms</text>
+
+    <rect x="260" y="0" width="80" height="28" rx="14" fill="#1a0d2e"/>
+    <text x="300" y="19" font-family="'Segoe UI', sans-serif" font-size="12" fill="#d2a8ff" text-anchor="middle">Cache</text>
+
+    <rect x="0" y="38" width="90" height="28" rx="14" fill="#1a0d2e"/>
+    <text x="45" y="57" font-family="'Segoe UI', sans-serif" font-size="12" fill="#d2a8ff" text-anchor="middle">Signals</text>
+
+    <rect x="102" y="38" width="90" height="28" rx="14" fill="#0d2a1a"/>
+    <text x="147" y="57" font-family="'Segoe UI', sans-serif" font-size="12" fill="#4ade80" text-anchor="middle">Testing</text>
+
+    <rect x="204" y="38" width="130" height="28" rx="14" fill="#1a1a0d"/>
+    <text x="269" y="57" font-family="'Segoe UI', sans-serif" font-size="12" fill="#fde047" text-anchor="middle">RSS / Sitemap</text>
+  </g>
+
+  <!-- Chapter count -->
+  <text x="675" y="542" font-family="'Segoe UI', sans-serif" font-size="13" fill="#6e7681">12 Chapters · 6 Appendices · 405 Halaman</text>
+
+  <!-- Brand -->
+  <text x="675" y="578" font-family="'Segoe UI', sans-serif" font-size="13" fill="#30363d">ngopidulur.my.id</text>
+
+  <!-- Glow accent corner -->
+  <circle cx="1170" cy="60" r="100" fill="#44b78b" opacity="0.05"/>
+  <circle cx="1170" cy="60" r="50" fill="#44b78b" opacity="0.05"/>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="625" width="1200" height="5" fill="url(#accent)"/>
+</svg>
