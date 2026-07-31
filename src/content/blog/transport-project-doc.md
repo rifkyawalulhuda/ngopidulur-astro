@@ -17,7 +17,7 @@ categories:
 - [1. Tech Stack](#1-tech-stack)
 - [2. Architecture](#2-architecture)
 - [3. Development Setup](#3-development-setup)
-- [4. Database & Migrations](#4-database--migrations)
+- [4. Database & Migrations](#4-database-migrations)
 - [5. API Reference](#5-api-reference)
 - [6. Deployment](#6-deployment)
 - [7. Troubleshooting](#7-troubleshooting)

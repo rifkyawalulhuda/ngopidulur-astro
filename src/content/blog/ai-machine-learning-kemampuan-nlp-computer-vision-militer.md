@@ -23,8 +23,8 @@ AI bukan lagi sekedar hype. Hari ini, AI sudah mencapai atau melampaui kemampuan
 
 - [Natural Language Processing](#natural-language-processing)
 - [Computer Vision](#computer-vision)
-- [Generative AI: Teks, Gambar, dan Suara](#generative-ai)
-- [Aplikasi Militer dan Pertahanan](#aplikasi-militer)
+- [Generative AI: Teks, Gambar, dan Suara](#generative-ai-teks-gambar-dan-suara)
+- [Aplikasi Militer dan Pertahanan](#aplikasi-militer-dan-pertahanan)
 - [Cyberwarfare dengan AI](#cyberwarfare-dengan-ai)
 - [AI sebagai Game Changer Komersial](#ai-sebagai-game-changer-komersial)
 
@@ -89,7 +89,7 @@ Computer vision merevolusi intelijen militer:
 
 
 
-## Generative AI: Teks, Gambar, dan Suara {#generative-ai}
+## Generative AI: Teks, Gambar, dan Suara
 
 Generative AI menghasilkan konten baru — teks, gambar, audio, video — yang tidak pernah ada sebelumnya. Ini adalah salah satu kemajuan AI paling dramatis dalam beberapa tahun terakhir.
 
@@ -186,7 +186,7 @@ Ini adalah area di mana AI membuat perbedaan paling signifikan:
 
 
 
-## Cyberwarfare dengan AI {#cyberwarfare-dengan-ai}
+## Cyberwarfare dengan AI
 
 Blank secara khusus menyoroti cyberwarfare sebagai domain di mana AI memberikan keunggulan asimetris:
 

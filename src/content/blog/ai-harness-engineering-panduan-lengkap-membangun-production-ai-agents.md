@@ -41,7 +41,7 @@ tags:
 7. [Sandboxing dan Execution Environment](#7-sandboxing-dan-execution-environment)
 8. [Evaluasi, Observability, dan Reliability AI Agents](#8-evaluasi-observability-dan-reliability-ai-agents)
 9. [Guardrails, Safety, dan Governance](#9-guardrails-safety-dan-governance)
-10. [Penutup & Ringkasan](#penutup--ringkasan)
+10. [Penutup & Ringkasan](#penutup-ringkasan)
 
 ---
 

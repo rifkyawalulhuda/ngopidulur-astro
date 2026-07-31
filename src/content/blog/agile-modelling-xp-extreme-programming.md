@@ -23,12 +23,12 @@ Extreme Programming (XP) adalah salah satu metodologi agile paling berpengaruh â
 - [Peran AM dalam XP Lifecycle](#peran-am-dalam-xp-lifecycle)
 - [Planning Game dengan AM](#planning-game-dengan-am)
 - [Modeling Spike](#modeling-spike)
-- [CRC Cards: Class Responsibility Collaborator](#crc-cards)
+- [CRC Cards: Class Responsibility Collaborator](#crc-cards-class-responsibility-collaborator)
 - [Domain Modeling dalam XP](#domain-modeling-dalam-xp)
 - [UI Prototyping Agile](#ui-prototyping-agile)
 - [Database Modeling dalam XP](#database-modeling-dalam-xp)
 - [Architecture Modeling dalam XP](#architecture-modeling-dalam-xp)
-- [Integrasi dengan XP Practices Lainnya](#integrasi-dengan-xp-practices)
+- [Integrasi dengan XP Practices Lainnya](#integrasi-dengan-xp-practices-lainnya)
 
 
 
@@ -120,7 +120,7 @@ Spike sering menghasilkan prototype yang membuktikan (atau menyangkal) asumsi ar
 
 
 
-## CRC Cards: Class Responsibility Collaborator {#crc-cards}
+## CRC Cards: Class Responsibility Collaborator
 
 CRC cards adalah teknik object-oriented modeling yang dikembangkan oleh Ward Cunningham dan Kent Beck â€” dan sangat sesuai dengan pendekatan AM.
 
@@ -285,7 +285,7 @@ Sebelum commit ke arsitektur tertentu, buat spike untuk memvalidasi:
 
 
 
-## Integrasi dengan XP Practices Lainnya {#integrasi-dengan-xp-practices}
+## Integrasi dengan XP Practices Lainnya
 
 ### Test-Driven Development + Modeling
 

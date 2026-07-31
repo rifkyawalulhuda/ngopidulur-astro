@@ -21,7 +21,7 @@ Dua komponen yang paling sering berinteraksi dengan pengguna di aplikasi Django 
 
 ## Daftar Isi
 
-- [Django Template Language (DTL)](#django-template-language)
+- [Django Template Language (DTL)](#django-template-language-dtl)
 - [Template Inheritance](#template-inheritance)
 - [Tag Bawaan](#tag-bawaan)
 - [Filter Bawaan](#filter-bawaan)
@@ -36,7 +36,7 @@ Dua komponen yang paling sering berinteraksi dengan pengguna di aplikasi Django 
 
 ---
 
-## Django Template Language (DTL) {#django-template-language}
+## Django Template Language (DTL)
 
 DTL adalah bahasa template yang sengaja dibuat sederhana — logika bisnis tidak boleh ada di template.
 

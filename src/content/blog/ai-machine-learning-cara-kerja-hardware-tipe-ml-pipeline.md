@@ -21,18 +21,18 @@ Memahami *apa* yang bisa dilakukan AI sudah penting. Tapi memahami *bagaimana* A
 
 ## Daftar Isi
 
-- [Hardware AI: GPU, TPU, dan NPU](#hardware-ai)
+- [Hardware AI: GPU, TPU, dan NPU](#hardware-ai-gpu-tpu-dan-npu)
 - [Tipe-Tipe Machine Learning](#tipe-tipe-machine-learning)
 - [Supervised Learning](#supervised-learning)
 - [Unsupervised Learning](#unsupervised-learning)
 - [Reinforcement Learning](#reinforcement-learning)
 - [Pipeline Data Science](#pipeline-data-science)
 - [Neural Networks dan Deep Learning](#neural-networks-dan-deep-learning)
-- [Keterbatasan AI yang Perlu Dipahami](#keterbatasan-ai)
+- [Keterbatasan AI yang Perlu Dipahami](#keterbatasan-ai-yang-perlu-dipahami)
 
 
 
-## Hardware AI: GPU, TPU, dan NPU {#hardware-ai}
+## Hardware AI: GPU, TPU, dan NPU
 
 AI membutuhkan hardware khusus. Komputer standar tidak cukup untuk training model besar atau inference real-time. Ada hierarki chip yang digunakan:
 
@@ -293,7 +293,7 @@ Input Layer → Hidden Layers → Output Layer
 
 
 
-## Keterbatasan AI yang Perlu Dipahami {#keterbatasan-ai}
+## Keterbatasan AI yang Perlu Dipahami
 
 ### Kebutuhan Data yang Masif
 

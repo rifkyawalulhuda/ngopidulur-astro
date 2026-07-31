@@ -326,7 +326,7 @@ class BookServiceTest {
 
 
 
-## Test Slices {#test-slices}
+## Test Slices
 
 Test slices memuat hanya subset dari ApplicationContext — lebih cepat dari `@SpringBootTest` penuh.
 

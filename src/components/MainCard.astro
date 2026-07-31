@@ -36,12 +36,11 @@ const accessibleHelpText = `${helpText}: ${title}`;
       // With image - show image with overlay title
       <div class="relative">
         <div class="aspect-video w-full overflow-hidden">
-          <Image
+          <img
             src={image}
             alt={title}
             width={1200}
             height={630}
-            format="webp"
             loading="eager"
             fetchpriority="high"
             decoding="async"

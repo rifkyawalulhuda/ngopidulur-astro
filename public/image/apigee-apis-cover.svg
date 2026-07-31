@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0e1a"/>
+      <stop offset="100%" style="stop-color:#111827"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2563eb"/>
+      <stop offset="100%" style="stop-color:#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#059669"/>
+      <stop offset="100%" style="stop-color:#10b981"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="0" y="0" width="1200" height="4" fill="url(#blue)"/>
+  <rect x="0" y="626" width="1200" height="4" fill="url(#blue)"/>
+
+  <!-- Left: API Architecture Diagram -->
+  <g transform="translate(50, 80)">
+    <!-- Title -->
+    <text x="210" y="30" font-family="monospace" font-size="12" fill="#6e7681" text-anchor="middle">API Platform Architecture</text>
+
+    <!-- Channels (top) -->
+    <rect x="0" y="48" width="80" height="30" rx="6" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="40" y="67" font-family="monospace" font-size="10" fill="#93c5fd" text-anchor="middle">Mobile</text>
+
+    <rect x="90" y="48" width="80" height="30" rx="6" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="130" y="67" font-family="monospace" font-size="10" fill="#93c5fd" text-anchor="middle">Web</text>
+
+    <rect x="180" y="48" width="80" height="30" rx="6" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="220" y="67" font-family="monospace" font-size="10" fill="#93c5fd" text-anchor="middle">Partner</text>
+
+    <rect x="270" y="48" width="80" height="30" rx="6" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="310" y="67" font-family="monospace" font-size="10" fill="#93c5fd" text-anchor="middle">IoT</text>
+
+    <!-- Arrows down -->
+    <line x1="40" y1="78" x2="40" y2="118" stroke="#3b82f6" stroke-width="1" stroke-dasharray="4,3"/>
+    <line x1="130" y1="78" x2="130" y2="118" stroke="#3b82f6" stroke-width="1" stroke-dasharray="4,3"/>
+    <line x1="220" y1="78" x2="220" y2="118" stroke="#3b82f6" stroke-width="1" stroke-dasharray="4,3"/>
+    <line x1="310" y1="78" x2="310" y2="118" stroke="#3b82f6" stroke-width="1" stroke-dasharray="4,3"/>
+
+    <!-- Horizontal connector -->
+    <line x1="40" y1="118" x2="310" y2="118" stroke="#3b82f6" stroke-width="1.5"/>
+    <line x1="175" y1="118" x2="175" y2="138" stroke="#3b82f6" stroke-width="1.5"/>
+    <polygon points="175,138 170,128 180,128" fill="#3b82f6"/>
+
+    <!-- API Gateway box -->
+    <rect x="75" y="138" width="200" height="50" rx="8" fill="#1e3a5f" stroke="#3b82f6" stroke-width="2"/>
+    <text x="175" y="157" font-family="monospace" font-size="11" fill="#93c5fd" text-anchor="middle" font-weight="bold">API Gateway</text>
+    <text x="175" y="174" font-family="monospace" font-size="9" fill="#6b7280" text-anchor="middle">Auth | Rate Limit | Transform</text>
+
+    <!-- Arrow down -->
+    <line x1="175" y1="188" x2="175" y2="208" stroke="#10b981" stroke-width="1.5"/>
+    <polygon points="175,208 170,198 180,198" fill="#10b981"/>
+
+    <!-- Services row -->
+    <rect x="0" y="208" width="100" height="40" rx="6" fill="#064e3b" stroke="#10b981" stroke-width="1.5"/>
+    <text x="50" y="222" font-family="monospace" font-size="9" fill="#6ee7b7" text-anchor="middle">Users</text>
+    <text x="50" y="237" font-family="monospace" font-size="9" fill="#6ee7b7" text-anchor="middle">Service</text>
+
+    <rect x="113" y="208" width="100" height="40" rx="6" fill="#064e3b" stroke="#10b981" stroke-width="1.5"/>
+    <text x="163" y="222" font-family="monospace" font-size="9" fill="#6ee7b7" text-anchor="middle">Orders</text>
+    <text x="163" y="237" font-family="monospace" font-size="9" fill="#6ee7b7" text-anchor="middle">Service</text>
+
+    <rect x="226" y="208" width="100" height="40" rx="6" fill="#064e3b" stroke="#10b981" stroke-width="1.5"/>
+    <text x="276" y="222" font-family="monospace" font-size="9" fill="#6ee7b7" text-anchor="middle">Analytics</text>
+    <text x="276" y="237" font-family="monospace" font-size="9" fill="#6ee7b7" text-anchor="middle">Service</text>
+
+    <!-- Connectors to gateway -->
+    <line x1="50" y1="208" x2="130" y2="188" stroke="#10b981" stroke-width="0.8" opacity="0.6"/>
+    <line x1="163" y1="208" x2="175" y2="188" stroke="#10b981" stroke-width="0.8" opacity="0.6"/>
+    <line x1="276" y1="208" x2="220" y2="188" stroke="#10b981" stroke-width="0.8" opacity="0.6"/>
+
+    <!-- Arrow down -->
+    <line x1="163" y1="248" x2="163" y2="272" stroke="#6366f1" stroke-width="1.5"/>
+    <polygon points="163,272 158,262 168,262" fill="#6366f1"/>
+
+    <!-- Database/Backend -->
+    <rect x="63" y="272" width="200" height="40" rx="8" fill="#1e1b4b" stroke="#6366f1" stroke-width="2"/>
+    <text x="163" y="291" font-family="monospace" font-size="11" fill="#c7d2fe" text-anchor="middle" font-weight="bold">Backend Systems</text>
+    <text x="163" y="306" font-family="monospace" font-size="9" fill="#6b7280" text-anchor="middle">DB | Legacy | ERP | CRM</text>
+
+    <!-- KPI section -->
+    <rect x="0" y="340" width="350" height="90" rx="8" fill="#0f172a" stroke="#374151" stroke-width="1"/>
+    <text x="175" y="360" font-family="monospace" font-size="10" fill="#9ca3af" text-anchor="middle">KPI Dashboard</text>
+    <text x="20" y="382" font-family="monospace" font-size="10" fill="#3b82f6">Uptime:</text>
+    <rect x="80" y="370" width="120" height="10" rx="4" fill="#1e3a5f"/>
+    <rect x="80" y="370" width="115" height="10" rx="4" fill="#3b82f6"/>
+    <text x="210" y="382" font-family="monospace" font-size="10" fill="#93c5fd">99.9%</text>
+
+    <text x="20" y="402" font-family="monospace" font-size="10" fill="#10b981">Latency:</text>
+    <rect x="80" y="390" width="120" height="10" rx="4" fill="#064e3b"/>
+    <rect x="80" y="390" width="40" height="10" rx="4" fill="#10b981"/>
+    <text x="210" y="402" font-family="monospace" font-size="10" fill="#6ee7b7">142ms</text>
+
+    <text x="20" y="422" font-family="monospace" font-size="10" fill="#f59e0b">Revenue:</text>
+    <rect x="80" y="410" width="120" height="10" rx="4" fill="#451a03"/>
+    <rect x="80" y="410" width="90" height="10" rx="4" fill="#f59e0b"/>
+    <text x="210" y="422" font-family="monospace" font-size="10" fill="#fcd34d">$5.6M</text>
+  </g>
+
+  <!-- Right: Title -->
+  <text x="550" y="130" font-family="'Segoe UI', sans-serif" font-size="12" fill="#6e7681" letter-spacing="4">APIGEE SPECIAL EDITION — WILEY 2014</text>
+  <text x="550" y="192" font-family="'Segoe UI', sans-serif" font-size="44" fill="#f0f6fc" font-weight="800" letter-spacing="-2">APIs untuk</text>
+  <text x="550" y="244" font-family="'Segoe UI', sans-serif" font-size="44" fill="url(#blue)" font-weight="800" letter-spacing="-2">Bisnis Digital</text>
+  <text x="550" y="290" font-family="'Segoe UI', sans-serif" font-size="26" fill="url(#green)" font-weight="600">APIs for Dummies</text>
+  <rect x="550" y="304" width="220" height="4" rx="2" fill="url(#blue)"/>
+
+  <text x="550" y="340" font-family="'Segoe UI', sans-serif" font-size="14" fill="#8b949e">Sharif Nijim &amp; Brian Pagano</text>
+  <text x="550" y="360" font-family="'Segoe UI', sans-serif" font-size="14" fill="#8b949e">Panduan Strategi API Bahasa Indonesia</text>
+
+  <!-- Pills -->
+  <g transform="translate(550, 382)">
+    <rect x="0" y="0" width="80" height="26" rx="13" fill="#1e3a5f"/>
+    <text x="40" y="17" font-family="'Segoe UI', sans-serif" font-size="11" fill="#93c5fd" text-anchor="middle">REST API</text>
+    <rect x="92" y="0" width="90" height="26" rx="13" fill="#064e3b"/>
+    <text x="137" y="17" font-family="'Segoe UI', sans-serif" font-size="11" fill="#6ee7b7" text-anchor="middle">Omnichannel</text>
+    <rect x="194" y="0" width="70" height="26" rx="13" fill="#1e1b4b"/>
+    <text x="229" y="17" font-family="'Segoe UI', sans-serif" font-size="11" fill="#c7d2fe" text-anchor="middle">Apigee</text>
+    <rect x="0" y="36" width="100" height="26" rx="13" fill="#1e3a5f"/>
+    <text x="50" y="53" font-family="'Segoe UI', sans-serif" font-size="11" fill="#93c5fd" text-anchor="middle">API Economy</text>
+    <rect x="112" y="36" width="80" height="26" rx="13" fill="#064e3b"/>
+    <text x="152" y="53" font-family="'Segoe UI', sans-serif" font-size="11" fill="#6ee7b7" text-anchor="middle">Monetisasi</text>
+    <rect x="204" y="36" width="60" height="26" rx="13" fill="#1e1b4b"/>
+    <text x="234" y="53" font-family="'Segoe UI', sans-serif" font-size="11" fill="#c7d2fe" text-anchor="middle">KPI</text>
+  </g>
+
+  <!-- Series list -->
+  <g transform="translate(550, 468)">
+    <text x="0" y="0" font-family="'Segoe UI', sans-serif" font-size="12" fill="#6e7681">Art.1  Pengantar API, Bisnis Digital, Customer Experience, Inovasi</text>
+    <text x="0" y="18" font-family="'Segoe UI', sans-serif" font-size="12" fill="#6e7681">Art.2  Agility, REST vs SOAP, KPI, 5 Studi Kasus Nyata</text>
+  </g>
+
+  <!-- Case study logos (text) -->
+  <g transform="translate(550, 516)">
+    <text x="0" y="0" font-family="'Segoe UI', sans-serif" font-size="11" fill="#374151">Studi Kasus:</text>
+    <rect x="0" y="10" width="75" height="22" rx="4" fill="#1f2937" stroke="#374151" stroke-width="1"/>
+    <text x="37" y="25" font-family="'Segoe UI', sans-serif" font-size="10" fill="#9ca3af" text-anchor="middle">Walgreens</text>
+    <rect x="87" y="10" width="80" height="22" rx="4" fill="#1f2937" stroke="#374151" stroke-width="1"/>
+    <text x="127" y="25" font-family="'Segoe UI', sans-serif" font-size="10" fill="#9ca3af" text-anchor="middle">Dig. River</text>
+    <rect x="179" y="10" width="65" height="22" rx="4" fill="#1f2937" stroke="#374151" stroke-width="1"/>
+    <text x="211" y="25" font-family="'Segoe UI', sans-serif" font-size="10" fill="#9ca3af" text-anchor="middle">Pearson</text>
+    <rect x="256" y="10" width="60" height="22" rx="4" fill="#1f2937" stroke="#374151" stroke-width="1"/>
+    <text x="286" y="25" font-family="'Segoe UI', sans-serif" font-size="10" fill="#9ca3af" text-anchor="middle">Bechtel</text>
+    <rect x="328" y="10" width="50" height="22" rx="4" fill="#1f2937" stroke="#374151" stroke-width="1"/>
+    <text x="353" y="25" font-family="'Segoe UI', sans-serif" font-size="10" fill="#9ca3af" text-anchor="middle">GM</text>
+  </g>
+
+  <text x="560" y="600" font-family="'Segoe UI', sans-serif" font-size="12" fill="#30363d">ngopidulur.my.id</text>
+
+  <!-- Glow -->
+  <circle cx="1150" cy="100" r="100" fill="#2563eb" opacity="0.04"/>
+</svg>

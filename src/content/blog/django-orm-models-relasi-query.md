@@ -29,7 +29,7 @@ Database adalah jantung dari hampir semua aplikasi web. Django ORM (Object-Relat
 - [Meta Inner Class](#meta-inner-class)
 - [Django Admin Registration](#django-admin-registration)
 - [Query API: CRUD dan Filtering](#query-api-crud-dan-filtering)
-- [Optimasi Query: select_related dan prefetch_related](#optimasi-query)
+- [Optimasi Query: select_related dan prefetch_related](#optimasi-query-select_related-dan-prefetch_related)
 - [Aggregasi dan Anotasi](#aggregasi-dan-anotasi)
 - [Raw SQL](#raw-sql)
 - [manage.py untuk Database](#managepy-untuk-database)
@@ -468,7 +468,7 @@ Post.objects.filter(
 
 ---
 
-## Optimasi Query: select_related dan prefetch_related {#optimasi-query}
+## Optimasi Query: select_related dan prefetch_related
 
 ```python
 # N+1 problem — BAD

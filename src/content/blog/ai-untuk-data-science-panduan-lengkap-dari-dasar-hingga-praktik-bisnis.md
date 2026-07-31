@@ -42,13 +42,13 @@ tags:
 1. [Bagian 1: Apa Itu AI dan Mengapa Penting untuk Data Scientist?](#bagian-1-apa-itu-ai-dan-mengapa-penting-untuk-data-scientist)
 2. [Bagian 2: Mengenal Deep Learning Frameworks](#bagian-2-mengenal-deep-learning-frameworks)
 3. [Bagian 3: Membangun Neural Network dengan MXNet](#bagian-3-membangun-neural-network-dengan-mxnet)
-4. [Bagian 4: TensorFlow & Keras](#bagian-4-tensorflow--keras)
+4. [Bagian 4: TensorFlow & Keras](#bagian-4-tensorflow-keras)
 5. [Bagian 5: Optimization Algorithms (PSO, Genetic Algorithm, Simulated Annealing)](#bagian-5-optimization-algorithms-pso-genetic-algorithm-simulated-annealing)
 6. [Bagian 6: CNN, RNN, dan Optimization Ensemble](#bagian-6-cnn-rnn-dan-optimization-ensemble)
 7. [Bagian 7: Alternative AI Frameworks (ELM, CapsNet, Fuzzy Logic)](#bagian-7-alternative-ai-frameworks-elm-capsnet-fuzzy-logic)
-8. [Bagian 8: Transfer Learning, Reinforcement Learning, Autoencoder & GANs](#bagian-8-transfer-learning-reinforcement-learning-autoencoder--gans)
+8. [Bagian 8: Transfer Learning, Reinforcement Learning, Autoencoder & GANs](#bagian-8-transfer-learning-reinforcement-learning-autoencoder-gans)
 9. [Bagian 9: Aspek Bisnis Penerapan AI dalam Proyek Data Science](#bagian-9-aspek-bisnis-penerapan-ai-dalam-proyek-data-science)
-10. [Penutup & Ringkasan Seri](#penutup--ringkasan-seri)
+10. [Penutup & Ringkasan Seri](#penutup-ringkasan-seri)
 
 ---
 

@@ -22,9 +22,9 @@ Teknik dasar prompting sudah dikuasai — sekarang saatnya naik level. Whitepape
 ## Daftar Isi
 
 - [Step-Back Prompting](#step-back-prompting)
-- [Chain of Thought (CoT)](#chain-of-thought)
+- [Chain of Thought (CoT)](#chain-of-thought-cot)
 - [Self-Consistency](#self-consistency)
-- [Tree of Thoughts (ToT)](#tree-of-thoughts)
+- [Tree of Thoughts (ToT)](#tree-of-thoughts-tot)
 - [ReAct: Reason and Act](#react-reason-and-act)
 - [Automatic Prompt Engineering](#automatic-prompt-engineering)
 - [Code Prompting](#code-prompting)
@@ -65,7 +65,7 @@ Step-back membantu model mengaktifkan pengetahuan yang lebih luas sebelum menera
 
 
 
-## Chain of Thought (CoT) {#chain-of-thought}
+## Chain of Thought (CoT)
 
 Chain of Thought (CoT) adalah teknik untuk meningkatkan kemampuan reasoning LLM dengan menghasilkan langkah-langkah penalaran antara (*intermediate reasoning steps*).
 
@@ -180,7 +180,7 @@ Meskipun ada satu attempt yang salah (NOT IMPORTANT), majority voting memberikan
 
 
 
-## Tree of Thoughts (ToT) {#tree-of-thoughts}
+## Tree of Thoughts (ToT)
 
 Tree of Thoughts (ToT) menggeneralisasi CoT dengan memungkinkan LLM **mengeksplorasi beberapa jalur reasoning sekaligus** dan memilih yang terbaik — seperti algoritma tree search.
 
@@ -236,7 +236,7 @@ Rating:
 
 
 
-## ReAct: Reason and Act {#react-reason-and-act}
+## ReAct: Reason and Act
 
 ReAct menggabungkan **reasoning** dan **acting** — model bisa menggunakan external tools (pencarian web, kalkulator, database) dalam proses reasoning-nya.
 

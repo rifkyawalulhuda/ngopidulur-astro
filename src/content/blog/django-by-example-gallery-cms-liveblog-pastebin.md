@@ -21,14 +21,14 @@ Teori tanpa praktik tidak lengkap. Chapter 7–10 dari *Python Web Development w
 
 ## Daftar Isi
 
-- [Photo Gallery: Upload dan Resize Gambar](#photo-gallery)
-- [Mini CMS: Content Management System](#mini-cms)
-- [Liveblog: Real-Time dengan Ajax](#liveblog)
-- [Pastebin: Syntax Highlighting dengan Pygments](#pastebin)
+- [Photo Gallery: Upload dan Resize Gambar](#photo-gallery-upload-dan-resize-gambar)
+- [Mini CMS: Content Management System](#mini-cms-content-management-system)
+- [Liveblog: Real-Time dengan Ajax](#liveblog-real-time-dengan-ajax)
+- [Pastebin: Syntax Highlighting dengan Pygments](#pastebin-syntax-highlighting-dengan-pygments)
 
 
 
-## Photo Gallery: Upload dan Resize Gambar {#photo-gallery}
+## Photo Gallery: Upload dan Resize Gambar
 
 ### Model
 
@@ -154,7 +154,7 @@ def photo_upload(request, album_slug):
 
 
 
-## Mini CMS: Content Management System {#mini-cms}
+## Mini CMS: Content Management System
 
 ### Model Hierarki Halaman
 
@@ -253,7 +253,7 @@ def breadcrumb(page):
 
 
 
-## Liveblog: Real-Time dengan Ajax {#liveblog}
+## Liveblog: Real-Time dengan Ajax
 
 ### Model
 
@@ -389,7 +389,7 @@ setInterval(pollUpdates, 5000);
 
 
 
-## Pastebin: Syntax Highlighting dengan Pygments {#pastebin}
+## Pastebin: Syntax Highlighting dengan Pygments
 
 ### Model
 

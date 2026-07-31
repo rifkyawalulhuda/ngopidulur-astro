@@ -21,12 +21,12 @@ Teknik-teknik prompting sudah dikuasai. Tapi ada perbedaan antara tahu tekniknya
 
 ## Daftar Isi
 
-- [Best Practice 1: Berikan Contoh](#berikan-contoh)
-- [Best Practice 2: Desain dengan Simplisitas](#desain-dengan-simplisitas)
-- [Best Practice 3: Spesifik pada Output](#spesifik-pada-output)
-- [Best Practice 4: Instruksi vs Constraints](#instruksi-vs-constraints)
-- [Best Practice 5: Kontrol Panjang Output](#kontrol-panjang-output)
-- [Best Practice 6: Hindari Prompt Ambigu](#hindari-prompt-ambigu)
+- [Best Practice 1: Berikan Contoh](#best-practice-1-berikan-contoh)
+- [Best Practice 2: Desain dengan Simplisitas](#best-practice-2-desain-dengan-simplisitas)
+- [Best Practice 3: Spesifik pada Output](#best-practice-3-spesifik-pada-output)
+- [Best Practice 4: Instruksi vs Constraints](#best-practice-4-instruksi-vs-constraints)
+- [Best Practice 5: Kontrol Panjang Output](#best-practice-5-kontrol-panjang-output)
+- [Best Practice 6: Hindari Prompt Ambigu](#best-practice-6-hindari-prompt-ambigu)
 - [Multimodal Prompting](#multimodal-prompting)
 - [Tantangan: Hallucination](#tantangan-hallucination)
 - [Tantangan: Prompt Injection](#tantangan-prompt-injection)
@@ -35,7 +35,7 @@ Teknik-teknik prompting sudah dikuasai. Tapi ada perbedaan antara tahu tekniknya
 
 
 
-## Best Practice 1: Berikan Contoh {#berikan-contoh}
+## Best Practice 1: Berikan Contoh
 
 Contoh adalah cara paling efektif untuk menunjukkan kepada model *apa* yang kamu inginkan. Lebih baik dari deskripsi panjang.
 
@@ -72,7 +72,7 @@ Example output: NEUTRAL
 
 
 
-## Best Practice 2: Desain dengan Simplisitas {#desain-dengan-simplisitas}
+## Best Practice 2: Desain dengan Simplisitas
 
 Prompt yang lebih simpel biasanya lebih baik. Hindari kompleksitas yang tidak perlu.
 
@@ -114,7 +114,7 @@ insight = llm.generate(f"Based on sentiment '{sentiment}' and themes '{themes}',
 
 
 
-## Best Practice 3: Spesifik pada Output {#spesifik-pada-output}
+## Best Practice 3: Spesifik pada Output
 
 Semakin spesifik kamu tentang format, struktur, dan konten yang diinginkan, semakin baik hasilnya.
 
@@ -154,7 +154,7 @@ Output format:
 
 
 
-## Best Practice 4: Instruksi vs Constraints {#instruksi-vs-constraints}
+## Best Practice 4: Instruksi vs Constraints
 
 Ada perbedaan antara instruksi positif ("lakukan ini") dan constraints negatif ("jangan lakukan ini").
 
@@ -195,7 +195,7 @@ DON'T:
 
 
 
-## Best Practice 5: Kontrol Panjang Output {#kontrol-panjang-output}
+## Best Practice 5: Kontrol Panjang Output
 
 Spesifikasikan panjang output yang diinginkan — jangan biarkan model memutuskan sendiri.
 
@@ -227,7 +227,7 @@ Mengatur token limit *tidak* membuat model menulis lebih ringkas — model hanya
 
 
 
-## Best Practice 6: Hindari Prompt Ambigu {#hindari-prompt-ambigu}
+## Best Practice 6: Hindari Prompt Ambigu
 
 Ambiguitas dalam prompt menghasilkan variasi yang tidak diinginkan dalam output.
 

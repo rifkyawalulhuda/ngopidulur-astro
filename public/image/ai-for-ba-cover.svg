@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0f1e"/>
+      <stop offset="100%" style="stop-color:#111827"/>
+    </linearGradient>
+    <linearGradient id="teal" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0d9488"/>
+      <stop offset="100%" style="stop-color:#14b8a6"/>
+    </linearGradient>
+    <linearGradient id="amber" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#d97706"/>
+      <stop offset="100%" style="stop-color:#f59e0b"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="0" y="0" width="1200" height="4" fill="url(#teal)"/>
+  <rect x="0" y="626" width="1200" height="4" fill="url(#teal)"/>
+
+  <!-- Left: BA workflow diagram -->
+  <g transform="translate(55, 80)">
+    <!-- BA Process Flow -->
+    <rect x="0" y="0" width="160" height="44" rx="8" fill="#0d2a28" stroke="#0d9488" stroke-width="1.5"/>
+    <text x="80" y="17" font-family="'Segoe UI', sans-serif" font-size="11" fill="#14b8a6" text-anchor="middle" font-weight="600">Problem</text>
+    <text x="80" y="33" font-family="'Segoe UI', sans-serif" font-size="11" fill="#14b8a6" text-anchor="middle" font-weight="600">Statement</text>
+
+    <line x1="80" y1="44" x2="80" y2="68" stroke="#0d9488" stroke-width="1.5" stroke-dasharray="4,2"/>
+    <polygon points="80,68 74,58 86,58" fill="#0d9488"/>
+
+    <rect x="0" y="68" width="160" height="44" rx="8" fill="#0d2a28" stroke="#0d9488" stroke-width="1.5"/>
+    <text x="80" y="85" font-family="'Segoe UI', sans-serif" font-size="11" fill="#14b8a6" text-anchor="middle" font-weight="600">Solution</text>
+    <text x="80" y="101" font-family="'Segoe UI', sans-serif" font-size="11" fill="#14b8a6" text-anchor="middle" font-weight="600">Description</text>
+
+    <line x1="80" y1="112" x2="80" y2="136" stroke="#0d9488" stroke-width="1.5" stroke-dasharray="4,2"/>
+    <polygon points="80,136 74,126 86,126" fill="#0d9488"/>
+
+    <rect x="0" y="136" width="160" height="44" rx="8" fill="#0d2a28" stroke="#0d9488" stroke-width="1.5"/>
+    <text x="80" y="153" font-family="'Segoe UI', sans-serif" font-size="11" fill="#14b8a6" text-anchor="middle" font-weight="600">High-Level</text>
+    <text x="80" y="169" font-family="'Segoe UI', sans-serif" font-size="11" fill="#14b8a6" text-anchor="middle" font-weight="600">Requirements</text>
+
+    <line x1="80" y1="180" x2="80" y2="204" stroke="#0d9488" stroke-width="1.5" stroke-dasharray="4,2"/>
+    <polygon points="80,204 74,194 86,194" fill="#0d9488"/>
+
+    <rect x="0" y="204" width="160" height="44" rx="8" fill="#0d2a28" stroke="#0d9488" stroke-width="1.5"/>
+    <text x="80" y="221" font-family="'Segoe UI', sans-serif" font-size="11" fill="#14b8a6" text-anchor="middle" font-weight="600">User Stories</text>
+    <text x="80" y="237" font-family="'Segoe UI', sans-serif" font-size="11" fill="#14b8a6" text-anchor="middle" font-weight="600">and Use Cases</text>
+
+    <line x1="80" y1="248" x2="80" y2="272" stroke="#0d9488" stroke-width="1.5" stroke-dasharray="4,2"/>
+    <polygon points="80,272 74,262 86,262" fill="#0d9488"/>
+
+    <rect x="0" y="272" width="160" height="44" rx="8" fill="#0d2a28" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="80" y="289" font-family="'Segoe UI', sans-serif" font-size="11" fill="#f59e0b" text-anchor="middle" font-weight="600">UI Wireframe</text>
+    <text x="80" y="305" font-family="'Segoe UI', sans-serif" font-size="11" fill="#fbbf24" text-anchor="middle" font-weight="600">(AI Generated)</text>
+
+    <!-- AI badges -->
+    <g transform="translate(175, 12)">
+      <rect x="0" y="0" width="60" height="20" rx="10" fill="#0d2a28" stroke="#0d9488" stroke-width="1"/>
+      <text x="30" y="14" font-family="monospace" font-size="9" fill="#14b8a6" text-anchor="middle">ChatGPT</text>
+    </g>
+    <g transform="translate(175, 80)">
+      <rect x="0" y="0" width="55" height="20" rx="10" fill="#0d2a28" stroke="#0d9488" stroke-width="1"/>
+      <text x="27" y="14" font-family="monospace" font-size="9" fill="#14b8a6" text-anchor="middle">Pace AI</text>
+    </g>
+    <g transform="translate(175, 148)">
+      <rect x="0" y="0" width="55" height="20" rx="10" fill="#0d2a28" stroke="#0d9488" stroke-width="1"/>
+      <text x="27" y="14" font-family="monospace" font-size="9" fill="#14b8a6" text-anchor="middle">ChatGPT</text>
+    </g>
+    <g transform="translate(175, 216)">
+      <rect x="0" y="0" width="55" height="20" rx="10" fill="#0d2a28" stroke="#0d9488" stroke-width="1"/>
+      <text x="27" y="14" font-family="monospace" font-size="9" fill="#14b8a6" text-anchor="middle">ChatGPT</text>
+    </g>
+    <g transform="translate(175, 284)">
+      <rect x="0" y="0" width="55" height="20" rx="10" fill="#2a1a0d" stroke="#f59e0b" stroke-width="1"/>
+      <text x="27" y="14" font-family="monospace" font-size="9" fill="#f59e0b" text-anchor="middle">Uizard</text>
+    </g>
+
+    <!-- Time savings badge -->
+    <rect x="0" y="344" width="250" height="48" rx="8" fill="#0d2a28" stroke="#14b8a6" stroke-width="1"/>
+    <text x="125" y="363" font-family="'Segoe UI', sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">Estimated Time Saved</text>
+    <text x="125" y="383" font-family="'Segoe UI', sans-serif" font-size="18" fill="#14b8a6" text-anchor="middle" font-weight="800">~28 jam / proyek</text>
+
+    <!-- BPMN box -->
+    <rect x="0" y="410" width="250" height="44" rx="8" fill="#1a0d2a" stroke="#8b5cf6" stroke-width="1.5"/>
+    <text x="125" y="428" font-family="'Segoe UI', sans-serif" font-size="11" fill="#8b5cf6" text-anchor="middle" font-weight="600">Business Process (BPMN)</text>
+    <text x="125" y="444" font-family="'Segoe UI', sans-serif" font-size="10" fill="#a78bfa" text-anchor="middle">BPMN Sketch Miner + AI</text>
+  </g>
+
+  <!-- Right: Title -->
+  <text x="550" y="140" font-family="'Segoe UI', sans-serif" font-size="12" fill="#6e7681" letter-spacing="4">AHMED ALSUWAILEM · 2024</text>
+  <text x="550" y="200" font-family="'Segoe UI', sans-serif" font-size="38" fill="#f0f6fc" font-weight="800" letter-spacing="-1">AI untuk</text>
+  <text x="550" y="248" font-family="'Segoe UI', sans-serif" font-size="38" fill="url(#teal)" font-weight="800" letter-spacing="-1">Business Analyst</text>
+  <rect x="550" y="263" width="200" height="4" rx="2" fill="url(#amber)"/>
+
+  <text x="550" y="300" font-family="'Segoe UI', sans-serif" font-size="15" fill="#8b949e">Use Case: Integrated Inspection Platform</text>
+  <text x="550" y="322" font-family="'Segoe UI', sans-serif" font-size="15" fill="#8b949e">Panduan Praktis Bahasa Indonesia</text>
+
+  <!-- Tools grid -->
+  <g transform="translate(550, 348)">
+    <rect x="0" y="0" width="90" height="26" rx="13" fill="#0d2a28"/>
+    <text x="45" y="17" font-family="'Segoe UI', sans-serif" font-size="11" fill="#14b8a6" text-anchor="middle">ChatGPT 4.0</text>
+    <rect x="102" y="0" width="65" height="26" rx="13" fill="#0d2a28"/>
+    <text x="134" y="17" font-family="'Segoe UI', sans-serif" font-size="11" fill="#14b8a6" text-anchor="middle">Pace AI</text>
+    <rect x="179" y="0" width="55" height="26" rx="13" fill="#2a1a0d"/>
+    <text x="206" y="17" font-family="'Segoe UI', sans-serif" font-size="11" fill="#f59e0b" text-anchor="middle">Uizard</text>
+    <rect x="246" y="0" width="50" height="26" rx="13" fill="#1a0d2a"/>
+    <text x="271" y="17" font-family="'Segoe UI', sans-serif" font-size="11" fill="#a78bfa" text-anchor="middle">Bard</text>
+    <rect x="0" y="36" width="110" height="26" rx="13" fill="#1a0d2a"/>
+    <text x="55" y="53" font-family="'Segoe UI', sans-serif" font-size="11" fill="#a78bfa" text-anchor="middle">BPMN Sketch Miner</text>
+  </g>
+
+  <!-- Performance summary -->
+  <g transform="translate(550, 430)">
+    <text x="0" y="0" font-family="'Segoe UI', sans-serif" font-size="13" fill="#6e7681">8 BA Tasks Evaluated</text>
+    <text x="0" y="22" font-family="'Segoe UI', sans-serif" font-size="12" fill="#6e7681">Problem Statement · Requirements · BPMN</text>
+    <text x="0" y="42" font-family="'Segoe UI', sans-serif" font-size="12" fill="#6e7681">User Stories · Use Cases · Architecture</text>
+    <text x="0" y="62" font-family="'Segoe UI', sans-serif" font-size="12" fill="#6e7681">Solution Benchmark · UI Wireframe</text>
+  </g>
+
+  <!-- Bottom quote -->
+  <rect x="550" y="520" width="590" height="56" rx="8" fill="#0d2a28" stroke="#0d9488" stroke-width="1"/>
+  <text x="845" y="543" font-family="'Segoe UI', sans-serif" font-size="12" fill="#6b7280" text-anchor="middle" font-style="italic">"AI can do parts of these tasks, but none fully.</text>
+  <text x="845" y="562" font-family="'Segoe UI', sans-serif" font-size="12" fill="#6b7280" text-anchor="middle" font-style="italic">Enhance your skill set using it." — Ahmed Alsuwailem</text>
+
+  <text x="560" y="608" font-family="'Segoe UI', sans-serif" font-size="12" fill="#30363d">ngopidulur.my.id</text>
+
+  <!-- Glow -->
+  <circle cx="1150" cy="100" r="120" fill="#0d9488" opacity="0.04"/>
+</svg>
