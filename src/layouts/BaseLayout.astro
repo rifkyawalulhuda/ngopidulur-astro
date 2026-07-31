@@ -34,6 +34,24 @@ const {
     <Header title={title} description={description} favicon={SITE_FAVICON} image={image} />
     <title>{`${title} - ${SITE_TAB}`}</title>
 
+    <!-- Google Analytics GA4 — with Astro View Transitions support -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X9KCVX8XXJ"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      // send_page_view: false — kita track manual via astro:page-load
+      gtag('config', 'G-X9KCVX8XXJ', { send_page_view: false });
+
+      // Track setiap navigasi View Transitions (SPA-style)
+      document.addEventListener('astro:page-load', function() {
+        gtag('event', 'page_view', {
+          page_title: document.title,
+          page_location: window.location.href,
+        });
+      });
+    </script>
+
     <script define:vars={{ SITE_THEME }} is:inline>
       (function () {
         const storedTheme = localStorage.getItem("theme");
