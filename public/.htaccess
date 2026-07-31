@@ -1,0 +1,45 @@
+# =====================================================
+# Block Spam Bots & Bad Crawlers
+# ngopidulur.my.id
+# =====================================================
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Block known spam bots by User-Agent
+  RewriteCond %{HTTP_USER_AGENT} (AhrefsBot|SemrushBot|MJ12bot|DotBot|BLEXBot|DataForSeoBot|PetalBot|Bytespider|GPTBot|ClaudeBot|CCBot|anthropic-ai|cohere-ai|Diffbot|Scrapy|ia_archiver|proximic|ZoominfoBot|Yandex|BaiduSpider|360Spider|Sogou|YisouSpider|XoviBot|linkdexbot|sistrix|seokicks|SEOkicks) [NC]
+  RewriteRule .* - [F,L]
+
+  # Block empty User-Agent (common bot behavior)
+  RewriteCond %{HTTP_USER_AGENT} ^-?$
+  RewriteRule .* - [F,L]
+
+  # Block suspicious query strings
+  RewriteCond %{QUERY_STRING} (base64_encode|GLOBALS|_REQUEST|proc/self/environ|mosConfig|localhost|loopback) [NC]
+  RewriteRule .* - [F,L]
+
+</IfModule>
+
+# =====================================================
+# Block Direct IP Access (bukan via domain)
+# =====================================================
+<IfModule mod_rewrite.c>
+  RewriteCond %{HTTP_HOST} ^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$
+  RewriteRule .* - [F,L]
+</IfModule>
+
+# =====================================================
+# Security Headers
+# =====================================================
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set X-XSS-Protection "1; mode=block"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# =====================================================
+# Allow Good Bots (Googlebot, Bingbot, dll.)
+# Catatan: Good bots tidak ter-block karena rule di
+# atas hanya target bot jahat yang sudah dikenal.
+# =====================================================

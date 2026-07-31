@@ -1,0 +1,135 @@
+---
+import MainCard from "@/components/MainCard.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const lastUpdated = "30 Juli 2026";
+const siteName = "Ngopidulur";
+const siteUrl = "https://ngopidulur.my.id";
+const ownerName = "Rifky Awalul Huda";
+const contactEmail = "admin@ngopidulur.my.id";
+---
+
+<BaseLayout
+  title="Privacy Policy"
+  description="Kebijakan privasi Ngopidulur — bagaimana kami mengumpulkan, menggunakan, dan melindungi data pengunjung."
+>
+  <MainCard
+    title="Privacy Policy"
+    description="Kebijakan Privasi Ngopidulur"
+    textOverlay="PRIVACY"
+    infoIcon="lucide:shield"
+  >
+    <div class="prose max-w-none prose-headings:scroll-mt-20">
+      <p class="text-sm text-base-content/50 mb-6">
+        Terakhir diperbarui: {lastUpdated}
+      </p>
+
+      <p>
+        Selamat datang di <strong>{siteName}</strong> (<a href={siteUrl}>{siteUrl}</a>).
+        Kebijakan privasi ini menjelaskan bagaimana kami mengumpulkan, menggunakan, dan melindungi
+        informasi yang diperoleh saat Anda mengunjungi website ini.
+      </p>
+
+      <h2>1. Informasi yang Kami Kumpulkan</h2>
+      <p>Kami dapat mengumpulkan informasi berikut secara otomatis saat Anda mengunjungi website:</p>
+      <ul>
+        <li>Alamat IP dan informasi browser</li>
+        <li>Halaman yang dikunjungi dan durasi kunjungan</li>
+        <li>Sumber rujukan (referral source)</li>
+        <li>Perangkat dan sistem operasi yang digunakan</li>
+      </ul>
+      <p>
+        Kami <strong>tidak</strong> mengumpulkan nama, alamat email, atau informasi pribadi lainnya
+        kecuali Anda secara sukarela memberikannya (misalnya melalui formulir kontak).
+      </p>
+
+      <h2>2. Penggunaan Google Analytics</h2>
+      <p>
+        Website ini menggunakan <strong>Google Analytics</strong> untuk menganalisis lalu lintas dan
+        perilaku pengunjung. Google Analytics menggunakan cookie untuk mengumpulkan data secara anonim,
+        termasuk jumlah pengunjung, halaman yang dilihat, dan waktu yang dihabiskan di website.
+      </p>
+      <p>
+        Data yang dikumpulkan Google Analytics tidak mengidentifikasi Anda secara pribadi. Anda dapat
+        menonaktifkan pelacakan Google Analytics dengan menginstal
+        <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">
+          Google Analytics Opt-out Browser Add-on
+        </a>.
+      </p>
+      <p>
+        Untuk informasi lebih lanjut tentang kebijakan privasi Google, kunjungi:
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
+          policies.google.com/privacy
+        </a>.
+      </p>
+
+      <h2>3. Cookie</h2>
+      <p>
+        Website ini menggunakan cookie untuk meningkatkan pengalaman pengguna, termasuk:
+      </p>
+      <ul>
+        <li><strong>Cookie fungsional</strong> — menyimpan preferensi tampilan (tema terang/gelap)</li>
+        <li><strong>Cookie analitik</strong> — digunakan oleh Google Analytics untuk statistik pengunjung anonim</li>
+      </ul>
+      <p>
+        Anda dapat mengontrol atau menghapus cookie melalui pengaturan browser Anda. Menonaktifkan
+        cookie mungkin mempengaruhi beberapa fungsi website.
+      </p>
+
+      <h2>4. Iklan (Google AdSense)</h2>
+      <p>
+        Website ini dapat menampilkan iklan melalui <strong>Google AdSense</strong>. Google menggunakan
+        cookie DART untuk menampilkan iklan berdasarkan kunjungan sebelumnya ke website ini dan website
+        lain di internet.
+      </p>
+      <p>
+        Anda dapat menonaktifkan penggunaan cookie DART dengan mengunjungi
+        <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">
+          Kebijakan Iklan Google
+        </a>.
+      </p>
+
+      <h2>5. Tautan ke Website Pihak Ketiga</h2>
+      <p>
+        Website ini dapat memuat tautan ke website pihak ketiga. Kami tidak bertanggung jawab atas
+        praktik privasi website tersebut. Kami menyarankan Anda membaca kebijakan privasi setiap
+        website yang Anda kunjungi.
+      </p>
+
+      <h2>6. Keamanan Data</h2>
+      <p>
+        Kami berkomitmen untuk melindungi keamanan informasi Anda. Namun, tidak ada metode transmisi
+        data melalui internet yang 100% aman. Kami tidak dapat menjamin keamanan absolut dari informasi
+        yang Anda kirimkan.
+      </p>
+
+      <h2>7. Hak Anda (GDPR)</h2>
+      <p>Jika Anda berada di wilayah Uni Eropa, Anda memiliki hak untuk:</p>
+      <ul>
+        <li>Mengakses data pribadi yang kami miliki tentang Anda</li>
+        <li>Meminta koreksi data yang tidak akurat</li>
+        <li>Meminta penghapusan data Anda</li>
+        <li>Keberatan atas pemrosesan data Anda</li>
+      </ul>
+      <p>
+        Untuk menggunakan hak-hak ini, hubungi kami melalui email di bawah.
+      </p>
+
+      <h2>8. Perubahan Kebijakan Privasi</h2>
+      <p>
+        Kami dapat memperbarui kebijakan privasi ini sewaktu-waktu. Perubahan akan berlaku segera
+        setelah diterbitkan di halaman ini. Kami menyarankan Anda meninjau halaman ini secara berkala.
+      </p>
+
+      <h2>9. Hubungi Kami</h2>
+      <p>
+        Jika Anda memiliki pertanyaan tentang kebijakan privasi ini, silakan hubungi:
+      </p>
+      <ul>
+        <li><strong>Nama:</strong> {ownerName}</li>
+        <li><strong>Website:</strong> <a href={siteUrl}>{siteUrl}</a></li>
+        <li><strong>Email:</strong> <a href={`mailto:${contactEmail}`}>{contactEmail}</a></li>
+      </ul>
+    </div>
+  </MainCard>
+</BaseLayout>
