@@ -69,6 +69,9 @@ export interface TranslationLabel {
   link: string;
   prevPage: string;
   nextPage: string;
+  pageOf: string;
+  showingPosts: string;
+  jumpToPage: string;
   wordCount: string;
   readTime: string;
   share: string;

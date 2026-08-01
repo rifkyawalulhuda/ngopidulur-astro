@@ -7,14 +7,24 @@ const {
   baseUrl,
   isOnly = false,
 } = Astro.props as PaginationNumberProps;
-const href = number === 1 ? baseUrl : `${baseUrl}/${number}`;
+const pageNum = Number(number);
+const href = pageNum === 1 ? baseUrl : `${baseUrl}/${pageNum}`;
+const isActive = pageNum === current;
 ---
 
 <a
   href={href}
   title={`Page ${number}`}
   aria-label={`Page ${number}`}
-  class:list={["join-item btn bg-base-100", number === current && "btn-active", isOnly && "rounded-btn"]}
+  aria-current={isActive ? "page" : undefined}
+  class:list={[
+    "join-item btn btn-sm sm:btn-md min-w-10 sm:min-w-12 px-2 sm:px-4",
+    "transition-colors duration-200 cursor-pointer",
+    isActive
+      ? "btn-primary text-primary-content shadow-sm"
+      : "btn-ghost bg-base-100 hover:bg-primary/10 hover:text-primary",
+    isOnly && "rounded-btn",
+  ]}
 >
   {number}
 </a>

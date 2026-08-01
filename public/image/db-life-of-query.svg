@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" width="900" height="380">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6366f1"/>
+    </marker>
+  </defs>
+  <rect width="900" height="380" fill="#ffffff" rx="12"/>
+  <rect width="900" height="380" fill="none" stroke="#e2e8f0" stroke-width="1.5" rx="12"/>
+  <rect x="0" y="0" width="900" height="44" fill="#4f46e5" rx="12"/>
+  <rect x="0" y="22" width="900" height="22" fill="#4f46e5"/>
+  <text x="450" y="28" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">Life of a Query — Alur Eksekusi SQL di RDBMS</text>
+  <!-- Client -->
+  <rect x="30" y="90" width="150" height="100" fill="#e0e7ff" rx="10" stroke="#6366f1" stroke-width="1.8"/>
+  <text x="105" y="120" font-family="Inter,Arial,sans-serif" font-size="12" fill="#3730a3" text-anchor="middle" font-weight="700">Client App</text>
+  <text x="105" y="140" font-family="Inter,Arial,sans-serif" font-size="9" fill="#6366f1" text-anchor="middle">ODBC / JDBC</text>
+  <text x="105" y="160" font-family="Inter,Arial,sans-serif" font-size="9" fill="#6366f1" text-anchor="middle">SQL Query</text>
+  <!-- Parser -->
+  <rect x="220" y="90" width="150" height="100" fill="#dbeafe" rx="10" stroke="#3b82f6" stroke-width="1.8"/>
+  <text x="295" y="120" font-family="Inter,Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle" font-weight="700">Parser</text>
+  <text x="295" y="140" font-family="Inter,Arial,sans-serif" font-size="9" fill="#3b82f6" text-anchor="middle">cek sintaks</text>
+  <text x="295" y="155" font-family="Inter,Arial,sans-serif" font-size="9" fill="#3b82f6" text-anchor="middle">resolusi nama</text>
+  <text x="295" y="170" font-family="Inter,Arial,sans-serif" font-size="9" fill="#3b82f6" text-anchor="middle">authorization</text>
+  <!-- Optimizer -->
+  <rect x="410" y="90" width="150" height="100" fill="#dcfce7" rx="10" stroke="#16a34a" stroke-width="1.8"/>
+  <text x="485" y="120" font-family="Inter,Arial,sans-serif" font-size="12" fill="#166534" text-anchor="middle" font-weight="700">Optimizer</text>
+  <text x="485" y="140" font-family="Inter,Arial,sans-serif" font-size="9" fill="#15803d" text-anchor="middle">query rewrite</text>
+  <text x="485" y="155" font-family="Inter,Arial,sans-serif" font-size="9" fill="#15803d" text-anchor="middle">pilih plan terbaik</text>
+  <text x="485" y="170" font-family="Inter,Arial,sans-serif" font-size="9" fill="#15803d" text-anchor="middle">cost estimation</text>
+  <!-- Executor -->
+  <rect x="600" y="90" width="150" height="100" fill="#fef3c7" rx="10" stroke="#d97706" stroke-width="1.8"/>
+  <text x="675" y="120" font-family="Inter,Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle" font-weight="700">Executor</text>
+  <text x="675" y="140" font-family="Inter,Arial,sans-serif" font-size="9" fill="#b45309" text-anchor="middle">operator tree</text>
+  <text x="675" y="155" font-family="Inter,Arial,sans-serif" font-size="9" fill="#b45309" text-anchor="middle">scan · join · agg</text>
+  <text x="675" y="170" font-family="Inter,Arial,sans-serif" font-size="9" fill="#b45309" text-anchor="middle">access methods</text>
+  <!-- Storage -->
+  <rect x="780" y="90" width="100" height="100" fill="#fce7f3" rx="10" stroke="#db2777" stroke-width="1.8"/>
+  <text x="830" y="125" font-family="Inter,Arial,sans-serif" font-size="11" fill="#9d174d" text-anchor="middle" font-weight="700">Storage</text>
+  <text x="830" y="145" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#db2777" text-anchor="middle">buffer pool</text>
+  <text x="830" y="160" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#db2777" text-anchor="middle">transactions</text>
+  <text x="830" y="175" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#db2777" text-anchor="middle">recovery</text>
+  <!-- Arrows -->
+  <line x1="180" y1="140" x2="220" y2="140" stroke="#6366f1" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="370" y1="140" x2="410" y2="140" stroke="#6366f1" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="560" y1="140" x2="600" y2="140" stroke="#6366f1" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="750" y1="140" x2="780" y2="140" stroke="#6366f1" stroke-width="2" marker-end="url(#arr)"/>
+  <!-- Bottom description -->
+  <rect x="30" y="230" width="840" height="110" fill="#f8fafc" rx="10" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="450" y="255" font-family="Inter,Arial,sans-serif" font-size="11.5" fill="#1e293b" text-anchor="middle" font-weight="700">5 Komponen Utama RDBMS (Hellerstein et al. 2007)</text>
+  <text x="450" y="280" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#475569" text-anchor="middle">1. Process Manager — kelola koneksi dan thread client</text>
+  <text x="450" y="298" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#475569" text-anchor="middle">2. Relational Query Processor — parse, optimize, execute</text>
+  <text x="450" y="316" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#475569" text-anchor="middle">3. Transactional Storage Manager — locking, logging, recovery</text>
+  <text x="450" y="334" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#475569" text-anchor="middle">4. Shared Utilities — memory, disk, replication, admin</text>
+  <!-- Footer -->
+  <text x="450" y="368" font-family="Inter,Arial,sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">Architecture of a Database System (Foundations and Trends in Databases, 2007)</text>
+</svg>

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" width="900" height="400">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6366f1"/>
+    </marker>
+    <marker id="arrG" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#16a34a"/>
+    </marker>
+  </defs>
+  <rect width="900" height="400" fill="#ffffff" rx="12"/>
+  <rect width="900" height="400" fill="none" stroke="#e2e8f0" stroke-width="1.5" rx="12"/>
+  <rect x="0" y="0" width="900" height="44" fill="#4f46e5" rx="12"/>
+  <rect x="0" y="22" width="900" height="22" fill="#4f46e5"/>
+  <text x="450" y="28" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">Linked Information Holder — Data Direferensikan via Link</text>
+  <!-- Client -->
+  <rect x="40" y="110" width="160" height="110" fill="#e0e7ff" rx="10" stroke="#6366f1" stroke-width="1.8"/>
+  <text x="120" y="140" font-family="Inter,Arial,sans-serif" font-size="12" fill="#3730a3" text-anchor="middle" font-weight="700">API Client</text>
+  <text x="120" y="158" font-family="Inter,Arial,sans-serif" font-size="9" fill="#6366f1" text-anchor="middle">dapat mengikuti link</text>
+  <text x="120" y="174" font-family="Inter,Arial,sans-serif" font-size="9" fill="#6366f1" text-anchor="middle">(3) follow link →</text>
+  <text x="120" y="198" font-family="Inter,Arial,sans-serif" font-size="9" fill="#6366f1" text-anchor="middle">ambil data on demand</text>
+  <!-- API Proxy -->
+  <rect x="270" y="110" width="170" height="110" fill="#4f46e5" rx="10" stroke="#3730a3" stroke-width="2"/>
+  <text x="355" y="140" font-family="Inter,Arial,sans-serif" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="700">API Proxy</text>
+  <text x="355" y="163" font-family="Inter,Arial,sans-serif" font-size="9" fill="#c7d2fe" text-anchor="middle">Resource Representation</text>
+  <text x="355" y="185" font-family="Inter,Arial,sans-serif" font-size="9" fill="#a5b4fc" text-anchor="middle">Link Element</text>
+  <text x="355" y="200" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#c7d2fe" text-anchor="middle">(alamat related resource)</text>
+  <!-- Arrow request -->
+  <line x1="200" y1="140" x2="270" y2="140" stroke="#6366f1" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="235" y="130" font-family="Inter,Arial,sans-serif" font-size="9" fill="#4f46e5" text-anchor="middle">Request</text>
+  <!-- Arrow response -->
+  <line x1="270" y1="190" x2="200" y2="190" stroke="#16a34a" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="235" y="210" font-family="Inter,Arial,sans-serif" font-size="9" fill="#16a34a" text-anchor="middle">Response + links</text>
+  <!-- Resource -->
+  <rect x="270" y="290" width="170" height="50" fill="#dbeafe" rx="8" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="355" y="312" font-family="Inter,Arial,sans-serif" font-size="10" fill="#1e40af" text-anchor="middle" font-weight="600">Resource</text>
+  <text x="355" y="328" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#3b82f6" text-anchor="middle">(data utama)</text>
+  <line x1="355" y1="220" x2="355" y2="290" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="385" y="260" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#3b82f6" text-anchor="middle">(1) references</text>
+  <!-- Related resource - Information Holder -->
+  <rect x="520" y="290" width="200" height="50" fill="#dcfce7" rx="8" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="620" y="312" font-family="Inter,Arial,sans-serif" font-size="10" fill="#166534" text-anchor="middle" font-weight="600">Information Holder</text>
+  <text x="620" y="328" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#15803d" text-anchor="middle">(related resource)</text>
+  <!-- Arrow links to -->
+  <line x1="440" y1="315" x2="520" y2="315" stroke="#16a34a" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#arrG)"/>
+  <text x="480" y="305" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#15803d" text-anchor="middle">(2) links to</text>
+  <!-- Example box -->
+  <rect x="500" y="100" width="360" height="150" fill="#f8fafc" rx="10" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="680" y="125" font-family="Inter,Arial,sans-serif" font-size="11" fill="#1e293b" text-anchor="middle" font-weight="700">Contoh Response (JSON + links)</text>
+  <text x="520" y="148" font-family="monospace,Consolas" font-size="8.5" fill="#475569">{"customer": {"id": "a51a"},</text>
+  <text x="520" y="164" font-family="monospace,Consolas" font-size="8.5" fill="#16a34a">  "links": [{</text>
+  <text x="520" y="180" font-family="monospace,Consolas" font-size="8.5" fill="#16a34a">    "rel": "customerProfile",</text>
+  <text x="520" y="196" font-family="monospace,Consolas" font-size="8.5" fill="#16a34a">    "href": "/customers/a51a/profile"</text>
+  <text x="520" y="212" font-family="monospace,Consolas" font-size="8.5" fill="#16a34a">  }],</text>
+  <text x="520" y="228" font-family="monospace,Consolas" font-size="8.5" fill="#475569">  "email": "rd@example.com"}</text>
+  <text x="680" y="245" font-family="Inter,Arial,sans-serif" font-size="9" fill="#64748b" text-anchor="middle">Client mengikuti href untuk data detail</text>
+  <!-- Footer -->
+  <text x="450" y="380" font-family="Inter,Arial,sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">Microservice API Patterns (MAP) — Zimmermann et al. 2019 · HATEOAS / REST maturity level 3</text>
+</svg>

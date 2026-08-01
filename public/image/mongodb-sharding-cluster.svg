@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" width="900" height="380">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#16a34a"/>
+    </marker>
+  </defs>
+  <rect width="900" height="380" fill="#ffffff" rx="12"/>
+  <rect width="900" height="380" fill="none" stroke="#e2e8f0" stroke-width="1.5" rx="12"/>
+  <rect x="0" y="0" width="900" height="44" fill="#16a34a" rx="12"/>
+  <rect x="0" y="22" width="900" height="22" fill="#16a34a"/>
+  <text x="450" y="28" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">MongoDB Sharded Cluster — Auto-Sharding untuk Skala Horizontal</text>
+  <!-- App -->
+  <rect x="30" y="110" width="150" height="90" fill="#dcfce7" rx="10" stroke="#16a34a" stroke-width="1.8"/>
+  <text x="105" y="140" font-family="Inter,Arial,sans-serif" font-size="12" fill="#166534" text-anchor="middle" font-weight="700">Application</text>
+  <text x="105" y="160" font-family="Inter,Arial,sans-serif" font-size="9" fill="#15803d" text-anchor="middle">MongoDB Driver</text>
+  <text x="105" y="180" font-family="Inter,Arial,sans-serif" font-size="9" fill="#15803d" text-anchor="middle">transparan —</text>
+  <text x="105" y="193" font-family="Inter,Arial,sans-serif" font-size="9" fill="#15803d" text-anchor="middle">tanpa tahu sharding</text>
+  <!-- Router -->
+  <rect x="240" y="110" width="150" height="90" fill="#fef3c7" rx="10" stroke="#d97706" stroke-width="1.8"/>
+  <text x="315" y="140" font-family="Inter,Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle" font-weight="700">Query Router</text>
+  <text x="315" y="160" font-family="Inter,Arial,sans-serif" font-size="9" fill="#b45309" text-anchor="middle">(mongos)</text>
+  <text x="315" y="180" font-family="Inter,Arial,sans-serif" font-size="9" fill="#b45309" text-anchor="middle">arahkan query</text>
+  <text x="315" y="193" font-family="Inter,Arial,sans-serif" font-size="9" fill="#b45309" text-anchor="middle">ke shard tepat</text>
+  <!-- Shards -->
+  <rect x="470" y="60" width="120" height="90" fill="#dbeafe" rx="10" stroke="#3b82f6" stroke-width="1.8"/>
+  <text x="530" y="90" font-family="Inter,Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle" font-weight="700">SHARD 1</text>
+  <text x="530" y="110" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#3b82f6" text-anchor="middle">replica set</text>
+  <text x="530" y="125" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#3b82f6" text-anchor="middle">range: a-f</text>
+  <rect x="630" y="60" width="120" height="90" fill="#dcfce7" rx="10" stroke="#16a34a" stroke-width="1.8"/>
+  <text x="690" y="90" font-family="Inter,Arial,sans-serif" font-size="12" fill="#166534" text-anchor="middle" font-weight="700">SHARD 2</text>
+  <text x="690" y="110" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#15803d" text-anchor="middle">replica set</text>
+  <text x="690" y="125" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#15803d" text-anchor="middle">range: g-m</text>
+  <rect x="790" y="60" width="90" height="90" fill="#fce7f3" rx="10" stroke="#db2777" stroke-width="1.8"/>
+  <text x="835" y="90" font-family="Inter,Arial,sans-serif" font-size="12" fill="#9d174d" text-anchor="middle" font-weight="700">SHARD 3</text>
+  <text x="835" y="110" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#db2777" text-anchor="middle">replica set</text>
+  <text x="835" y="125" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#db2777" text-anchor="middle">range: n-z</text>
+  <!-- Config servers -->
+  <rect x="470" y="230" width="250" height="60" fill="#f1f5f9" rx="10" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="595" y="255" font-family="Inter,Arial,sans-serif" font-size="11" fill="#475569" text-anchor="middle" font-weight="700">Config Servers (metadata)</text>
+  <text x="595" y="273" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#64748b" text-anchor="middle">shard key ranges · routing info</text>
+  <!-- Edges -->
+  <line x1="180" y1="155" x2="240" y2="155" stroke="#16a34a" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="390" y1="140" x2="470" y2="120" stroke="#16a34a" stroke-width="1.8" marker-end="url(#arr)"/>
+  <line x1="390" y1="160" x2="630" y2="125" stroke="#16a34a" stroke-width="1.8" marker-end="url(#arr)"/>
+  <line x1="390" y1="175" x2="800" y2="140" stroke="#16a34a" stroke-width="1.8" marker-end="url(#arr)"/>
+  <line x1="390" y1="185" x2="595" y2="230" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#arr)"/>
+  <!-- Bottom -->
+  <text x="450" y="330" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#64748b" text-anchor="middle">Shard key: distribusi dokumen sesuai nilai key · auto-balancing · scale dengan tambah shard</text>
+  <text x="450" y="350" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#64748b" text-anchor="middle">Range-based · Hash-based · Zone-aware sharding</text>
+  <text x="450" y="372" font-family="Inter,Arial,sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">MongoDB Architecture Guide — Data Management</text>
+</svg>

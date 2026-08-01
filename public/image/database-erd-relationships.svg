@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" width="900" height="380">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6366f1"/>
+    </marker>
+  </defs>
+  <rect width="900" height="380" fill="#ffffff" rx="12"/>
+  <rect width="900" height="380" fill="none" stroke="#e2e8f0" stroke-width="1.5" rx="12"/>
+  <rect x="0" y="0" width="900" height="44" fill="#4f46e5" rx="12"/>
+  <rect x="0" y="22" width="900" height="22" fill="#4f46e5"/>
+  <text x="450" y="28" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">Hubungan antar Tabel — Crow's Foot Notation</text>
+  <!-- One-to-One -->
+  <rect x="40" y="80" width="250" height="90" fill="#f8fafc" rx="10" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="165" y="102" font-family="Inter,Arial,sans-serif" font-size="12" fill="#334155" text-anchor="middle" font-weight="700">One-to-One (1:1)</text>
+  <rect x="60" y="112" width="80" height="35" fill="#dbeafe" rx="7" stroke="#3b82f6" stroke-width="1.2"/>
+  <text x="100" y="134" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#1e40af" text-anchor="middle">Customer</text>
+  <rect x="190" y="112" width="80" height="35" fill="#dcfce7" rx="7" stroke="#16a34a" stroke-width="1.2"/>
+  <text x="230" y="134" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#166534" text-anchor="middle">Profile</text>
+  <line x1="140" y1="130" x2="190" y2="130" stroke="#6366f1" stroke-width="2"/>
+  <line x1="190" y1="122" x2="190" y2="138" stroke="#6366f1" stroke-width="2"/>
+  <line x1="140" y1="122" x2="140" y2="138" stroke="#6366f1" stroke-width="2"/>
+  <!-- One-to-Many -->
+  <rect x="320" y="80" width="250" height="90" fill="#f8fafc" rx="10" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="445" y="102" font-family="Inter,Arial,sans-serif" font-size="12" fill="#334155" text-anchor="middle" font-weight="700">One-to-Many (1:M)</text>
+  <rect x="340" y="112" width="80" height="35" fill="#dbeafe" rx="7" stroke="#3b82f6" stroke-width="1.2"/>
+  <text x="380" y="134" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#1e40af" text-anchor="middle">Customer</text>
+  <rect x="470" y="112" width="80" height="35" fill="#dcfce7" rx="7" stroke="#16a34a" stroke-width="1.2"/>
+  <text x="510" y="134" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#166534" text-anchor="middle">Orders</text>
+  <line x1="420" y1="130" x2="470" y2="130" stroke="#6366f1" stroke-width="2"/>
+  <!-- crow's foot (many side) -->
+  <polygon points="470,130 458,123 458,137" fill="none" stroke="#6366f1" stroke-width="2"/>
+  <!-- Many-to-Many -->
+  <rect x="600" y="80" width="260" height="90" fill="#f8fafc" rx="10" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="730" y="102" font-family="Inter,Arial,sans-serif" font-size="12" fill="#334155" text-anchor="middle" font-weight="700">Many-to-Many (M:N)</text>
+  <rect x="620" y="112" width="75" height="35" fill="#dbeafe" rx="7" stroke="#3b82f6" stroke-width="1.2"/>
+  <text x="657" y="134" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#1e40af" text-anchor="middle">Orders</text>
+  <rect x="770" y="112" width="75" height="35" fill="#dcfce7" rx="7" stroke="#16a34a" stroke-width="1.2"/>
+  <text x="807" y="134" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#166534" text-anchor="middle">Products</text>
+  <line x1="695" y1="130" x2="770" y2="130" stroke="#6366f1" stroke-width="2"/>
+  <polygon points="695,130 707,123 707,137" fill="none" stroke="#6366f1" stroke-width="2"/>
+  <polygon points="770,130 758,123 758,137" fill="none" stroke="#6366f1" stroke-width="2"/>
+  <!-- Junction table -->
+  <rect x="655" y="200" width="140" height="35" fill="#fef3c7" rx="7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="725" y="222" font-family="Inter,Arial,sans-serif" font-size="10" fill="#92400e" text-anchor="middle" font-weight="700">Order_Items</text>
+  <text x="725" y="235" font-family="Inter,Arial,sans-serif" font-size="8" fill="#b45309" text-anchor="middle">(junction table)</text>
+  <line x1="657" y1="147" x2="657" y2="200" stroke="#d97706" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="807" y1="147" x2="807" y2="200" stroke="#d97706" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <!-- Key types -->
+  <rect x="40" y="230" width="820" height="110" fill="#f1f5f9" rx="10" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="450" y="255" font-family="Inter,Arial,sans-serif" font-size="12" fill="#1e293b" text-anchor="middle" font-weight="700">Jenis Key</text>
+  <rect x="60" y="270" width="240" height="55" fill="#dbeafe" rx="8" stroke="#3b82f6" stroke-width="1.2"/>
+  <text x="180" y="292" font-family="Inter,Arial,sans-serif" font-size="10.5" fill="#1e40af" text-anchor="middle" font-weight="700">Primary Key (PK)</text>
+  <text x="180" y="310" font-family="Inter,Arial,sans-serif" font-size="9" fill="#3b82f6" text-anchor="middle">identitas unik setiap row</text>
+  <rect x="330" y="270" width="240" height="55" fill="#dcfce7" rx="8" stroke="#16a34a" stroke-width="1.2"/>
+  <text x="450" y="292" font-family="Inter,Arial,sans-serif" font-size="10.5" fill="#166534" text-anchor="middle" font-weight="700">Foreign Key (FK)</text>
+  <text x="450" y="310" font-family="Inter,Arial,sans-serif" font-size="9" fill="#15803d" text-anchor="middle">referensi ke PK tabel lain</text>
+  <rect x="600" y="270" width="240" height="55" fill="#fef3c7" rx="8" stroke="#d97706" stroke-width="1.2"/>
+  <text x="720" y="292" font-family="Inter,Arial,sans-serif" font-size="10.5" fill="#92400e" text-anchor="middle" font-weight="700">Unique Key</text>
+  <text x="720" y="310" font-family="Inter,Arial,sans-serif" font-size="9" fill="#b45309" text-anchor="middle">unik tapi bukan identitas utama</text>
+  <!-- Footer -->
+  <text x="450" y="365" font-family="Inter,Arial,sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">Beginning Database Design (Gavin Powell, Wiley 2006)</text>
+</svg>

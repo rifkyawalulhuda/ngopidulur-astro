@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" width="900" height="400">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6366f1"/>
+    </marker>
+  </defs>
+  <rect width="900" height="400" fill="#ffffff" rx="12"/>
+  <rect width="900" height="400" fill="none" stroke="#e2e8f0" stroke-width="1.5" rx="12"/>
+  <rect x="0" y="0" width="900" height="44" fill="#4f46e5" rx="12"/>
+  <rect x="0" y="22" width="900" height="22" fill="#4f46e5"/>
+  <text x="450" y="28" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">Embedded Entity Pattern — Data Disertakan dalam Response</text>
+  <!-- Client -->
+  <rect x="40" y="120" width="160" height="110" fill="#e0e7ff" rx="10" stroke="#6366f1" stroke-width="1.8"/>
+  <text x="120" y="150" font-family="Inter,Arial,sans-serif" font-size="12" fill="#3730a3" text-anchor="middle" font-weight="700">API Client</text>
+  <text x="120" y="168" font-family="Inter,Arial,sans-serif" font-size="9" fill="#6366f1" text-anchor="middle">satu request</text>
+  <text x="120" y="184" font-family="Inter,Arial,sans-serif" font-size="9" fill="#6366f1" text-anchor="middle">semua data diterima</text>
+  <text x="120" y="208" font-family="Inter,Arial,sans-serif" font-size="9" fill="#6366f1" text-anchor="middle">✓ tanpa request tambahan</text>
+  <!-- Arrow request -->
+  <line x1="200" y1="150" x2="280" y2="150" stroke="#6366f1" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="240" y="140" font-family="Inter,Arial,sans-serif" font-size="9" fill="#4f46e5" text-anchor="middle">Request</text>
+  <!-- Arrow response -->
+  <line x1="280" y1="200" x2="200" y2="200" stroke="#16a34a" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="240" y="220" font-family="Inter,Arial,sans-serif" font-size="9" fill="#16a34a" text-anchor="middle">Response (nested)</text>
+  <!-- API Proxy -->
+  <rect x="280" y="110" width="150" height="140" fill="#4f46e5" rx="10" stroke="#3730a3" stroke-width="2"/>
+  <text x="355" y="145" font-family="Inter,Arial,sans-serif" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="700">API Proxy</text>
+  <text x="355" y="168" font-family="Inter,Arial,sans-serif" font-size="9" fill="#c7d2fe" text-anchor="middle">Resource</text>
+  <text x="355" y="184" font-family="Inter,Arial,sans-serif" font-size="9" fill="#c7d2fe" text-anchor="middle">Representation</text>
+  <text x="355" y="208" font-family="Inter,Arial,sans-serif" font-size="9" fill="#a5b4fc" text-anchor="middle">contains (2)</text>
+  <text x="355" y="224" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#c7d2fe" text-anchor="middle">Embedded Entity</text>
+  <!-- Resource -->
+  <rect x="280" y="290" width="150" height="50" fill="#dbeafe" rx="8" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="355" y="312" font-family="Inter,Arial,sans-serif" font-size="10" fill="#1e40af" text-anchor="middle" font-weight="600">Resource</text>
+  <text x="355" y="328" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#3b82f6" text-anchor="middle">(data utama)</text>
+  <!-- Related resource -->
+  <rect x="480" y="290" width="180" height="50" fill="#dcfce7" rx="8" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="570" y="312" font-family="Inter,Arial,sans-serif" font-size="10" fill="#166534" text-anchor="middle" font-weight="600">Related Resource</text>
+  <text x="570" y="328" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#15803d" text-anchor="middle">(data terhubung)</text>
+  <!-- Arrow contains -->
+  <line x1="355" y1="250" x2="355" y2="290" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="380" y="275" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#3b82f6" text-anchor="middle">(1) references</text>
+  <!-- Arrow embed -->
+  <line x1="530" y1="290" x2="400" y2="245" stroke="#16a34a" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#arr)"/>
+  <text x="490" y="262" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#15803d" text-anchor="middle">di-embed ke response</text>
+  <!-- Example box -->
+  <rect x="480" y="110" width="380" height="140" fill="#f8fafc" rx="10" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="670" y="135" font-family="Inter,Arial,sans-serif" font-size="11" fill="#1e293b" text-anchor="middle" font-weight="700">Contoh Response (JSON)</text>
+  <text x="500" y="158" font-family="monospace,Consolas" font-size="9" fill="#475569">{"customer": {"id": "a51a",</text>
+  <text x="500" y="174" font-family="monospace,Consolas" font-size="9" fill="#475569">  "name": "R. D."},</text>
+  <text x="500" y="190" font-family="monospace,Consolas" font-size="9" fill="#16a34a">  "customerProfile": {  ← nested</text>
+  <text x="500" y="206" font-family="monospace,Consolas" font-size="9" fill="#16a34a">    "currentAddress": "..."},</text>
+  <text x="500" y="222" font-family="monospace,Consolas" font-size="9" fill="#475569">  "customerInteractionLog": []}</text>
+  <text x="670" y="242" font-family="Inter,Arial,sans-serif" font-size="9" fill="#64748b" text-anchor="middle">Semua data terkait langsung disertakan</text>
+  <!-- Footer -->
+  <text x="450" y="380" font-family="Inter,Arial,sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">Microservice API Patterns (MAP) — Zimmermann et al. 2019</text>
+</svg>

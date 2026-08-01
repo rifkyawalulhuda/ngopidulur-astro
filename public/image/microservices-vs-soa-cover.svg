@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" width="900" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f1b2d"/>
+      <stop offset="50%" style="stop-color:#1e1b4b"/>
+      <stop offset="100%" style="stop-color:#4c1d95"/>
+    </linearGradient>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#a5b4fc"/>
+    </marker>
+  </defs>
+  <rect width="900" height="500" fill="url(#bg)"/>
+  <!-- Red Hat badge -->
+  <rect x="740" y="28" width="130" height="40" fill="#ee0000" rx="6"/>
+  <text x="805" y="54" font-family="Inter,Arial,sans-serif" font-size="17" font-weight="800" fill="#ffffff" text-anchor="middle">OpenShift</text>
+  <!-- Title -->
+  <text x="450" y="90" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="30" font-weight="800" fill="#ffffff" text-anchor="middle">Microservices vs SOA</text>
+  <text x="450" y="118" font-family="Inter,Arial,sans-serif" font-size="15" fill="#a5b4fc" text-anchor="middle">Perbandingan Arsitektur Service-Based</text>
+  <!-- VS split -->
+  <rect x="90" y="155" width="300" height="180" fill="rgba(79,70,229,0.25)" stroke="#818cf8" stroke-width="2" rx="14"/>
+  <text x="240" y="190" font-family="Inter,Arial,sans-serif" font-size="22" font-weight="700" fill="#c7d2fe" text-anchor="middle">MICROSERVICES</text>
+  <!-- MS boxes -->
+  <rect x="110" y="215" width="120" height="35" fill="#0891b2" rx="7"/>
+  <text x="170" y="238" font-family="Inter,Arial,sans-serif" font-size="10" fill="#e0f7ff" text-anchor="middle">Service A (API)</text>
+  <rect x="250" y="215" width="120" height="35" fill="#059669" rx="7"/>
+  <text x="310" y="238" font-family="Inter,Arial,sans-serif" font-size="10" fill="#d1fae5" text-anchor="middle">Service B (API)</text>
+  <rect x="110" y="262" width="120" height="35" fill="#d97706" rx="7"/>
+  <text x="170" y="285" font-family="Inter,Arial,sans-serif" font-size="10" fill="#fef3c7" text-anchor="middle">Service C (API)</text>
+  <rect x="250" y="262" width="120" height="35" fill="#7c3aed" rx="7"/>
+  <text x="310" y="285" font-family="Inter,Arial,sans-serif" font-size="10" fill="#ede9fe" text-anchor="middle">Service D (API)</text>
+  <!-- MS label -->
+  <text x="240" y="330" font-family="Inter,Arial,sans-serif" font-size="10.5" fill="#94a3b8" text-anchor="middle">API layer (optional) · fine-grained · share-as-little</text>
+  <!-- VS badge -->
+  <circle cx="450" cy="250" r="38" fill="#ee0000"/>
+  <text x="450" y="258" font-family="Inter,Arial,sans-serif" font-size="20" font-weight="900" fill="#ffffff" text-anchor="middle">VS</text>
+  <!-- SOA -->
+  <rect x="510" y="155" width="300" height="180" fill="rgba(217,119,6,0.2)" stroke="#fbbf24" stroke-width="2" rx="14"/>
+  <text x="660" y="190" font-family="Inter,Arial,sans-serif" font-size="22" font-weight="700" fill="#fde68a" text-anchor="middle">SOA</text>
+  <!-- ESB -->
+  <rect x="545" y="215" width="230" height="45" fill="#d97706" rx="7"/>
+  <text x="660" y="235" font-family="Inter,Arial,sans-serif" font-size="11" fill="#fff7ed" text-anchor="middle" font-weight="600">Enterprise Service Bus</text>
+  <text x="660" y="250" font-family="Inter,Arial,sans-serif" font-size="9" fill="#fed7aa" text-anchor="middle">(messaging middleware)</text>
+  <!-- services around -->
+  <rect x="525" y="275" width="90" height="30" fill="#f59e0b" rx="6" opacity="0.9"/>
+  <text x="570" y="295" font-family="Inter,Arial,sans-serif" font-size="9" fill="#451a03" text-anchor="middle">Enterprise</text>
+  <rect x="660" y="275" width="90" height="30" fill="#f59e0b" rx="6" opacity="0.9"/>
+  <text x="705" y="295" font-family="Inter,Arial,sans-serif" font-size="9" fill="#451a03" text-anchor="middle">Domain Svc</text>
+  <text x="660" y="330" font-family="Inter,Arial,sans-serif" font-size="10.5" fill="#94a3b8" text-anchor="middle">ESB · coarse-grained · share-as-much</text>
+  <!-- Footer -->
+  <text x="450" y="405" font-family="Inter,Arial,sans-serif" font-size="13" fill="#e2e8f0" text-anchor="middle">Kapan memilih masing-masing?</text>
+  <text x="450" y="425" font-family="Inter,Arial,sans-serif" font-size="11" fill="#a5b4fc" text-anchor="middle">Red Hat OpenShift · Mark Richards</text>
+  <text x="450" y="460" font-family="Inter,Arial,sans-serif" font-size="10" fill="#64748b" text-anchor="middle">ngopidulur.my.id</text>
+</svg>

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" width="900" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0c0a09"/>
+      <stop offset="50%" style="stop-color:#1c1917"/>
+      <stop offset="100%" style="stop-color:#292524"/>
+    </linearGradient>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#fbbf24"/>
+    </marker>
+  </defs>
+  <rect width="900" height="500" fill="url(#bg)"/>
+  <!-- Badge -->
+  <rect x="700" y="28" width="170" height="38" fill="#f59e0b" rx="6"/>
+  <text x="785" y="53" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="800" fill="#1c1917" text-anchor="middle">Microservices 2019</text>
+  <!-- Title -->
+  <text x="450" y="95" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="30" font-weight="800" fill="#ffffff" text-anchor="middle">Microservice API Patterns</text>
+  <text x="450" y="123" font-family="Inter,Arial,sans-serif" font-size="15" fill="#fbbf24" text-anchor="middle">(MAP) — Bahasa Pola untuk Desain API</text>
+  <!-- Hexagon topology -->
+  <!-- Center -->
+  <polygon points="450,190 490,168 530,190 530,234 490,256 450,234" fill="#f59e0b" stroke="#fbbf24" stroke-width="2"/>
+  <text x="490" y="218" font-family="Inter,Arial,sans-serif" font-size="10" fill="#1c1917" text-anchor="middle" font-weight="700">API</text>
+  <!-- Satellites -->
+  <polygon points="330,190 370,168 410,190 410,234 370,256 330,234" fill="rgba(34,211,238,0.25)" stroke="#22d3ee" stroke-width="1.8"/>
+  <text x="370" y="218" font-family="Inter,Arial,sans-serif" font-size="9" fill="#67e8f9" text-anchor="middle">Embedded</text>
+  <polygon points="570,190 610,168 650,190 650,234 610,256 570,234" fill="rgba(52,211,153,0.25)" stroke="#34d399" stroke-width="1.8"/>
+  <text x="610" y="218" font-family="Inter,Arial,sans-serif" font-size="9" fill="#6ee7b7" text-anchor="middle">Linked</text>
+  <polygon points="290,300 330,278 370,300 370,344 330,366 290,344" fill="rgba(251,113,133,0.2)" stroke="#fb7185" stroke-width="1.8"/>
+  <text x="330" y="328" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#fda4af" text-anchor="middle">Representation</text>
+  <polygon points="530,300 570,278 610,300 610,344 570,366 530,344" fill="rgba(129,140,248,0.2)" stroke="#818cf8" stroke-width="1.8"/>
+  <text x="570" y="328" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#a5b4fc" text-anchor="middle">Quality</text>
+  <polygon points="410,330 450,308 490,330 490,374 450,396 410,374" fill="rgba(251,191,36,0.2)" stroke="#fbbf24" stroke-width="1.8"/>
+  <text x="450" y="358" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#fde68a" text-anchor="middle">Foundation</text>
+  <!-- Connections -->
+  <line x1="410" y1="212" x2="370" y2="190" stroke="#22d3ee" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <line x1="530" y1="212" x2="570" y2="190" stroke="#34d399" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <line x1="410" y1="234" x2="410" y2="330" stroke="#fbbf24" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <line x1="490" y1="234" x2="570" y2="300" stroke="#818cf8" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <!-- Authors -->
+  <text x="450" y="440" font-family="Inter,Arial,sans-serif" font-size="11.5" fill="#d6d3d1" text-anchor="middle">Zimmermann · Stocker · Lübke · Pautasso · Zdun</text>
+  <text x="450" y="458" font-family="Inter,Arial,sans-serif" font-size="10" fill="#78716c" text-anchor="middle">www.microservice-api-patterns.org</text>
+  <text x="450" y="480" font-family="Inter,Arial,sans-serif" font-size="10" fill="#57534e" text-anchor="middle">ngopidulur.my.id</text>
+</svg>

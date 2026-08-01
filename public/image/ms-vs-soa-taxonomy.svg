@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" width="900" height="400">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6366f1"/>
+    </marker>
+  </defs>
+  <rect width="900" height="400" fill="#ffffff" rx="12"/>
+  <rect width="900" height="400" fill="none" stroke="#e2e8f0" stroke-width="1.5" rx="12"/>
+  <rect x="0" y="0" width="900" height="44" fill="#4f46e5" rx="12"/>
+  <rect x="0" y="22" width="900" height="22" fill="#4f46e5"/>
+  <text x="450" y="28" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">Service Taxonomy — Microservices vs SOA</text>
+  <!-- Left: Microservices taxonomy -->
+  <rect x="30" y="70" width="410" height="290" fill="#f8fafc" rx="10" stroke="#cbd5e1" stroke-width="1.5"/>
+  <rect x="30" y="70" width="410" height="32" fill="#0891b2" rx="10"/>
+  <rect x="30" y="90" width="410" height="12" fill="#0891b2"/>
+  <text x="235" y="92" font-family="Inter,Arial,sans-serif" font-size="13" fill="#fff" text-anchor="middle" font-weight="700">MICROSERVICES — 2 TIPE</text>
+  <!-- Functional -->
+  <rect x="60" y="125" width="160" height="90" fill="#e0f2fe" rx="10" stroke="#0284c7" stroke-width="1.8"/>
+  <text x="140" y="152" font-family="Inter,Arial,sans-serif" font-size="12" fill="#0c4a6e" text-anchor="middle" font-weight="700">Functional</text>
+  <text x="140" y="170" font-family="Inter,Arial,sans-serif" font-size="9" fill="#0369a1" text-anchor="middle">Business operations</text>
+  <text x="140" y="186" font-family="Inter,Arial,sans-serif" font-size="9" fill="#0369a1" text-anchor="middle">diekpos ke dunia luar</text>
+  <text x="140" y="202" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#0284c7" text-anchor="middle">tidak di-share antar service</text>
+  <!-- Infrastructure -->
+  <rect x="250" y="125" width="170" height="90" fill="#fef3c7" rx="10" stroke="#d97706" stroke-width="1.8"/>
+  <text x="335" y="152" font-family="Inter,Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle" font-weight="700">Infrastructure</text>
+  <text x="335" y="170" font-family="Inter,Arial,sans-serif" font-size="9" fill="#b45309" text-anchor="middle">auth, audit, logging,</text>
+  <text x="335" y="186" font-family="Inter,Arial,sans-serif" font-size="9" fill="#b45309" text-anchor="middle">monitoring, security</text>
+  <text x="335" y="202" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#d97706" text-anchor="middle">PRIVATE — hanya internal</text>
+  <!-- Note -->
+  <rect x="60" y="240" width="360" height="95" fill="#f1f5f9" rx="8" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="240" y="260" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#475569" text-anchor="middle">Infrastructure services TIDAK diekspos ke luar —</text>
+  <text x="240" y="276" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#475569" text-anchor="middle">private shared services hanya untuk service internal.</text>
+  <text x="240" y="300" font-family="Inter,Arial,sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">Service taxonomy sederhana &amp; fleksibel</text>
+  <!-- Right: SOA taxonomy -->
+  <rect x="460" y="70" width="410" height="290" fill="#f8fafc" rx="10" stroke="#cbd5e1" stroke-width="1.5"/>
+  <rect x="460" y="70" width="410" height="32" fill="#d97706" rx="10"/>
+  <rect x="460" y="90" width="410" height="12" fill="#d97706"/>
+  <text x="665" y="92" font-family="Inter,Arial,sans-serif" font-size="13" fill="#fff" text-anchor="middle" font-weight="700">SOA — TAKSONOMI FORMAL</text>
+  <!-- 4 types -->
+  <rect x="490" y="120" width="170" height="55" fill="#fef3c7" rx="8" stroke="#d97706" stroke-width="1.5"/>
+  <text x="575" y="143" font-family="Inter,Arial,sans-serif" font-size="10.5" fill="#92400e" text-anchor="middle" font-weight="600">Business Service</text>
+  <text x="575" y="160" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#b45309" text-anchor="middle">bisnis inti, reusable</text>
+  <rect x="680" y="120" width="170" height="55" fill="#e0e7ff" rx="8" stroke="#6366f1" stroke-width="1.5"/>
+  <text x="765" y="143" font-family="Inter,Arial,sans-serif" font-size="10.5" fill="#3730a3" text-anchor="middle" font-weight="600">Enterprise Service</text>
+  <text x="765" y="160" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#6366f1" text-anchor="middle">shared cross-app</text>
+  <rect x="490" y="190" width="170" height="55" fill="#dcfce7" rx="8" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="575" y="213" font-family="Inter,Arial,sans-serif" font-size="10.5" fill="#166534" text-anchor="middle" font-weight="600">Application Service</text>
+  <text x="575" y="230" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#15803d" text-anchor="middle">scoped per aplikasi</text>
+  <rect x="680" y="190" width="170" height="55" fill="#fce7f3" rx="8" stroke="#db2777" stroke-width="1.5"/>
+  <text x="765" y="213" font-family="Inter,Arial,sans-serif" font-size="10.5" fill="#9d174d" text-anchor="middle" font-weight="600">Infrastructure Service</text>
+  <text x="765" y="230" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#db2777" text-anchor="middle">auth, audit, logging</text>
+  <!-- Note -->
+  <rect x="490" y="265" width="360" height="70" fill="#f1f5f9" rx="8" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="670" y="286" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#475569" text-anchor="middle">Taksonomi sangat formal dan terstruktur —</text>
+  <text x="670" y="302" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#475569" text-anchor="middle">banyak jenis service dengan peran spesifik</text>
+  <text x="670" y="322" font-family="Inter,Arial,sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">Mendukung enterprise-wide reuse</text>
+  <!-- Footer -->
+  <text x="450" y="385" font-family="Inter,Arial,sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">Microservices vs SOA (Mark Richards, Red Hat OpenShift 2022)</text>
+</svg>

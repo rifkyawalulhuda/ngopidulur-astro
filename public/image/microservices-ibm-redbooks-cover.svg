@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" width="900" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="50%" style="stop-color:#0c2a4a"/>
+      <stop offset="100%" style="stop-color:#0a3d62"/>
+    </linearGradient>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#38bdf8"/>
+    </marker>
+  </defs>
+  <rect width="900" height="500" fill="url(#bg)"/>
+  <!-- IBM badge -->
+  <rect x="720" y="28" width="150" height="40" fill="#0f62fe" rx="6"/>
+  <text x="795" y="53" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="800" fill="#ffffff" text-anchor="middle">IBM Redbooks</text>
+  <!-- Title -->
+  <text x="450" y="95" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="28" font-weight="800" fill="#ffffff" text-anchor="middle">Microservices from</text>
+  <text x="450" y="130" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="28" font-weight="800" fill="#38bdf8" text-anchor="middle">Theory to Practice</text>
+  <text x="450" y="158" font-family="Inter,Arial,sans-serif" font-size="14" fill="#7dd3fc" text-anchor="middle">Creating Applications in IBM Bluemix</text>
+  <!-- Microservices hexagons -->
+  <polygon points="450,210 490,188 530,210 530,254 490,276 450,254" fill="#0f62fe" stroke="#78a9ff" stroke-width="2"/>
+  <text x="490" y="240" font-family="Inter,Arial,sans-serif" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="700">UI</text>
+  <polygon points="330,210 370,188 410,210 410,254 370,276 330,254" fill="#0ea5e9" stroke="#7dd3fc" stroke-width="1.8"/>
+  <text x="370" y="240" font-family="Inter,Arial,sans-serif" font-size="9" fill="#e0f2fe" text-anchor="middle">Catalog</text>
+  <polygon points="570,210 610,188 650,210 650,254 610,276 570,254" fill="#0ea5e9" stroke="#7dd3fc" stroke-width="1.8"/>
+  <text x="610" y="240" font-family="Inter,Arial,sans-serif" font-size="9" fill="#e0f2fe" text-anchor="middle">Orders</text>
+  <polygon points="290,320 330,298 370,320 370,364 330,386 290,364" fill="#f59e0b" stroke="#fcd34d" stroke-width="1.8"/>
+  <text x="330" y="348" font-family="Inter,Arial,sans-serif" font-size="9" fill="#fffbeb" text-anchor="middle">Shipping</text>
+  <polygon points="530,320 570,298 610,320 610,364 570,386 530,364" fill="#f59e0b" stroke="#fcd34d" stroke-width="1.8"/>
+  <text x="570" y="348" font-family="Inter,Arial,sans-serif" font-size="9" fill="#fffbeb" text-anchor="middle">Payment</text>
+  <!-- Connections -->
+  <line x1="410" y1="232" x2="370" y2="210" stroke="#38bdf8" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <line x1="530" y1="232" x2="570" y2="210" stroke="#38bdf8" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <line x1="370" y1="254" x2="330" y2="320" stroke="#f59e0b" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <line x1="610" y1="254" x2="570" y2="320" stroke="#f59e0b" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <!-- Tags -->
+  <rect x="200" y="415" width="130" height="30" fill="rgba(56,189,248,0.2)" stroke="#38bdf8" stroke-width="1.2" rx="15"/>
+  <text x="265" y="435" font-family="Inter,Arial,sans-serif" font-size="10" fill="#7dd3fc" text-anchor="middle">Theory + Practice</text>
+  <rect x="360" y="415" width="130" height="30" fill="rgba(245,158,11,0.2)" stroke="#f59e0b" stroke-width="1.2" rx="15"/>
+  <text x="425" y="435" font-family="Inter,Arial,sans-serif" font-size="10" fill="#fcd34d" text-anchor="middle">3 Case Studies</text>
+  <rect x="520" y="415" width="140" height="30" fill="rgba(15,98,254,0.3)" stroke="#78a9ff" stroke-width="1.2" rx="15"/>
+  <text x="590" y="435" font-family="Inter,Arial,sans-serif" font-size="10" fill="#a5c8ff" text-anchor="middle">Bluemix + DevOps</text>
+  <text x="450" y="478" font-family="Inter,Arial,sans-serif" font-size="10" fill="#64748b" text-anchor="middle">ngopidulur.my.id</text>
+</svg>

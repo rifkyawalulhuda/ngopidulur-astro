@@ -14,6 +14,9 @@ en:
     link: "Link: "
     prevPage: Recent posts
     nextPage: Older posts
+    pageOf: "Page %d of %d"
+    showingPosts: "Showing %d–%d of %d posts"
+    jumpToPage: Jump to page
     wordCount: words
     readTime: minutes
     share: Share
@@ -77,6 +80,9 @@ zh:
     link: "链接: "
     prevPage: 上一页
     nextPage: 下一页
+    pageOf: "第 %d 页，共 %d 页"
+    showingPosts: "显示第 %d–%d 条，共 %d 条"
+    jumpToPage: 跳转到页面
     wordCount: 字
     readTime: 分钟
     share: 分享
@@ -140,6 +146,9 @@ fr:
     link: "Lien : "
     prevPage: Articles récents
     nextPage: Articles plus anciens
+    pageOf: "Page %d sur %d"
+    showingPosts: "Affichage de %d–%d sur %d articles"
+    jumpToPage: Aller à la page
     wordCount: mots
     readTime: minutes
     share: Partager
@@ -203,6 +212,9 @@ ja:
     link: "リンク: "
     prevPage: 最近の投稿
     nextPage: 古い投稿
+    pageOf: "%d / %d ページ"
+    showingPosts: "%d–%d 件を表示（全 %d 件）"
+    jumpToPage: ページへ移動
     wordCount: 語
     readTime: 分
     share: 共有
@@ -266,6 +278,9 @@ ko:
     link: "링크: "
     prevPage: 최근 게시물
     nextPage: 이전 게시물
+    pageOf: "%d / %d 페이지"
+    showingPosts: "%d–%d 항목 표시 (총 %d개)"
+    jumpToPage: 페이지로 이동
     wordCount: 단어
     readTime: 분
     share: 공유
@@ -329,6 +344,9 @@ es:
     link: "Enlace: "
     prevPage: Publicaciones recientes
     nextPage: Publicaciones antiguas
+    pageOf: "Página %d de %d"
+    showingPosts: "Mostrando %d–%d de %d artículos"
+    jumpToPage: Ir a la página
     wordCount: palabras
     readTime: minutos
     share: Compartir
@@ -392,6 +410,9 @@ de:
     link: "Link: "
     prevPage: Neuere Beiträge
     nextPage: Ältere Beiträge
+    pageOf: "Seite %d von %d"
+    showingPosts: "Zeige %d–%d von %d Beiträgen"
+    jumpToPage: Zur Seite springen
     wordCount: Wörter
     readTime: Minuten
     share: Teilen
@@ -455,6 +476,9 @@ ru:
     link: "Ссылка: "
     prevPage: Недавние записи
     nextPage: Старые записи
+    pageOf: "Страница %d из %d"
+    showingPosts: "Показаны %d–%d из %d записей"
+    jumpToPage: Перейти на страницу
     wordCount: слов
     readTime: минут
     share: Поделиться
@@ -518,6 +542,9 @@ pt:
     link: "Link: "
     prevPage: Posts recentes
     nextPage: Posts mais antigos
+    pageOf: "Página %d de %d"
+    showingPosts: "Exibindo %d–%d de %d artigos"
+    jumpToPage: Ir para a página
     wordCount: palavras
     readTime: minutos
     share: Compartilhar
@@ -581,6 +608,9 @@ it:
     link: "Link: "
     prevPage: Post recenti
     nextPage: Post più vecchi
+    pageOf: "Pagina %d di %d"
+    showingPosts: "Visualizzazione di %d–%d su %d articoli"
+    jumpToPage: Vai alla pagina
     wordCount: parole
     readTime: minuti
     share: Condividi

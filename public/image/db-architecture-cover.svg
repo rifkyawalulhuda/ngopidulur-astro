@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" width="900" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0c0a09"/>
+      <stop offset="50%" style="stop-color:#292524"/>
+      <stop offset="100%" style="stop-color:#44403c"/>
+    </linearGradient>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#fbbf24"/>
+    </marker>
+  </defs>
+  <rect width="900" height="500" fill="url(#bg)"/>
+  <!-- Journal badge -->
+  <rect x="640" y="28" width="230" height="40" fill="#f59e0b" rx="6"/>
+  <text x="755" y="53" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="800" fill="#1c1917" text-anchor="middle">Foundations and Trends in DB</text>
+  <!-- Title -->
+  <text x="450" y="95" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="30" font-weight="800" fill="#ffffff" text-anchor="middle">Architecture of a Database System</text>
+  <text x="450" y="123" font-family="Inter,Arial,sans-serif" font-size="14" fill="#fbbf24" text-anchor="middle">Hellerstein · Stonebraker · Hamilton (2007)</text>
+  <!-- Pipeline: Client → Parser → Optimizer → Executor → Storage -->
+  <rect x="60" y="160" width="140" height="70" fill="rgba(56,189,248,0.2)" stroke="#38bdf8" stroke-width="1.8" rx="10"/>
+  <text x="130" y="190" font-family="Inter,Arial,sans-serif" font-size="11" fill="#7dd3fc" text-anchor="middle" font-weight="700">Client</text>
+  <text x="130" y="208" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#bae6fd" text-anchor="middle">SQL Query</text>
+  <line x1="200" y1="195" x2="235" y2="195" stroke="#fbbf24" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="240" y="160" width="140" height="70" fill="rgba(52,211,153,0.2)" stroke="#34d399" stroke-width="1.8" rx="10"/>
+  <text x="310" y="190" font-family="Inter,Arial,sans-serif" font-size="11" fill="#6ee7b7" text-anchor="middle" font-weight="700">Query Processor</text>
+  <text x="310" y="208" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#a7f3d0" text-anchor="middle">Parse · Optimize</text>
+  <line x1="380" y1="195" x2="415" y2="195" stroke="#fbbf24" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="420" y="160" width="140" height="70" fill="rgba(251,146,60,0.2)" stroke="#fb923c" stroke-width="1.8" rx="10"/>
+  <text x="490" y="190" font-family="Inter,Arial,sans-serif" font-size="11" fill="#fdba74" text-anchor="middle" font-weight="700">Executor</text>
+  <text x="490" y="208" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#fed7aa" text-anchor="middle">Operators</text>
+  <line x1="560" y1="195" x2="595" y2="195" stroke="#fbbf24" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="600" y="160" width="240" height="70" fill="rgba(129,140,248,0.2)" stroke="#818cf8" stroke-width="1.8" rx="10"/>
+  <text x="720" y="190" font-family="Inter,Arial,sans-serif" font-size="11" fill="#a5b4fc" text-anchor="middle" font-weight="700">Storage Engine</text>
+  <text x="720" y="208" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#c7d2fe" text-anchor="middle">Buffer Pool · Transactions · Recovery</text>
+  <!-- Disk -->
+  <ellipse cx="720" cy="330" rx="120" ry="30" fill="rgba(148,163,184,0.15)" stroke="#94a3b8" stroke-width="1.5"/>
+  <ellipse cx="720" cy="305" rx="120" ry="30" fill="rgba(148,163,184,0.25)" stroke="#94a3b8" stroke-width="1.5"/>
+  <rect x="600" y="305" width="240" height="25" fill="rgba(148,163,184,0.15)"/>
+  <text x="720" y="332" font-family="Inter,Arial,sans-serif" font-size="10" fill="#cbd5e1" text-anchor="middle">Disk</text>
+  <line x1="720" y1="230" x2="720" y2="295" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="5,4"/>
+  <!-- Side topics -->
+  <rect x="60" y="280" width="220" height="90" fill="rgba(34,211,238,0.12)" stroke="#22d3ee" stroke-width="1.5" rx="10"/>
+  <text x="170" y="305" font-family="Inter,Arial,sans-serif" font-size="11" fill="#67e8f9" text-anchor="middle" font-weight="700">Process Models</text>
+  <text x="170" y="323" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#a5f3fc" text-anchor="middle">Process · Thread · Async</text>
+  <text x="170" y="355" font-family="Inter,Arial,sans-serif" font-size="9" fill="#67e8f9" text-anchor="middle">Parallel Architecture</text>
+  <rect x="340" y="280" width="220" height="90" fill="rgba(251,191,36,0.12)" stroke="#fbbf24" stroke-width="1.5" rx="10"/>
+  <text x="450" y="305" font-family="Inter,Arial,sans-serif" font-size="11" fill="#fde68a" text-anchor="middle" font-weight="700">Transactions</text>
+  <text x="450" y="323" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#fef3c7" text-anchor="middle">ACID · Locking · ARIES</text>
+  <text x="450" y="355" font-family="Inter,Arial,sans-serif" font-size="9" fill="#fde68a" text-anchor="middle">WAL · Checkpoint · Recovery</text>
+  <text x="450" y="440" font-family="Inter,Arial,sans-serif" font-size="10" fill="#57534e" text-anchor="middle">ngopidulur.my.id</text>
+</svg>

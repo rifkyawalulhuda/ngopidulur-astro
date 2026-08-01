@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" width="900" height="420">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6366f1"/>
+    </marker>
+    <marker id="arrO" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#d97706"/>
+    </marker>
+  </defs>
+  <rect width="900" height="420" fill="#ffffff" rx="12"/>
+  <rect width="900" height="420" fill="none" stroke="#e2e8f0" stroke-width="1.5" rx="12"/>
+  <rect x="0" y="0" width="900" height="44" fill="#4f46e5" rx="12"/>
+  <rect x="0" y="22" width="900" height="22" fill="#4f46e5"/>
+  <text x="450" y="28" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">Arsitektur Topology — Microservices vs SOA</text>
+  <!-- Left: Microservices -->
+  <rect x="30" y="70" width="410" height="310" fill="#f0fdf4" rx="10" stroke="#bbf7d0" stroke-width="1.5"/>
+  <rect x="30" y="70" width="410" height="32" fill="#16a34a" rx="10"/>
+  <rect x="30" y="90" width="410" height="12" fill="#16a34a"/>
+  <text x="235" y="92" font-family="Inter,Arial,sans-serif" font-size="13" fill="#fff" text-anchor="middle" font-weight="700">MICROSERVICES — SHARE-AS-LITTLE</text>
+  <!-- Client -->
+  <rect x="120" y="115" width="230" height="40" fill="#e2e8f0" rx="8" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="235" y="139" font-family="Inter,Arial,sans-serif" font-size="10.5" fill="#334155" text-anchor="middle" font-weight="600">Clients (Web / Mobile / API)</text>
+  <!-- API layer -->
+  <rect x="120" y="175" width="230" height="45" fill="#e0e7ff" rx="8" stroke="#6366f1" stroke-width="1.8"/>
+  <text x="235" y="195" font-family="Inter,Arial,sans-serif" font-size="11" fill="#3730a3" text-anchor="middle" font-weight="600">API Layer (optional)</text>
+  <text x="235" y="210" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#6366f1" text-anchor="middle">gateway / BFF / edge</text>
+  <!-- Services -->
+  <rect x="55" y="250" width="100" height="45" fill="#bbf7d0" rx="8" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="105" y="272" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#166534" text-anchor="middle" font-weight="600">Service A</text>
+  <text x="105" y="286" font-family="Inter,Arial,sans-serif" font-size="8" fill="#15803d" text-anchor="middle">API + DB</text>
+  <rect x="185" y="250" width="100" height="45" fill="#bbf7d0" rx="8" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="235" y="272" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#166534" text-anchor="middle" font-weight="600">Service B</text>
+  <text x="235" y="286" font-family="Inter,Arial,sans-serif" font-size="8" fill="#15803d" text-anchor="middle">API + DB</text>
+  <rect x="315" y="250" width="100" height="45" fill="#bbf7d0" rx="8" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="365" y="272" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#166534" text-anchor="middle" font-weight="600">Service C</text>
+  <text x="365" y="286" font-family="Inter,Arial,sans-serif" font-size="8" fill="#15803d" text-anchor="middle">API + DB</text>
+  <!-- Arrows -->
+  <line x1="235" y1="155" x2="235" y2="175" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="190" y1="220" x2="130" y2="250" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="235" y1="220" x2="235" y2="250" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="285" y1="220" x2="345" y2="250" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="235" y="330" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#15803d" text-anchor="middle">✓ Tidak ada mediator / ESB</text>
+  <text x="235" y="348" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#15803d" text-anchor="middle">✓ Komunikasi langsung antar service</text>
+  <text x="235" y="366" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#15803d" text-anchor="middle">✓ API layer opsional</text>
+  <!-- Right: SOA -->
+  <rect x="460" y="70" width="410" height="310" fill="#fff7ed" rx="10" stroke="#fed7aa" stroke-width="1.5"/>
+  <rect x="460" y="70" width="410" height="32" fill="#d97706" rx="10"/>
+  <rect x="460" y="90" width="410" height="12" fill="#d97706"/>
+  <text x="665" y="92" font-family="Inter,Arial,sans-serif" font-size="13" fill="#fff" text-anchor="middle" font-weight="700">SOA — SHARE-AS-MUCH + ESB</text>
+  <!-- Client -->
+  <rect x="550" y="115" width="230" height="40" fill="#e2e8f0" rx="8" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="665" y="139" font-family="Inter,Arial,sans-serif" font-size="10.5" fill="#334155" text-anchor="middle" font-weight="600">Applications / Consumers</text>
+  <!-- ESB -->
+  <rect x="540" y="175" width="250" height="60" fill="#f59e0b" rx="10" stroke="#d97706" stroke-width="2"/>
+  <text x="665" y="200" font-family="Inter,Arial,sans-serif" font-size="13" fill="#451a03" text-anchor="middle" font-weight="700">Enterprise Service Bus</text>
+  <text x="665" y="218" font-family="Inter,Arial,sans-serif" font-size="9" fill="#78350f" text-anchor="middle">transformasi · routing · orchestration</text>
+  <text x="665" y="230" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#92400e" text-anchor="middle">mediator sentral — smart middleware</text>
+  <!-- Services -->
+  <rect x="500" y="270" width="110" height="45" fill="#fef3c7" rx="8" stroke="#d97706" stroke-width="1.5"/>
+  <text x="555" y="292" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#92400e" text-anchor="middle" font-weight="600">Enterprise</text>
+  <text x="555" y="306" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#b45309" text-anchor="middle">Service</text>
+  <rect x="635" y="270" width="110" height="45" fill="#fef3c7" rx="8" stroke="#d97706" stroke-width="1.5"/>
+  <text x="690" y="292" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#92400e" text-anchor="middle" font-weight="600">Business</text>
+  <text x="690" y="306" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#b45309" text-anchor="middle">Service</text>
+  <rect x="770" y="270" width="85" height="45" fill="#fef3c7" rx="8" stroke="#d97706" stroke-width="1.5"/>
+  <text x="812" y="292" font-family="Inter,Arial,sans-serif" font-size="9" fill="#92400e" text-anchor="middle" font-weight="600">App</text>
+  <text x="812" y="306" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#b45309" text-anchor="middle">Service</text>
+  <!-- Arrows -->
+  <line x1="665" y1="155" x2="665" y2="175" stroke="#d97706" stroke-width="1.5" marker-end="url(#arrO)"/>
+  <line x1="610" y1="235" x2="570" y2="270" stroke="#d97706" stroke-width="1.5" marker-end="url(#arrO)"/>
+  <line x1="665" y1="235" x2="690" y2="270" stroke="#d97706" stroke-width="1.5" marker-end="url(#arrO)"/>
+  <line x1="720" y1="235" x2="790" y2="270" stroke="#d97706" stroke-width="1.5" marker-end="url(#arrO)"/>
+  <text x="665" y="345" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#92400e" text-anchor="middle">✗ Mediator sentral (ESB) = bottleneck</text>
+  <text x="665" y="363" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#92400e" text-anchor="middle">✗ Shared services = coupling tinggi</text>
+  <!-- Footer -->
+  <text x="450" y="405" font-family="Inter,Arial,sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">Microservices vs SOA (Mark Richards, Red Hat OpenShift 2022)</text>
+</svg>

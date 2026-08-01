@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" width="900" height="420">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6366f1"/>
+    </marker>
+  </defs>
+  <rect width="900" height="420" fill="#ffffff" rx="12"/>
+  <rect width="900" height="420" fill="none" stroke="#e2e8f0" stroke-width="1.5" rx="12"/>
+  <rect x="0" y="0" width="900" height="44" fill="#4f46e5" rx="12"/>
+  <rect x="0" y="22" width="900" height="22" fill="#4f46e5"/>
+  <text x="450" y="28" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">Star Schema — Data Warehouse Model</text>
+  <!-- Dimension: Time -->
+  <rect x="40" y="100" width="150" height="120" fill="#dbeafe" rx="10" stroke="#3b82f6" stroke-width="1.8"/>
+  <text x="115" y="128" font-family="Inter,Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle" font-weight="700">DIM TIME</text>
+  <text x="55" y="150" font-family="monospace,Consolas" font-size="9" fill="#3b82f6">PK time_id</text>
+  <text x="55" y="166" font-family="monospace,Consolas" font-size="9" fill="#475569">day, month</text>
+  <text x="55" y="182" font-family="monospace,Consolas" font-size="9" fill="#475569">quarter, year</text>
+  <text x="55" y="198" font-family="monospace,Consolas" font-size="9" fill="#475569">holiday_flag</text>
+  <!-- Dimension: Customer -->
+  <rect x="40" y="270" width="150" height="100" fill="#dcfce7" rx="10" stroke="#16a34a" stroke-width="1.8"/>
+  <text x="115" y="298" font-family="Inter,Arial,sans-serif" font-size="12" fill="#166534" text-anchor="middle" font-weight="700">DIM CUSTOMER</text>
+  <text x="55" y="320" font-family="monospace,Consolas" font-size="9" fill="#16a34a">PK cust_id</text>
+  <text x="55" y="336" font-family="monospace,Consolas" font-size="9" fill="#475569">name, city</text>
+  <text x="55" y="352" font-family="monospace,Consolas" font-size="9" fill="#475569">segment</text>
+  <!-- Fact table center -->
+  <rect x="340" y="185" width="220" height="120" fill="#4f46e5" rx="12" stroke="#3730a3" stroke-width="2.5"/>
+  <text x="450" y="215" font-family="Inter,Arial,sans-serif" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">FACT SALES</text>
+  <text x="355" y="240" font-family="monospace,Consolas" font-size="9" fill="#c7d2fe">FK time_id</text>
+  <text x="355" y="256" font-family="monospace,Consolas" font-size="9" fill="#c7d2fe">FK cust_id</text>
+  <text x="355" y="272" font-family="monospace,Consolas" font-size="9" fill="#c7d2fe">FK prod_id</text>
+  <text x="355" y="288" font-family="monospace,Consolas" font-size="9" fill="#fbbf24">revenue (measure)</text>
+  <text x="355" y="300" font-family="monospace,Consolas" font-size="9" fill="#fbbf24">quantity (measure)</text>
+  <!-- Dimension: Product -->
+  <rect x="710" y="100" width="150" height="120" fill="#fef3c7" rx="10" stroke="#d97706" stroke-width="1.8"/>
+  <text x="785" y="128" font-family="Inter,Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle" font-weight="700">DIM PRODUCT</text>
+  <text x="725" y="150" font-family="monospace,Consolas" font-size="9" fill="#d97706">PK prod_id</text>
+  <text x="725" y="166" font-family="monospace,Consolas" font-size="9" fill="#475569">name, category</text>
+  <text x="725" y="182" font-family="monospace,Consolas" font-size="9" fill="#475569">brand, price</text>
+  <!-- Dimension: Store -->
+  <rect x="710" y="270" width="150" height="100" fill="#fce7f3" rx="10" stroke="#db2777" stroke-width="1.8"/>
+  <text x="785" y="298" font-family="Inter,Arial,sans-serif" font-size="12" fill="#9d174d" text-anchor="middle" font-weight="700">DIM STORE</text>
+  <text x="725" y="320" font-family="monospace,Consolas" font-size="9" fill="#db2777">PK store_id</text>
+  <text x="725" y="336" font-family="monospace,Consolas" font-size="9" fill="#475569">city, region</text>
+  <!-- Arrows -->
+  <line x1="190" y1="160" x2="340" y2="215" stroke="#6366f1" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="190" y1="300" x2="340" y2="275" stroke="#16a34a" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="710" y1="160" x2="560" y2="215" stroke="#d97706" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="710" y1="300" x2="560" y2="275" stroke="#db2777" stroke-width="2" marker-end="url(#arr)"/>
+  <!-- Labels -->
+  <text x="115" y="90" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#64748b" text-anchor="middle">Dimension Table</text>
+  <text x="450" y="175" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#64748b" text-anchor="middle">Fact Table (measures)</text>
+  <text x="785" y="90" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#64748b" text-anchor="middle">Dimension Table</text>
+  <!-- Footer -->
+  <text x="450" y="400" font-family="Inter,Arial,sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">Beginning Database Design (Gavin Powell, Wiley 2006) — Chapter 7</text>
+</svg>

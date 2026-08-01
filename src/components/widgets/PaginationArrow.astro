@@ -3,10 +3,27 @@ import type { PaginationArrowProps } from "@interfaces/data";
 import { Icon } from "astro-icon/components";
 
 const { url, direction, label } = Astro.props as PaginationArrowProps;
+const isDisabled = !url;
 ---
 
-<a href={url || "#"} class:list={["btn bg-base-100 shadow-xl", !url && "btn-disabled"]}>
-  {direction === "prev" && <Icon name="ri:arrow-left-s-line" class="h-6 w-6 md:h-8 md:w-8" />}
-  <span class="hidden lg:inline">{label}</span>
-  {direction === "next" && <Icon name="ri:arrow-right-s-line" class="h-6 w-6 md:h-8 md:w-8" />}
+<a
+  href={url || "#"}
+  aria-label={label}
+  aria-disabled={isDisabled}
+  tabindex={isDisabled ? -1 : undefined}
+  class:list={[
+    "btn btn-sm sm:btn-md gap-1 sm:gap-2 px-3 sm:px-5",
+    "transition-colors duration-200 cursor-pointer",
+    "bg-base-100 shadow-sm hover:bg-primary/10 hover:text-primary",
+    "border border-base-300/60 rounded-lg",
+    isDisabled && "btn-disabled pointer-events-none opacity-45",
+  ]}
+>
+  {direction === "prev" && (
+    <Icon name="ri:arrow-left-s-line" class="h-5 w-5 sm:h-6 sm:w-6" />
+  )}
+  <span class="hidden md:inline text-sm">{label}</span>
+  {direction === "next" && (
+    <Icon name="ri:arrow-right-s-line" class="h-5 w-5 sm:h-6 sm:w-6" />
+  )}
 </a>

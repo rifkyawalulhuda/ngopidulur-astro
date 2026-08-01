@@ -1,24 +1,54 @@
 ---
+import { t } from "@config";
 import type { PaginationDropdownProps } from "@interfaces/data";
 
-const { hiddenPages, current, baseUrl } =
-  Astro.props as PaginationDropdownProps;
+const { hiddenPages, current, baseUrl } = Astro.props as PaginationDropdownProps;
 ---
 
 <div class="dropdown dropdown-top join-item">
-  <div tabindex="0" role="button" class="btn join-item bg-base-100">...</div>
-  <ul class="dropdown-content z-[100] menu p-2 shadow-xl bg-base-100 rounded-box w-auto mx-auto mt-1">
+  <button
+    tabindex="0"
+    role="button"
+    aria-label={t("label.jumpToPage")}
+    aria-haspopup="true"
+    aria-expanded="false"
+    class="btn btn-sm sm:btn-md min-w-10 sm:min-w-12 px-2 sm:px-4 join-item btn-ghost bg-base-100 hover:bg-primary/10 hover:text-primary transition-colors duration-200 cursor-pointer"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      class="w-3.5 h-3.5"
+      aria-hidden="true"
+    >
+      <circle cx="5" cy="12" r="2" />
+      <circle cx="12" cy="12" r="2" />
+      <circle cx="19" cy="12" r="2" />
+    </svg>
+  </button>
+  <ul
+    tabindex="0"
+    class="dropdown-content z-[100] menu p-2 shadow-xl bg-base-100 rounded-box w-auto mx-auto mt-1 max-h-72 overflow-y-auto"
+  >
     {
-      hiddenPages.map((page) => (
-        <li class="w-full">
-          <a
-            href={page === 1 ? baseUrl : `${baseUrl}/${page}`}
-            class:list={["text-center py-1 px-3", page === current && "bg-primary text-primary-content"]}
-          >
-            {page}
-          </a>
-        </li>
-      ))
+      hiddenPages.map((page) => {
+        const pageNum = Number(page);
+        return (
+          <li class="w-full">
+            <a
+              href={pageNum === 1 ? baseUrl : `${baseUrl}/${pageNum}`}
+              aria-current={pageNum === current ? "page" : undefined}
+              class:list={[
+                "text-center py-1.5 px-3 rounded-md transition-colors duration-150 cursor-pointer",
+                pageNum === current && "bg-primary text-primary-content",
+                pageNum !== current && "hover:bg-primary/10 hover:text-primary",
+              ]}
+            >
+              {page}
+            </a>
+          </li>
+        );
+      })
     }
   </ul>
 </div>

@@ -25,7 +25,10 @@ export interface Page {
   data: Post[];
   total: number;
   size: number;
-  current: number;
+  currentPage: number;
+  lastPage: number;
+  start: number;
+  end: number;
 }
 
 export interface PostData {
