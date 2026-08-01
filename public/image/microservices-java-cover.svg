@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" width="900" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e1b4b"/>
+      <stop offset="50%" style="stop-color:#312e81"/>
+      <stop offset="100%" style="stop-color:#4c1d95"/>
+    </linearGradient>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#a5b4fc"/>
+    </marker>
+  </defs>
+  <rect width="900" height="500" fill="url(#bg)"/>
+  <!-- Hexagon grid background pattern -->
+  <g opacity="0.08">
+    <polygon points="80,60 110,42 140,60 140,96 110,114 80,96" fill="none" stroke="#a5b4fc" stroke-width="1"/>
+    <polygon points="140,60 170,42 200,60 200,96 170,114 140,96" fill="none" stroke="#a5b4fc" stroke-width="1"/>
+    <polygon points="200,60 230,42 260,60 260,96 230,114 200,96" fill="none" stroke="#a5b4fc" stroke-width="1"/>
+    <polygon points="110,114 140,96 170,114 170,150 140,168 110,150" fill="none" stroke="#a5b4fc" stroke-width="1"/>
+    <polygon points="170,114 200,96 230,114 230,150 200,168 170,150" fill="none" stroke="#a5b4fc" stroke-width="1"/>
+  </g>
+  <!-- Microservice hexagons (colorful, connected) -->
+  <!-- Center -->
+  <polygon points="450,200 490,178 530,200 530,244 490,266 450,244" fill="#4f46e5" stroke="#818cf8" stroke-width="2"/>
+  <text x="490" y="230" font-family="Inter,Arial,sans-serif" font-size="11" fill="#e0e7ff" text-anchor="middle" font-weight="600">API Gateway</text>
+  <!-- Top -->
+  <polygon points="370,130 410,108 450,130 450,174 410,196 370,174" fill="#0891b2" stroke="#67e8f9" stroke-width="2"/>
+  <text x="410" y="156" font-family="Inter,Arial,sans-serif" font-size="10" fill="#e0f7ff" text-anchor="middle">Auth</text>
+  <!-- Top right -->
+  <polygon points="530,130 570,108 610,130 610,174 570,196 530,174" fill="#059669" stroke="#6ee7b7" stroke-width="2"/>
+  <text x="570" y="156" font-family="Inter,Arial,sans-serif" font-size="10" fill="#d1fae5" text-anchor="middle">Orders</text>
+  <!-- Right -->
+  <polygon points="610,200 650,178 690,200 690,244 650,266 610,244" fill="#d97706" stroke="#fcd34d" stroke-width="2"/>
+  <text x="650" y="230" font-family="Inter,Arial,sans-serif" font-size="10" fill="#fef3c7" text-anchor="middle">Payments</text>
+  <!-- Bottom right -->
+  <polygon points="530,270 570,248 610,270 610,314 570,336 530,314" fill="#dc2626" stroke="#fca5a5" stroke-width="2"/>
+  <text x="570" y="296" font-family="Inter,Arial,sans-serif" font-size="10" fill="#fee2e2" text-anchor="middle">Inventory</text>
+  <!-- Bottom left -->
+  <polygon points="370,270 410,248 450,270 450,314 410,336 370,314" fill="#7c3aed" stroke="#c4b5fd" stroke-width="2"/>
+  <text x="410" y="296" font-family="Inter,Arial,sans-serif" font-size="10" fill="#ede9fe" text-anchor="middle">Users</text>
+  <!-- Left -->
+  <polygon points="290,200 330,178 370,200 370,244 330,266 290,244" fill="#be185d" stroke="#f9a8d4" stroke-width="2"/>
+  <text x="330" y="230" font-family="Inter,Arial,sans-serif" font-size="10" fill="#fce7f3" text-anchor="middle">Notif</text>
+  <!-- Connection lines -->
+  <line x1="450" y1="200" x2="410" y2="174" stroke="#a5b4fc" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <line x1="490" y1="178" x2="530" y2="152" stroke="#a5b4fc" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <line x1="530" y1="222" x2="610" y2="222" stroke="#a5b4fc" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <line x1="530" y1="244" x2="570" y2="270" stroke="#a5b4fc" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <line x1="450" y1="244" x2="410" y2="270" stroke="#a5b4fc" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <line x1="370" y1="222" x2="290" y2="222" stroke="#a5b4fc" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <!-- Title -->
+  <text x="450" y="395" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="28" font-weight="800" fill="#ffffff" text-anchor="middle">Microservices for Java Developers</text>
+  <text x="450" y="425" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#a5b4fc" text-anchor="middle">InfoQ eMag 2020 · 18 Chapters · Architecture, Communication, Testing, Observability</text>
+  <!-- InfoQ badge -->
+  <rect x="760" y="28" width="110" height="36" fill="#e11d48" rx="6"/>
+  <text x="815" y="52" font-family="Inter,Arial,sans-serif" font-size="16" font-weight="800" fill="#ffffff" text-anchor="middle">InfoQ</text>
+  <!-- Top label -->
+  <text x="450" y="68" font-family="Inter,Arial,sans-serif" font-size="13" fill="#c7d2fe" text-anchor="middle" font-style="italic">Microservices Architecture · Communication · Resilience · Observability</text>
+</svg>

@@ -5,7 +5,7 @@
  * Deteksi seri: prioritas field `series`+`seriesOrder` dari frontmatter,
  * fallback ke deteksi otomatis dari prefix slug (≥2 kata yang match ≥2 artikel).
  */
-import { getCollection, type CollectionEntry } from "astro:content";
+import { type CollectionEntry, getCollection } from "astro:content";
 import { Icon } from "astro-icon/components";
 
 interface Props {
@@ -15,7 +15,7 @@ interface Props {
 const { currentSlug } = Astro.props;
 
 const allPosts = await getCollection("blog", ({ data }) =>
-  import.meta.env.PROD ? !data.draft : true
+  import.meta.env.PROD ? !data.draft : true,
 );
 
 // Cari post saat ini
@@ -40,7 +40,10 @@ if (currentPost?.data.series) {
     });
 } else {
   // ── Mode 2: deteksi otomatis dari prefix slug ──
-  function getSeriesPrefix(slug: string, posts: CollectionEntry<"blog">[]): string | null {
+  function getSeriesPrefix(
+    slug: string,
+    posts: CollectionEntry<"blog">[],
+  ): string | null {
     const parts = slug.split("-");
     let bestPrefix: string | null = null;
     let bestCount = 1;
@@ -48,7 +51,7 @@ if (currentPost?.data.series) {
       if (parts.length <= n) continue;
       const prefix = parts.slice(0, n).join("-");
       const count = posts.filter(
-        (p) => p.id.startsWith(prefix + "-") || p.id === prefix
+        (p) => p.id.startsWith(prefix + "-") || p.id === prefix,
       ).length;
       if (count >= 2 && count > bestCount) {
         bestCount = count;
@@ -76,7 +79,8 @@ if (currentPost?.data.series) {
 
 const currentIndex = seriesPosts.findIndex((p) => p.id === currentSlug);
 const prevPost = currentIndex > 0 ? seriesPosts[currentIndex - 1] : null;
-const nextPost = currentIndex < seriesPosts.length - 1 ? seriesPosts[currentIndex + 1] : null;
+const nextPost =
+  currentIndex < seriesPosts.length - 1 ? seriesPosts[currentIndex + 1] : null;
 ---
 
 {seriesPosts.length > 1 && (

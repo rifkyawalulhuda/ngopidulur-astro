@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" width="900" height="480">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6366f1"/>
+    </marker>
+  </defs>
+  <rect width="900" height="480" fill="#ffffff" rx="12"/>
+  <rect width="900" height="480" fill="none" stroke="#e2e8f0" stroke-width="1.5" rx="12"/>
+  <!-- Header -->
+  <rect x="0" y="0" width="900" height="44" fill="#4f46e5" rx="12"/>
+  <rect x="0" y="22" width="900" height="22" fill="#4f46e5"/>
+  <text x="450" y="28" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">IBM API Gateway Architecture</text>
+
+  <!-- Top row: Developer Portal + API Marketplace -->
+  <rect x="80" y="65" width="200" height="70" fill="#e0e7ff" rx="10" stroke="#6366f1" stroke-width="2"/>
+  <text x="180" y="92" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12" fill="#3730a3" text-anchor="middle" font-weight="700">Developer Portal</text>
+  <text x="180" y="110" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="10" fill="#6366f1" text-anchor="middle">Documentation</text>
+  <text x="180" y="124" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="10" fill="#6366f1" text-anchor="middle">API Keys · SDKs</text>
+
+  <rect x="620" y="65" width="200" height="70" fill="#e0e7ff" rx="10" stroke="#6366f1" stroke-width="2"/>
+  <text x="720" y="92" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12" fill="#3730a3" text-anchor="middle" font-weight="700">API Marketplace</text>
+  <text x="720" y="110" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="10" fill="#6366f1" text-anchor="middle">Discover APIs</text>
+  <text x="720" y="124" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="10" fill="#6366f1" text-anchor="middle">Subscribe · Monetize</text>
+
+  <!-- Arrows to gateway -->
+  <line x1="180" y1="135" x2="330" y2="195" stroke="#6366f1" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="720" y1="135" x2="570" y2="195" stroke="#6366f1" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- API Gateway box -->
+  <rect x="250" y="195" width="400" height="100" fill="#4f46e5" rx="12" stroke="#3730a3" stroke-width="2"/>
+  <text x="450" y="225" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">API Gateway</text>
+  <text x="290" y="250" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="11" fill="#c7d2fe" text-anchor="middle">🔒 Security</text>
+  <text x="450" y="250" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="11" fill="#c7d2fe" text-anchor="middle">⚡ Rate Limit</text>
+  <text x="610" y="250" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="11" fill="#c7d2fe" text-anchor="middle">🔑 Auth</text>
+  <text x="290" y="275" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="11" fill="#a5b4fc" text-anchor="middle">Routing</text>
+  <text x="450" y="275" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="11" fill="#a5b4fc" text-anchor="middle">Analytics</text>
+  <text x="610" y="275" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="11" fill="#a5b4fc" text-anchor="middle">Monitoring</text>
+
+  <!-- Arrows to backends -->
+  <line x1="330" y1="295" x2="170" y2="360" stroke="#6366f1" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="450" y1="295" x2="450" y2="360" stroke="#6366f1" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="570" y1="295" x2="730" y2="360" stroke="#6366f1" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- Backend boxes -->
+  <rect x="70" y="360" width="200" height="70" fill="#dcfce7" rx="10" stroke="#16a34a" stroke-width="2"/>
+  <text x="170" y="387" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12" fill="#166534" text-anchor="middle" font-weight="700">Microservices</text>
+  <text x="170" y="403" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="10" fill="#16a34a" text-anchor="middle">Orders · Users</text>
+  <text x="170" y="417" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="10" fill="#16a34a" text-anchor="middle">Products · Payments</text>
+
+  <rect x="350" y="360" width="200" height="70" fill="#fef3c7" rx="10" stroke="#f59e0b" stroke-width="2"/>
+  <text x="450" y="387" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle" font-weight="700">Legacy Systems</text>
+  <text x="450" y="403" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="10" fill="#b45309" text-anchor="middle">Mainframe · SAP</text>
+  <text x="450" y="417" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="10" fill="#b45309" text-anchor="middle">On-Premise ERP</text>
+
+  <rect x="630" y="360" width="200" height="70" fill="#e0f2fe" rx="10" stroke="#0284c7" stroke-width="2"/>
+  <text x="730" y="387" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12" fill="#0c4a6e" text-anchor="middle" font-weight="700">Cloud Services</text>
+  <text x="730" y="403" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="10" fill="#0284c7" text-anchor="middle">AWS · Azure · GCP</text>
+  <text x="730" y="417" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="10" fill="#0284c7" text-anchor="middle">SaaS Integrations</text>
+
+  <!-- Footer label -->
+  <text x="450" y="468" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">IBM API Connect — Single Entry Point untuk semua Backend Services</text>
+</svg>

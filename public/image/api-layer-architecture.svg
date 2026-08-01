@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="900" height="500" viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="API Layer Architecture diagram showing clients connecting to API Layer then to Backend Systems">
+  <title>API Layer Architecture</title>
+  <desc>Multiple client types (Mobile Apps, Web Apps, Wearables, IoT Devices, Partners, Internal Systems) connect to a central API Layer, which connects to Business Logic and Backend Systems below.</desc>
+
+  <!-- Background -->
+  <rect width="900" height="500" fill="#f8fafc" rx="0"/>
+
+  <!-- ── Title ── -->
+  <text x="450" y="38" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#1e293b" letter-spacing="0.3">API Layer Architecture</text>
+  <text x="450" y="58" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12" fill="#64748b">Berbagai client terhubung ke API Layer, lalu ke Business Logic &amp; Backend Systems</text>
+
+  <!-- ═══════════════════════════════════════════
+       CLIENT LAYER — top row (6 boxes)
+  ═══════════════════════════════════════════ -->
+
+  <!-- Section label -->
+  <text x="450" y="95" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" fill="#94a3b8" letter-spacing="1.2">CLIENT LAYER</text>
+
+  <!-- Client box helper: each box 118w × 52h, gap 14px, total 6×118+5×14 = 778, left offset = (900-778)/2 = 61 -->
+
+  <!-- Mobile Apps -->
+  <rect x="61" y="105" width="118" height="52" rx="10" fill="#fff" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="120" y="127" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18">📱</text>
+  <text x="120" y="148" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" fill="#1e40af">Mobile Apps</text>
+
+  <!-- Web Apps -->
+  <rect x="193" y="105" width="118" height="52" rx="10" fill="#fff" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="252" y="127" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18">🌐</text>
+  <text x="252" y="148" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" fill="#1e40af">Web Apps</text>
+
+  <!-- Wearables -->
+  <rect x="325" y="105" width="118" height="52" rx="10" fill="#fff" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="384" y="127" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18">⌚</text>
+  <text x="384" y="148" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" fill="#1e40af">Wearables</text>
+
+  <!-- IoT Devices -->
+  <rect x="457" y="105" width="118" height="52" rx="10" fill="#fff" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="516" y="127" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18">🔌</text>
+  <text x="516" y="148" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" fill="#1e40af">IoT Devices</text>
+
+  <!-- Partners -->
+  <rect x="589" y="105" width="118" height="52" rx="10" fill="#fff" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="648" y="127" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18">🤝</text>
+  <text x="648" y="148" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" fill="#1e40af">Partners</text>
+
+  <!-- Internal Systems -->
+  <rect x="721" y="105" width="118" height="52" rx="10" fill="#fff" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="780" y="127" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18">🏢</text>
+  <text x="780" y="148" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" fill="#1e40af">Internal Systems</text>
+
+  <!-- ── Arrows from each client down to API Layer ── -->
+  <!-- Each arrow: from bottom-center of client box (y=157) to top of API layer box (y=218) -->
+  <!-- Arrow marker def -->
+  <defs>
+    <marker id="arr-blue" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M1,1 L7,4 L1,7 Z" fill="#3b82f6"/>
+    </marker>
+    <marker id="arr-indigo" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M1,1 L7,4 L1,7 Z" fill="#6366f1"/>
+    </marker>
+    <marker id="arr-emerald" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M1,1 L7,4 L1,7 Z" fill="#10b981"/>
+    </marker>
+  </defs>
+
+  <!-- client center x values: 120, 252, 384, 516, 648, 780 -->
+  <line x1="120" y1="157" x2="120" y2="213" stroke="#3b82f6" stroke-width="1.8" marker-end="url(#arr-blue)" stroke-dasharray="none"/>
+  <line x1="252" y1="157" x2="252" y2="213" stroke="#3b82f6" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+  <line x1="384" y1="157" x2="384" y2="213" stroke="#3b82f6" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+  <line x1="516" y1="157" x2="516" y2="213" stroke="#3b82f6" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+  <line x1="648" y1="157" x2="648" y2="213" stroke="#3b82f6" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+  <line x1="780" y1="157" x2="780" y2="213" stroke="#3b82f6" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+
+  <!-- ═══════════════════════════════════════════
+       API LAYER — center box
+  ═══════════════════════════════════════════ -->
+  <text x="450" y="212" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" fill="#94a3b8" letter-spacing="1.2">API LAYER</text>
+
+  <!-- Main API Layer box -->
+  <rect x="170" y="220" width="560" height="90" rx="14" fill="#3b82f6" stroke="#1d4ed8" stroke-width="2"/>
+
+  <!-- Inner label -->
+  <text x="450" y="254" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#ffffff" letter-spacing="0.5">🔗  API Layer</text>
+  <text x="450" y="276" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" fill="#bfdbfe">Authentication · Rate Limiting · Routing · Analytics · Security</text>
+  <text x="450" y="295" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" fill="#bfdbfe">Versioning · Transformation · Caching · Developer Portal</text>
+
+  <!-- ── Arrow from API Layer down to Backend ── -->
+  <line x1="450" y1="310" x2="450" y2="358" stroke="#6366f1" stroke-width="2.2" marker-end="url(#arr-indigo)"/>
+
+  <!-- ═══════════════════════════════════════════
+       BACKEND LAYER — bottom row (3 boxes)
+  ═══════════════════════════════════════════ -->
+  <text x="450" y="358" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" fill="#94a3b8" letter-spacing="1.2">BACKEND LAYER</text>
+
+  <!-- Business Logic -->
+  <rect x="140" y="368" width="176" height="72" rx="10" fill="#fff" stroke="#6366f1" stroke-width="1.5"/>
+  <text x="228" y="392" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18">⚙️</text>
+  <text x="228" y="413" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#3730a3">Business Logic</text>
+  <text x="228" y="429" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="10" fill="#6366f1">Rules &amp; Workflows</text>
+
+  <!-- Data &amp; Storage -->
+  <rect x="362" y="368" width="176" height="72" rx="10" fill="#fff" stroke="#6366f1" stroke-width="1.5"/>
+  <text x="450" y="392" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18">🗄️</text>
+  <text x="450" y="413" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#3730a3">Data &amp; Storage</text>
+  <text x="450" y="429" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="10" fill="#6366f1">Databases &amp; Files</text>
+
+  <!-- Legacy &amp; Services -->
+  <rect x="584" y="368" width="176" height="72" rx="10" fill="#fff" stroke="#6366f1" stroke-width="1.5"/>
+  <text x="672" y="392" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18">🏛️</text>
+  <text x="672" y="413" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#3730a3">Legacy Systems</text>
+  <text x="672" y="429" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="10" fill="#6366f1">ERP, CRM &amp; Core</text>
+
+  <!-- Horizontal connector between backend boxes -->
+  <line x1="316" y1="404" x2="362" y2="404" stroke="#c7d2fe" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="538" y1="404" x2="584" y2="404" stroke="#c7d2fe" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- ── Vertical arrows from API Layer bottom-center to each backend box top ── -->
+  <!-- API Layer bottom-center is at x=450,y=310 — we already drew a center arrow above -->
+  <!-- Fan-out lines from y=330 to each backend top -->
+  <line x1="450" y1="330" x2="228" y2="330" stroke="#c7d2fe" stroke-width="1.5"/>
+  <line x1="450" y1="330" x2="672" y2="330" stroke="#c7d2fe" stroke-width="1.5"/>
+  <line x1="228" y1="330" x2="228" y2="363" stroke="#6366f1" stroke-width="1.8" marker-end="url(#arr-indigo)"/>
+  <line x1="672" y1="330" x2="672" y2="363" stroke="#6366f1" stroke-width="1.8" marker-end="url(#arr-indigo)"/>
+
+  <!-- Footer note -->
+  <text x="450" y="470" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="10.5" fill="#94a3b8">API Layer bertindak sebagai gerbang tunggal — mengelola keamanan, routing, dan observability untuk semua client</text>
+  <text x="450" y="486" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="10" fill="#cbd5e1">Sumber: APIs For Dummies, Apigee Special Edition (Nijim &amp; Pagano, 2014)</text>
+</svg>

@@ -21,6 +21,7 @@ Setelah memahami API dari perspektif bisnis, kini saatnya menyelami aspek teknis
 
 ## Daftar Isi
 
+
 - [Definisi Formal API](#definisi-formal-api)
 - [API di Bahasa Prosedural](#api-di-bahasa-prosedural)
 - [API di Bahasa Object-Oriented](#api-di-bahasa-object-oriented)
@@ -33,9 +34,8 @@ Setelah memahami API dari perspektif bisnis, kini saatnya menyelami aspek teknis
 - [Dokumentasi API](#dokumentasi-api)
 - [Metadata dalam Dokumentasi API](#metadata-dalam-dokumentasi-api)
 
-
-
 ## Definisi Formal API
+
 
 Dalam pemrograman komputer, **API (Application Programming Interface)** adalah sekumpulan rutinitas, protokol, dan tools untuk membangun aplikasi perangkat lunak.
 
@@ -45,24 +45,18 @@ API mengekspresikan komponen perangkat lunak dalam hal:
 - **Output** — data apa yang dihasilkan
 - **Underlying types** — tipe data yang digunakan
 
-```
-KONSEP DASAR API:
+**KONSEP DASAR API:**
 
-Implementasi A  ──┐
-                  │    ┌─────────┐    ┌─────────────┐
-Implementasi B  ──┼───►│   API   │───►│  Consumer   │
-                  │    │Interface│    │  (Program)  │
-Implementasi C  ──┘    └─────────┘    └─────────────┘
-
+![API sebagai Abstraction Layer — Implementasi A/B/C → API Interface → Consumer](/image/api-abstraction-layer.svg)
 API mendefinisikan fungsi secara INDEPENDEN dari implementasinya
-→ Implementasi bisa berubah tanpa merusak consumer
-```
+- Implementasi bisa berubah tanpa merusak consumer
 
 **Filosofi kunci:** API mendefinisikan fungsionalitas yang **independen** dari implementasinya — memungkinkan definisi dan implementasi berubah tanpa merusak antarmuka.
 
 *"A good API makes it easier to develop a program by providing all the building blocks. A programmer then puts the blocks together."*
 
 ### API vs ABI
+
 
 Sering dicampuradukkan, tapi keduanya berbeda:
 
@@ -79,13 +73,13 @@ Sering dicampuradukkan, tapi keduanya berbeda:
 - Libraries bahasa pemrograman (C++ STL, Java API)
 - Remote service specification (REST, SOAP)
 
-
-
 ## API di Bahasa Prosedural
+
 
 Dalam bahasa prosedural, API menetapkan sekumpulan **fungsi atau rutinitas** yang menyelesaikan tugas tertentu.
 
 ### Contoh: Math API di Unix
+
 
 Perintah `man 3 sqrt` menampilkan signature fungsi sqrt:
 
@@ -108,6 +102,7 @@ Dalam C, API ini diinterpretasikan sebagai **kumpulan include files** yang digun
 
 ### Contoh: Math API di Perl
 
+
 ```perl
 $ perldoc -f sqrt
 
@@ -121,13 +116,13 @@ sqrt
 
 Setiap bahasa prosedural memiliki library-nya sendiri dengan API yang serupa untuk tugas matematika.
 
-
-
 ## API di Bahasa Object-Oriented
+
 
 Dalam OOP, API umumnya mencakup deskripsi **sekumpulan class definitions** dengan perilaku yang terkait.
 
 ### Contoh: Scanner API di Java
+
 
 ```java
 import java.util.Scanner;
@@ -161,15 +156,15 @@ Throws:
 
 ### Konsep Penting dalam Object API
 
+
 **API sebagai Interface:**
-```
+
 Class Stack:
-  push()  ← tambah item ke stack (public method)
-  pop()   ← ambil item teratas (public method)
+push()  ← tambah item ke stack (public method)
+pop()   ← ambil item teratas (public method)
 
 API Stack = {push(), pop()} atau lebih tepatnya:
 "Objek yang bisa di-push dan di-pop"
-```
 
 **Marker Interface:**
 Tidak semua API membutuhkan implementasi method. Contoh: `Serializable` di Java adalah marker interface yang hanya mensyaratkan perilaku serializable tanpa method publik.
@@ -190,47 +185,42 @@ public class User implements Serializable {
 
 ### Kualitas Dokumentasi = Keberhasilan API
 
+
 > *"The quality of the documentation associated with an API is often a factor determining its success in terms of ease of use."*
-
-
 
 ## API Libraries dan Frameworks
 
-```
+
 HUBUNGAN API, LIBRARY, DAN FRAMEWORK:
 
-API ─────────────────────────────────────────────
-│ Mendefinisikan KONTRAK:                        │
-│ - Apa yang tersedia                            │
-│ - Bagaimana cara menggunakannya                │
-│ - Apa yang akan dikembalikan                   │
-└────────────────────────────────────────────────
+API
+Mendefinisikan KONTRAK:
+Apa yang tersedia
+Bagaimana cara menggunakannya
+Apa yang akan dikembalikan
 
-Library ─────────────────────────────────────────
-│ Implementasi NYATA dari API:                   │
-│ - Kode yang bisa dipanggil                     │
-│ - Disimpan sebagai .jar, .dll, .so, dll        │
-└────────────────────────────────────────────────
+Library
+Implementasi NYATA dari API:
+Kode yang bisa dipanggil
+Disimpan sebagai .jar, .dll, .so, dll
 
-Framework ───────────────────────────────────────
-│ Kerangka aplikasi yang lebih besar:            │
-│ - Menyediakan struktur pengembangan            │
-│ - API lebih opinionated                        │
-│ - Bisa include runtime environment             │
-└────────────────────────────────────────────────
-```
+Framework
+Kerangka aplikasi yang lebih besar:
+Menyediakan struktur pengembangan
+API lebih opinionated
+Bisa include runtime environment
 
 **Perbedaan kunci:**
 - **Library** — kamu yang memanggil kode library (Inversion of Control: tidak ada)
 - **Framework** — framework yang memanggil kodemu (Inversion of Control: ada)
 
-
-
 ## API Web Service dan Protokol
+
 
 Ketika API berinteraksi melalui jaringan, ia membutuhkan format pesan yang language-neutral.
 
 ### SOAP
+
 
 ```xml
 <!-- SOAP menggunakan XML sebagai container -->
@@ -246,78 +236,71 @@ Ketika API berinteraksi melalui jaringan, ia membutuhkan format pesan yang langu
 
 ### REST
 
-```
+
 REST API bisa menggunakan XML atau JSON:
 
 JSON (lebih umum):
 GET /api/users/12345
 {
-  "id": 12345,
-  "name": "Rifky Awalul Huda",
-  "email": "rifky@example.com"
+- "id": 12345,
+- "name": "Rifky Awalul Huda",
+- "email": "rifky@example.com"
 }
 
 XML (kurang umum):
 <User>
-  <Id>12345</Id>
-  <Name>Rifky Awalul Huda</Name>
+- <Id>12345</Id>
+- <Name>Rifky Awalul Huda</Name>
 </User>
-```
 
 ### Object Exchange API
 
+
 API objek dapat menetapkan **format pertukaran objek spesifik** yang bisa digunakan program secara lokal dalam satu aplikasi, atau diekspos sebagai web service.
 
-```
-TIPE MESSAGE FORMAT:
+**TIPE MESSAGE FORMAT:**
 
 Language-specific:
-  Java RMI, Python Pickle
-  → Hanya bisa digunakan dalam bahasa yang sama
+- Java RMI, Python Pickle
+- Hanya bisa digunakan dalam bahasa yang sama
 
 Language-neutral:
-  SOAP (XML), REST (JSON/XML), gRPC (Protobuf)
-  → Bisa digunakan lintas bahasa dan platform
-```
-
-
+- SOAP (XML), REST (JSON/XML), gRPC (Protobuf)
+- Bisa digunakan lintas bahasa dan platform
 
 ## Tipe-Tipe API Berdasarkan Penggunaan
 
-```
-TAKSONOMI API
+
+**TAKSONOMI API:**
 
 API
-├── By Access Level
-│   ├── Public/Open API
-│   │   └── Tersedia untuk semua developer
-│   ├── Partner API
-│   │   └── Hanya untuk partner terseleksi
-│   └── Private/Internal API
-│       └── Hanya untuk penggunaan internal
-│
-├── By Technology
-│   ├── REST API
-│   ├── SOAP API
-│   ├── GraphQL API
-│   ├── gRPC API
-│   └── WebSocket API
-│
-└── By Purpose
-    ├── Database API (SQL, NoSQL)
-    ├── Hardware API (GPU, Disk)
-    ├── OS API (Windows API, POSIX)
-    ├── Web API (Maps, Payment, Social)
-    └── Library/Framework API
-```
-
-
+By Access Level
+Public/Open API
+Tersedia untuk semua developer
+Partner API
+Hanya untuk partner terseleksi
+Private/Internal API
+Hanya untuk penggunaan internal
+By Technology
+REST API
+SOAP API
+GraphQL API
+gRPC API
+WebSocket API
+By Purpose
+Database API (SQL, NoSQL)
+Hardware API (GPU, Disk)
+OS API (Windows API, POSIX)
+Web API (Maps, Payment, Social)
+Library/Framework API
 
 ## API untuk Berbagi Konten Web
+
 
 Praktik mempublikasikan API telah memungkinkan komunitas web menciptakan **arsitektur terbuka** untuk berbagi konten dan data.
 
 ### Contoh Penggunaan API Web
+
 
 **Berbagi foto:**
 - Foto di Flickr atau Photobucket → bisa dibagikan ke Facebook via API
@@ -337,55 +320,53 @@ Praktik mempublikasikan API telah memungkinkan komunitas web menciptakan **arsit
 
 ### Implementasi Open Architecture Web
 
-```
+
 Open API Ecosystem:
 
-Content Creator ──API──► Platform A
-                    └──► Platform B
-                    └──► Platform C
-                    └──► Mobile App
-                    └──► Third-party Developer
+Content Creator API Platform A
+Platform B
+Platform C
+Mobile App
+Third-party Developer
 
 Konten dibuat SEKALI → tersedia di BANYAK tempat
-```
-
-
 
 ## Prinsip Desain API
+
 
 Desain API yang baik membutuhkan keahlian khusus. Beberapa penulis terkenal telah membuat rekomendasi, termasuk **Joshua Bloch** dan **Michi Henning**.
 
 ### Prinsip Universal
 
-```
-API DESIGN PRINCIPLES:
+
+**API DESIGN PRINCIPLES:**
 
 1. CONSISTENCY
-   → API harus konsisten dengan API lain dalam sistem
-   → Gunakan konvensi penamaan yang seragam
-   → GET untuk read, POST untuk create, dll (REST)
+- API harus konsisten dengan API lain dalam sistem
+- Gunakan konvensi penamaan yang seragam
+- GET untuk read, POST untuk create, dll (REST)
 
 2. SIMPLICITY
-   → "If the interface is complex, the API will not be used"
-   → Minimal learning curve untuk consumer
-   → Sedikit konsep yang harus dipahami
+- "If the interface is complex, the API will not be used"
+- Minimal learning curve untuk consumer
+- Sedikit konsep yang harus dipahami
 
 3. COMPLETENESS
-   → Menyediakan semua yang consumer butuhkan
-   → Tidak memaksa consumer melakukan workaround
+- Menyediakan semua yang consumer butuhkan
+- Tidak memaksa consumer melakukan workaround
 
 4. EVOLUTION SUPPORT
-   → Versioning yang jelas (v1, v2, ...)
-   → Backward compatibility
-   → Deprecation policy yang jelas
+- Versioning yang jelas (v1, v2, ...)
+- Backward compatibility
+- Deprecation policy yang jelas
 
 5. GOOD DOCUMENTATION
-   → Semua behavior terdokumentasi
-   → Contoh kode yang bisa langsung dijalankan
-   → Error messages yang informatif
-```
+- Semua behavior terdokumentasi
+- Contoh kode yang bisa langsung dijalankan
+- Error messages yang informatif
 
 ### Conway's Law dalam API Design
+
 
 *"Organizations which design systems are constrained to produce designs which are copies of the communication structures of these organizations."*
 
@@ -393,37 +374,36 @@ Implikasinya untuk API: desain API yang baik membutuhkan **kolaborasi lintas tim
 
 ### API Consistency
 
+
 Karena salah satu prinsip API design adalah **konsistensi dengan API yang sudah ada**, detail desain API sangat bergantung pada:
 - Bahasa pemrograman yang digunakan
 - Sistem/platform tempat API berjalan
 - Konvensi yang sudah ada di organisasi
 
-```
-CONTOH KONSISTENSI NAMING:
+**CONTOH KONSISTENSI NAMING:**
 
 Java Style (camelCase):
-  getUserById()
-  createNewOrder()
-  deleteProduct()
+- getUserById()
+- createNewOrder()
+- deleteProduct()
 
 Python Style (snake_case):
-  get_user_by_id()
-  create_new_order()
-  delete_product()
+- get_user_by_id()
+- create_new_order()
+- delete_product()
 
 REST Style:
-  GET    /users/{id}
-  POST   /orders
-  DELETE /products/{id}
-```
-
-
+- GET    /users/{id}
+- POST   /orders
+- DELETE /products/{id}
 
 ## Release Policy API
+
 
 Kebijakan utama untuk merilis API:
 
 ### 1. Private/Protected API
+
 
 Informasi tentang API dilindungi dari publik.
 
@@ -436,23 +416,21 @@ Informasi tentang API dilindungi dari publik.
 
 ### 2. Partner API
 
+
 API tersedia untuk pihak tertentu melalui perjanjian business.
 
-```
 Partner API Flow:
 
-Company ──────────────────────────────────
-│  Partner API (restricted access)        │
-│  - Signed NDA / agreement               │
-│  - Custom SLA                           │
-│  - Dedicated support                    │
-└──────────────────────────────────────────
-       │              │
-   Partner A      Partner B
+Company
+Partner API (restricted access)
+Signed NDA / agreement
+Custom SLA
+Dedicated support
+- Partner A      Partner B
 (approved access)  (approved access)
-```
 
 ### 3. Public/Open API
+
 
 API tersedia untuk semua developer.
 
@@ -467,52 +445,52 @@ API tersedia untuk semua developer.
 
 ### Implikasi Hukum API
 
+
 Masalah kepemilikan dan hak cipta API menjadi semakin penting. Kasus **Oracle vs Google** tentang Java API di Android menjadi preseden penting:
 
 - Oracle mengklaim copyright atas Java API
 - Google mengimplementasikan Java API di Android
 - Implikasi: implementasi API tidak sama dengan memiliki API
 
-
-
 ## Dokumentasi API
+
 
 Dokumentasi API yang baik adalah **faktor penentu keberhasilan** sebuah API.
 
 ### Elemen Dokumentasi API yang Lengkap
 
-```
-DOKUMENTASI API KOMPREHENSIF:
+
+**DOKUMENTASI API KOMPREHENSIF:**
 
 1. DATA STRUCTURES
-   └── Semua struktur data yang digunakan
+Semua struktur data yang digunakan
 
 2. FUNCTION SIGNATURES
-   ├── Nama fungsi
-   ├── Nama parameter (jika berlaku)
-   ├── Tipe parameter
-   ├── Return type
-   └── Apakah parameter bisa dimodifikasi
+Nama fungsi
+Nama parameter (jika berlaku)
+Tipe parameter
+Return type
+Apakah parameter bisa dimodifikasi
 
 3. ERROR HANDLING
-   └── Semua kondisi error dan cara menanganinya
+Semua kondisi error dan cara menanganinya
 
 4. PRE/POST CONDITIONS
-   ├── Pre-conditions (apa yang harus benar sebelum panggil)
-   ├── Post-conditions (apa yang dijamin setelah panggil)
-   └── Invariants
+Pre-conditions (apa yang harus benar sebelum panggil)
+Post-conditions (apa yang dijamin setelah panggil)
+Invariants
 
 5. STATE CHANGES
-   └── Bagaimana state berubah setelah eksekusi fungsi
+Bagaimana state berubah setelah eksekusi fungsi
 
 6. SIDE EFFECTS
-   └── Efek samping yang mungkin terjadi
+Efek samping yang mungkin terjadi
 
 7. ACCESSIBILITY CONSTRAINTS
-   └── Batasan akses dan visibilitas
-```
+Batasan akses dan visibilitas
 
 ### Dokumentasi Object API
+
 
 Object API harus mendokumentasikan:
 - Semua method yang diekspos secara publik
@@ -521,27 +499,26 @@ Object API harus mendokumentasikan:
 
 ### Dokumentasi Format dan Versi
 
-```
-VERSION INFORMATION DALAM DOCS:
+
+**VERSION INFORMATION DALAM DOCS:**
 
 Untuk Library:
-  └── Language version number yang kompatibel
-  └── Library dan resource dependencies
-  └── Protocol versions yang diimplementasikan
-  └── OS/Platform version yang didukung
+Language version number yang kompatibel
+Library dan resource dependencies
+Protocol versions yang diimplementasikan
+OS/Platform version yang didukung
 
 Untuk Cross-Language API:
-  └── Dokumentasikan batasan penggunaan di bahasa non-native
-  └── Contoh adaptasi untuk setiap bahasa yang didukung
-```
-
-
+Dokumentasikan batasan penggunaan di bahasa non-native
+Contoh adaptasi untuk setiap bahasa yang didukung
 
 ## Metadata dalam Dokumentasi API
+
 
 Dokumentasi API bisa diperkaya dengan **metadata** yang bisa diproses secara otomatis.
 
 ### Java Annotations
+
 
 ```java
 /**
@@ -561,6 +538,7 @@ public User getUserById(int userId) throws UserNotFoundException {
 ```
 
 ### OpenAPI/Swagger (REST API)
+
 
 ```yaml
 openapi: 3.0.0
@@ -587,62 +565,63 @@ paths:
 
 ### Manfaat Metadata API
 
-```
-METADATA API DIGUNAKAN OLEH:
+
+**METADATA API DIGUNAKAN OLEH:**
 
 Compiler:
-  └── Validasi penggunaan API yang sudah deprecated
+Validasi penggunaan API yang sudah deprecated
 
 IDE/Tools:
-  └── Auto-complete, type checking, error highlighting
+Auto-complete, type checking, error highlighting
 
 Runtime Environment:
-  └── Custom behaviors (caching, logging, security)
-  └── Serialization/deserialization otomatis
+Custom behaviors (caching, logging, security)
+Serialization/deserialization otomatis
 
 Documentation Generator:
-  └── JavaDoc, Sphinx, Swagger UI
-  └── Generate docs dari annotation otomatis
-```
-
-
+JavaDoc, Sphinx, Swagger UI
+Generate docs dari annotation otomatis
 
 ## Rangkuman: Ekosistem API Lengkap
 
-```
+
 EKOSISTEM API — PANDANGAN MENYELURUH
 
-DEFINISI & KONTRAK
-  API Spec ──► Interface Definition
-              (apa yang bisa dilakukan, bagaimana caranya)
+**DEFINISI & KONTRAK:**
 
-IMPLEMENTASI
-  Library/Framework ──► Actual Code
-                       (yang menjalankan kontrak)
+API Spec  Interface Definition
+- (apa yang bisa dilakukan, bagaimana caranya)
 
-KONSUMSI
-  Application ──► Call API
-                 (pakai building blocks yang tersedia)
+**IMPLEMENTASI:**
 
-DISTRIBUSI
-  ├── Library (JAR, DLL, .so)
-  ├── Web Service (REST, SOAP endpoint)
-  └── SDK (API + tools + docs + samples)
+Library/Framework  Actual Code
+- (yang menjalankan kontrak)
 
-GOVERNANCE
-  ├── Versioning (v1, v2, semantic versioning)
-  ├── Deprecation policy
-  └── Release policy (public/partner/private)
+**KONSUMSI:**
 
-DOKUMENTASI
-  ├── Reference docs (semua method, params, returns)
-  ├── Guides & tutorials (cara pakai)
-  └── Changelog (apa yang berubah tiap versi)
-```
+Application  Call API
+- (pakai building blocks yang tersedia)
 
+**DISTRIBUSI:**
 
+Library (JAR, DLL, .so)
+Web Service (REST, SOAP endpoint)
+SDK (API + tools + docs + samples)
+
+**GOVERNANCE:**
+
+Versioning (v1, v2, semantic versioning)
+Deprecation policy
+Release policy (public/partner/private)
+
+**DOKUMENTASI:**
+
+Reference docs (semua method, params, returns)
+Guides & tutorials (cara pakai)
+Changelog (apa yang berubah tiap versi)
 
 ## Ringkasan Seri APIs for Dummies
+
 
 Empat artikel seri ini memberikan pemahaman komprehensif tentang API:
 
@@ -655,6 +634,11 @@ Empat artikel seri ini memberikan pemahaman komprehensif tentang API:
 
 **Pesan utama:** API adalah jembatan antara implementasi dan konsumsi — antara bisnis dan teknologi, antara sistem dan pengguna, antara masa lalu dan inovasi masa depan.
 
-
-
 **Sumber:** Wikipedia, *Application Programming Interface* — [en.wikipedia.org/wiki/Application_programming_interface](https://en.wikipedia.org/wiki/Application_programming_interface)
+
+## Referensi
+
+- Wikipedia contributors. (2024). *Application programming interface*. Wikipedia, The Free Encyclopedia.
+- Fielding, R. T. (2000). *Architectural Styles and the Design of Network-based Software Architectures* (Doctoral dissertation). University of California, Irvine.
+- W3C. (2000). *Simple Object Access Protocol (SOAP) 1.1*. World Wide Web Consortium.
+- Mozilla Developer Network. (2024). *MDN Web Docs: HTTP*. Mozilla.

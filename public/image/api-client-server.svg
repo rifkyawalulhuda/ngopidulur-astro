@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" width="900" height="380" font-family="'Segoe UI', system-ui, -apple-system, sans-serif">
+  <!-- Background -->
+  <rect width="900" height="380" fill="#f8fafc" rx="12"/>
+
+  <!-- Title -->
+  <text x="450" y="38" text-anchor="middle" font-size="17" font-weight="700" fill="#1e293b">Komunikasi Client–Server via API</text>
+
+  <!-- ── CLIENT BOX ── -->
+  <rect x="40" y="70" width="220" height="240" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <rect x="40" y="70" width="220" height="42" rx="14" fill="#3b82f6"/>
+  <rect x="40" y="98" width="220" height="14" fill="#3b82f6"/>
+  <text x="150" y="97" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">CLIENT</text>
+
+  <!-- Client icons row -->
+  <!-- Smartphone icon -->
+  <rect x="72" y="132" width="36" height="56" rx="5" fill="none" stroke="#64748b" stroke-width="1.8"/>
+  <line x1="83" y1="178" x2="97" y2="178" stroke="#64748b" stroke-width="1.8" stroke-linecap="round"/>
+  <circle cx="90" cy="142" r="2" fill="#64748b"/>
+  <!-- Browser icon -->
+  <rect x="132" y="132" width="48" height="36" rx="4" fill="none" stroke="#64748b" stroke-width="1.8"/>
+  <line x1="132" y1="143" x2="180" y2="143" stroke="#64748b" stroke-width="1.5"/>
+  <circle cx="140" cy="138" r="2.5" fill="#ef4444"/>
+  <circle cx="149" cy="138" r="2.5" fill="#f59e0b"/>
+  <circle cx="158" cy="138" r="2.5" fill="#22c55e"/>
+  <!-- Desktop icon -->
+  <rect x="72" y="200" width="96" height="58" rx="4" fill="none" stroke="#64748b" stroke-width="1.8"/>
+  <line x1="110" y1="258" x2="130" y2="258" stroke="#64748b" stroke-width="1.8" stroke-linecap="round"/>
+  <line x1="120" y1="258" x2="120" y2="272" stroke="#64748b" stroke-width="1.8" stroke-linecap="round"/>
+  <line x1="108" y1="272" x2="132" y2="272" stroke="#64748b" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Client labels -->
+  <text x="90" y="200" text-anchor="middle" font-size="11" fill="#475569">Smartphone</text>
+  <text x="156" y="180" text-anchor="middle" font-size="11" fill="#475569">Web Browser</text>
+  <text x="120" y="290" text-anchor="middle" font-size="11" fill="#475569">Desktop App</text>
+
+  <!-- ── API MIDDLE SECTION ── -->
+  <rect x="330" y="120" width="240" height="140" rx="14" fill="#ffffff" stroke="#a78bfa" stroke-width="2"/>
+  <rect x="330" y="120" width="240" height="42" rx="14" fill="#7c3aed"/>
+  <rect x="330" y="148" width="240" height="14" fill="#7c3aed"/>
+  <text x="450" y="147" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">API</text>
+  <text x="450" y="175" text-anchor="middle" font-size="11.5" fill="#6d28d9" font-weight="600">Application Programming Interface</text>
+
+  <!-- API detail items -->
+  <text x="360" y="200" font-size="11" fill="#4c1d95">📋  Meneruskan HTTP Request</text>
+  <text x="360" y="220" font-size="11" fill="#4c1d95">🔐  Autentikasi &amp; Otorisasi</text>
+  <text x="360" y="240" font-size="11" fill="#4c1d95">📦  Format Data (JSON / XML)</text>
+
+  <!-- ── SERVER BOX ── -->
+  <rect x="640" y="70" width="220" height="240" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <rect x="640" y="70" width="220" height="42" rx="14" fill="#0f766e"/>
+  <rect x="640" y="98" width="220" height="14" fill="#0f766e"/>
+  <text x="750" y="97" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">API PROVIDER</text>
+
+  <!-- Server rack icon -->
+  <rect x="690" y="132" width="120" height="20" rx="3" fill="none" stroke="#64748b" stroke-width="1.8"/>
+  <circle cx="704" cy="142" r="3" fill="#22c55e"/>
+  <rect x="690" y="158" width="120" height="20" rx="3" fill="none" stroke="#64748b" stroke-width="1.8"/>
+  <circle cx="704" cy="168" r="3" fill="#22c55e"/>
+  <rect x="690" y="184" width="120" height="20" rx="3" fill="none" stroke="#64748b" stroke-width="1.8"/>
+  <circle cx="704" cy="194" r="3" fill="#f59e0b"/>
+
+  <!-- Database cylinder -->
+  <ellipse cx="750" cy="236" rx="34" ry="9" fill="none" stroke="#64748b" stroke-width="1.8"/>
+  <line x1="716" y1="236" x2="716" y2="264" stroke="#64748b" stroke-width="1.8"/>
+  <line x1="784" y1="236" x2="784" y2="264" stroke="#64748b" stroke-width="1.8"/>
+  <ellipse cx="750" cy="264" rx="34" ry="9" fill="none" stroke="#64748b" stroke-width="1.8"/>
+
+  <text x="750" y="226" text-anchor="middle" font-size="11" fill="#475569">Web Server</text>
+  <text x="750" y="294" text-anchor="middle" font-size="11" fill="#475569">Database</text>
+
+  <!-- ── ARROWS Client → API ── -->
+  <!-- Request arrow (top, left to right) -->
+  <defs>
+    <marker id="arrowR" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#7c3aed"/>
+    </marker>
+    <marker id="arrowL" markerWidth="9" markerHeight="7" refX="1" refY="3.5" orient="auto">
+      <polygon points="9 0, 0 3.5, 9 7" fill="#7c3aed"/>
+    </marker>
+    <marker id="arrowRG" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#7c3aed"/>
+    </marker>
+  </defs>
+
+  <!-- Client to API: request -->
+  <line x1="262" y1="178" x2="326" y2="178" stroke="#7c3aed" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#arrowR)"/>
+  <text x="294" y="168" text-anchor="middle" font-size="10.5" fill="#7c3aed" font-weight="600">HTTP Request</text>
+
+  <!-- API to Client: response -->
+  <line x1="326" y1="202" x2="262" y2="202" stroke="#0f766e" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#arrowL)"/>
+  <text x="294" y="220" text-anchor="middle" font-size="10.5" fill="#0f766e" font-weight="600">HTTP Response</text>
+
+  <!-- API to Server: request -->
+  <defs>
+    <marker id="arrowR2" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#7c3aed"/>
+    </marker>
+    <marker id="arrowL2" markerWidth="9" markerHeight="7" refX="1" refY="3.5" orient="auto">
+      <polygon points="9 0, 0 3.5, 9 7" fill="#0f766e"/>
+    </marker>
+  </defs>
+  <line x1="572" y1="178" x2="636" y2="178" stroke="#7c3aed" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#arrowR2)"/>
+  <text x="604" y="168" text-anchor="middle" font-size="10.5" fill="#7c3aed" font-weight="600">Request</text>
+
+  <!-- Server to API: response -->
+  <line x1="636" y1="202" x2="572" y2="202" stroke="#0f766e" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#arrowL2)"/>
+  <text x="604" y="220" text-anchor="middle" font-size="10.5" fill="#0f766e" font-weight="600">Response</text>
+
+  <!-- ── BOTTOM LABELS ── -->
+  <text x="150" y="338" text-anchor="middle" font-size="12" fill="#64748b">Yang meminta data</text>
+  <text x="450" y="338" text-anchor="middle" font-size="12" fill="#64748b">Jembatan komunikasi</text>
+  <text x="750" y="338" text-anchor="middle" font-size="12" fill="#64748b">Yang menyediakan data</text>
+
+  <!-- bottom dots to separate sections -->
+  <line x1="40" y1="355" x2="260" y2="355" stroke="#e2e8f0" stroke-width="1"/>
+  <line x1="330" y1="355" x2="570" y2="355" stroke="#e2e8f0" stroke-width="1"/>
+  <line x1="640" y1="355" x2="860" y2="355" stroke="#e2e8f0" stroke-width="1"/>
+</svg>

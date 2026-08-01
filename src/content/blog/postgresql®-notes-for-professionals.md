@@ -51,7 +51,7 @@ Buku *PostgreSQL® Notes for Professionals* adalah buku gratis tidak resmi untuk
 25. [Bab 25: Akses Programatik](#bab-25-mengakses-data-secara-programatis)
 26. [Bab 26: Java](#bab-26-koneksi-postgresql-dari-java)
 27. [Bab 27: High Availability](#bab-27-postgresql-high-availability)
-28. [Bab 28: dblink & FDW](#bab-28-extension-dblink-dan-postgresfdw)
+28. [Bab 28: dblink & FDW](#bab-28-extension-dblink-dan-postgres_fdw)
 29. [Bab 29: Tips & Tricks](#bab-29-tips-dan-trik-postgresql)
 
 ---

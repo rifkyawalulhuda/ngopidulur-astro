@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" width="900" height="420" font-family="Inter, Segoe UI, sans-serif">
+  <!-- Background -->
+  <rect width="900" height="420" fill="#f8fafc" rx="12"/>
+
+  <!-- Title -->
+  <text x="450" y="36" text-anchor="middle" font-size="18" font-weight="700" fill="#1e293b">Testing Pyramid untuk Microservices</text>
+  <text x="450" y="56" text-anchor="middle" font-size="12" fill="#64748b">Strategi testing berlapis — lebih banyak di bawah, lebih sedikit di atas</text>
+
+  <!-- Layer 4 — E2E (top, narrowest) -->
+  <polygon points="450,80 310,155 590,155" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+  <text x="450" y="125" text-anchor="middle" font-size="13" font-weight="700" fill="#b91c1c">E2E Tests</text>
+  <text x="450" y="142" text-anchor="middle" font-size="10" fill="#991b1b">Selenium · Cypress · Playwright</text>
+
+  <!-- Layer 3 — Contract -->
+  <polygon points="310,155 590,155 650,235 250,235" fill="#fef9c3" stroke="#ca8a04" stroke-width="2"/>
+  <text x="450" y="192" text-anchor="middle" font-size="13" font-weight="700" fill="#92400e">Contract Tests</text>
+  <text x="450" y="210" text-anchor="middle" font-size="10" fill="#92400e">Pact · Spring Cloud Contract</text>
+
+  <!-- Layer 2 — Integration -->
+  <polygon points="250,235 650,235 720,325 180,325" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="450" y="273" text-anchor="middle" font-size="13" font-weight="700" fill="#1d4ed8">Integration Tests</text>
+  <text x="450" y="293" text-anchor="middle" font-size="10" fill="#1d4ed8">Testcontainers · WireMock · MockServer</text>
+  <text x="450" y="310" text-anchor="middle" font-size="10" fill="#1d4ed8">Spring Boot Test · REST Assured</text>
+
+  <!-- Layer 1 — Unit (bottom, widest) -->
+  <polygon points="180,325 720,325 800,400 100,400" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="450" y="358" text-anchor="middle" font-size="13" font-weight="700" fill="#15803d">Unit Tests</text>
+  <text x="450" y="376" text-anchor="middle" font-size="10" fill="#166534">JUnit 5 · Mockito · AssertJ · TestContainers</text>
+  <text x="450" y="392" text-anchor="middle" font-size="10" fill="#166534">Fast · Isolated · Numerous</text>
+
+  <!-- Left annotation: speed & cost -->
+  <line x1="85" y1="80" x2="85" y2="400" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="80" y="78" text-anchor="middle" font-size="10" fill="#64748b" transform="rotate(-90,80,240)">Slower &amp; More Expensive</text>
+  <polygon points="85,82 81,92 89,92" fill="#94a3b8"/>
+
+  <!-- Right annotation: count -->
+  <line x1="820" y1="400" x2="820" y2="80" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="825" y="78" text-anchor="start" font-size="10" fill="#64748b" transform="rotate(-90,825,240)">Fewer Tests</text>
+  <polygon points="820,82 816,92 824,92" fill="#94a3b8"/>
+
+  <!-- Right-side count badges -->
+  <rect x="820" y="105" width="62" height="22" rx="11" fill="#fee2e2" stroke="#dc2626" stroke-width="1"/>
+  <text x="851" y="120" text-anchor="middle" font-size="10" fill="#b91c1c" font-weight="600">~5-10%</text>
+
+  <rect x="820" y="185" width="62" height="22" rx="11" fill="#fef9c3" stroke="#ca8a04" stroke-width="1"/>
+  <text x="851" y="200" text-anchor="middle" font-size="10" fill="#92400e" font-weight="600">~10-20%</text>
+
+  <rect x="820" y="270" width="62" height="22" rx="11" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
+  <text x="851" y="285" text-anchor="middle" font-size="10" fill="#1d4ed8" font-weight="600">~20-30%</text>
+
+  <rect x="820" y="350" width="62" height="22" rx="11" fill="#dcfce7" stroke="#16a34a" stroke-width="1"/>
+  <text x="851" y="365" text-anchor="middle" font-size="10" fill="#15803d" font-weight="600">~60-70%</text>
+</svg>

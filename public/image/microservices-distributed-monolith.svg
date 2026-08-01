@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" width="900" height="400">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#dc2626"/>
+    </marker>
+  </defs>
+  <rect width="900" height="400" fill="#ffffff" rx="12"/>
+  <rect width="900" height="400" fill="none" stroke="#e2e8f0" stroke-width="1.5" rx="12"/>
+  <rect x="0" y="0" width="900" height="44" fill="#4f46e5" rx="12"/>
+  <rect x="0" y="22" width="900" height="22" fill="#4f46e5"/>
+  <text x="450" y="28" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">Bahaya Distributed Monolith — Dependency Cycles &amp; Spaghetti</text>
+  <!-- Spaghetti diagram -->
+  <!-- Services at corners -->
+  <rect x="90" y="100" width="140" height="55" fill="#fee2e2" rx="8" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="160" y="125" font-family="Inter,Arial,sans-serif" font-size="11" fill="#991b1b" text-anchor="middle" font-weight="600">Service A</text>
+  <text x="160" y="142" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#b91c1c" text-anchor="middle">(Order)</text>
+  <rect x="670" y="100" width="140" height="55" fill="#fee2e2" rx="8" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="740" y="125" font-family="Inter,Arial,sans-serif" font-size="11" fill="#991b1b" text-anchor="middle" font-weight="600">Service B</text>
+  <text x="740" y="142" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#b91c1c" text-anchor="middle">(Payment)</text>
+  <rect x="90" y="280" width="140" height="55" fill="#fee2e2" rx="8" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="160" y="305" font-family="Inter,Arial,sans-serif" font-size="11" fill="#991b1b" text-anchor="middle" font-weight="600">Service C</text>
+  <text x="160" y="322" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#b91c1c" text-anchor="middle" font-weight="600">(Inventory)</text>
+  <rect x="670" y="280" width="140" height="55" fill="#fee2e2" rx="8" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="740" y="305" font-family="Inter,Arial,sans-serif" font-size="11" fill="#991b1b" text-anchor="middle" font-weight="600">Service D</text>
+  <text x="740" y="322" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#b91c1c" text-anchor="middle" font-weight="600">(Shipping)</text>
+  <!-- Center shared DB -->
+  <rect x="360" y="200" width="180" height="60" fill="#fecaca" rx="10" stroke="#dc2626" stroke-width="2"/>
+  <text x="450" y="224" font-family="Inter,Arial,sans-serif" font-size="12" fill="#991b1b" text-anchor="middle" font-weight="700">Shared Database</text>
+  <text x="450" y="242" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#b91c1c" text-anchor="middle">Semua service akses tabel sama</text>
+  <!-- Spaghetti lines -->
+  <line x1="160" y1="155" x2="450" y2="200" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <line x1="740" y1="155" x2="450" y2="200" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <line x1="160" y1="280" x2="450" y2="260" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <line x1="740" y1="280" x2="450" y2="260" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <line x1="230" y1="128" x2="670" y2="128" stroke="#f87171" stroke-width="1.5"/>
+  <line x1="230" y1="303" x2="670" y2="303" stroke="#f87171" stroke-width="1.5"/>
+  <line x1="160" y1="230" x2="740" y2="230" stroke="#f87171" stroke-width="1.5"/>
+  <line x1="160" y1="155" x2="740" y2="280" stroke="#f87171" stroke-width="1"/>
+  <line x1="740" y1="155" x2="160" y2="280" stroke="#f87171" stroke-width="1"/>
+  <!-- Cycle badge -->
+  <rect x="300" y="310" width="300" height="55" fill="#fff7ed" rx="8" stroke="#ea580c" stroke-width="1.5"/>
+  <text x="450" y="330" font-family="Inter,Arial,sans-serif" font-size="11" fill="#c2410c" text-anchor="middle" font-weight="600">⚠ Dependency Cycle: A → B → C → A</text>
+  <text x="450" y="348" font-family="Inter,Arial,sans-serif" font-size="9" fill="#ea580c" text-anchor="middle">Deploy A butuh B, B butuh C, C butuh A — tidak bisa deploy sendiri</text>
+  <!-- Problems list -->
+  <text x="450" y="120" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#b91c1c" text-anchor="middle">✗ Chattiness: banyak round-trip antar service</text>
+  <text x="450" y="137" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#b91c1c" text-anchor="middle">✗ Remote call latency: ms bukan ns</text>
+  <text x="450" y="154" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#b91c1c" text-anchor="middle">✗ Shared library: update = deploy semua</text>
+  <text x="450" y="171" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#b91c1c" text-anchor="middle">✗ Shared DB: schema change berdampak global</text>
+  <!-- Footer -->
+  <text x="450" y="385" font-family="Inter,Arial,sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">Building Microservices (Sam Newman) — Anti-pattern distributed monolith</text>
+</svg>

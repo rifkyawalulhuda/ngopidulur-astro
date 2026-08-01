@@ -1,11 +1,11 @@
 ---
-import { Icon } from "astro-icon/components";
 import { DATE_FORMAT } from "@config";
+import { getAllPosts, sortPostsByDate } from "@utils/blogUtils";
+import dayjs from "@utils/dayjs";
+import { Icon } from "astro-icon/components";
 import MainCard from "@/components/MainCard.astro";
 import GitHubStats from "@/components/mdx/GitHubStats.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import dayjs from "@utils/dayjs";
-import { getAllPosts, sortPostsByDate } from "@utils/blogUtils";
 
 const latestPosts = sortPostsByDate(await getAllPosts()).slice(0, 6);
 ---

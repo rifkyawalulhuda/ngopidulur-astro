@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" width="900" height="480">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6366f1"/>
+    </marker>
+    <marker id="arrG" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#16a34a"/>
+    </marker>
+    <marker id="arrR" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#dc2626"/>
+    </marker>
+  </defs>
+  <rect width="900" height="480" fill="#ffffff" rx="12"/>
+  <rect width="900" height="480" fill="none" stroke="#e2e8f0" stroke-width="1.5" rx="12"/>
+  <rect x="0" y="0" width="900" height="44" fill="#4f46e5" rx="12"/>
+  <rect x="0" y="22" width="900" height="22" fill="#4f46e5"/>
+  <text x="450" y="28" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">Microservices Communication — Protocol Comparison</text>
+  <!-- Client box -->
+  <rect x="30" y="80" width="130" height="320" fill="#f1f5f9" rx="10" stroke="#cbd5e1" stroke-width="1.5"/>
+  <rect x="30" y="80" width="130" height="28" fill="#64748b" rx="10"/>
+  <rect x="30" y="96" width="130" height="12" fill="#64748b"/>
+  <text x="95" y="99" font-family="Inter,Arial,sans-serif" font-size="12" fill="#fff" text-anchor="middle" font-weight="700">CLIENT</text>
+  <text x="95" y="130" font-family="Inter,Arial,sans-serif" font-size="10" fill="#475569" text-anchor="middle">Web App</text>
+  <text x="95" y="147" font-family="Inter,Arial,sans-serif" font-size="10" fill="#475569" text-anchor="middle">Mobile App</text>
+  <text x="95" y="164" font-family="Inter,Arial,sans-serif" font-size="10" fill="#475569" text-anchor="middle">Other Service</text>
+  <!-- REST -->
+  <rect x="240" y="85" width="140" height="55" fill="#dbeafe" rx="8" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="310" y="108" font-family="Inter,Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle" font-weight="700">REST / HTTP</text>
+  <text x="310" y="125" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#3b82f6" text-anchor="middle">JSON over HTTP/1.1</text>
+  <text x="310" y="137" font-family="Inter,Arial,sans-serif" font-size="9" fill="#60a5fa" text-anchor="middle">Stateless · Easy · Cacheable</text>
+  <!-- GraphQL -->
+  <rect x="240" y="160" width="140" height="55" fill="#fce7f3" rx="8" stroke="#db2777" stroke-width="1.5"/>
+  <text x="310" y="183" font-family="Inter,Arial,sans-serif" font-size="12" fill="#9d174d" text-anchor="middle" font-weight="700">GraphQL</text>
+  <text x="310" y="200" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#db2777" text-anchor="middle">Flexible queries / mutations</text>
+  <text x="310" y="212" font-family="Inter,Arial,sans-serif" font-size="9" fill="#f472b6" text-anchor="middle">Single endpoint · No over-fetch</text>
+  <!-- gRPC -->
+  <rect x="240" y="235" width="140" height="55" fill="#dcfce7" rx="8" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="310" y="258" font-family="Inter,Arial,sans-serif" font-size="12" fill="#166534" text-anchor="middle" font-weight="700">gRPC</text>
+  <text x="310" y="275" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#16a34a" text-anchor="middle">Protocol Buffers / HTTP/2</text>
+  <text x="310" y="287" font-family="Inter,Arial,sans-serif" font-size="9" fill="#4ade80" text-anchor="middle">Fast · Streaming · Typed</text>
+  <!-- Message Queue -->
+  <rect x="240" y="310" width="140" height="55" fill="#fef3c7" rx="8" stroke="#d97706" stroke-width="1.5"/>
+  <text x="310" y="333" font-family="Inter,Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle" font-weight="700">Message Queue</text>
+  <text x="310" y="350" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#d97706" text-anchor="middle">Kafka / RabbitMQ / NATS</text>
+  <text x="310" y="362" font-family="Inter,Arial,sans-serif" font-size="9" fill="#fbbf24" text-anchor="middle">Async · Decoupled · Durable</text>
+  <!-- Arrows from client -->
+  <line x1="160" y1="112" x2="240" y2="112" stroke="#3b82f6" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="160" y1="187" x2="240" y2="187" stroke="#db2777" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="160" y1="262" x2="240" y2="262" stroke="#16a34a" stroke-width="2" marker-end="url(#arrG)"/>
+  <line x1="160" y1="337" x2="240" y2="337" stroke="#d97706" stroke-width="2" marker-end="url(#arr)"/>
+  <!-- Services on right -->
+  <rect x="470" y="80" width="120" height="55" fill="#e0e7ff" rx="8" stroke="#6366f1" stroke-width="1.5"/>
+  <text x="530" y="108" font-family="Inter,Arial,sans-serif" font-size="11" fill="#3730a3" text-anchor="middle" font-weight="700">Order Service</text>
+  <text x="530" y="124" font-family="Inter,Arial,sans-serif" font-size="9" fill="#6366f1" text-anchor="middle">REST consumer</text>
+  <rect x="470" y="160" width="120" height="55" fill="#fce7f3" rx="8" stroke="#db2777" stroke-width="1.5"/>
+  <text x="530" y="188" font-family="Inter,Arial,sans-serif" font-size="11" fill="#9d174d" text-anchor="middle" font-weight="700">BFF / Aggregator</text>
+  <text x="530" y="204" font-family="Inter,Arial,sans-serif" font-size="9" fill="#db2777" text-anchor="middle">GraphQL resolver</text>
+  <rect x="470" y="235" width="120" height="55" fill="#dcfce7" rx="8" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="530" y="263" font-family="Inter,Arial,sans-serif" font-size="11" fill="#166534" text-anchor="middle" font-weight="700">Internal Service</text>
+  <text x="530" y="279" font-family="Inter,Arial,sans-serif" font-size="9" fill="#16a34a" text-anchor="middle">gRPC streaming</text>
+  <rect x="470" y="310" width="120" height="55" fill="#fef3c7" rx="8" stroke="#d97706" stroke-width="1.5"/>
+  <text x="530" y="338" font-family="Inter,Arial,sans-serif" font-size="11" fill="#92400e" text-anchor="middle" font-weight="700">Event Consumer</text>
+  <text x="530" y="354" font-family="Inter,Arial,sans-serif" font-size="9" fill="#d97706" text-anchor="middle">async processing</text>
+  <!-- Arrows protocol to service -->
+  <line x1="380" y1="112" x2="470" y2="112" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr)"/>
+  <line x1="380" y1="187" x2="470" y2="187" stroke="#db2777" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr)"/>
+  <line x1="380" y1="262" x2="470" y2="262" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrG)"/>
+  <line x1="380" y1="337" x2="470" y2="337" stroke="#d97706" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr)"/>
+  <!-- Decision guide -->
+  <rect x="630" y="80" width="240" height="290" fill="#f8fafc" rx="10" stroke="#e2e8f0" stroke-width="1.5"/>
+  <rect x="630" y="80" width="240" height="28" fill="#4f46e5" rx="10"/>
+  <rect x="630" y="96" width="240" height="12" fill="#4f46e5"/>
+  <text x="750" y="99" font-family="Inter,Arial,sans-serif" font-size="12" fill="#fff" text-anchor="middle" font-weight="700">Cara Memilih Protocol</text>
+  <text x="645" y="125" font-family="Inter,Arial,sans-serif" font-size="10" fill="#1e40af">✦ REST</text>
+  <text x="645" y="140" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#475569">Public API, CRUD sederhana</text>
+  <text x="645" y="160" font-family="Inter,Arial,sans-serif" font-size="10" fill="#9d174d">✦ GraphQL</text>
+  <text x="645" y="175" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#475569">Flexible query, mobile/BFF</text>
+  <text x="645" y="195" font-family="Inter,Arial,sans-serif" font-size="10" fill="#166534">✦ gRPC</text>
+  <text x="645" y="210" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#475569">Internal service-to-service</text>
+  <text x="645" y="225" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#475569">high-perf, streaming</text>
+  <text x="645" y="245" font-family="Inter,Arial,sans-serif" font-size="10" fill="#92400e">✦ Message Queue</text>
+  <text x="645" y="260" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#475569">Event-driven, async, decoupled</text>
+  <text x="645" y="280" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#475569">fire-and-forget workloads</text>
+  <text x="645" y="305" font-family="Inter,Arial,sans-serif" font-size="10" fill="#0891b2">✦ Apache Thrift / Avro</text>
+  <text x="645" y="320" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#475569">Multi-language, schema evolution</text>
+  <text x="645" y="340" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#475569">data serialization at scale</text>
+  <!-- Footer -->
+  <text x="450" y="460" font-family="Inter,Arial,sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">Microservices for Java Developers (InfoQ eMag, 2020) — Chapter 2: Communication</text>
+</svg>

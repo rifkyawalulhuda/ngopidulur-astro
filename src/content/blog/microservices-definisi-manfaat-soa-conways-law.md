@@ -32,8 +32,6 @@ Industri software tidak pernah berhenti berevolusi. Selama beberapa tahun terakh
 - [Migration dari Monolith](#migration-dari-monolith)
 - [Kapan TIDAK Menggunakan Microservices?](#kapan-tidak-menggunakan-microservices)
 
-
-
 ## Apa itu Microservices?
 
 > *"Microservices are small, autonomous services that work together."*
@@ -43,34 +41,22 @@ Definisi sederhana ini mengandung dua kata kunci yang penting:
 1. **Small** — setiap service kecil dan fokus pada satu domain
 2. **Autonomous** — setiap service bisa di-deploy, di-scale, dan dikembangkan secara independen
 
-```
 ARSITEKTUR MONOLITH vs MICROSERVICES
 
-MONOLITH:
-┌─────────────────────────────────────────┐
-│           Single Application            │
-│  ┌───────┐ ┌─────────┐ ┌────────────┐  │
-│  │  UI   │ │Business │ │  Database  │  │
-│  │Layer  │ │  Logic  │ │   Access   │  │
-│  └───────┘ └─────────┘ └────────────┘  │
-└─────────────────────────────────────────┘
+**MONOLITH:**
+
+![Monolith vs Microservices — perbandingan arsitektur](/image/microservices-monolith-vs-ms.svg)
 Deploy sebagai satu unit → scale semua atau tidak sama sekali
 
-MICROSERVICES:
-┌──────────┐  ┌──────────┐  ┌──────────┐
-│  User    │  │  Order   │  │ Payment  │
-│ Service  │  │ Service  │  │ Service  │
-│  [DB]    │  │  [DB]    │  │  [DB]    │
-└──────────┘  └──────────┘  └──────────┘
-     │               │              │
-     └───────────────┴──────────────┘
-              API / Message Bus
+**MICROSERVICES:**
+
+User Order Payment
+Service Service Service
+[DB] [DB] [DB]
+- API / Message Bus
 Deploy, scale, develop secara INDEPENDEN
-```
 
 Microservices adalah layanan **loosely coupled** yang dapat dideploy secara independen, masing-masing memodelkan **domain bisnis** tertentu.
-
-
 
 ## Seberapa Kecil itu "Micro"?
 
@@ -92,25 +78,21 @@ Indikator lain: **apakah service bisa ditulis ulang dalam 2 minggu?** Jika ya, u
 
 Faktor penting lainnya: **alignment dengan struktur tim**. Jika codebase terlalu besar untuk dikelola satu tim kecil, wajar untuk memecahnya.
 
-```
-PANDUAN UKURAN MICROSERVICE:
+**PANDUAN UKURAN MICROSERVICE:**
 
 Terlalu besar jika:
-  - Tim tidak bisa memahami codebase sepenuhnya
-  - Deployment butuh koordinasi banyak tim
-  - Perubahan kecil perlu waktu lama
+- Tim tidak bisa memahami codebase sepenuhnya
+- Deployment butuh koordinasi banyak tim
+- Perubahan kecil perlu waktu lama
 
 Tepat ukurannya jika:
-  - Satu tim kecil (2-8 orang) bisa memilikinya
-  - Bisa ditulis ulang dalam waktu wajar
-  - Fokus pada satu domain bisnis
+- Satu tim kecil (2-8 orang) bisa memilikinya
+- Bisa ditulis ulang dalam waktu wajar
+- Fokus pada satu domain bisnis
 
 Terlalu kecil jika:
-  - Lebih banyak overhead komunikasi dari manfaatnya
-  - Setiap request harus panggil 10+ services
-```
-
-
+- Lebih banyak overhead komunikasi dari manfaatnya
+- Setiap request harus panggil 10+ services
 
 ## 8 Manfaat Utama Microservices
 
@@ -118,14 +100,13 @@ Terlalu kecil jika:
 
 Dengan sistem yang terdiri dari banyak service yang berkolaborasi, kita bisa menggunakan **teknologi berbeda di setiap service**. Ini memungkinkan memilih tool yang tepat untuk pekerjaan yang tepat.
 
-```
-CONTOH NYATA:
-  Katalog produk → ElasticSearch (full-text search)
-  Transaksi      → PostgreSQL (ACID transactions)
-  Session user   → Redis (in-memory, fast)
-  Analitik       → Hadoop/Spark (big data)
-  ML Rekomendasi → Python + TensorFlow
-```
+**CONTOH NYATA:**
+
+Katalog produk → ElasticSearch (full-text search)
+Transaksi      → PostgreSQL (ACID transactions)
+Session user   → Redis (in-memory, fast)
+Analitik       → Hadoop/Spark (big data)
+ML Rekomendasi → Python + TensorFlow
 
 Netflix dan Twitter membatasi pilihan bahasa dengan menggunakan JVM sebagai platform, mempertahankan fleksibilitas bahasa sambil memanfaatkan tooling JVM yang matang.
 
@@ -139,14 +120,12 @@ Dalam arsitektur monolith, satu component yang gagal bisa menjatuhkan seluruh si
 
 Dalam monolith, kita harus men-scale seluruh aplikasi. Dengan microservices, kita bisa **men-scale hanya service yang membutuhkannya**.
 
-```
-TARGETED SCALING:
+**TARGETED SCALING:**
 
 User Service:     1 instance   (traffic rendah)
 Product Service:  3 instances  (traffic sedang)
 Search Service:   10 instances (traffic tinggi — butuh scale!)
 Order Service:    2 instances  (traffic sedang)
-```
 
 **Studi kasus Gilt:** Gilt memulai sebagai aplikasi Rails monolitik pada 2007. Pada 2009, sistemnya tidak mampu menangani beban. Dengan memecah bagian-bagian yang membutuhkan scale, mereka berhasil mengatasi masalah performa tanpa harus scale seluruh sistem.
 
@@ -154,19 +133,19 @@ Order Service:    2 instances  (traffic sedang)
 
 Perubahan pada satu baris kode di monolith bisa memerlukan deployment seluruh aplikasi — berisiko tinggi, koordinasi kompleks. Dengan microservices:
 
-```
-DEPLOYMENT COMPARISON:
+**DEPLOYMENT COMPARISON:**
 
-MONOLITH:
-  1 perubahan kecil → deploy seluruh aplikasi
-  Risiko: perubahan kecil bisa merusak fitur lain
-  Frekuensi: sekali seminggu/bulan
+**MONOLITH:**
 
-MICROSERVICES:
-  1 perubahan → deploy 1 service saja
-  Risiko: terisolasi ke 1 service
-  Frekuensi: berkali-kali sehari
-```
+1 perubahan kecil → deploy seluruh aplikasi
+- Risiko: perubahan kecil bisa merusak fitur lain
+- Frekuensi: sekali seminggu/bulan
+
+**MICROSERVICES:**
+
+1 perubahan → deploy 1 service saja
+- Risiko: terisolasi ke 1 service
+- Frekuensi: berkali-kali sehari
 
 ### 5. Organizational Alignment (Keselarasan Organisasi)
 
@@ -188,33 +167,23 @@ Seberapa sering kamu punya kode warisan yang semua orang takut untuk disentuh? D
 
 Newman jujur: microservices tidak gratis. Ada trade-off yang harus dipahami, termasuk kompleksitas jaringan, distributed transactions, dan kebutuhan infrastruktur yang lebih matang.
 
-
-
 ## Microservices vs SOA
 
 Sering ada kebingungan: apakah microservices sama dengan SOA (Service-Oriented Architecture)?
 
-```
-PERBANDINGAN SOA vs MICROSERVICES
+**Perbandingan SOA vs Microservices:**
 
-Aspek              │ SOA              │ Microservices
-───────────────────┼──────────────────┼──────────────────
-Granularitas       │ Coarse-grained   │ Fine-grained
-                   │ (service besar)  │ (service kecil)
-Smart Pipeline     │ Smart ESB        │ Dumb pipes
-atau Smart         │ (middleware      │ (smart endpoints)
-Endpoint?          │ complex)         │
-Komunikasi         │ SOAP/WS-*        │ REST/gRPC/Events
-Data Store         │ Shared database  │ Database per service
-Deployment         │ Coordinated      │ Independent
-Governance         │ Centralized      │ Decentralized
-```
-
+| Aspek | SOA | Microservices |
+|-------|-----|---------------|
+| Granularitas | Coarse-grained (service besar) | Fine-grained (service kecil) |
+| Smart Pipeline atau Smart Endpoint | Smart ESB (middleware complex) | Dumb pipes (smart endpoints) |
+| Komunikasi | SOAP / WS-* | REST / gRPC / Events |
+| Data Store | Shared database | Database per service |
+| Deployment | Coordinated | Independent |
+| Governance | Centralized | Decentralized |
 **Perbedaan filosofis utama:** SOA menggunakan **smart middleware** (ESB — Enterprise Service Bus) dengan endpoint yang "bodoh". Microservices menggunakan **dumb pipes** (HTTP/messaging) dengan endpoint yang "cerdas".
 
 > *"SOA became ​synonymous with vendor middleware, heavy specs, and a whole lot of complexity. Microservices are a response to those challenges."*
-
-
 
 ## Prinsip Loose Coupling dan High Cohesion
 
@@ -224,17 +193,15 @@ Dua prinsip desain fundamental untuk microservices yang baik:
 
 **Coupling** mengacu pada seberapa banyak perubahan di satu service mempengaruhi service lain.
 
-```
 COUPLING TINGGI (buruk):
-Service A ──────────────────► Service B
-              (banyak dependensi internal)
+Service A Service B
+- (banyak dependensi internal)
 Perubahan B → harus ubah A juga
 
 COUPLING RENDAH (baik):
-Service A ──────────────────► Service B
-              (interface bersih, stabil)
+Service A Service B
+- (interface bersih, stabil)
 Perubahan internal B → A tidak terpengaruh
-```
 
 Sebuah loosely coupled service tahu sesedikit mungkin tentang service lain yang digunakan. Batasi jenis panggilan dari satu service ke service lain.
 
@@ -244,18 +211,12 @@ Sebuah loosely coupled service tahu sesedikit mungkin tentang service lain yang 
 
 > *"We want to find boundaries within our problem domain that help ensure related behavior sits together, and that communicate with other boundaries as loosely as possible."*
 
-```
 COHESION RENDAH (buruk):         HIGH COHESION (baik):
-┌────────────────────────┐       ┌─────────────────┐
-│ User Service           │       │ Customer Service │
-│  - Manage users        │       │  - Register      │
-│  - Process payments    │       │  - Update profile│
-│  - Send notifications  │       │  - View history  │
-│  - Generate reports    │       └─────────────────┘
-└────────────────────────┘
-```
-
-
+User Service Customer Service
+Manage users - Register
+Process payments - Update profile
+Send notifications - View history
+Generate reports
 
 ## Conway's Law dan Struktur Tim
 
@@ -263,27 +224,23 @@ COHESION RENDAH (buruk):         HIGH COHESION (baik):
 
 > *"Any organization that designs a system will produce a design whose structure is a copy of the organization's communication structure."*
 
-```
-IMPLIKASI CONWAY'S LAW:
+**IMPLIKASI CONWAY'S LAW:**
 
 Organisasi dengan 4 tim terpisah:
-  Tim A: Frontend
-  Tim B: Backend
-  Tim C: Database
-  Tim D: QA
+- Tim A: Frontend
+- Tim B: Backend
+- Tim C: Database
+- Tim D: QA
 
 Hasil arsitektur sistem:
-  Layer: Frontend → Backend → Database → Testing
-  (layer architecture = struktur organisasi)
+Layer: Frontend → Backend → Database → Testing
+- (layer architecture = struktur organisasi)
 
 Untuk microservices:
-  Ubah struktur tim → arsitektur akan ikut berubah
-  1 tim = ownership 1 service atau beberapa service terkait
-```
+Ubah struktur tim → arsitektur akan ikut berubah
+- 1 tim = ownership 1 service atau beberapa service terkait
 
 Sam Newman merekomendasikan tim yang **cross-functional** — setiap tim memiliki semua kemampuan yang diperlukan untuk mengembangkan, men-deploy, dan mengoperasikan service mereka sendiri.
-
-
 
 ## Migration dari Monolith
 
@@ -293,66 +250,49 @@ Tidak ada yang mulai dari microservices secara langsung. Hampir semua sistem dim
 
 Jangan lakukan **"big bang rewrite"**. Sebaliknya, pecah monolith secara bertahap:
 
-```
-INCREMENTAL MIGRATION STRATEGY:
+**INCREMENTAL MIGRATION STRATEGY:**
 
 Fase 1: Identifikasi domain boundary
-  → Domain mana yang paling sering berubah?
-  → Domain mana yang butuh scale berbeda?
+→ Domain mana yang paling sering berubah?
+→ Domain mana yang butuh scale berbeda?
 
 Fase 2: Strangler Pattern
-  ┌─────────────────────────────────┐
-  │         Load Balancer           │
-  └──────────────┬──────────────────┘
-                 │
-     ┌───────────┴────────────┐
-     │                        │
-  ┌──────────┐          ┌──────────────┐
-  │ Monolith │          │  New Service │
-  │(legacy)  │          │(microservice)│
-  └──────────┘          └──────────────┘
+![Service Discovery dan Load Balancing](/image/microservices-service-discovery.svg)
 
 Fase 3: Secara bertahap pindah traffic ke service baru
-  → Mulai dari feature baru, bukan migrasi fitur lama
-  → Tambah service baru, jangan modifikasi monolith
+→ Mulai dari feature baru, bukan migrasi fitur lama
+→ Tambah service baru, jangan modifikasi monolith
 
 Fase 4: Akhirnya monolith menyusut dan bisa dihapus
-```
 
 ### Kapan Mulai?
 
 Newman jujur: **jangan mulai dengan microservices jika kamu baru memulai**. Mulai dengan monolith dulu, pahami domain-nya, lalu pecah ketika ada alasan yang jelas.
 
-
-
 ## Kapan TIDAK Menggunakan Microservices?
 
 Microservices bukan solusi untuk semua masalah. Ada beberapa situasi di mana ini bukan pilihan terbaik:
 
-```
-HINDARI MICROSERVICES JIKA:
+**HINDARI MICROSERVICES JIKA:**
 
 1. Domain belum dipahami dengan baik
-   → Microservices prematur = mahal untuk di-refactor
-   → Monolith lebih mudah di-refactor
+→ Microservices prematur = mahal untuk di-refactor
+→ Monolith lebih mudah di-refactor
 
 2. Tim sangat kecil (1-3 orang)
-   → Overhead ops microservices bisa overwhelming
-   → ROI tidak worth it
+→ Overhead ops microservices bisa overwhelming
+→ ROI tidak worth it
 
 3. Startup tahap awal
-   → Fokus pada product-market fit dulu
-   → Eric Ries: "6 bulan membangun produk yang tidak didownload siapapun"
+→ Fokus pada product-market fit dulu
+→ Eric Ries: "6 bulan membangun produk yang tidak didownload siapapun"
 
 4. Sistem yang tidak butuh independent scaling
-   → Overhead tidak worth it
+→ Overhead tidak worth it
 
 5. Strong consistency requirements
-   → Distributed transactions = sangat kompleks
-   → ACID di monolith jauh lebih mudah
-```
-
-
+→ Distributed transactions = sangat kompleks
+→ ACID di monolith jauh lebih mudah
 
 ## Ringkasan
 

@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" width="900" height="360">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#475569"/>
+    </marker>
+    <marker id="arrG" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#16a34a"/>
+    </marker>
+  </defs>
+  <rect width="900" height="360" fill="#ffffff" rx="12"/>
+  <rect width="900" height="360" fill="none" stroke="#e2e8f0" stroke-width="1.5" rx="12"/>
+  <rect x="0" y="0" width="900" height="44" fill="#4f46e5" rx="12"/>
+  <rect x="0" y="22" width="900" height="22" fill="#4f46e5"/>
+  <text x="450" y="28" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">Komunikasi dengan vs tanpa API</text>
+  <!-- Left: without API -->
+  <rect x="30" y="70" width="410" height="250" fill="#fef2f2" rx="10" stroke="#fecaca" stroke-width="1.5"/>
+  <rect x="30" y="70" width="410" height="30" fill="#dc2626" rx="10"/>
+  <rect x="30" y="88" width="410" height="12" fill="#dc2626"/>
+  <text x="235" y="91" font-family="Inter,Arial,sans-serif" font-size="12" fill="#fff" text-anchor="middle" font-weight="700">TANPA API</text>
+  <!-- Human -->
+  <rect x="60" y="125" width="110" height="45" fill="#fee2e2" rx="8" stroke="#f87171" stroke-width="1.5"/>
+  <text x="115" y="147" font-family="Inter,Arial,sans-serif" font-size="10.5" fill="#991b1b" text-anchor="middle" font-weight="600">Human</text>
+  <text x="115" y="161" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#b91c1c" text-anchor="middle">(membaca visual)</text>
+  <!-- Browser -->
+  <rect x="210" y="125" width="100" height="45" fill="#fee2e2" rx="8" stroke="#f87171" stroke-width="1.5"/>
+  <text x="260" y="147" font-family="Inter,Arial,sans-serif" font-size="10.5" fill="#991b1b" text-anchor="middle" font-weight="600">Browser</text>
+  <!-- Website -->
+  <rect x="340" y="125" width="90" height="45" fill="#fee2e2" rx="8" stroke="#f87171" stroke-width="1.5"/>
+  <text x="385" y="147" font-family="Inter,Arial,sans-serif" font-size="10" fill="#991b1b" text-anchor="middle" font-weight="600">Website</text>
+  <text x="385" y="161" font-family="Inter,Arial,sans-serif" font-size="8" fill="#b91c1c" text-anchor="middle">(HTML/CSS)</text>
+  <line x1="170" y1="147" x2="210" y2="147" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="310" y1="147" x2="340" y2="147" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="235" y="220" font-family="Inter,Arial,sans-serif" font-size="10" fill="#991b1b" text-anchor="middle">Hasil: tampilan visual</text>
+  <text x="235" y="240" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#b91c1c" text-anchor="middle">✗ Computer tidak bisa baca</text>
+  <text x="235" y="256" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#b91c1c" text-anchor="middle">tampilan visual dengan mudah</text>
+  <text x="235" y="276" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#64748b" text-anchor="middle">(human eyes required)</text>
+  <!-- Right: with API -->
+  <rect x="460" y="70" width="410" height="250" fill="#f0fdf4" rx="10" stroke="#bbf7d0" stroke-width="1.5"/>
+  <rect x="460" y="70" width="410" height="30" fill="#16a34a" rx="10"/>
+  <rect x="460" y="88" width="410" height="12" fill="#16a34a"/>
+  <text x="665" y="91" font-family="Inter,Arial,sans-serif" font-size="12" fill="#fff" text-anchor="middle" font-weight="700">DENGAN API</text>
+  <!-- Computer -->
+  <rect x="490" y="125" width="110" height="45" fill="#dcfce7" rx="8" stroke="#4ade80" stroke-width="1.5"/>
+  <text x="545" y="147" font-family="Inter,Arial,sans-serif" font-size="10.5" fill="#166534" text-anchor="middle" font-weight="600">Computer</text>
+  <text x="545" y="161" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#15803d" text-anchor="middle">(app/code)</text>
+  <!-- API -->
+  <rect x="640" y="125" width="90" height="45" fill="#4f46e5" rx="8" stroke="#3730a3" stroke-width="2"/>
+  <text x="685" y="147" font-family="Inter,Arial,sans-serif" font-size="10.5" fill="#ffffff" text-anchor="middle" font-weight="700">API</text>
+  <text x="685" y="161" font-family="Inter,Arial,sans-serif" font-size="8" fill="#c7d2fe" text-anchor="middle">Request</text>
+  <!-- Server -->
+  <rect x="770" y="125" width="90" height="45" fill="#dcfce7" rx="8" stroke="#4ade80" stroke-width="1.5"/>
+  <text x="815" y="147" font-family="Inter,Arial,sans-serif" font-size="10.5" fill="#166534" text-anchor="middle" font-weight="600">Server</text>
+  <text x="815" y="161" font-family="Inter,Arial,sans-serif" font-size="8" fill="#15803d" text-anchor="middle">(JSON/XML)</text>
+  <line x1="600" y1="147" x2="640" y2="147" stroke="#16a34a" stroke-width="2" marker-end="url(#arrG)"/>
+  <line x1="730" y1="147" x2="770" y2="147" stroke="#16a34a" stroke-width="2" marker-end="url(#arrG)"/>
+  <text x="665" y="220" font-family="Inter,Arial,sans-serif" font-size="10" fill="#166534" text-anchor="middle">Hasil: data terstruktur</text>
+  <text x="665" y="240" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#15803d" text-anchor="middle">✓ Computer bisa proses data</text>
+  <text x="665" y="256" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#15803d" text-anchor="middle">langsung, otomatis, dalam detik</text>
+  <text x="665" y="276" font-family="Inter,Arial,sans-serif" font-size="9.5" fill="#64748b" text-anchor="middle">(machine-readable)</text>
+  <!-- Footer -->
+  <text x="450" y="345" font-family="Inter,Arial,sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">An Introduction to APIs (Brian Cooksey, Zapier)</text>
+</svg>

@@ -21,6 +21,7 @@ Empat tahun setelah edisi Apigee, **APIs For Dummies, 3rd IBM Limited Edition** 
 
 ## Daftar Isi
 
+
 - [API sebagai Fondasi Revolusi Cloud dan IoT](#api-sebagai-fondasi-revolusi-cloud-dan-iot)
 - [Dari Nol ke 17.000 Public API](#dari-nol-ke-17000-public-api)
 - [API sebagai Produk Bisnis](#api-sebagai-produk-bisnis)
@@ -39,37 +40,17 @@ Empat tahun setelah edisi Apigee, **APIs For Dummies, 3rd IBM Limited Edition** 
 - [Managed vs Unmanaged API](#managed-vs-unmanaged-api)
 - [5 Hal Penting tentang API](#5-hal-penting-tentang-api)
 
-
-
 ## API sebagai Fondasi Revolusi Cloud dan IoT
+
 
 **Application Programming Interfaces (APIs)** adalah fondasi dari revolusi cloud, mobile, dan Internet of Things (IoT). Kecepatan, skalabilitas, dan kesederhanaan yang ditawarkan API menjadikannya pilihan utama bagi developer dan bisnis dalam membangun sistem modern.
 
-```
-EKOSISTEM API MODERN (IBM View)
-
-    Developer Portal  ←→  API Marketplace
-           ↓                    ↓
-    ┌──────────────────────────────────┐
-    │         API Gateway              │
-    │  (Security | Rate Limit | Auth)  │
-    └──────────────────────────────────┘
-           ↕                    ↕
-    ┌─────────────┐    ┌───────────────┐
-    │   On-Prem   │    │  Cloud (IBM)  │
-    │   Systems   │    │  Services     │
-    └─────────────┘    └───────────────┘
-           ↕                    ↕
-    ┌──────────────────────────────────┐
-    │     IoT Devices / Mobile Apps    │
-    └──────────────────────────────────┘
-```
+![Arsitektur IBM API Gateway — Developer Portal, API Marketplace, dan Backend Services](/image/api-gateway-ibm.svg)
 
 > *"APIs are the underpinning of the cloud, mobile, and Internet of Things (IoT) revolution."*
 
-
-
 ## Dari Nol ke 17.000 Public API
+
 
 Menurut situs **ProgrammableWeb** yang mengkatalogkan public API:
 
@@ -85,68 +66,46 @@ Pertumbuhan ini didorong oleh:
 
 Tidak memiliki public API hari ini ibarat tidak memiliki website di era 2000-an — bukan pilihan yang kompetitif.
 
-
-
 ## API sebagai Produk Bisnis
+
 
 Salah satu filosofi inti buku ini: **API harus diperlakukan seperti produk bisnis**, bukan sekadar komponen teknis.
 
 ### Pertanyaan Kunci untuk API sebagai Produk
 
-```
-API Product Framework:
 
-┌─────────────────────────────────────────┐
-│ 1. Who is the audience?                 │
-│    → Developer internal/partner/publik  │
-│                                         │
-│ 2. What do they want?                   │
-│    → Fungsi, data, atau integrasi?      │
-│                                         │
-│ 3. What are the terms?                  │
-│    → Freemium, Pay-per-use, Contract    │
-│                                         │
-│ 4. How do we measure success?           │
-│    → Adoption rate, call volume, revenue│
-│                                         │
-│ 5. What is the lifecycle?               │
-│    → Alpha → Beta → GA → Deprecated    │
-└─────────────────────────────────────────┘
-```
+**API Product Framework:**
+
+1. **Who is the audience?** — Developer internal, partner, atau publik
+2. **What do they want?** — Fungsi, data, atau integrasi tertentu
+3. **What are the terms?** — Freemium, Pay-per-use, atau Contract
+4. **How do we measure success?** — Adoption rate, call volume, revenue
+5. **What is the lifecycle?** — Alpha → Beta → GA → Deprecated
 
 **Contoh Amazon:** Amazon membangun merchant platform di atas API yang memungkinkan onboarding merchant baru dengan mudah — bukan hanya untuk developer internal, tapi sebagai enabler bisnis terbuka.
 
 **Contoh perbankan:** Bank telah membangun infrastruktur pembayaran antar bank selama beberapa dekade menggunakan layanan API dalam berbagai bentuk. Ini bukan konsep baru — tapi kini lebih accessible dan terbuka.
 
-
-
 ## Lima Titik Masuk Strategi API
+
 
 Chapter 2 memperkenalkan **5 API entry points** yang mewakili agenda bisnis dan IT dalam mendorong pemikiran API. Satu perusahaan mungkin memiliki beberapa agenda sekaligus.
 
-```
-5 API ENTRY POINTS
+**5 API Entry Points:**
 
-┌─────────────────────────────────────────────────────┐
-│  1. MONETIZE DATA       2. FREEDOM TO INNOVATE      │
-│  $$$ Revenue model      Protect backend stability    │
-│                                                     │
-│  3. MOBILE IN           4. HYBRID WORLD             │
-│     TEN MINUTES         On-prem + cloud uniform     │
-│  Opportunistic mobile   consumption model           │
-│                                                     │
-│  5. PROGRAM YOUR WORLD                              │
-│  IoT + programmable environment                     │
-└─────────────────────────────────────────────────────┘
-```
-
-
+1. **Monetize Data** — buat data dan fungsi bisnis jadi sumber revenue baru
+2. **Freedom to Innovate** — beri developer kebebasan eksperimen tanpa mengganggu backend
+3. **Mobile in Ten Minutes** — enable tim mobile untuk bergerak cepat dan oportunistik
+4. **Living in a Hybrid World** — sambungkan on-premise dan cloud dengan model konsumsi seragam
+5. **Program Your World (IoT)** — integrasikan perangkat fisik ke ekosistem digital
 
 ## API dan Monetisasi Data
+
 
 Entry point pertama — **monetisasi** — adalah agenda yang paling *glamorous*.
 
 ### Elemen Kunci Monetisasi API
+
 
 **API Terms & Conditions:**
 Jangan lupa memasukkan dalam pertimbanganmu syarat dan ketentuan di mana konsumsi API bisa terjadi:
@@ -157,24 +116,17 @@ Jangan lupa memasukkan dalam pertimbanganmu syarat dan ketentuan di mana konsums
 **API Implementation:**
 Cara kamu mengurasi data dan fungsi untuk mengimplementasikan API bermuara pada kualitas dan relevansi — ini menentukan apakah API *"terjual"* (diadopsi developer).
 
-```
-MONETISASI API — CONTOH NYATA
+**Contoh Nyata Monetisasi API:**
 
-Company    │ API Product      │ Model         │ Revenue Impact
-───────────┼──────────────────┼───────────────┼───────────────
-Expedia    │ Travel Search    │ Transaction   │ 90% dari $2B
-           │ & Booking        │ fee           │ (2011)
-Twitter    │ Streaming API    │ Tiered        │ Developer
-           │                  │               │ ecosystem
-Twilio     │ SMS/Voice/Video  │ Pay per use   │ Seluruh bisnis
-           │                  │               │ berbasis API
-Google Maps│ Maps & Places    │ Freemium +    │ $10B+ revenue
-           │                  │ paid tiers    │ potential
-```
-
-
+| Perusahaan | Produk API | Model | Revenue Impact |
+|-----------|-----------|-------|---------------|
+| Expedia | Travel Search & Booking | Transaction fee | 90% dari $2B (2011) |
+| Twitter | Streaming API | Tiered | Developer ecosystem |
+| Twilio | SMS/Voice/Video | Pay per use | Seluruh bisnis berbasis API |
+| Google Maps | Maps & Places | Freemium + paid tiers | $10B+ revenue potential |
 
 ## Freedom to Innovate
+
 
 Entry point kedua lebih *subtle* tapi sama pentingnya: **freedom to innovate** — memberikan kebebasan berinovasi tanpa mengganggu stabilitas sistem inti.
 
@@ -186,66 +138,66 @@ Dua aspek peran ini:
 
 Perusahaan dengan sejarah panjang punya keuntungan memiliki lebih banyak aset yang bisa diekspos sebagai API. Tapi bahkan startup pun bisa memanfaatkan pendekatan ini dengan mengekspos layanan core mereka.
 
-
-
 ## Mobile in Ten Minutes
+
 
 Entry point ketiga adalah tentang **inovasi oportunistik** — bagaimana tim mobile bisa bergerak cepat.
 
 ### Panduan Mobile API
 
-```
+
 GOAL: Immediate support for mobile dev teams
-      Mobile team → figures out data needed
-      API → provides that data immediately
+Mobile team → figures out data needed
+API → provides that data immediately
 
-APIS TO PROVIDE:
-  √ Opportunistic APIs (cepat, tidak perlu reusable)
-  √ Shadow API management (lightweight governance)
+**APIS TO PROVIDE:**
 
-API TERMS:
-  √ Bukan soal bayaran
-  √ Proteksi keamanan backend
-  √ Stabilitas sistem yang ada
+- √ Opportunistic APIs (cepat, tidak perlu reusable)
+- √ Shadow API management (lightweight governance)
 
-API IMPLEMENTATION:
-  √ Quality & agility lebih penting dari reuse
-  √ API baru bisa muncul setiap hari
-  √ API management modern membuat ini feasible
-```
+**API TERMS:**
+
+- √ Bukan soal bayaran
+- √ Proteksi keamanan backend
+- √ Stabilitas sistem yang ada
+
+**API IMPLEMENTATION:**
+
+- √ Quality & agility lebih penting dari reuse
+- √ API baru bisa muncul setiap hari
+- √ API management modern membuat ini feasible
 
 Pendekatan oportunistik ini mungkin terdengar tidak terkelola, tapi dengan teknologi API management modern, ini sangat feasible untuk enterprise besar sekalipun.
 
-
-
 ## Living in a Hybrid World
+
 
 Entry point keempat berfokus pada **API sebagai model konsumsi seragam** dalam ekosistem hybrid — kombinasi sistem on-premises dan cloud (private maupun public).
 
 ### Arsitektur Hybrid dengan API
 
-```
+
 HYBRID API ARCHITECTURE (IBM Model)
 
 Development Time:
-  Developer ──► API Marketplace
-              (discover, register, learn)
+Developer  API Marketplace
+- (discover, register, learn)
 
 Runtime:
-  API Consumer ──► Cloud Gateway ──► Cloud Service
-                ──► On-Prem Gateway ──► Legacy System
+API Consumer  Cloud Gateway  Cloud Service
+On-Prem Gateway  Legacy System
 
 Cloud Gateways berfungsi:
-  - Secure communication
-  - Rate limiting
-  - Authentication
-  - Transformation
-  - Monitoring
-```
+- Secure communication
+- Rate limiting
+- Authentication
+- Transformation
+- Monitoring
 
 **Mantra bisnis:** *"Freedom from lock-in"* — kebebasan memilih platform terbaik untuk setiap kebutuhan, tanpa terikat pada satu vendor.
 
 ### Panduan untuk Hybrid
+
 
 **APIs to provide:**
 - External audience → enterprise APIs yang sudah terdefinisi
@@ -255,78 +207,68 @@ Cloud Gateways berfungsi:
 
 Lingkungan hybrid secara inheren kompleks. Menggunakan API sebagai *lingua franca* bisa membuat kompleksitas itu jauh lebih mudah dikelola dari perspektif developer.
 
-
-
 ## Programming Your World (IoT)
+
 
 Entry point kelima adalah yang paling futuristik: **programmable world** — dunia di mana segalanya bisa diprogram melalui API.
 
-```
-PROGRAM YOUR WORLD
+**PROGRAM YOUR WORLD:**
 
 Physical Infrastructure  →  Sensors  →  APIs  →  Applications
-  (mesin, gedung, kota)    (IoT)
+- (mesin, gedung, kota)    (IoT)
 
 Tujuan: Completely programmable environment
 
 Contoh:
-  Smart Building  ──API──► Energy Mgmt App
-  Factory Machine ──API──► Predictive Maintenance
-  Smart City      ──API──► Traffic Optimization
-  Connected Car   ──API──► Insurance/Navigation
-```
+Smart Building  API Energy Mgmt App
+Factory Machine API Predictive Maintenance
+Smart City API Traffic Optimization
+Connected Car API Insurance/Navigation
 
 Entry point ini lebih tentang **mengonsumsi** API daripada menyediakannya. Semakin dunia menjadi lebih cerdas dan terinstrumentasi, kebutuhan akan kemampuan *program-your-world* akan terus meningkat.
 
-
-
 ## Fundamental API: Seperti Mobil Formula 1
+
 
 Chapter 3 menggunakan analogi yang menarik: **API seperti mobil balap Formula 1**.
 
-```
-FORMULA 1 ANALOGY:
+**FORMULA 1 ANALOGY:**
 
 Tim F1 Modern:
-  - Selalu mengoptimalkan model bisnis
-  - Mencari keseimbangan antara perubahan dan stabilitas
-  - Beberapa komponen stabil → beberapa selalu dioptimalkan
+- Selalu mengoptimalkan model bisnis
+- Mencari keseimbangan antara perubahan dan stabilitas
+- Beberapa komponen stabil → beberapa selalu dioptimalkan
 
 API-First Enterprise:
-  - Core API stabil → memungkinkan ekosistem yang ada
-  - Opportunistic API berubah → mendukung inovasi cepat
-  - Balance: "stable core" + "fast outer ring"
-```
+- Core API stabil → memungkinkan ekosistem yang ada
+- Opportunistic API berubah → mendukung inovasi cepat
+- Balance: "stable core" + "fast outer ring"
 
 Inovasi yang cepat diaktifkan oleh **desain yang baik** — yang untuk setiap API mencakup antarmuka dan karakteristik teknisnya.
 
-
-
 ## API Opportunistic vs Enterprise
+
 
 Tidak ada dalam konsep API yang mengharuskannya reusable atau stabil dari waktu ke waktu. Pentingnya reusability dan stabilitas **bergantung sepenuhnya pada tujuan bisnis**.
 
-```
-TIPE API BERDASARKAN TUJUAN:
+**TIPE API BERDASARKAN TUJUAN:**
 
 OPPORTUNISTIC APIs:
-  ├── Tujuan: Rapid change & inovasi
-  ├── Karakteristik: Cepat dibuat, bisa cepat dihapus
-  ├── Governance: Lightweight
-  └── Contoh: Mobile feature APIs, experimental APIs
+Tujuan: Rapid change & inovasi
+Karakteristik: Cepat dibuat, bisa cepat dihapus
+Governance: Lightweight
+Contoh: Mobile feature APIs, experimental APIs
 
 ENTERPRISE (STABLE) APIs:
-  ├── Tujuan: Ekosistem jangka panjang
-  ├── Karakteristik: Well-defined, versioned, backward compatible
-  ├── Governance: Full lifecycle management
-  └── Contoh: Payment API, Customer Data API
-```
+Tujuan: Ekosistem jangka panjang
+Karakteristik: Well-defined, versioned, backward compatible
+Governance: Full lifecycle management
+Contoh: Payment API, Customer Data API
 
 **Kunci:** Menyediakan opportunistic APIs membutuhkan keahlian teknis dan manajerial yang berbeda dari menyediakan enterprise APIs yang stabil.
 
-
-
 ## API vs SOA: Perbedaan Kritis
+
 
 Pertanyaan yang sering muncul: **apakah API adalah service dalam SOA?**
 
@@ -343,47 +285,45 @@ Secara teknis, ya — API yang dirancang baik memiliki semua karakteristik servi
 
 Ini adalah pelajaran besar untuk desain API: **antarmuka yang kompleks adalah API yang tidak akan digunakan**.
 
-
-
 ## Desain API yang Baik
+
 
 Tidak ada satu definisi universal tentang *good API design* — ini sangat bergantung pada pilihan teknologi. Desain REST yang baik sangat berbeda dari desain SOA yang baik.
 
 ### Prinsip-Prinsip Universal
 
-```
-UNIVERSAL API DESIGN PRINCIPLES:
+
+**UNIVERSAL API DESIGN PRINCIPLES:**
 
 1. DEVELOPER EXPERIENCE FIRST
-   → "If the interface is complex, the API will not be used"
-   → Easy to find, easy to register, easy to use
+- "If the interface is complex, the API will not be used"
+- Easy to find, easy to register, easy to use
 
 2. COMMUNITY-CENTRIC
-   → Developer portal yang baik
-   → Documentation yang jelas
-   → Active community support
+- Developer portal yang baik
+- Documentation yang jelas
+- Active community support
 
 3. TRUST IS EXPLICIT
-   → Jelas seberapa bisa dipercaya untuk mission-critical
-   → SLA yang terdokumentasi
-   → Versioning yang jelas
+- Jelas seberapa bisa dipercaya untuk mission-critical
+- SLA yang terdokumentasi
+- Versioning yang jelas
 
 4. EASY CONSUMPTION
-   → Tidak hanya tentang tampilan API
-   → Easy to find (discoverability)
-   → Easy to register
-   → Easy to trust
-```
+- Tidak hanya tentang tampilan API
+- Easy to find (discoverability)
+- Easy to register
+- Easy to trust
 
 ### API Value Chain vs Reality
+
 
 Banyak hype tentang API berpusat pada **API value chain** — cara API memperluas model bisnis ke ekosistem terbuka. Sayangnya, sebagian besar contoh yang dibahas di industri adalah contoh ekstrem dari perusahaan teknologi seperti Salesforce dan Amazon.
 
 **Realita lebih kompleks:** Nilai API tidak hanya tentang membuka ekosistem eksternal — ada nilai besar juga di internal efficiency, mobile enablement, dan hybrid integration.
 
-
-
 ## Implementasi Program API
+
 
 Chapter 4 membahas **cara mengimplementasikan program API** yang efektif di organisasi.
 
@@ -391,118 +331,100 @@ Chapter 4 membahas **cara mengimplementasikan program API** yang efektif di orga
 
 ### Definisi Managed API
 
+
 **Managed API** bukan hanya memiliki antarmuka yang terdefinisi baik dan audiens yang jelas, tapi juga berada di bawah **business and IT controls yang ditegakkan secara tepat**.
 
-```
-MANAGED API CHARACTERISTICS:
+**MANAGED API CHARACTERISTICS:**
 
-  √ Well-defined interface
-  √ Defined target audience
-  √ Enforced business controls
-    (terms, pricing, quotas)
-  √ Enforced IT controls
-    (security, rate limiting, monitoring)
-  √ Lifecycle management
-    (versioning, deprecation)
-```
-
-
+- √ Well-defined interface
+- √ Defined target audience
+- √ Enforced business controls
+- (terms, pricing, quotas)
+- √ Enforced IT controls
+- (security, rate limiting, monitoring)
+- √ Lifecycle management
+- (versioning, deprecation)
 
 ## Peran dalam API Management
 
+
 Untuk efektivitas maksimal, tiga peran harus bekerja sama dalam API management:
 
-```
-API MANAGEMENT ROLES:
+**API MANAGEMENT ROLES:**
 
-┌──────────────────┐  ┌──────────────────┐  ┌──────────────────┐
-│  BUSINESS OWNER  │  │  IT OPERATIONS   │  │  API DESIGNER    │
-│                  │  │                  │  │                  │
-│ - Define terms   │  │ - Security       │  │ - Interface def  │
-│ - Set pricing    │  │ - Rate limiting  │  │ - Backend mapping│
-│ - Manage quotas  │  │ - Traffic policy │  │ - Transformation │
-│ - API governance │  │ - Monitoring     │  │ - Testing        │
-│ - Lifecycle mgmt │  │ - Availability   │  │ - Documentation  │
-└──────────────────┘  └──────────────────┘  └──────────────────┘
-         │                    │                      │
-         └────────────────────┴──────────────────────┘
-                              │
-                    ┌─────────────────┐
-                    │  Managed API    │
-                    │  (Successful)   │
-                    └─────────────────┘
-```
+BUSINESS OWNER IT OPERATIONS API DESIGNER
+Define terms - Security - Interface def
+Set pricing - Rate limiting - Backend mapping
+Manage quotas - Traffic policy - Transformation
+API governance - Monitoring - Testing
+Lifecycle mgmt - Availability - Documentation
+Managed API
+(Successful)
 
 **Kunci untuk API Designer:** Tugas-tugas ini harus bisa dilakukan **tanpa banyak coding**. Begitu membuat API menjadi code-intensive daripada dynamic configuration, laju inovasi pasti melambat.
 
 ### IT Operations — Security & Traffic Policies
 
+
 IT Operations perlu membuat keputusan API provider yang tepat — biasanya dalam bentuk **security dan traffic policies** — untuk melindungi infrastruktur dari penyalahgunaan atau kelebihan beban.
 
 Governance regime harus **sangat ringan** (*lightweight*), dengan keputusan yang bersifat operasional.
 
-
-
 ## Managed vs Unmanaged API
+
 
 Tidak semua API perlu dikelola. Kapan menggunakan unmanaged API?
 
-```
 MANAGED vs UNMANAGED API
 
 MANAGED API:                    UNMANAGED API:
-┌────────────────────┐          ┌────────────────────┐
-│ Well-defined       │          │ Internal services  │
-│ interface          │          │ accessed uniformly │
-│                    │          │                    │
-│ Defined target     │          │ No formal          │
-│ audience           │          │ registration       │
-│                    │          │                    │
-│ Business controls  │          │ No SLA             │
-│ (pricing, quotas)  │          │ enforcement        │
-│                    │          │                    │
-│ IT controls        │          │ No rate limiting   │
-│ (security, rate    │          │ policies           │
-│  limiting)         │          │                    │
-│                    │          │ Still: uniform     │
-│ Lifecycle mgmt     │          │ consumption model  │
-└────────────────────┘          └────────────────────┘
+Well-defined Internal services
+interface accessed uniformly
+Defined target No formal
+audience registration
+Business controls No SLA
+(pricing, quotas) enforcement
+IT controls No rate limiting
+(security, rate policies
+limiting)
+Still: uniform
+Lifecycle mgmt consumption model
 Untuk: Public/Partner APIs      Untuk: Internal APIs
-                                        yang terpercaya
-```
+- yang terpercaya
 
 **Insight penting:** Unmanaged APIs masih bisa menjadi sumber daya penting dalam ekosistem — menyediakan fungsi dan data penting secara seragam. Bahkan kamu mungkin ingin mengkatalogkan semua unmanaged API yang tersedia untuk memudahkan discovery.
 
-
-
 ## 5 Hal Penting tentang API
+
 
 Chapter 5 merangkum mindset yang diperlukan organisasi untuk berpikir tentang API secara efektif.
 
 ### 1. Omni-Channel Experience Mendorong Kebutuhan API
 
+
 Pengalaman omnichannel membutuhkan data dan fungsi yang sama tersedia di semua channel — web, mobile, wearables, IoT. API adalah enabler satu-satunya yang memungkinkan ini tanpa duplikasi sistem.
 
 ### 2. API Adalah Produk Bisnis
 
+
 Kembali ke tema sentral buku: perlakukan API sebagai produk. Ini memudahkan membedakan pendekatan API-centric dari pendekatan software delivery klasik.
 
-```
-API AS PRODUCT CHECKLIST:
+**API as Product — Checklist:**
 
-□ Ada product owner yang bertanggung jawab
-□ Ada roadmap yang terdokumentasi
-□ Ada proses versioning yang jelas
-□ Ada feedback loop dari consumer
-□ Ada metrik keberhasilan yang terukur
-□ Ada lifecycle yang terdefinisi (termasuk deprecation)
-```
+- Ada product owner yang bertanggung jawab
+- Ada roadmap yang terdokumentasi
+- Ada proses versioning yang jelas
+- Ada feedback loop dari consumer
+- Ada metrik keberhasilan yang terukur
+- Ada lifecycle yang terdefinisi (termasuk deprecation)
 
 ### 3. Desain Tidak Pernah Berhenti
+
 
 API yang baik adalah hasil dari desain yang berkelanjutan. Sama seperti tim Formula 1 yang selalu mengoptimalkan mobil mereka, API harus terus berkembang berdasarkan feedback dan kebutuhan yang berubah.
 
 ### 4. Setiap API Membutuhkan Owner
+
 
 Tanpa ownership yang jelas, API akan menjadi *orphaned product* — tidak dipelihara, tidak dikembangkan, dan akhirnya menjadi technical debt.
 
@@ -514,28 +436,23 @@ Tanpa ownership yang jelas, API akan menjadi *orphaned product* — tidak dipeli
 
 ### 5. Insight dari Instrumentasi API
 
+
 **"Try early, learn fast, scale easily"** — bagian dari resep ini adalah kemampuan belajar cepat.
 
-```
-API INSTRUMENTATION VALUE:
+**Nilai API Instrumentation:**
 
-API Calls ──► Logs & Metrics ──► Analytics ──► Business Insights
-                                      │
-                              ┌───────────────┐
-                              │ What to learn:│
-                              │ - Usage patterns
-                              │ - Error patterns
-                              │ - Performance
-                              │ - Consumer behavior
-                              │ - Revenue attribution
-                              └───────────────┘
-```
+Data yang mengalir melalui API memberikan wawasan bisnis secara real-time:
+
+- **Usage patterns** — fitur apa yang paling banyak digunakan
+- **Error patterns** — di mana consumer kesulitan
+- **Performance** — bottleneck dan SLA
+- **Consumer behavior** — bagaimana API dikonsumsi
+- **Revenue attribution** — value yang tercipta dari tiap endpoint
 
 Cara terbaik belajar cepat adalah dengan memanfaatkan informasi yang sudah mengalir melalui sistem operasi bisnis. API instrumentation memberikan akses mudah ke informasi ini.
 
-
-
 ## Perbandingan Dua Edisi: Apigee vs IBM
+
 
 Dua buku dalam seri "APIs For Dummies" ini saling melengkapi:
 
@@ -549,40 +466,26 @@ Dua buku dalam seri "APIs For Dummies" ini saling melengkapi:
 | Teknis | Minimal | API design principles |
 | Cloud | Tidak dibahas | Hybrid cloud (IBM Cloud) |
 
-
-
 ## Ringkasan: Prinsip Utama API IBM Edition
 
-```
-9 PRINSIP DARI APIs FOR DUMMIES IBM EDITION
 
-1. APIs = Fondasi cloud, mobile, IoT revolution
+**9 Prinsip dari APIs for Dummies IBM Edition:**
 
-2. API harus diperlakukan sebagai PRODUK
-   dengan lifecycle dan ownership yang jelas
-
-3. 5 Entry Points: monetize, innovate, mobile,
-   hybrid, IoT — pilih sesuai agenda bisnismu
-
-4. API bukan hanya soal publik — internal API
-   memberikan nilai besar untuk efisiensi
-
-5. Hybrid cloud membutuhkan API sebagai
-   lingua franca yang seragam
-
-6. Opportunistic APIs valid dan diperlukan —
-   tidak semua API harus stabil dan reusable
-
-7. API Management melibatkan 3 peran:
-   Business Owner, IT Ops, API Designer
-
-8. Tidak semua API harus managed —
-   katalogkan unmanaged APIs untuk discovery
-
-9. Instrumentasi API = business intelligence
-   tentang bagaimana bisnis beroperasi
-```
-
-
+1. API adalah fondasi revolusi cloud, mobile, dan IoT
+2. API harus diperlakukan sebagai **produk bisnis** dengan lifecycle dan ownership yang jelas
+3. Ada 5 entry points strategis: monetize, innovate, mobile, hybrid, IoT — pilih sesuai agenda
+4. API bukan hanya soal publik — API internal memberikan nilai besar untuk efisiensi organisasi
+5. Hybrid cloud membutuhkan API sebagai lingua franca yang seragam antara on-premise dan cloud
+6. Opportunistic APIs valid dan diperlukan — tidak semua API harus stabil dan reusable
+7. API Management melibatkan 3 peran: Business Owner, IT Ops, dan API Designer
+8. Tidak semua API harus managed — katalogkan unmanaged APIs untuk visibility dan discovery
+9. Instrumentasi API menghasilkan business intelligence tentang bagaimana bisnis beroperasi
 
 **Sumber:** Dennis Ashby & Claus T. Jensen, *APIs For Dummies, 3rd IBM Limited Edition* (2018), John Wiley & Sons. [ibm.com/cloud/api-connect](https://www.ibm.com/cloud/api-connect)
+
+## Referensi
+
+- Ashby, D., & Jensen, C. T. (2018). *APIs for Dummies, 3rd IBM Limited Edition*. John Wiley & Sons.
+- IBM Developer. (2023). *API Connect documentation*. IBM.
+- Richardson, L., & Ruby, S. (2007). *RESTful Web Services*. O'Reilly Media.
+- Fielding, R. T. (2000). *Architectural Styles and the Design of Network-based Software Architectures* (Doctoral dissertation). University of California, Irvine.

@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" width="900" height="420" font-family="'Segoe UI', system-ui, -apple-system, sans-serif">
+  <!-- Background -->
+  <rect width="900" height="420" fill="#f8fafc" rx="12"/>
+
+  <!-- Title -->
+  <text x="450" y="38" text-anchor="middle" font-size="17" font-weight="700" fill="#1e293b">HTTP Request–Response Cycle</text>
+
+  <!-- ══ CLIENT COLUMN ══ -->
+  <rect x="30" y="60" width="200" height="300" rx="12" fill="#ffffff" stroke="#bfdbfe" stroke-width="1.5"/>
+  <rect x="30" y="60" width="200" height="40" rx="12" fill="#2563eb"/>
+  <rect x="30" y="88" width="200" height="12" fill="#2563eb"/>
+  <text x="130" y="86" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">CLIENT</text>
+
+  <!-- Client device icon -->
+  <rect x="97" y="108" width="66" height="48" rx="5" fill="none" stroke="#93c5fd" stroke-width="2"/>
+  <line x1="97" y1="120" x2="163" y2="120" stroke="#93c5fd" stroke-width="1.5"/>
+  <circle cx="106" cy="114" r="2.5" fill="#ef4444"/>
+  <circle cx="115" cy="114" r="2.5" fill="#f59e0b"/>
+  <circle cx="124" cy="114" r="2.5" fill="#22c55e"/>
+  <text x="130" y="168" text-anchor="middle" font-size="11" fill="#3b82f6">Web App / Script</text>
+
+  <!-- CLIENT REQUEST box -->
+  <rect x="46" y="188" width="168" height="148" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.2"/>
+  <text x="130" y="207" text-anchor="middle" font-size="11" font-weight="700" fill="#1d4ed8">HTTP REQUEST</text>
+  <line x1="54" y1="212" x2="206" y2="212" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="58" y="228" font-size="10.5" fill="#1e3a8a" font-weight="600">METHOD</text>
+  <text x="58" y="243" font-size="10" fill="#3730a3">  GET / POST / PUT / DELETE</text>
+  <text x="58" y="261" font-size="10.5" fill="#1e3a8a" font-weight="600">URL</text>
+  <text x="58" y="276" font-size="10" fill="#3730a3">  /api/orders/456</text>
+  <text x="58" y="294" font-size="10.5" fill="#1e3a8a" font-weight="600">HEADERS</text>
+  <text x="58" y="309" font-size="10" fill="#3730a3">  Authorization, Content-Type</text>
+  <text x="58" y="322" font-size="10.5" fill="#1e3a8a" font-weight="600">BODY</text>
+  <text x="58" y="337" font-size="10" fill="#3730a3">  {"crust": "original", ...}</text>
+
+  <!-- ══ SERVER COLUMN ══ -->
+  <rect x="670" y="60" width="200" height="300" rx="12" fill="#ffffff" stroke="#bbf7d0" stroke-width="1.5"/>
+  <rect x="670" y="60" width="200" height="40" rx="12" fill="#15803d"/>
+  <rect x="670" y="88" width="200" height="12" fill="#15803d"/>
+  <text x="770" y="86" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">SERVER</text>
+
+  <!-- Server rack icon -->
+  <rect x="719" y="108" width="102" height="18" rx="3" fill="none" stroke="#86efac" stroke-width="2"/>
+  <circle cx="730" cy="117" r="3" fill="#22c55e"/>
+  <rect x="719" y="132" width="102" height="18" rx="3" fill="none" stroke="#86efac" stroke-width="2"/>
+  <circle cx="730" cy="141" r="3" fill="#22c55e"/>
+  <text x="770" y="168" text-anchor="middle" font-size="11" fill="#16a34a">API Server</text>
+
+  <!-- SERVER RESPONSE box -->
+  <rect x="686" y="188" width="168" height="148" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1.2"/>
+  <text x="770" y="207" text-anchor="middle" font-size="11" font-weight="700" fill="#15803d">HTTP RESPONSE</text>
+  <line x1="694" y1="212" x2="846" y2="212" stroke="#bbf7d0" stroke-width="1"/>
+  <text x="698" y="228" font-size="10.5" fill="#14532d" font-weight="600">STATUS CODE</text>
+  <text x="698" y="243" font-size="10" fill="#166534">  200 OK / 201 Created / 404 …</text>
+  <text x="698" y="261" font-size="10.5" fill="#14532d" font-weight="600">HEADERS</text>
+  <text x="698" y="276" font-size="10" fill="#166534">  Content-Type: application/json</text>
+  <text x="698" y="294" font-size="10.5" fill="#14532d" font-weight="600">BODY</text>
+  <text x="698" y="309" font-size="10" fill="#166534">  {"id": 456, "status": "baking"}</text>
+  <text x="698" y="322" font-size="10.5" fill="#14532d" font-weight="600">DATE</text>
+  <text x="698" y="337" font-size="10" fill="#166534">  Thu, 31 Jul 2026 08:00:00 GMT</text>
+
+  <!-- ══ MIDDLE / ARROW AREA ══ -->
+  <!-- Top: Request arrow left → right -->
+  <defs>
+    <marker id="arrRight" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
+    </marker>
+    <marker id="arrLeft" markerWidth="10" markerHeight="7" refX="1" refY="3.5" orient="auto">
+      <polygon points="10 0, 0 3.5, 10 7" fill="#15803d"/>
+    </marker>
+  </defs>
+
+  <!-- Request arrow -->
+  <line x1="234" y1="185" x2="666" y2="185" stroke="#2563eb" stroke-width="2.2" marker-end="url(#arrRight)"/>
+  <rect x="340" y="158" width="220" height="26" rx="6" fill="#dbeafe"/>
+  <text x="450" y="176" text-anchor="middle" font-size="12" font-weight="700" fill="#1d4ed8">➜  HTTP REQUEST</text>
+
+  <!-- Response arrow -->
+  <line x1="666" y1="235" x2="234" y2="235" stroke="#15803d" stroke-width="2.2" marker-end="url(#arrLeft)"/>
+  <rect x="340" y="238" width="220" height="26" rx="6" fill="#dcfce7"/>
+  <text x="450" y="256" text-anchor="middle" font-size="12" font-weight="700" fill="#15803d">◄  HTTP RESPONSE</text>
+
+  <!-- Processing box in middle -->
+  <rect x="364" y="274" width="172" height="62" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="450" y="294" text-anchor="middle" font-size="11" font-weight="700" fill="#475569">SERVER PROCESSING</text>
+  <text x="450" y="311" text-anchor="middle" font-size="10" fill="#64748b">Validasi request</text>
+  <text x="450" y="326" text-anchor="middle" font-size="10" fill="#64748b">Query database → Format response</text>
+
+  <!-- Vertical connector lines -->
+  <line x1="450" y1="262" x2="450" y2="274" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="3,2"/>
+  <line x1="450" y1="336" x2="450" y2="356" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="3,2"/>
+
+  <!-- ══ BOTTOM LEGEND ══ -->
+  <text x="130" y="388" text-anchor="middle" font-size="11.5" fill="#2563eb" font-weight="600">Inisiator</text>
+  <text x="130" y="405" text-anchor="middle" font-size="11" fill="#64748b">Selalu memulai duluan</text>
+  <text x="450" y="388" text-anchor="middle" font-size="11.5" fill="#7c3aed" font-weight="600">Satu Request → Satu Response</text>
+  <text x="450" y="405" text-anchor="middle" font-size="11" fill="#64748b">Stateless — setiap request berdiri sendiri</text>
+  <text x="770" y="388" text-anchor="middle" font-size="11.5" fill="#15803d" font-weight="600">Responder</text>
+  <text x="770" y="405" text-anchor="middle" font-size="11" fill="#64748b">Hanya membalas request</text>
+</svg>
