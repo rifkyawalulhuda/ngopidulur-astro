@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <rect x="60" y="40" width="680" height="370" rx="8" fill="none" stroke="#e94560" stroke-width="2"/>
+  <text x="400" y="120" font-family="Georgia, serif" font-size="42" fill="#ffffff" text-anchor="middle" font-weight="bold">Software Architecture</text>
+  <text x="400" y="180" font-family="Georgia, serif" font-size="36" fill="#e94560" text-anchor="middle" font-style="italic">The Hard Parts</text>
+  <line x1="250" y1="210" x2="550" y2="210" stroke="#e94560" stroke-width="1"/>
+  <text x="400" y="260" font-family="Verdana, sans-serif" font-size="16" fill="#a0a0c0" text-anchor="middle">Modern Trade-Off Analyses</text>
+  <text x="400" y="285" font-family="Verdana, sans-serif" font-size="16" fill="#a0a0c0" text-anchor="middle">for Distributed Architectures</text>
+  <text x="400" y="350" font-family="Verdana, sans-serif" font-size="14" fill="#8080a0" text-anchor="middle">Neal Ford · Mark Richards · Pramod Sadalage · Zhamak Dehghani</text>
+  <text x="400" y="390" font-family="Verdana, sans-serif" font-size="13" fill="#606080" text-anchor="middle">O'Reilly Media · 2021</text>
+</svg>

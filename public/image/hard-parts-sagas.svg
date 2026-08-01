@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" font-family="Verdana, sans-serif">
+  <rect width="1000" height="600" fill="#f8f9fa"/>
+  <text x="500" y="35" font-size="20" font-weight="bold" text-anchor="middle" fill="#212529">8 Transactional Saga Patterns</text>
+  <text x="500" y="58" font-size="12" text-anchor="middle" fill="#6c757d">Three dimensions: Communication · Consistency · Coordination</text>
+
+  <!-- Axis labels -->
+  <text x="500" y="90" font-size="11" font-weight="bold" text-anchor="middle" fill="#495057">s = synchronous · a = asynchronous | a = atomic · e = eventual | o = orchestrated · c = choreographed</text>
+
+  <!-- Grid: 2x4 -->
+  <!-- Row 1: Synchronous -->
+  <rect x="60" y="110" width="215" height="110" rx="8" fill="#d4edda" stroke="#28a745" stroke-width="2"/>
+  <text x="167" y="135" font-size="13" font-weight="bold" text-anchor="middle" fill="#155724">Epic Saga (sao)</text>
+  <text x="167" y="155" font-size="10" text-anchor="middle" fill="#155724">Sync · Atomic · Orchestrated</text>
+  <text x="167" y="172" font-size="9" text-anchor="middle" fill="#155724">Easiest, most coupled</text>
+  <text x="167" y="188" font-size="9" text-anchor="middle" fill="#28a745">✓ Recommended for simplicity</text>
+
+  <rect x="290" y="110" width="215" height="110" rx="8" fill="#fff3cd" stroke="#ffc107" stroke-width="2"/>
+  <text x="397" y="135" font-size="13" font-weight="bold" text-anchor="middle" fill="#856404">Phone Tag (sac)</text>
+  <text x="397" y="155" font-size="10" text-anchor="middle" fill="#856404">Sync · Atomic · Choreographed</text>
+  <text x="397" y="172" font-size="9" text-anchor="middle" fill="#856404">Hard to debug</text>
+  <text x="397" y="188" font-size="9" text-anchor="middle" fill="#856404">⚠ Use with caution</text>
+
+  <rect x="520" y="110" width="215" height="110" rx="8" fill="#d4edda" stroke="#28a745" stroke-width="2"/>
+  <text x="627" y="135" font-size="13" font-weight="bold" text-anchor="middle" fill="#155724">Fairy Tale (seo)</text>
+  <text x="627" y="155" font-size="10" text-anchor="middle" fill="#155724">Sync · Eventual · Orchestrated</text>
+  <text x="627" y="172" font-size="9" text-anchor="middle" fill="#155724">Good balance</text>
+  <text x="627" y="188" font-size="9" text-anchor="middle" fill="#28a745">✓ Recommended</text>
+
+  <rect x="750" y="110" width="215" height="110" rx="8" fill="#fff3cd" stroke="#ffc107" stroke-width="2"/>
+  <text x="857" y="135" font-size="13" font-weight="bold" text-anchor="middle" fill="#856404">Time Travel (sec)</text>
+  <text x="857" y="155" font-size="10" text-anchor="middle" fill="#856404">Sync · Eventual · Choreographed</text>
+  <text x="857" y="172" font-size="9" text-anchor="middle" fill="#856404">Complex state mgmt</text>
+  <text x="857" y="188" font-size="9" text-anchor="middle" fill="#856404">⚠ Use with caution</text>
+
+  <!-- Row 2: Asynchronous -->
+  <rect x="60" y="240" width="215" height="110" rx="8" fill="#e7f1ff" stroke="#0d6efd" stroke-width="2"/>
+  <text x="167" y="265" font-size="13" font-weight="bold" text-anchor="middle" fill="#0d6efd">Fantasy Fiction (aao)</text>
+  <text x="167" y="285" font-size="10" text-anchor="middle" fill="#0d6efd">Async · Atomic · Orchestrated</text>
+  <text x="167" y="302" font-size="9" text-anchor="middle" fill="#0d6efd">Rarely used</text>
+  <text x="167" y="318" font-size="9" text-anchor="middle" fill="#0d6efd">○ Niche use case</text>
+
+  <rect x="290" y="240" width="215" height="110" rx="8" fill="#f8d7da" stroke="#dc3545" stroke-width="3"/>
+  <text x="397" y="265" font-size="13" font-weight="bold" text-anchor="middle" fill="#721c24">Horror Story (aac)</text>
+  <text x="397" y="285" font-size="10" text-anchor="middle" fill="#721c24">Async · Atomic · Choreographed</text>
+  <text x="397" y="302" font-size="9" text-anchor="middle" fill="#721c24">MOST DIFFICULT</text>
+  <text x="397" y="318" font-size="9" font-weight="bold" text-anchor="middle" fill="#dc3545">✗ AVOID</text>
+
+  <rect x="520" y="240" width="215" height="110" rx="8" fill="#d4edda" stroke="#28a745" stroke-width="2"/>
+  <text x="627" y="265" font-size="13" font-weight="bold" text-anchor="middle" fill="#155724">Parallel Saga (aeo)</text>
+  <text x="627" y="285" font-size="10" text-anchor="middle" fill="#155724">Async · Eventual · Orchestrated</text>
+  <text x="627" y="302" font-size="9" text-anchor="middle" fill="#155724">Good for scale</text>
+  <text x="627" y="318" font-size="9" text-anchor="middle" fill="#28a745">✓ Recommended</text>
+
+  <rect x="750" y="240" width="215" height="110" rx="8" fill="#d4edda" stroke="#28a745" stroke-width="2"/>
+  <text x="857" y="265" font-size="13" font-weight="bold" text-anchor="middle" fill="#155724">Anthology (aec)</text>
+  <text x="857" y="285" font-size="10" text-anchor="middle" fill="#155724">Async · Eventual · Choreographed</text>
+  <text x="857" y="302" font-size="9" text-anchor="middle" fill="#155724">Most decoupled</text>
+  <text x="857" y="318" font-size="9" text-anchor="middle" fill="#28a745">✓ Recommended for decoupling</text>
+
+  <!-- Dimension key -->
+  <rect x="60" y="380" width="905" height="190" rx="8" fill="#ffffff" stroke="#495057" stroke-width="1"/>
+  <text x="500" y="405" font-size="14" font-weight="bold" text-anchor="middle" fill="#212529">Three Dimensions of Trade-Off</text>
+
+  <rect x="90" y="425" width="270" height="120" rx="5" fill="#e7f1ff" stroke="#0d6efd" stroke-width="1"/>
+  <text x="225" y="450" font-size="12" font-weight="bold" text-anchor="middle" fill="#0d6efd">Communication</text>
+  <text x="225" y="472" font-size="10" text-anchor="middle" fill="#212529">Synchronous: simpler, but coupled</text>
+  <text x="225" y="490" font-size="10" text-anchor="middle" fill="#212529">Asynchronous: decoupled, but complex</text>
+
+  <rect x="380" y="425" width="270" height="120" rx="5" fill="#fff3cd" stroke="#ffc107" stroke-width="1"/>
+  <text x="515" y="450" font-size="12" font-weight="bold" text-anchor="middle" fill="#856404">Consistency</text>
+  <text x="515" y="472" font-size="10" text-anchor="middle" fill="#212529">Atomic: strong consistency, hard to scale</text>
+  <text x="515" y="490" font-size="10" text-anchor="middle" fill="#212529">Eventual: scales, but complex compensation</text>
+
+  <rect x="670" y="425" width="270" height="120" rx="5" fill="#d4edda" stroke="#28a745" stroke-width="1"/>
+  <text x="805" y="450" font-size="12" font-weight="bold" text-anchor="middle" fill="#155724">Coordination</text>
+  <text x="805" y="472" font-size="10" text-anchor="middle" fill="#212529">Orchestrated: visible, single point of control</text>
+  <text x="805" y="490" font-size="10" text-anchor="middle" fill="#212529">Choreographed: decoupled, hard to track</text>
+</svg>

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" width="900" height="400">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6366f1"/>
+    </marker>
+  </defs>
+  <rect width="900" height="400" fill="#ffffff" rx="12"/>
+  <rect width="900" height="400" fill="none" stroke="#e2e8f0" stroke-width="1.5" rx="12"/>
+  <rect x="0" y="0" width="900" height="44" fill="#4f46e5" rx="12"/>
+  <rect x="0" y="22" width="900" height="22" fill="#4f46e5"/>
+  <text x="450" y="28" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">Layered Mobile Application Architecture</text>
+  <!-- Client side -->
+  <rect x="30" y="70" width="400" height="280" fill="#f8fafc" rx="12" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="230" y="92" font-family="Inter,Arial,sans-serif" font-size="12" fill="#475569" text-anchor="middle" font-weight="700">Mobile Device (Rich Client)</text>
+  <rect x="50" y="105" width="360" height="55" fill="#dbeafe" rx="10" stroke="#3b82f6" stroke-width="1.8"/>
+  <text x="230" y="128" font-family="Inter,Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle" font-weight="700">Presentation Layer</text>
+  <text x="230" y="146" font-family="Inter,Arial,sans-serif" font-size="9" fill="#3b82f6" text-anchor="middle">UI Components · User Process Components</text>
+  <rect x="50" y="175" width="360" height="55" fill="#dcfce7" rx="10" stroke="#16a34a" stroke-width="1.8"/>
+  <text x="230" y="198" font-family="Inter,Arial,sans-serif" font-size="12" fill="#166534" text-anchor="middle" font-weight="700">Business Layer</text>
+  <text x="230" y="216" font-family="Inter,Arial,sans-serif" font-size="9" fill="#15803d" text-anchor="middle">Application Facade · Business Components · Services Interfaces</text>
+  <rect x="50" y="245" width="360" height="55" fill="#fef3c7" rx="10" stroke="#d97706" stroke-width="1.8"/>
+  <text x="230" y="268" font-family="Inter,Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle" font-weight="700">Data Layer</text>
+  <text x="230" y="286" font-family="Inter,Arial,sans-serif" font-size="9" fill="#b45309" text-anchor="middle">Data Access Logic · Helpers · Service Agents</text>
+  <rect x="50" y="315" width="360" height="25" fill="#e2e8f0" rx="6" stroke="#94a3b8" stroke-width="1"/>
+  <text x="230" y="332" font-family="Inter,Arial,sans-serif" font-size="9" fill="#64748b" text-anchor="middle">Cross-cutting: Security · Caching · Exception · Logging · Validation</text>
+  <!-- Server side -->
+  <rect x="470" y="70" width="400" height="280" fill="#f8fafc" rx="12" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="670" y="92" font-family="Inter,Arial,sans-serif" font-size="12" fill="#475569" text-anchor="middle" font-weight="700">Server Infrastructure</text>
+  <rect x="490" y="105" width="360" height="55" fill="#fce7f3" rx="10" stroke="#db2777" stroke-width="1.8"/>
+  <text x="670" y="128" font-family="Inter,Arial,sans-serif" font-size="12" fill="#9d174d" text-anchor="middle" font-weight="700">Service Layer</text>
+  <text x="670" y="146" font-family="Inter,Arial,sans-serif" font-size="9" fill="#db2777" text-anchor="middle">Service Interfaces · Service Implementation · Translators</text>
+  <rect x="490" y="175" width="360" height="55" fill="#dcfce7" rx="10" stroke="#16a34a" stroke-width="1.8"/>
+  <text x="670" y="198" font-family="Inter,Arial,sans-serif" font-size="12" fill="#166534" text-anchor="middle" font-weight="700">Business Layer (Server)</text>
+  <text x="670" y="216" font-family="Inter,Arial,sans-serif" font-size="9" fill="#15803d" text-anchor="middle">Business Components · Workflow · Validation</text>
+  <rect x="490" y="245" width="360" height="55" fill="#fef3c7" rx="10" stroke="#d97706" stroke-width="1.8"/>
+  <text x="670" y="268" font-family="Inter,Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle" font-weight="700">Data Layer (Server)</text>
+  <text x="670" y="286" font-family="Inter,Arial,sans-serif" font-size="9" fill="#b45309" text-anchor="middle">Repositories · Data Stores · Databases</text>
+  <rect x="490" y="315" width="360" height="25" fill="#e2e8f0" rx="6" stroke="#94a3b8" stroke-width="1"/>
+  <text x="670" y="332" font-family="Inter,Arial,sans-serif" font-size="9" fill="#64748b" text-anchor="middle">Infrastructure: Communication · Deployment · Security</text>
+  <!-- Connection -->
+  <line x1="430" y1="180" x2="490" y2="180" stroke="#6366f1" stroke-width="2.5" marker-end="url(#arr)"/>
+  <line x1="490" y1="210" x2="430" y2="210" stroke="#6366f1" stroke-width="2.5" marker-end="url(#arr)"/>
+  <text x="460" y="170" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#4f46e5" text-anchor="middle">REST/SOAP</text>
+  <text x="460" y="228" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#4f46e5" text-anchor="middle">XML/JSON</text>
+  <text x="460" y="250" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#94a3b8" text-anchor="middle">↕ sync</text>
+  <!-- Footer -->
+  <text x="450" y="385" font-family="Inter,Arial,sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">Mobile Application Architecture Pocket Guide (Microsoft patterns &amp; practices)</text>
+</svg>
