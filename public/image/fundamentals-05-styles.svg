@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="m5bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f0c29"/>
+      <stop offset="100%" stop-color="#302b63"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#m5bg)"/>
+  <text x="400" y="50" font-size="28" font-weight="bold" text-anchor="middle" fill="#ffffff">Distributed &amp; Advanced Styles</text>
+  <text x="400" y="80" font-size="14" text-anchor="middle" fill="#a0a0a0">Event-Driven, Space-Based, SOA, Microservices - Fundamentals Ch14-18</text>
+  <!-- Event-Driven -->
+  <rect x="50" y="120" width="170" height="140" rx="10" fill="#3498db" opacity="0.9"/>
+  <text x="135" y="145" font-size="14" font-weight="bold" text-anchor="middle" fill="#ffffff">Event-Driven</text>
+  <rect x="70" y="160" width="60" height="30" rx="4" fill="#2980b9"/>
+  <text x="100" y="180" font-size="9" text-anchor="middle" fill="#ffffff">Producer</text>
+  <line x1="130" y1="175" x2="150" y2="175" stroke="#ffffff" stroke-width="2"/>
+  <rect x="150" y="160" width="40" height="30" rx="4" fill="#2980b9"/>
+  <text x="170" y="180" font-size="9" text-anchor="middle" fill="#ffffff">Bus</text>
+  <line x1="170" y1="190" x2="170" y2="210" stroke="#ffffff" stroke-width="2"/>
+  <rect x="100" y="210" width="60" height="25" rx="4" fill="#2980b9"/>
+  <text x="130" y="227" font-size="8" text-anchor="middle" fill="#ffffff">Consumer A</text>
+  <rect x="170" y="210" width="60" height="25" rx="4" fill="#2980b9"/>
+  <text x="200" y="227" font-size="8" text-anchor="middle" fill="#ffffff">Consumer B</text>
+  <!-- Space-Based -->
+  <rect x="240" y="120" width="170" height="140" rx="10" fill="#2ecc71" opacity="0.9"/>
+  <text x="325" y="145" font-size="14" font-weight="bold" text-anchor="middle" fill="#ffffff">Space-Based</text>
+  <rect x="260" y="160" width="50" height="40" rx="4" fill="#27ae60"/>
+  <text x="285" y="185" font-size="8" text-anchor="middle" fill="#ffffff">PU 1</text>
+  <rect x="320" y="160" width="50" height="40" rx="4" fill="#27ae60"/>
+  <text x="345" y="185" font-size="8" text-anchor="middle" fill="#ffffff">PU 2</text>
+  <rect x="290" y="210" width="80" height="20" rx="4" fill="#27ae60"/>
+  <text x="330" y="225" font-size="8" text-anchor="middle" fill="#ffffff">Data Grid</text>
+  <text x="325" y="245" font-size="9" text-anchor="middle" fill="#d5f5e3">In-Memory</text>
+  <!-- SOA -->
+  <rect x="430" y="120" width="170" height="140" rx="10" fill="#9b59b6" opacity="0.9"/>
+  <text x="515" y="145" font-size="14" font-weight="bold" text-anchor="middle" fill="#ffffff">SOA</text>
+  <rect x="450" y="160" width="130" height="20" rx="4" fill="#8e44ad"/>
+  <text x="515" y="175" font-size="8" text-anchor="middle" fill="#ffffff">Business Services</text>
+  <rect x="450" y="190" width="130" height="20" rx="4" fill="#8e44ad"/>
+  <text x="515" y="205" font-size="8" text-anchor="middle" fill="#ffffff">Enterprise Services</text>
+  <rect x="450" y="220" width="130" height="20" rx="4" fill="#8e44ad"/>
+  <text x="515" y="235" font-size="8" text-anchor="middle" fill="#ffffff">Application Services</text>
+  <rect x="460" y="250" width="110" height="15" rx="4" fill="#8e44ad"/>
+  <text x="515" y="262" font-size="8" text-anchor="middle" fill="#ffffff">ESB</text>
+  <!-- Microservices -->
+  <rect x="620" y="120" width="170" height="140" rx="10" fill="#e74c3c" opacity="0.9"/>
+  <text x="705" y="145" font-size="14" font-weight="bold" text-anchor="middle" fill="#ffffff">Microservices</text>
+  <rect x="640" y="160" width="50" height="40" rx="4" fill="#c0392b"/>
+  <text x="665" y="185" font-size="8" text-anchor="middle" fill="#ffffff">Order</text>
+  <rect x="700" y="160" width="50" height="40" rx="4" fill="#c0392b"/>
+  <text x="725" y="185" font-size="8" text-anchor="middle" fill="#ffffff">Customer</text>
+  <rect x="670" y="210" width="50" height="40" rx="4" fill="#c0392b"/>
+  <text x="695" y="235" font-size="8" text-anchor="middle" fill="#ffffff">Catalog</text>
+  <text x="705" y="255" font-size="9" text-anchor="middle" fill="#fadbd8">Own DB each</text>
+  <!-- Trade-offs -->
+  <rect x="50" y="290" width="700" height="120" rx="10" fill="#34495e" opacity="0.8"/>
+  <text x="400" y="315" font-size="14" font-weight="bold" text-anchor="middle" fill="#ffffff">Trade-Offs Comparison</text>
+  <text x="135" y="340" font-size="10" text-anchor="middle" fill="#3498db">Event-Driven</text>
+  <text x="135" y="355" font-size="9" text-anchor="middle" fill="#bdc3c7">Async, scalable</text>
+  <text x="135" y="370" font-size="9" text-anchor="middle" fill="#bdc3c7">Complex debugging</text>
+  <text x="325" y="340" font-size="10" text-anchor="middle" fill="#2ecc71">Space-Based</text>
+  <text x="325" y="355" font-size="9" text-anchor="middle" fill="#bdc3c7">Linear scalability</text>
+  <text x="325" y="370" font-size="9" text-anchor="middle" fill="#bdc3c7">Expensive memory</text>
+  <text x="515" y="340" font-size="10" text-anchor="middle" fill="#9b59b6">SOA</text>
+  <text x="515" y="355" font-size="9" text-anchor="middle" fill="#bdc3c7">Enterprise reuse</text>
+  <text x="515" y="370" font-size="9" text-anchor="middle" fill="#bdc3c7">ESB complexity</text>
+  <text x="705" y="340" font-size="10" text-anchor="middle" fill="#e74c3c">Microservices</text>
+  <text x="705" y="355" font-size="9" text-anchor="middle" fill="#bdc3c7">Independent deploy</text>
+  <text x="705" y="370" font-size="9" text-anchor="middle" fill="#bdc3c7">Distributed complexity</text>
+</svg>

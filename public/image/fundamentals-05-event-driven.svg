@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="edbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f2027"/>
+      <stop offset="100%" stop-color="#203a43"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#edbg)"/>
+  <text x="400" y="50" font-size="28" font-weight="bold" text-anchor="middle" fill="#ffffff">Event-Driven Architecture</text>
+  <text x="400" y="80" font-size="14" text-anchor="middle" fill="#a0a0a0">Broker vs Mediator Topology - Fundamentals Chapter 14</text>
+  <!-- Broker -->
+  <text x="200" y="120" font-size="16" font-weight="bold" text-anchor="middle" fill="#ffffff">Broker Topology</text>
+  <rect x="80" y="140" width="100" height="40" rx="6" fill="#3498db"/>
+  <text x="130" y="165" font-size="11" text-anchor="middle" fill="#ffffff">Producer</text>
+  <line x1="180" y1="160" x2="250" y2="160" stroke="#f39c12" stroke-width="2"/>
+  <polygon points="250,155 260,160 250,165" fill="#f39c12"/>
+  <rect x="260" y="130" width="80" height="60" rx="6" fill="#9b59b6"/>
+  <text x="300" y="160" font-size="11" text-anchor="middle" fill="#ffffff">Event Bus</text>
+  <line x1="300" y1="190" x2="300" y2="220" stroke="#f39c12" stroke-width="2"/>
+  <line x1="300" y1="190" x2="150" y2="220" stroke="#f39c12" stroke-width="2"/>
+  <line x1="300" y1="190" x2="450" y2="220" stroke="#f39c12" stroke-width="2"/>
+  <rect x="100" y="220" width="100" height="40" rx="6" fill="#2ecc71"/>
+  <text x="150" y="245" font-size="11" text-anchor="middle" fill="#ffffff">Consumer A</text>
+  <rect x="250" y="220" width="100" height="40" rx="6" fill="#2ecc71"/>
+  <text x="300" y="245" font-size="11" text-anchor="middle" fill="#ffffff">Consumer B</text>
+  <rect x="400" y="220" width="100" height="40" rx="6" fill="#2ecc71"/>
+  <text x="450" y="245" font-size="11" text-anchor="middle" fill="#ffffff">Consumer C</text>
+  <!-- Mediator -->
+  <text x="600" y="120" font-size="16" font-weight="bold" text-anchor="middle" fill="#ffffff">Mediator Topology</text>
+  <rect x="500" y="140" width="100" height="40" rx="6" fill="#3498db"/>
+  <text x="550" y="165" font-size="11" text-anchor="middle" fill="#ffffff">Producer</text>
+  <line x1="600" y1="160" x2="650" y2="160" stroke="#f39c12" stroke-width="2"/>
+  <polygon points="650,155 660,160 650,165" fill="#f39c12"/>
+  <rect x="660" y="130" width="80" height="60" rx="6" fill="#e74c3c"/>
+  <text x="700" y="160" font-size="11" text-anchor="middle" fill="#ffffff">Mediator</text>
+  <line x1="700" y1="190" x2="700" y2="220" stroke="#f39c12" stroke-width="2"/>
+  <line x1="700" y1="190" x2="580" y2="220" stroke="#f39c12" stroke-width="2"/>
+  <line x1="700" y1="190" x2="820" y2="220" stroke="#f39c12" stroke-width="2"/>
+  <rect x="530" y="220" width="100" height="40" rx="6" fill="#2ecc71"/>
+  <text x="580" y="245" font-size="11" text-anchor="middle" fill="#ffffff">Consumer A</text>
+  <rect x="650" y="220" width="100" height="40" rx="6" fill="#2ecc71"/>
+  <text x="700" y="245" font-size="11" text-anchor="middle" fill="#ffffff">Consumer B</text>
+  <rect x="770" y="220" width="100" height="40" rx="6" fill="#2ecc71"/>
+  <text x="820" y="245" font-size="11" text-anchor="middle" fill="#ffffff">Consumer C</text>
+  <!-- Trade-offs -->
+  <rect x="50" y="300" width="700" height="120" rx="10" fill="#34495e" opacity="0.8"/>
+  <text x="400" y="325" font-size="14" font-weight="bold" text-anchor="middle" fill="#ffffff">Trade-Offs</text>
+  <text x="200" y="350" font-size="11" text-anchor="middle" fill="#2ecc71">✓ Scalability ★★★★★</text>
+  <text x="200" y="370" font-size="11" text-anchor="middle" fill="#2ecc71">✓ Elasticity ★★★★☆</text>
+  <text x="200" y="390" font-size="11" text-anchor="middle" fill="#2ecc71">✓ Fault Tolerance ★★★★☆</text>
+  <text x="400" y="350" font-size="11" text-anchor="middle" fill="#e74c3c">✗ Complexity ★★☆☆☆</text>
+  <text x="400" y="370" font-size="11" text-anchor="middle" fill="#e74c3c">✗ Testability ★★☆☆☆</text>
+  <text x="400" y="390" font-size="11" text-anchor="middle" fill="#e74c3c">✗ Event Ordering</text>
+  <text x="600" y="350" font-size="11" text-anchor="middle" fill="#f39c12">Best for:</text>
+  <text x="600" y="370" font-size="11" text-anchor="middle" fill="#f39c12">Real-time processing</text>
+  <text x="600" y="390" font-size="11" text-anchor="middle" fill="#f39c12">Decoupled services</text>
+</svg>

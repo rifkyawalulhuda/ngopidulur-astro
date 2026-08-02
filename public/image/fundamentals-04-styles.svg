@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="m4bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f2027"/>
+      <stop offset="100%" stop-color="#203a43"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#m4bg)"/>
+  <text x="400" y="50" font-size="28" font-weight="bold" text-anchor="middle" fill="#ffffff">Monolithic &amp; Simple Styles</text>
+  <text x="400" y="80" font-size="14" text-anchor="middle" fill="#a0a0a0">Layered, Pipeline, Microkernel, Service-Based - Fundamentals Ch9-13</text>
+  <!-- Layered -->
+  <rect x="50" y="120" width="170" height="140" rx="10" fill="#3498db" opacity="0.9"/>
+  <text x="135" y="145" font-size="14" font-weight="bold" text-anchor="middle" fill="#ffffff">Layered</text>
+  <rect x="70" y="160" width="130" height="20" rx="4" fill="#2980b9"/>
+  <text x="135" y="175" font-size="9" text-anchor="middle" fill="#ffffff">Presentation</text>
+  <rect x="70" y="185" width="130" height="20" rx="4" fill="#2980b9"/>
+  <text x="135" y="200" font-size="9" text-anchor="middle" fill="#ffffff">Business</text>
+  <rect x="70" y="210" width="130" height="20" rx="4" fill="#2980b9"/>
+  <text x="135" y="225" font-size="9" text-anchor="middle" fill="#ffffff">Persistence</text>
+  <rect x="70" y="235" width="130" height="20" rx="4" fill="#2980b9"/>
+  <text x="135" y="250" font-size="9" text-anchor="middle" fill="#ffffff">Database</text>
+  <!-- Pipeline -->
+  <rect x="240" y="120" width="170" height="140" rx="10" fill="#2ecc71" opacity="0.9"/>
+  <text x="325" y="145" font-size="14" font-weight="bold" text-anchor="middle" fill="#ffffff">Pipeline</text>
+  <rect x="260" y="160" width="40" height="40" rx="4" fill="#27ae60"/>
+  <text x="280" y="185" font-size="9" text-anchor="middle" fill="#ffffff">In</text>
+  <line x1="300" y1="180" x2="320" y2="180" stroke="#ffffff" stroke-width="2"/>
+  <rect x="320" y="160" width="40" height="40" rx="4" fill="#27ae60"/>
+  <text x="340" y="185" font-size="9" text-anchor="middle" fill="#ffffff">Parse</text>
+  <line x1="360" y1="180" x2="380" y2="180" stroke="#ffffff" stroke-width="2"/>
+  <rect x="380" y="160" width="40" height="40" rx="4" fill="#27ae60"/>
+  <text x="400" y="185" font-size="9" text-anchor="middle" fill="#ffffff">Out</text>
+  <text x="325" y="230" font-size="10" text-anchor="middle" fill="#d5f5e3">Filters + Pipes</text>
+  <!-- Microkernel -->
+  <rect x="430" y="120" width="170" height="140" rx="10" fill="#9b59b6" opacity="0.9"/>
+  <text x="515" y="145" font-size="14" font-weight="bold" text-anchor="middle" fill="#ffffff">Microkernel</text>
+  <rect x="450" y="160" width="130" height="50" rx="6" fill="#8e44ad"/>
+  <text x="515" y="185" font-size="10" text-anchor="middle" fill="#ffffff">Core System</text>
+  <rect x="440" y="220" width="40" height="30" rx="4" fill="#8e44ad"/>
+  <text x="460" y="240" font-size="8" text-anchor="middle" fill="#ffffff">Plugin A</text>
+  <rect x="500" y="220" width="40" height="30" rx="4" fill="#8e44ad"/>
+  <text x="520" y="240" font-size="8" text-anchor="middle" fill="#ffffff">Plugin B</text>
+  <rect x="560" y="220" width="40" height="30" rx="4" fill="#8e44ad"/>
+  <text x="580" y="240" font-size="8" text-anchor="middle" fill="#ffffff">Plugin C</text>
+  <!-- Service-Based -->
+  <rect x="620" y="120" width="170" height="140" rx="10" fill="#e74c3c" opacity="0.9"/>
+  <text x="705" y="145" font-size="14" font-weight="bold" text-anchor="middle" fill="#ffffff">Service-Based</text>
+  <rect x="640" y="160" width="50" height="40" rx="4" fill="#c0392b"/>
+  <text x="665" y="185" font-size="8" text-anchor="middle" fill="#ffffff">Svc A</text>
+  <rect x="700" y="160" width="50" height="40" rx="4" fill="#c0392b"/>
+  <text x="725" y="185" font-size="8" text-anchor="middle" fill="#ffffff">Svc B</text>
+  <rect x="640" y="210" width="110" height="20" rx="4" fill="#c0392b"/>
+  <text x="695" y="225" font-size="9" text-anchor="middle" fill="#ffffff">Shared DB</text>
+  <!-- Trade-offs -->
+  <rect x="50" y="290" width="700" height="120" rx="10" fill="#34495e" opacity="0.8"/>
+  <text x="400" y="315" font-size="14" font-weight="bold" text-anchor="middle" fill="#ffffff">Trade-Offs Comparison</text>
+  <text x="135" y="340" font-size="10" text-anchor="middle" fill="#3498db">Layered</text>
+  <text x="135" y="355" font-size="9" text-anchor="middle" fill="#bdc3c7">Simple, cheap</text>
+  <text x="135" y="370" font-size="9" text-anchor="middle" fill="#bdc3c7">Hard to scale</text>
+  <text x="325" y="340" font-size="10" text-anchor="middle" fill="#2ecc71">Pipeline</text>
+  <text x="325" y="355" font-size="9" text-anchor="middle" fill="#bdc3c7">Data processing</text>
+  <text x="325" y="370" font-size="9" text-anchor="middle" fill="#bdc3c7">Good testability</text>
+  <text x="515" y="340" font-size="10" text-anchor="middle" fill="#9b59b6">Microkernel</text>
+  <text x="515" y="355" font-size="9" text-anchor="middle" fill="#bdc3c7">Extensible</text>
+  <text x="515" y="370" font-size="9" text-anchor="middle" fill="#bdc3c7">Product-based</text>
+  <text x="705" y="340" font-size="10" text-anchor="middle" fill="#e74c3c">Service-Based</text>
+  <text x="705" y="355" font-size="9" text-anchor="middle" fill="#bdc3c7">Domain split</text>
+  <text x="705" y="370" font-size="9" text-anchor="middle" fill="#bdc3c7">Migration path</text>
+</svg>

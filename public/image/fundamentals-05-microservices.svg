@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="msbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f0c29"/>
+      <stop offset="100%" stop-color="#302b63"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#msbg)"/>
+  <text x="400" y="50" font-size="28" font-weight="bold" text-anchor="middle" fill="#ffffff">Microservices Architecture</text>
+  <text x="400" y="80" font-size="14" text-anchor="middle" fill="#a0a0a0">Bounded Context + Database per Service - Fundamentals Chapter 17</text>
+  <!-- API Gateway -->
+  <rect x="300" y="110" width="200" height="50" rx="8" fill="#f39c12" opacity="0.9"/>
+  <text x="400" y="140" font-size="14" font-weight="bold" text-anchor="middle" fill="#ffffff">API Gateway</text>
+  <!-- Services -->
+  <rect x="50" y="190" width="180" height="180" rx="10" fill="#3498db" opacity="0.9"/>
+  <text x="140" y="215" font-size="13" font-weight="bold" text-anchor="middle" fill="#ffffff">Order Service</text>
+  <rect x="70" y="230" width="140" height="30" rx="4" fill="#2980b9"/>
+  <text x="140" y="250" font-size="10" text-anchor="middle" fill="#ffffff">API</text>
+  <rect x="70" y="270" width="140" height="30" rx="4" fill="#2980b9"/>
+  <text x="140" y="290" font-size="10" text-anchor="middle" fill="#ffffff">Business Logic</text>
+  <rect x="70" y="310" width="140" height="30" rx="4" fill="#2980b9"/>
+  <text x="140" y="330" font-size="10" text-anchor="middle" fill="#ffffff">Order DB</text>
+  <rect x="250" y="190" width="180" height="180" rx="10" fill="#2ecc71" opacity="0.9"/>
+  <text x="340" y="215" font-size="13" font-weight="bold" text-anchor="middle" fill="#ffffff">Customer Service</text>
+  <rect x="270" y="230" width="140" height="30" rx="4" fill="#27ae60"/>
+  <text x="340" y="250" font-size="10" text-anchor="middle" fill="#ffffff">API</text>
+  <rect x="270" y="270" width="140" height="30" rx="4" fill="#27ae60"/>
+  <text x="340" y="290" font-size="10" text-anchor="middle" fill="#ffffff">Business Logic</text>
+  <rect x="270" y="310" width="140" height="30" rx="4" fill="#27ae60"/>
+  <text x="340" y="330" font-size="10" text-anchor="middle" fill="#ffffff">Customer DB</text>
+  <rect x="450" y="190" width="180" height="180" rx="10" fill="#9b59b6" opacity="0.9"/>
+  <text x="540" y="215" font-size="13" font-weight="bold" text-anchor="middle" fill="#ffffff">Catalog Service</text>
+  <rect x="470" y="230" width="140" height="30" rx="4" fill="#8e44ad"/>
+  <text x="540" y="250" font-size="10" text-anchor="middle" fill="#ffffff">API</text>
+  <rect x="470" y="270" width="140" height="30" rx="4" fill="#8e44ad"/>
+  <text x="540" y="290" font-size="10" text-anchor="middle" fill="#ffffff">Business Logic</text>
+  <rect x="470" y="310" width="140" height="30" rx="4" fill="#8e44ad"/>
+  <text x="540" y="330" font-size="10" text-anchor="middle" fill="#ffffff">Catalog DB</text>
+  <rect x="650" y="190" width="100" height="180" rx="10" fill="#e74c3c" opacity="0.9"/>
+  <text x="700" y="215" font-size="12" font-weight="bold" text-anchor="middle" fill="#ffffff">Auth</text>
+  <text x="700" y="240" font-size="10" text-anchor="middle" fill="#fadbd8">Service</text>
+  <text x="700" y="260" font-size="10" text-anchor="middle" fill="#fadbd8">Discovery</text>
+  <text x="700" y="280" font-size="10" text-anchor="middle" fill="#fadbd8">Circuit</text>
+  <text x="700" y="300" font-size="10" text-anchor="middle" fill="#fadbd8">Breaker</text>
+  <!-- Connections -->
+  <line x1="140" y1="190" x2="140" y2="160" stroke="#f39c12" stroke-width="2"/>
+  <line x1="340" y1="190" x2="340" y2="160" stroke="#f39c12" stroke-width="2"/>
+  <line x1="540" y1="190" x2="540" y2="160" stroke="#f39c12" stroke-width="2"/>
+  <!-- Trade-offs -->
+  <rect x="50" y="390" width="700" height="40" rx="8" fill="#34495e" opacity="0.8"/>
+  <text x="400" y="415" font-size="12" text-anchor="middle" fill="#ffffff">Scalability ★★★★★ | Deployability ★★★★★ | Complexity ★★☆☆☆ | Performance ★★☆☆☆</text>
+</svg>

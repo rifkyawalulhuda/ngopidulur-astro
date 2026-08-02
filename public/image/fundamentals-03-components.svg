@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="cpbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#0f3460"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#cpbg)"/>
+  <text x="400" y="50" font-size="28" font-weight="bold" text-anchor="middle" fill="#ffffff">Component Scope</text>
+  <text x="400" y="80" font-size="14" text-anchor="middle" fill="#a0a0a0">From Library to Microservice - Fundamentals Chapter 8</text>
+  <!-- Scope levels -->
+  <rect x="50" y="120" width="160" height="200" rx="10" fill="#95a5a6" opacity="0.8"/>
+  <text x="130" y="150" font-size="14" font-weight="bold" text-anchor="middle" fill="#ffffff">1. Library</text>
+  <text x="130" y="175" font-size="11" text-anchor="middle" fill="#ffffff">Utility</text>
+  <rect x="70" y="190" width="120" height="25" rx="4" fill="#7f8c8d"/>
+  <text x="130" y="207" font-size="10" text-anchor="middle" fill="#ffffff">StringUtils</text>
+  <rect x="70" y="225" width="120" height="25" rx="4" fill="#7f8c8d"/>
+  <text x="130" y="242" font-size="10" text-anchor="middle" fill="#ffffff">lodash</text>
+  <text x="130" y="280" font-size="10" text-anchor="middle" fill="#bdc3c7">In-process</text>
+  <text x="130" y="300" font-size="10" text-anchor="middle" fill="#bdc3c7">High coupling</text>
+  <rect x="220" y="120" width="160" height="200" rx="10" fill="#3498db" opacity="0.85"/>
+  <text x="300" y="150" font-size="14" font-weight="bold" text-anchor="middle" fill="#ffffff">2. Wrapper</text>
+  <text x="300" y="175" font-size="11" text-anchor="middle" fill="#ffffff">Adapter/Facade</text>
+  <rect x="240" y="190" width="120" height="25" rx="4" fill="#2980b9"/>
+  <text x="300" y="207" font-size="10" text-anchor="middle" fill="#ffffff">PaymentAdapter</text>
+  <rect x="240" y="225" width="120" height="25" rx="4" fill="#2980b9"/>
+  <text x="300" y="242" font-size="10" text-anchor="middle" fill="#ffffff">LoggingFacade</text>
+  <text x="300" y="280" font-size="10" text-anchor="middle" fill="#bdc3c7">In-process</text>
+  <text x="300" y="300" font-size="10" text-anchor="middle" fill="#bdc3c7">Simplified API</text>
+  <rect x="390" y="120" width="160" height="200" rx="10" fill="#2ecc71" opacity="0.85"/>
+  <text x="470" y="150" font-size="14" font-weight="bold" text-anchor="middle" fill="#ffffff">3. Service</text>
+  <text x="470" y="175" font-size="11" text-anchor="middle" fill="#ffffff">Business Capability</text>
+  <rect x="410" y="190" width="120" height="25" rx="4" fill="#27ae60"/>
+  <text x="470" y="207" font-size="10" text-anchor="middle" fill="#ffffff">OrderService</text>
+  <rect x="410" y="225" width="120" height="25" rx="4" fill="#27ae60"/>
+  <text x="470" y="242" font-size="10" text-anchor="middle" fill="#ffffff">UserService</text>
+  <text x="470" y="280" font-size="10" text-anchor="middle" fill="#bdc3c7">Separate process</text>
+  <text x="470" y="300" font-size="10" text-anchor="middle" fill="#bdc3c7">Shared DB possible</text>
+  <rect x="560" y="120" width="160" height="200" rx="10" fill="#e74c3c" opacity="0.9"/>
+  <text x="640" y="150" font-size="14" font-weight="bold" text-anchor="middle" fill="#ffffff">4. Microservice</text>
+  <text x="640" y="175" font-size="11" text-anchor="middle" fill="#ffffff">Independent Deploy</text>
+  <rect x="580" y="190" width="120" height="25" rx="4" fill="#c0392b"/>
+  <text x="640" y="207" font-size="10" text-anchor="middle" fill="#ffffff">order-service</text>
+  <rect x="580" y="225" width="120" height="25" rx="4" fill="#c0392b"/>
+  <text x="640" y="242" font-size="10" text-anchor="middle" fill="#ffffff">Own Database</text>
+  <text x="640" y="280" font-size="10" text-anchor="middle" fill="#bdc3c7">Own deployment</text>
+  <text x="640" y="300" font-size="10" text-anchor="middle" fill="#bdc3c7">Bounded context</text>
+  <!-- Key -->
+  <rect x="150" y="340" width="500" height="60" rx="8" fill="#34495e" opacity="0.8"/>
+  <text x="400" y="365" font-size="13" text-anchor="middle" fill="#ffffff">Component = Module that can be deployed independently</text>
+  <text x="400" y="385" font-size="11" text-anchor="middle" fill="#bdc3c7">Scope increases → Independence increases, Coupling decreases</text>
+</svg>

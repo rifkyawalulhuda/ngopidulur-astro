@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="soabg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#4a1a6b"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#soabg)"/>
+  <text x="400" y="50" font-size="28" font-weight="bold" text-anchor="middle" fill="#ffffff">Service-Oriented Architecture</text>
+  <text x="400" y="80" font-size="14" text-anchor="middle" fill="#a0a0a0">Service Taxonomy + ESB - Fundamentals Chapter 16</text>
+  <!-- Taxonomy -->
+  <rect x="50" y="110" width="700" height="40" rx="6" fill="#3498db" opacity="0.9"/>
+  <text x="400" y="135" font-size="13" font-weight="bold" text-anchor="middle" fill="#ffffff">Business Services (Abstract) - ProcessOrder, ManageCustomer</text>
+  <rect x="50" y="160" width="700" height="40" rx="6" fill="#2ecc71" opacity="0.9"/>
+  <text x="400" y="185" font-size="13" font-weight="bold" text-anchor="middle" fill="#ffffff">Enterprise Services (Shared) - CustomerService, OrderService</text>
+  <rect x="50" y="210" width="700" height="40" rx="6" fill="#9b59b6" opacity="0.9"/>
+  <text x="400" y="235" font-size="13" font-weight="bold" text-anchor="middle" fill="#ffffff">Application Services (Specific) - OrderValidator, PriceCalculator</text>
+  <rect x="50" y="260" width="700" height="40" rx="6" fill="#e67e22" opacity="0.9"/>
+  <text x="400" y="285" font-size="13" font-weight="bold" text-anchor="middle" fill="#ffffff">Infrastructure Services (Technical) - Logging, Auth, Monitoring</text>
+  <!-- ESB -->
+  <rect x="250" y="320" width="300" height="50" rx="8" fill="#e74c3c" opacity="0.9"/>
+  <text x="400" y="345" font-size="14" font-weight="bold" text-anchor="middle" fill="#ffffff">Enterprise Service Bus (ESB)</text>
+  <text x="400" y="360" font-size="11" text-anchor="middle" fill="#fadbd8">Routing, Transformation, Orchestration</text>
+  <!-- Trade-offs -->
+  <rect x="50" y="390" width="700" height="40" rx="8" fill="#34495e" opacity="0.8"/>
+  <text x="400" y="415" font-size="12" text-anchor="middle" fill="#ffffff">Reusability ★★★★★ | Governance ★★★★★ | Complexity ★☆☆☆☆ | Performance ★★☆☆☆</text>
+</svg>

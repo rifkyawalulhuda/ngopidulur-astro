@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="cbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f2027"/>
+      <stop offset="100%" stop-color="#2c5364"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#cbg)"/>
+  <text x="400" y="50" font-size="28" font-weight="bold" text-anchor="middle" fill="#ffffff">7 Levels of Cohesion</text>
+  <text x="400" y="80" font-size="14" text-anchor="middle" fill="#a0a0a0">From Best (Functional) to Worst (Coincidental)</text>
+  <!-- Cohesion levels - pyramid style -->
+  <rect x="250" y="120" width="300" height="45" rx="6" fill="#27ae60" opacity="0.95"/>
+  <text x="400" y="147" font-size="14" font-weight="bold" text-anchor="middle" fill="#ffffff">1. Functional (BEST)</text>
+  <text x="400" y="160" font-size="10" text-anchor="middle" fill="#d5f5e3">All elements for single purpose</text>
+  <rect x="270" y="175" width="260" height="40" rx="6" fill="#2ecc71" opacity="0.85"/>
+  <text x="400" y="197" font-size="12" font-weight="bold" text-anchor="middle" fill="#ffffff">2. Sequential</text>
+  <text x="400" y="210" font-size="9" text-anchor="middle" fill="#d5f5e3">Output of one feeds another</text>
+  <rect x="290" y="225" width="220" height="40" rx="6" fill="#3498db" opacity="0.85"/>
+  <text x="400" y="247" font-size="12" font-weight="bold" text-anchor="middle" fill="#ffffff">3. Communicational</text>
+  <text x="400" y="260" font-size="9" text-anchor="middle" fill="#d5e8f5">Operations on same data</text>
+  <rect x="310" y="275" width="180" height="40" rx="6" fill="#f39c12" opacity="0.85"/>
+  <text x="400" y="297" font-size="12" font-weight="bold" text-anchor="middle" fill="#ffffff">4. Procedural</text>
+  <text x="400" y="310" font-size="9" text-anchor="middle" fill="#fdebd0">Specific execution order</text>
+  <rect x="330" y="325" width="140" height="35" rx="6" fill="#e67e22" opacity="0.8"/>
+  <text x="400" y="345" font-size="11" font-weight="bold" text-anchor="middle" fill="#ffffff">5. Temporal</text>
+  <rect x="350" y="370" width="100" height="30" rx="6" fill="#e74c3c" opacity="0.75"/>
+  <text x="400" y="390" font-size="10" font-weight="bold" text-anchor="middle" fill="#ffffff">6. Logical</text>
+  <rect x="370" y="410" width="60" height="25" rx="6" fill="#c0392b" opacity="0.7"/>
+  <text x="400" y="427" font-size="9" font-weight="bold" text-anchor="middle" fill="#ffffff">7. Coincidental (WORST)</text>
+  <!-- Labels -->
+  <text x="650" y="147" font-size="12" text-anchor="middle" fill="#27ae60">★★★★★</text>
+  <text x="650" y="197" font-size="12" text-anchor="middle" fill="#2ecc71">★★★★☆</text>
+  <text x="650" y="247" font-size="12" text-anchor="middle" fill="#3498db">★★★★☆</text>
+  <text x="650" y="297" font-size="12" text-anchor="middle" fill="#f39c12">★★★☆☆</text>
+  <text x="650" y="342" font-size="12" text-anchor="middle" fill="#e67e22">★★☆☆☆</text>
+  <text x="650" y="387" font-size="12" text-anchor="middle" fill="#e74c3c">★★☆☆☆</text>
+  <text x="650" y="425" font-size="12" text-anchor="middle" fill="#c0392b">★☆☆☆☆</text>
+  <text x="150" y="147" font-size="12" text-anchor="middle" fill="#27ae60">OrderCalculator</text>
+  <text x="150" y="197" font-size="11" text-anchor="middle" fill="#2ecc71">FileParser → Validator</text>
+  <text x="150" y="247" font-size="11" text-anchor="middle" fill="#3498db">CustomerDAO</text>
+  <text x="150" y="297" font-size="11" text-anchor="middle" fill="#f39c12">StartupInitializer</text>
+  <text x="150" y="342" font-size="11" text-anchor="middle" fill="#e67e22">BatchScheduler</text>
+  <text x="150" y="387" font-size="11" text-anchor="middle" fill="#e74c3c">StringUtils</text>
+  <text x="150" y="425" font-size="11" text-anchor="middle" fill="#c0392b">RandomUtils</text>
+</svg>

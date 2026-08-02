@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="fcbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f2027"/>
+      <stop offset="100%" stop-color="#2c5364"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#fcbg)"/>
+  <text x="400" y="50" font-size="28" font-weight="bold" text-anchor="middle" fill="#ffffff">4 C's of Architecture</text>
+  <text x="400" y="80" font-size="14" text-anchor="middle" fill="#a0a0a0">Communication, Collaboration, Clarity, Conciseness</text>
+  <!-- 4 C's -->
+  <rect x="150" y="120" width="200" height="120" rx="10" fill="#3498db" opacity="0.9"/>
+  <text x="250" y="150" font-size="18" font-weight="bold" text-anchor="middle" fill="#ffffff">Communication</text>
+  <text x="250" y="175" font-size="11" text-anchor="middle" fill="#d5e8f5">Clear, transparent</text>
+  <text x="250" y="195" font-size="10" text-anchor="middle" fill="#d5e8f5">ADRs, diagrams</text>
+  <text x="250" y="215" font-size="10" text-anchor="middle" fill="#d5e8f5">Presentations</text>
+  <rect x="450" y="120" width="200" height="120" rx="10" fill="#2ecc71" opacity="0.9"/>
+  <text x="550" y="150" font-size="18" font-weight="bold" text-anchor="middle" fill="#ffffff">Collaboration</text>
+  <text x="550" y="175" font-size="11" text-anchor="middle" fill="#d5f5e3">Work with the team</text>
+  <text x="550" y="195" font-size="10" text-anchor="middle" fill="#d5f5e3">Workshops, pairing</text>
+  <text x="550" y="215" font-size="10" text-anchor="middle" fill="#d5f5e3">Not ivory tower</text>
+  <rect x="150" y="260" width="200" height="120" rx="10" fill="#9b59b6" opacity="0.9"/>
+  <text x="250" y="290" font-size="18" font-weight="bold" text-anchor="middle" fill="#ffffff">Clarity</text>
+  <text x="250" y="315" font-size="11" text-anchor="middle" fill="#e8daef">No ambiguity</text>
+  <text x="250" y="335" font-size="10" text-anchor="middle" fill="#e8daef">Clear requirements</text>
+  <text x="250" y="355" font-size="10" text-anchor="middle" fill="#e8daef">Well-defined interfaces</text>
+  <rect x="450" y="260" width="200" height="120" rx="10" fill="#e74c3c" opacity="0.9"/>
+  <text x="550" y="290" font-size="18" font-weight="bold" text-anchor="middle" fill="#ffffff">Conciseness</text>
+  <text x="550" y="315" font-size="11" text-anchor="middle" fill="#fadbd8">To the point</text>
+  <text x="550" y="335" font-size="10" text-anchor="middle" fill="#fadbd8">Simple solutions</text>
+  <text x="550" y="355" font-size="10" text-anchor="middle" fill="#fadbd8">No over-engineering</text>
+  <!-- Center -->
+  <circle cx="400" cy="240" r="40" fill="#f39c12" opacity="0.9"/>
+  <text x="400" y="245" font-size="12" font-weight="bold" text-anchor="middle" fill="#ffffff">4 C's</text>
+</svg>

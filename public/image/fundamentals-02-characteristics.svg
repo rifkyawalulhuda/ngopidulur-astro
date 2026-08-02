@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="chbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f2027"/>
+      <stop offset="100%" stop-color="#203a43"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#chbg)"/>
+  <text x="400" y="50" font-size="28" font-weight="bold" text-anchor="middle" fill="#ffffff">Architecture Characteristics</text>
+  <text x="400" y="80" font-size="14" text-anchor="middle" fill="#a0a0a0">Three Categories - Fundamentals of Software Architecture</text>
+  <!-- Operational -->
+  <rect x="50" y="110" width="220" height="180" rx="10" fill="#3498db" opacity="0.9"/>
+  <text x="160" y="140" font-size="16" font-weight="bold" text-anchor="middle" fill="#ffffff">Operational</text>
+  <text x="160" y="160" font-size="11" text-anchor="middle" fill="#d5e8f5">How the system runs</text>
+  <rect x="70" y="175" width="180" height="25" rx="4" fill="#2980b9"/>
+  <text x="160" y="192" font-size="10" text-anchor="middle" fill="#ffffff">Availability (99.9%)</text>
+  <rect x="70" y="210" width="180" height="25" rx="4" fill="#2980b9"/>
+  <text x="160" y="227" font-size="10" text-anchor="middle" fill="#ffffff">Performance (&lt;200ms)</text>
+  <rect x="70" y="245" width="180" height="25" rx="4" fill="#2980b9"/>
+  <text x="160" y="262" font-size="10" text-anchor="middle" fill="#ffffff">Scalability (10x users)</text>
+  <text x="160" y="290" font-size="10" text-anchor="middle" fill="#d5e8f5">Uptime, latency, throughput</text>
+  <!-- Structural -->
+  <rect x="290" y="110" width="220" height="180" rx="10" fill="#2ecc71" opacity="0.9"/>
+  <text x="400" y="140" font-size="16" font-weight="bold" text-anchor="middle" fill="#ffffff">Structural</text>
+  <text x="400" y="160" font-size="11" text-anchor="middle" fill="#d5f5e3">How the code is organized</text>
+  <rect x="310" y="175" width="180" height="25" rx="4" fill="#27ae60"/>
+  <text x="400" y="192" font-size="10" text-anchor="middle" fill="#ffffff">Maintainability</text>
+  <rect x="310" y="210" width="180" height="25" rx="4" fill="#27ae60"/>
+  <text x="400" y="227" font-size="10" text-anchor="middle" fill="#ffffff">Extensibility</text>
+  <rect x="310" y="245" width="180" height="25" rx="4" fill="#27ae60"/>
+  <text x="400" y="262" font-size="10" text-anchor="middle" fill="#ffffff">Testability</text>
+  <text x="400" y="290" font-size="10" text-anchor="middle" fill="#d5f5e3">Coupling, complexity, coverage</text>
+  <!-- Cross-Cutting -->
+  <rect x="530" y="110" width="220" height="180" rx="10" fill="#9b59b6" opacity="0.9"/>
+  <text x="640" y="140" font-size="16" font-weight="bold" text-anchor="middle" fill="#ffffff">Cross-Cutting</text>
+  <text x="640" y="160" font-size="11" text-anchor="middle" fill="#e8daef">Affects all parts</text>
+  <rect x="550" y="175" width="180" height="25" rx="4" fill="#8e44ad"/>
+  <text x="640" y="192" font-size="10" text-anchor="middle" fill="#ffffff">Security</text>
+  <rect x="550" y="210" width="180" height="25" rx="4" fill="#8e44ad"/>
+  <text x="640" y="227" font-size="10" text-anchor="middle" fill="#ffffff">Privacy</text>
+  <rect x="550" y="245" width="180" height="25" rx="4" fill="#8e44ad"/>
+  <text x="640" y="262" font-size="10" text-anchor="middle" fill="#ffffff">Usability</text>
+  <text x="640" y="290" font-size="10" text-anchor="middle" fill="#e8daef">Auth, GDPR, accessibility</text>
+  <!-- Key Insight -->
+  <rect x="150" y="320" width="500" height="60" rx="8" fill="#34495e" opacity="0.8"/>
+  <text x="400" y="345" font-size="13" text-anchor="middle" fill="#ffffff">Characteristics = Non-Functional Requirements</text>
+  <text x="400" y="365" font-size="11" text-anchor="middle" fill="#bdc3c7">Extract from domain concerns and requirements</text>
+</svg>
