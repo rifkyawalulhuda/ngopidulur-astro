@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" font-family="Verdana, sans-serif">
+  <rect width="900" height="500" fill="#f8f9fa"/>
+  <text x="450" y="35" font-size="20" font-weight="bold" text-anchor="middle" fill="#2c3e50">Lean UX Design Process</text>
+  <text x="450" y="60" font-size="12" text-anchor="middle" fill="#7f8c8d">User centered + iterative = usability</text>
+  <!-- Steps A-E -->
+  <rect x="50" y="90" width="155" height="110" rx="8" fill="#3498db" opacity="0.9"/>
+  <text x="127" y="115" font-size="13" font-weight="bold" text-anchor="middle" fill="#ffffff">A. User Profiles</text>
+  <text x="127" y="140" font-size="9" text-anchor="middle" fill="#d5e8f5">Age, gender,</text>
+  <text x="127" y="155" font-size="9" text-anchor="middle" fill="#d5e8f5">education,</text>
+  <text x="127" y="170" font-size="9" text-anchor="middle" fill="#d5e8f5">tech comfort</text>
+  <text x="127" y="188" font-size="9" text-anchor="middle" fill="#f39c12">Shadowing</text>
+  <rect x="220" y="90" width="155" height="110" rx="8" fill="#2ecc71" opacity="0.9"/>
+  <text x="297" y="115" font-size="13" font-weight="bold" text-anchor="middle" fill="#ffffff">B. Personas</text>
+  <text x="297" y="140" font-size="9" text-anchor="middle" fill="#d5f5e3">Fiktif representasi</text>
+  <text x="297" y="155" font-size="9" text-anchor="middle" fill="#d5f5e3">target user</text>
+  <text x="297" y="170" font-size="9" text-anchor="middle" fill="#d5f5e3">Empathy map</text>
+  <text x="297" y="188" font-size="9" text-anchor="middle" fill="#f39c12">Emotional design</text>
+  <rect x="390" y="90" width="155" height="110" rx="8" fill="#9b59b6" opacity="0.9"/>
+  <text x="467" y="115" font-size="13" font-weight="bold" text-anchor="middle" fill="#ffffff">C. Card Sorting</text>
+  <text x="467" y="140" font-size="9" text-anchor="middle" fill="#e8daef">Kategorisasi</text>
+  <text x="467" y="155" font-size="9" text-anchor="middle" fill="#e8daef">konten</text>
+  <text x="467" y="170" font-size="9" text-anchor="middle" fill="#e8daef">Struktur navigasi</text>
+  <text x="467" y="188" font-size="9" text-anchor="middle" fill="#f39c12">Info architecture</text>
+  <rect x="560" y="90" width="155" height="110" rx="8" fill="#e67e22" opacity="0.9"/>
+  <text x="637" y="115" font-size="13" font-weight="bold" text-anchor="middle" fill="#ffffff">D. Interaction</text>
+  <text x="637" y="140" font-size="9" text-anchor="middle" fill="#fdebd0">Berdasarkan</text>
+  <text x="637" y="155" font-size="9" text-anchor="middle" fill="#fdebd0">use case +</text>
+  <text x="637" y="170" font-size="9" text-anchor="middle" fill="#fdebd0">flow chart</text>
+  <text x="637" y="188" font-size="9" text-anchor="middle" fill="#f39c12">Container grouping</text>
+  <rect x="730" y="90" width="120" height="110" rx="8" fill="#e74c3c" opacity="0.9"/>
+  <text x="790" y="115" font-size="13" font-weight="bold" text-anchor="middle" fill="#ffffff">E. UI Design</text>
+  <text x="790" y="140" font-size="9" text-anchor="middle" fill="#fadbd8">Prototype</text>
+  <text x="790" y="155" font-size="9" text-anchor="middle" fill="#fadbd8">mockup</text>
+  <text x="790" y="170" font-size="9" text-anchor="middle" fill="#fadbd8">iteratif</text>
+  <text x="790" y="188" font-size="9" text-anchor="middle" fill="#f39c12">High-priority only</text>
+  <!-- Arrows -->
+  <line x1="205" y1="145" x2="220" y2="145" stroke="#95a5a6" stroke-width="2"/>
+  <line x1="375" y1="145" x2="390" y2="145" stroke="#95a5a6" stroke-width="2"/>
+  <line x1="545" y1="145" x2="560" y2="145" stroke="#95a5a6" stroke-width="2"/>
+  <line x1="715" y1="145" x2="730" y2="145" stroke="#95a5a6" stroke-width="2"/>
+  <!-- Key principles -->
+  <rect x="50" y="225" width="400" height="130" rx="10" fill="#ecf0f1"/>
+  <text x="250" y="250" font-size="14" font-weight="bold" text-anchor="middle" fill="#2c3e50">Prinsip Konten UI</text>
+  <rect x="75" y="265" width="350" height="35" rx="5" fill="#3498db"/>
+  <text x="250" y="288" font-size="11" text-anchor="middle" fill="#ffffff">1. Concise - singkat, tanpa misinterpretasi</text>
+  <rect x="75" y="308" width="350" height="35" rx="5" fill="#2ecc71"/>
+  <text x="250" y="331" font-size="11" text-anchor="middle" fill="#ffffff">2. Useful - bahasa user, bukan tim teknis</text>
+  <rect x="470" y="225" width="380" height="130" rx="10" fill="#ecf0f1"/>
+  <text x="660" y="250" font-size="14" font-weight="bold" text-anchor="middle" fill="#2c3e50">Prototype sebagai WIP</text>
+  <text x="660" y="278" font-size="11" text-anchor="middle" fill="#34495e">Bukan untuk semua UI - hanya</text>
+  <text x="660" y="298" font-size="11" text-anchor="middle" fill="#34495e">fitur high-priority yang sering dipakai</text>
+  <text x="660" y="322" font-size="11" text-anchor="middle" fill="#34495e">Iterasi di prototype &lt;&lt; biaya</text>
+  <text x="660" y="342" font-size="11" text-anchor="middle" fill="#34495e">iterasi di produk final</text>
+  <!-- Closing -->
+  <rect x="150" y="375" width="600" height="90" rx="8" fill="#34495e" opacity="0.9"/>
+  <text x="450" y="400" font-size="13" font-weight="bold" text-anchor="middle" fill="#ffffff">Gaudi Approach &amp; Humanization of Products</text>
+  <text x="450" y="422" font-size="11" text-anchor="middle" fill="#bdc3c7">Gaudi: "The great book always open is that of Nature"</text>
+  <text x="450" y="442" font-size="11" text-anchor="middle" fill="#bdc3c7">Steve Jobs: user di pusat desain - menciptakan natural-born users</text>
+  <text x="450" y="465" font-size="11" text-anchor="middle" fill="#f39c12">"Everything should be made as simple as possible, but not simpler" - Einstein</text>
+</svg>

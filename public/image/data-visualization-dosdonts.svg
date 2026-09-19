@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" font-family="Verdana, sans-serif">
+  <rect width="900" height="500" fill="#f8f9fa"/>
+  <text x="450" y="35" font-size="20" font-weight="bold" text-anchor="middle" fill="#2c3e50">10 Do's and Don'ts Desain Chart</text>
+  <text x="450" y="60" font-size="12" text-anchor="middle" fill="#7f8c8d">Best practice untuk visualisasi data yang akurat dan efektif</text>
+  <!-- DO's -->
+  <rect x="40" y="85" width="400" height="370" rx="10" fill="#e8f8f5"/>
+  <rect x="40" y="85" width="400" height="45" rx="10" fill="#27ae60"/>
+  <text x="240" y="115" font-size="18" font-weight="bold" text-anchor="middle" fill="#ffffff">✓ DO</text>
+  <rect x="60" y="145" width="360" height="55" rx="6" fill="#ffffff" stroke="#27ae60" stroke-width="2"/>
+  <text x="75" y="168" font-size="12" font-weight="bold" fill="#27ae60">1. Use one color per category</text>
+  <text x="75" y="188" font-size="10" fill="#555">Konsistensi memudahkan identifikasi</text>
+  <rect x="60" y="210" width="360" height="55" rx="6" fill="#ffffff" stroke="#27ae60" stroke-width="2"/>
+  <text x="75" y="233" font-size="12" font-weight="bold" fill="#27ae60">2. Order data logically</text>
+  <text x="75" y="253" font-size="10" fill="#555">Alphabetical, sequential, atau by value</text>
+  <rect x="60" y="275" width="360" height="55" rx="6" fill="#ffffff" stroke="#27ae60" stroke-width="2"/>
+  <text x="75" y="298" font-size="12" font-weight="bold" fill="#27ae60">3. Use callouts</text>
+  <text x="75" y="318" font-size="10" fill="#555">Highlight info penting/menarik</text>
+  <rect x="60" y="340" width="360" height="55" rx="6" fill="#ffffff" stroke="#27ae60" stroke-width="2"/>
+  <text x="75" y="363" font-size="12" font-weight="bold" fill="#27ae60">4. Easy to compare</text>
+  <text x="75" y="383" font-size="10" fill="#555">Visualisasi yang memudahkan perbandingan nilai</text>
+  <rect x="60" y="405" width="360" height="40" rx="6" fill="#ffffff" stroke="#27ae60" stroke-width="2"/>
+  <text x="75" y="425" font-size="12" font-weight="bold" fill="#27ae60">5. Use icons</text>
+  <text x="75" y="440" font-size="10" fill="#555">Enhance comprehension, kurangi labeling</text>
+  <!-- DON'Ts -->
+  <rect x="460" y="85" width="400" height="370" rx="10" fill="#fdedec"/>
+  <rect x="460" y="85" width="400" height="45" rx="10" fill="#c0392b"/>
+  <text x="660" y="115" font-size="18" font-weight="bold" text-anchor="middle" fill="#ffffff">✗ DON'T</text>
+  <rect x="480" y="145" width="360" height="55" rx="6" fill="#ffffff" stroke="#c0392b" stroke-width="2"/>
+  <text x="495" y="168" font-size="12" font-weight="bold" fill="#c0392b">6. High contrast combos</text>
+  <text x="495" y="188" font-size="10" fill="#555">Red/green, blue/yellow sulit dilihat</text>
+  <rect x="480" y="210" width="360" height="55" rx="6" fill="#ffffff" stroke="#c0392b" stroke-width="2"/>
+  <text x="495" y="233" font-size="12" font-weight="bold" fill="#c0392b">7. 3D charts</text>
+  <text x="495" y="253" font-size="10" fill="#555">Skew persepsi visualisasi</text>
+  <rect x="480" y="275" width="360" height="55" rx="6" fill="#ffffff" stroke="#c0392b" stroke-width="2"/>
+  <text x="495" y="298" font-size="12" font-weight="bold" fill="#c0392b">8. Chart junk</text>
+  <text x="495" y="318" font-size="10" fill="#555">Ilustrasi/drop shadow/ornamen mengalihkan</text>
+  <rect x="480" y="340" width="360" height="55" rx="6" fill="#ffffff" stroke="#c0392b" stroke-width="2"/>
+  <text x="495" y="363" font-size="12" font-weight="bold" fill="#c0392b">9. More than 6 colors</text>
+  <text x="495" y="383" font-size="10" fill="#555">Terlalu banyak warna membingungkan</text>
+  <rect x="480" y="405" width="360" height="40" rx="6" fill="#ffffff" stroke="#c0392b" stroke-width="2"/>
+  <text x="495" y="425" font-size="12" font-weight="bold" fill="#c0392b">10. Distracting fonts</text>
+  <text x="495" y="440" font-size="10" fill="#555">Bold/italic/underline berlebihan</text>
+  <text x="450" y="478" font-size="12" text-anchor="middle" fill="#7f8c8d">Chart yang baik = menyampaikan data secara akurat, jelas, dan tanpa distraksi</text>
+</svg>

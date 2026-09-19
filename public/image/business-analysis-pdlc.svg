@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" font-family="Verdana, sans-serif">
+  <rect width="900" height="500" fill="#f8f9fa"/>
+  <text x="450" y="35" font-size="20" font-weight="bold" text-anchor="middle" fill="#2c3e50">Product Development Life Cycle (Lean)</text>
+  <text x="450" y="60" font-size="12" text-anchor="middle" fill="#7f8c8d">Setiap tahap punya sumber waste yang harus dicegah</text>
+  <!-- Steps -->
+  <rect x="40" y="95" width="180" height="90" rx="8" fill="#3498db" opacity="0.9"/>
+  <text x="130" y="120" font-size="12" font-weight="bold" text-anchor="middle" fill="#ffffff">1. Enterprise Arch</text>
+  <text x="130" y="142" font-size="10" text-anchor="middle" fill="#d5e8f5">Selaraskan dengan</text>
+  <text x="130" y="158" font-size="10" text-anchor="middle" fill="#d5e8f5">strategi korporat</text>
+  <text x="130" y="176" font-size="9" text-anchor="middle" fill="#f39c12">Waste: portfolio-level</text>
+  <rect x="240" y="95" width="180" height="90" rx="8" fill="#9b59b6" opacity="0.9"/>
+  <text x="330" y="120" font-size="12" font-weight="bold" text-anchor="middle" fill="#ffffff">2. Strategic Analysis</text>
+  <text x="330" y="142" font-size="10" text-anchor="middle" fill="#e8daef">Product scope</text>
+  <text x="330" y="158" font-size="10" text-anchor="middle" fill="#e8daef">definition</text>
+  <text x="330" y="176" font-size="9" text-anchor="middle" fill="#f39c12">Waste: scope-level</text>
+  <rect x="440" y="95" width="180" height="90" rx="8" fill="#e67e22" opacity="0.9"/>
+  <text x="530" y="120" font-size="12" font-weight="bold" text-anchor="middle" fill="#ffffff">3. Requirements</text>
+  <text x="530" y="142" font-size="10" text-anchor="middle" fill="#fdebd0">Gathering &amp;</text>
+  <text x="530" y="158" font-size="10" text-anchor="middle" fill="#fdebd0">documentation</text>
+  <text x="530" y="176" font-size="9" text-anchor="middle" fill="#f39c12">Waste: WIP-level</text>
+  <rect x="640" y="95" width="180" height="90" rx="8" fill="#2ecc71" opacity="0.9"/>
+  <text x="730" y="120" font-size="12" font-weight="bold" text-anchor="middle" fill="#ffffff">4. Lean UX</text>
+  <text x="730" y="142" font-size="10" text-anchor="middle" fill="#d5f5e3">Design &amp;</text>
+  <text x="730" y="158" font-size="10" text-anchor="middle" fill="#d5f5e3">usability</text>
+  <text x="730" y="176" font-size="9" text-anchor="middle" fill="#f39c12">Waste: rework</text>
+  <!-- Lower row -->
+  <rect x="140" y="215" width="180" height="90" rx="8" fill="#1abc9c" opacity="0.9"/>
+  <text x="230" y="240" font-size="12" font-weight="bold" text-anchor="middle" fill="#ffffff">5. Technical Design</text>
+  <text x="230" y="262" font-size="10" text-anchor="middle" fill="#d1f2eb">Arsitektur fleksibel</text>
+  <text x="230" y="278" font-size="10" text-anchor="middle" fill="#d1f2eb">+ DevOps</text>
+  <text x="230" y="296" font-size="9" text-anchor="middle" fill="#f39c12">Waste: bottleneck</text>
+  <rect x="340" y="215" width="180" height="90" rx="8" fill="#e74c3c" opacity="0.9"/>
+  <text x="430" y="240" font-size="12" font-weight="bold" text-anchor="middle" fill="#ffffff">6. QA &amp; Testing</text>
+  <text x="430" y="262" font-size="10" text-anchor="middle" fill="#fadbd8">Automation level</text>
+  <text x="430" y="278" font-size="10" text-anchor="middle" fill="#fadbd8">yang tepat</text>
+  <text x="430" y="296" font-size="9" text-anchor="middle" fill="#f39c12">Waste: shelfware</text>
+  <rect x="540" y="215" width="180" height="90" rx="8" fill="#34495e" opacity="0.9"/>
+  <text x="630" y="240" font-size="12" font-weight="bold" text-anchor="middle" fill="#ffffff">7. Project Mgmt</text>
+  <text x="630" y="262" font-size="10" text-anchor="middle" fill="#bdc3c7">Product vs</text>
+  <text x="630" y="278" font-size="10" text-anchor="middle" fill="#bdc3c7">project scope</text>
+  <text x="630" y="296" font-size="9" text-anchor="middle" fill="#f39c12">Waste: project-level</text>
+  <!-- Arrows -->
+  <line x1="220" y1="140" x2="240" y2="140" stroke="#95a5a6" stroke-width="2"/>
+  <line x1="420" y1="140" x2="440" y2="140" stroke="#95a5a6" stroke-width="2"/>
+  <line x1="620" y1="140" x2="640" y2="140" stroke="#95a5a6" stroke-width="2"/>
+  <line x1="730" y1="185" x2="650" y2="215" stroke="#95a5a6" stroke-width="2"/>
+  <line x1="320" y1="260" x2="340" y2="260" stroke="#95a5a6" stroke-width="2"/>
+  <line x1="520" y1="260" x2="540" y2="260" stroke="#95a5a6" stroke-width="2"/>
+  <!-- Key -->
+  <rect x="150" y="335" width="600" height="70" rx="8" fill="#ecf0f1"/>
+  <text x="450" y="360" font-size="14" font-weight="bold" text-anchor="middle" fill="#2c3e50">Prinsip Lean di Setiap Tahap</text>
+  <text x="450" y="382" font-size="11" text-anchor="middle" fill="#34495e">Just in time | Cegah WIP inventory | Kaizen (continuous improvement)</text>
+  <text x="450" y="398" font-size="11" text-anchor="middle" fill="#34495e">Jangan takut gagal awal: "Good judgment comes from experience"</text>
+  <text x="450" y="445" font-size="12" text-anchor="middle" fill="#7f8c8d">Lean = menghilangkan waste agar sumber daya hanya untuk hal bernilai</text>
+  <text x="450" y="470" font-size="11" text-anchor="middle" fill="#95a5a6">Studi kasus: CEC Mobile Application - Type-A project dengan hybrid methodology</text>
+</svg>
